@@ -4,7 +4,7 @@ import net.minecraft.world.item.Item;
 
 public class Tin_Wire extends Item {
 
-  public Tin_Wire() {
-    super(new Item.Properties());
-  }
+    public Tin_Wire() {
+        super(new Item.Properties());
+    }
 }
