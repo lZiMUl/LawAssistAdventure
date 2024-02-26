@@ -15,11 +15,11 @@ import static com.lzimul.law_assist_adventure.Config.LOGGER;
 import static com.lzimul.law_assist_adventure.Config.MODID;
 
 @Mod(MODID)
-public class LawAssistAdventure extends ItemGroups {
+public class LawAssistAdventure extends ItemGroup {
     public LawAssistAdventure(IEventBus modEventBus) {
         super();
 
-        ItemGroups.register(modEventBus);
+        ItemGroup.register(modEventBus);
         Items.register(modEventBus);
         Blocks.register(modEventBus);
         Sounds.register(modEventBus);

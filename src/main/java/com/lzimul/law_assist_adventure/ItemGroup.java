@@ -9,13 +9,13 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import static com.lzimul.law_assist_adventure.Config.MODID;
 
-public class ItemGroups {
+public class ItemGroup {
     private static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
-    public ItemGroups() {
-        CREATIVE_MODE_TAB.register("item_group.lzimul.items", () -> CreativeModeTab.builder()
+    public ItemGroup() {
+        CREATIVE_MODE_TAB.register("itemGroup.lzimul.law_assist_adventure.items", () -> CreativeModeTab.builder()
                 .icon(() -> new ItemStack(Blocks.Crafting_Table.get()))
-                .title(Component.translatable("item_group.lzimul.item_tabs"))
+                .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.items"))
                 .displayItems((input, output) -> {
                     output.accept(Items.Copper_Ingot.get());
                     output.accept(Items.Ingot.get());
@@ -24,9 +24,9 @@ public class ItemGroups {
                     output.accept(Items.Gold_Wire.get());
                     output.accept(Items.Tin_Wire.get());
                 }).build());
-        CREATIVE_MODE_TAB.register("item_group.lzimul.blocks", () -> CreativeModeTab.builder()
+        CREATIVE_MODE_TAB.register("itemGroup.lzimul.law_assist_adventure.blocks", () -> CreativeModeTab.builder()
                 .icon(() -> new ItemStack(Blocks.Crafting_Table.get()))
-                .title(Component.translatable("item_group.lzimul.item_tabs"))
+                .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.blocks"))
                 .displayItems((input, output) -> {
                     output.accept(Items.Crafting_Table.get());
                     output.accept(Items.Washer.get());
