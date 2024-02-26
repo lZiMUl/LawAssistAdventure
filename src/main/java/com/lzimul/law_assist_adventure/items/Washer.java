@@ -8,3 +8,4 @@ public class Washer extends BlockItem {
     public Washer() {
         super(Blocks.Washer.get(), new Item.Properties());
     }
+}
