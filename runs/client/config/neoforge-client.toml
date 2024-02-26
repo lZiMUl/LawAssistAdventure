@@ -1,3 +1,4 @@
+
 #Client only settings, mostly things related to rendering
 [client]
 #EXPERIMENTAL: Enable the NeoForge block rendering pipeline - fixes the lighting of custom models.

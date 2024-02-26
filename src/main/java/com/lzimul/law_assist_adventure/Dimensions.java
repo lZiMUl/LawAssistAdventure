@@ -15,12 +15,10 @@ import net.minecraft.world.phys.Vec3;
 public class Dimensions {
     public static final ResourceKey<Level> MAIN_WORLD_DIMENSION = ResourceKey.create(Registries.DIMENSION, new ResourceLocation("overworld"));
     public static final ResourceKey<Level> lZiMUl = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(Config.MODID, "lzimul"));
-
     private static boolean isAirOrStone(LevelChunk chunk, BlockPos pos) {
         BlockState state = chunk.getBlockState(pos);
         return state.getBlock().equals(Blocks.STONE) || state.isAir();
     }
-
     private static boolean isReplaceable(Level world, BlockPos pos) {
         BlockState state = world.getBlockState(pos);
         return state.getBlock().equals(Blocks.STONE) ||
@@ -32,7 +30,6 @@ public class Dimensions {
                 state.getBlock().equals(Blocks.LAVA) ||
                 state.isAir();
     }
-
     public static Vec3 placeTeleporterWorld(ServerLevel world, LevelChunk chunk) {
         boolean deep = false;
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
@@ -88,7 +85,6 @@ public class Dimensions {
 
         return null;
     }
-
     public static Vec3 placeTeleporterOverworld(ServerLevel world, LevelChunk chunk) {
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
         for (int x = 0; x < 16; x++) {
