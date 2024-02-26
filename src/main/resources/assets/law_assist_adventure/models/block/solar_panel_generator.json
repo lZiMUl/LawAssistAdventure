@@ -1,0 +1,281 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "block/cube_all",
+  "texture_size": [
+    64,
+    64
+  ],
+  "textures": {
+    "0": "law_assist_adventure:block/solar_panel_generator",
+    "particle": "law_assist_adventure:block/solar_panel_generator"
+  },
+  "elements": [
+    {
+      "name": "zu",
+      "from": [
+        6.5,
+        16,
+        6.5
+      ],
+      "to": [
+        9.5,
+        22,
+        9.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            8,
+            4.75,
+            8.75,
+            6.25
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            8,
+            4.75,
+            8.75,
+            6.25
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            8,
+            4.75,
+            8.75,
+            6.25
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            8,
+            4.75,
+            8.75,
+            6.25
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            8,
+            4,
+            8.75,
+            4.75
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            8,
+            4,
+            8.75,
+            4.75
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "zt",
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            4,
+            8,
+            0,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            8,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "ban",
+      "from": [
+        -16,
+        22,
+        -16
+      ],
+      "to": [
+        14,
+        24,
+        32
+      ],
+      "rotation": {
+        "angle": -22.5,
+        "axis": "z",
+        "origin": [
+          0,
+          0,
+          0
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            15.75,
+            6,
+            16
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            15.75,
+            6,
+            16
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            15.75,
+            6,
+            16
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            15.75,
+            6,
+            16
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            16,
+            16,
+            10,
+            10
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            16,
+            4,
+            10,
+            10
+          ],
+          "texture": "#0"
+        }
+      }
+    }
+  ],
+  "groups": [
+    {
+      "name": "group",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "color": 0,
+      "children": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "display": {
+    "gui": {
+      "rotation": [
+        0,
+        -38,
+        0
+      ],
+      "translation": [
+        0.25,
+        -3.25,
+        -2.5
+      ],
+      "scale": [
+        0.27,
+        0.39,
+        0.43
+      ]
+    }
+  },
+  "groups": [
+    {
+      "name": "group",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "color": 0,
+      "children": [
+        0,
+        1,
+        2
+      ]
+    }
+  ]
+}
