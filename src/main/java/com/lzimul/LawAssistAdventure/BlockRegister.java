@@ -1,15 +1,15 @@
 package com.lzimul.LawAssistAdventure;
 
+import com.lzimul.LawAssistAdventure.Blocks.*;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import static com.lzimul.LawAssistAdventure.Config.MODID;
-import com.lzimul.LawAssistAdventure.Blocks.*;
 
 public class BlockRegister {
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
+    private static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
     public static final DeferredBlock<Block> Crafting_Table = BLOCKS.register("crafting_table", Crafting_Table::new);
     public static final DeferredBlock<Block> Washer = BLOCKS.register("washer", Washer::new);
     public static final DeferredBlock<Block> Thermal_Generators = BLOCKS.register("thermal_generators", Thermal_Generators::new);
