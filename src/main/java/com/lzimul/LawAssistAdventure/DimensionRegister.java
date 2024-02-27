@@ -12,13 +12,13 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.LevelChunk;
 import net.minecraft.world.phys.Vec3;
 
-public class Dimension {
+public class DimensionRegister {
     public static final ResourceKey<Level> MAIN_WORLD_DIMENSION = ResourceKey.create(Registries.DIMENSION, new ResourceLocation("overworld"));
-    public static final ResourceKey<Level> FINAL_WING = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(Config.MODID, "final_wing"));
-    public static final ResourceKey<Level> REMNANT_DAWN = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(Config.MODID, "remnant_dawn"));
-    public static final ResourceKey<Level> FALL_INTO_THE_VOID = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(Config.MODID, "fall_into_the_void"));
-    public static final ResourceKey<Level> DUST = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(Config.MODID, "dust"));
-    public static final ResourceKey<Level> STARING = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(Config.MODID, "staring"));
+//    public static final ResourceKey<Level> FINAL_WING = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(Config.MODID, "final_wing"));
+//    public static final ResourceKey<Level> REMNANT_DAWN = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(Config.MODID, "remnant_dawn"));
+//    public static final ResourceKey<Level> FALL_INTO_THE_VOID = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(Config.MODID, "fall_into_the_void"));
+//    public static final ResourceKey<Level> DUST = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(Config.MODID, "dust"));
+//    public static final ResourceKey<Level> STARING = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(Config.MODID, "staring"));
 
 
     private static boolean isAirOrStone(LevelChunk chunk, BlockPos pos) {

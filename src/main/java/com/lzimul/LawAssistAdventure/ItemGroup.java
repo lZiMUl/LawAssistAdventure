@@ -12,9 +12,9 @@ import static com.lzimul.LawAssistAdventure.Config.MODID;
 public class ItemGroup {
     private static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
     public ItemGroup() {
-        CREATIVE_MODE_TAB.register("item_group.lzimul.law_assist_adventure.blocks", () -> CreativeModeTab.builder()
-                .icon(() -> new ItemStack(BlockRegister.CraftingTable.get()))
-                .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.blocks"))
+        CREATIVE_MODE_TAB.register("item_group.lzimul.law_assist_adventure.items", () -> CreativeModeTab.builder()
+                .icon(() -> new ItemStack(ItemRegister.CopperIngot.get()))
+                .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.items"))
                 .displayItems((input, output) -> {
                     output.accept(ItemRegister.CopperIngot.get());
                     output.accept(ItemRegister.Ingot.get());

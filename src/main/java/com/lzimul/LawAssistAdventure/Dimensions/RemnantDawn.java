@@ -1,6 +1,6 @@
 package com.lzimul.LawAssistAdventure.Dimensions;
 
-import com.lzimul.LawAssistAdventure.Dimension;
+import com.lzimul.LawAssistAdventure.DimensionRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -12,8 +12,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
 
-import static com.lzimul.LawAssistAdventure.Dimension.placeTeleporterOverworld;
-import static com.lzimul.LawAssistAdventure.Dimension.placeTeleporterWorld;
+import static com.lzimul.LawAssistAdventure.DimensionRegister.placeTeleporterOverworld;
+import static com.lzimul.LawAssistAdventure.DimensionRegister.placeTeleporterWorld;
 
 public class RemnantDawn implements ITeleporter {
     private final BlockPos pos;
@@ -32,11 +32,11 @@ public class RemnantDawn implements ITeleporter {
         LevelChunk chunk = (LevelChunk) destWorld.getChunk(pos);
         Vec3 spawnPos;
 
-        if (destWorld.dimension().equals(Dimension.REMNANT_DAWN)) {
+//        if (destWorld.dimension().equals(Dimension.REMNANT_DAWN)) {
             spawnPos = placeTeleporterWorld(destWorld, chunk);
-        } else {
-            spawnPos = placeTeleporterOverworld(destWorld, chunk);
-        }
+//        } else {
+//            spawnPos = placeTeleporterOverworld(destWorld, chunk);
+//        }
 
         if (spawnPos == null) {
             return entity;

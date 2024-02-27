@@ -13,11 +13,11 @@ public class BlockRegister {
     public static final DeferredBlock<Block> CraftingTable = BLOCKS.register("crafting_table", CraftingTable::new);
     public static final DeferredBlock<Block> Washer = BLOCKS.register("washer", Washer::new);
     public static final DeferredBlock<Block> ThermalGenerators = BLOCKS.register("thermal_generators", ThermalGenerators::new);
-    public static final DeferredBlock<Block> PowerStorageBox1 = BLOCKS.register("power_storage_box1", PowerStorageBox1::new);
-    public static final DeferredBlock<Block> PowerStorageBox2 = BLOCKS.register("power_storage_box2", PowerStorageBox2::new);
-    public static final DeferredBlock<Block> PowerStorageBox3 = BLOCKS.register("power_storage_box3", PowerStorageBox3::new);
-    public static final DeferredBlock<Block> PowerStorageBox4 = BLOCKS.register("power_storage_box4", PowerStorageBox4::new);
-    public static final DeferredBlock<Block> PowerStorageBox5 = BLOCKS.register("power_storage_box5", PowerStorageBox5::new);
+    public static final DeferredBlock<Block> PowerStorageBox1 = BLOCKS.register("power_storage_box_1", PowerStorageBox1::new);
+    public static final DeferredBlock<Block> PowerStorageBox2 = BLOCKS.register("power_storage_box_2", PowerStorageBox2::new);
+    public static final DeferredBlock<Block> PowerStorageBox3 = BLOCKS.register("power_storage_box_3", PowerStorageBox3::new);
+    public static final DeferredBlock<Block> PowerStorageBox4 = BLOCKS.register("power_storage_box_4", PowerStorageBox4::new);
+    public static final DeferredBlock<Block> PowerStorageBox5 = BLOCKS.register("power_storage_box_5", PowerStorageBox5::new);
     public static final DeferredBlock<Block> SolarPanelGenerator = BLOCKS.register("solar_panel_generator", SolarPanelGenerator::new);
     public static final DeferredBlock<Block> FluidFuelGenerators = BLOCKS.register("fluid_fuel_generators", FluidFuelGenerators::new);
     public static final DeferredBlock<Block> PowerWire = BLOCKS.register("power_wire", PowerWire::new);

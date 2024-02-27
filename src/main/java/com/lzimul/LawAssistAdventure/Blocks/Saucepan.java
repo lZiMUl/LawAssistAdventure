@@ -19,8 +19,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
-import static com.lzimul.LawAssistAdventure.Dimension.DUST;
-import static com.lzimul.LawAssistAdventure.Dimension.MAIN_WORLD_DIMENSION;
+//import static com.lzimul.LawAssistAdventure.Dimension.DUST;
+import static com.lzimul.LawAssistAdventure.DimensionRegister.MAIN_WORLD_DIMENSION;
 
 public class Saucepan extends Block {
     public Saucepan() {
@@ -30,7 +30,7 @@ public class Saucepan extends Block {
     public @NotNull InteractionResult use(@NotNull BlockState blockState, @NotNull Level level, @NotNull BlockPos blockPos, @NotNull Player player, @NotNull InteractionHand interactionHand, @NotNull BlockHitResult blockHitResult) {
         if (!level.isClientSide) {
             if (player.level().dimension() == MAIN_WORLD_DIMENSION) {
-                teleportToWorld((ServerPlayer) player, DUST, player.getOnPos());
+                teleportToWorld((ServerPlayer) player, MAIN_WORLD_DIMENSION, player.getOnPos());
             } else {
                 teleportToWorld((ServerPlayer) player, MAIN_WORLD_DIMENSION, player.getOnPos());
             }
