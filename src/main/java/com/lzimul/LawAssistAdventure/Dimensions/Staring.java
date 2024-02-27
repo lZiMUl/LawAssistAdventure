@@ -15,10 +15,10 @@ import java.util.function.Function;
 import static com.lzimul.LawAssistAdventure.Dimension.placeTeleporterOverworld;
 import static com.lzimul.LawAssistAdventure.Dimension.placeTeleporterWorld;
 
-public class lZiMUl implements ITeleporter {
+public class Staring implements ITeleporter {
     private final BlockPos pos;
 
-    public lZiMUl(BlockPos pos) {
+    public Staring(BlockPos pos) {
         this.pos = pos;
     }
 
@@ -30,9 +30,9 @@ public class lZiMUl implements ITeleporter {
             return entity;
         }
         LevelChunk chunk = (LevelChunk) destWorld.getChunk(pos);
-        Vec3 spawnPos = null;
+        Vec3 spawnPos;
 
-        if (destWorld.dimension().equals(Dimension.lZiMUl)) {
+        if (destWorld.dimension().equals(Dimension.STARING)) {
             spawnPos = placeTeleporterWorld(destWorld, chunk);
         } else {
             spawnPos = placeTeleporterOverworld(destWorld, chunk);

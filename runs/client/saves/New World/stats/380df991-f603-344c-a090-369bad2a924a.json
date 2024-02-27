@@ -4,19 +4,9 @@
       "law_assist_adventure:power_storage_box_2": 1,
       "law_assist_adventure:power_storage_box_4": 2
     },
-    "minecraft:custom": {
-      "minecraft:time_since_rest": 31933,
-      "minecraft:crouch_one_cm": 105,
-      "minecraft:sprint_one_cm": 20241,
-      "minecraft:play_time": 31933,
-      "minecraft:walk_one_cm": 49837,
-      "minecraft:sneak_time": 37,
-      "minecraft:drop": 3,
-      "minecraft:jump": 395,
-      "minecraft:leave_game": 7,
-      "minecraft:time_since_death": 31933,
-      "minecraft:total_world_time": 63208,
-      "minecraft:fly_one_cm": 98011
+    "minecraft:picked_up": {
+      "law_assist_adventure:power_storage_box_2": 1,
+      "law_assist_adventure:power_storage_box_4": 2
     },
     "minecraft:used": {
       "minecraft:glow_item_frame": 6,
@@ -39,13 +29,23 @@
       "law_assist_adventure:power_storage_box_1": 2,
       "law_assist_adventure:copper_ore": 1,
       "law_assist_adventure:rubber_wood": 1,
-      "law_assist_adventure:power_storage_box_2": 4,
+      "law_assist_adventure:power_storage_box_2": 5,
       "law_assist_adventure:power_storage_box_4": 15,
       "law_assist_adventure:power_storage_box_3": 3
     },
-    "minecraft:picked_up": {
-      "law_assist_adventure:power_storage_box_2": 1,
-      "law_assist_adventure:power_storage_box_4": 2
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 32205,
+      "minecraft:crouch_one_cm": 105,
+      "minecraft:sprint_one_cm": 20446,
+      "minecraft:play_time": 32205,
+      "minecraft:walk_one_cm": 50960,
+      "minecraft:sneak_time": 37,
+      "minecraft:drop": 3,
+      "minecraft:jump": 395,
+      "minecraft:leave_game": 8,
+      "minecraft:time_since_death": 32205,
+      "minecraft:total_world_time": 70088,
+      "minecraft:fly_one_cm": 98011
     }
   },
   "DataVersion": 3700
