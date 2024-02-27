@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
-import static com.lzimul.LawAssistAdventure.DimensionRegister.MAIN_WORLD_DIMENSION;
+import static com.lzimul.LawAssistAdventure.DimensionRegister.*;
 
 public class Teleporter extends Item {
     public Teleporter() {
@@ -27,10 +27,10 @@ public class Teleporter extends Item {
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
         if (!level.isClientSide) {
-            if (player.level().dimension() == MAIN_WORLD_DIMENSION) {
-                teleportToWorld((ServerPlayer) player, MAIN_WORLD_DIMENSION, player.getOnPos());
+            if (player.level().dimension() == OVERWORLD) {
+                teleportToWorld((ServerPlayer) player, THE_END, player.getOnPos());
             } else {
-                teleportToWorld((ServerPlayer) player, MAIN_WORLD_DIMENSION, player.getOnPos());
+                teleportToWorld((ServerPlayer) player, OVERWORLD, player.getOnPos());
             }
             player.getCooldowns().addCooldown(ItemRegister.Teleporter.get(), 20);
         }
