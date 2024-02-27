@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.lzimul.law_assist_adventure.mixin",
+  "package": "com.lzimul.LawAssistAdventure.mixin",
   "compatibilityLevel": "JAVA_8",
   "refmap": "LawAssistAdventure.refmap.json",
   "mixins": [
