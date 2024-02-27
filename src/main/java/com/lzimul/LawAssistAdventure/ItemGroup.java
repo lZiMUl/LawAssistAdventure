@@ -22,6 +22,7 @@ public class ItemGroup {
                     output.accept(ItemRegister.CopperWire.get());
                     output.accept(ItemRegister.GoldWire.get());
                     output.accept(ItemRegister.TinWire.get());
+                    output.accept(ItemRegister.Teleporter.get());
                 }).build());
 
         CREATIVE_MODE_TAB.register("item_group.lzimul.law_assist_adventure.blocks", () -> CreativeModeTab.builder()

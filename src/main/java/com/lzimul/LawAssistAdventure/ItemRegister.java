@@ -38,6 +38,7 @@ public class ItemRegister {
     public static final DeferredItem<Item> CopperWire = ITEMS.register("copper_wire", CopperWire::new);
     public static final DeferredItem<Item> GoldWire = ITEMS.register("gold_wire", GoldWire::new);
     public static final DeferredItem<Item> TinWire = ITEMS.register("tin_wire", TinWire::new);
+    public static final DeferredItem<Item> Teleporter = ITEMS.register("teleporter", Teleporter::new);
 
     public static void register(IEventBus modEventBus) {
         ITEMS.register(modEventBus);
