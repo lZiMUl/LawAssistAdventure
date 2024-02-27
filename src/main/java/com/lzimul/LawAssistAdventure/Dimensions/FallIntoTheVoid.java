@@ -15,10 +15,10 @@ import java.util.function.Function;
 import static com.lzimul.LawAssistAdventure.Dimension.placeTeleporterOverworld;
 import static com.lzimul.LawAssistAdventure.Dimension.placeTeleporterWorld;
 
-public class Remnant_Dawn implements ITeleporter {
+public class FallIntoTheVoid implements ITeleporter {
     private final BlockPos pos;
 
-    public Remnant_Dawn(BlockPos pos) {
+    public FallIntoTheVoid(BlockPos pos) {
         this.pos = pos;
     }
 
@@ -32,7 +32,7 @@ public class Remnant_Dawn implements ITeleporter {
         LevelChunk chunk = (LevelChunk) destWorld.getChunk(pos);
         Vec3 spawnPos;
 
-        if (destWorld.dimension().equals(Dimension.REMNANT_DAWN)) {
+        if (destWorld.dimension().equals(Dimension.FALL_INTO_THE_VOID)) {
             spawnPos = placeTeleporterWorld(destWorld, chunk);
         } else {
             spawnPos = placeTeleporterOverworld(destWorld, chunk);
