@@ -1,5 +1,6 @@
 package com.lzimul.LawAssistAdventure;
 
+import com.lzimul.LawAssistAdventure.Items.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
@@ -7,7 +8,6 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import static com.lzimul.LawAssistAdventure.Config.MODID;
-import com.lzimul.LawAssistAdventure.Items.*;
 
 public class ItemRegister {
     private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
