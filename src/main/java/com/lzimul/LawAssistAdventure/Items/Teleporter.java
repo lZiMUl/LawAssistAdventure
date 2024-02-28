@@ -20,6 +20,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
+import static com.lzimul.LawAssistAdventure.DimensionRegister.*;
+
 public class Teleporter extends Item {
     public Teleporter() {
         super(new Item.Properties());
@@ -28,11 +30,11 @@ public class Teleporter extends Item {
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
         if (!level.isClientSide) {
-//            if (player.level().dimension() == OVERWORLD) {
-//                teleportToWorld((ServerPlayer) player, THE_END, player.getOnPos());
-//            } else {
-//                teleportToWorld((ServerPlayer) player, OVERWORLD, player.getOnPos());
-//            }
+            if (player.level().dimension() == OVERWORLD) {
+                teleportToWorld((ServerPlayer) player, THE_END, player.getOnPos());
+            } else {
+                teleportToWorld((ServerPlayer) player, OVERWORLD, player.getOnPos());
+            }
             ItemStack source = player.getItemBySlot(EquipmentSlot.HEAD);
             if (!source.isEmpty()) {
                 for (ItemStack item : player.getInventory().items) {
