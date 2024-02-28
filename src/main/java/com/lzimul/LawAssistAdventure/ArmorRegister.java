@@ -25,7 +25,7 @@ public class ArmorRegister {
             20,
             SoundEvents.FOX_TELEPORT,
             () -> Ingredient.of(ItemRegister.ExtremeDangerExplorerHelm),
-            "parachute",
+            "extreme_danger_explorer_helm",
             0.25f,
             0.15f
     ),
@@ -39,7 +39,7 @@ public class ArmorRegister {
             20,
             SoundEvents.FOX_TELEPORT,
             () -> Ingredient.of(ItemRegister.ExtremeDangerExplorerBreastplate),
-            "parachute",
+            "extreme_danger_explorer_breastplate",
             0.25f,
             0.15f
     ),
@@ -53,7 +53,7 @@ public class ArmorRegister {
             20,
             SoundEvents.FOX_TELEPORT,
             () -> Ingredient.of(ItemRegister.ExtremeDangerExplorerPants),
-            "parachute",
+            "extreme_danger_explorer_pants",
             0.25f,
             0.15f
     ),
@@ -67,12 +67,11 @@ public class ArmorRegister {
             20,
             SoundEvents.FOX_TELEPORT,
             () -> Ingredient.of(ItemRegister.ExtremeDangerExplorerPants),
-            "parachute",
+            "extreme_danger_explorer_shoes",
             0.25f,
             0.15f
     ),
             ArmorItem.Type.BOOTS,
             new Item.Properties()
     );
-    ;
 }
