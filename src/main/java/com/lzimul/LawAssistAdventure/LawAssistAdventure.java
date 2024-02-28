@@ -22,8 +22,6 @@ import static com.lzimul.LawAssistAdventure.Config.MODID;
 @Mod(MODID)
 public class LawAssistAdventure extends ItemGroup {
     public LawAssistAdventure(IEventBus modEventBus) {
-        super();
-
         ItemGroup.register(modEventBus);
         ItemRegister.register(modEventBus);
         BlockRegister.register(modEventBus);

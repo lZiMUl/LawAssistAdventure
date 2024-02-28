@@ -1,5 +1,6 @@
 package com.lzimul.LawAssistAdventure;
 
+import com.lzimul.LawAssistAdventure.Items.Blocks.*;
 import com.lzimul.LawAssistAdventure.Items.*;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.BlockItem;
@@ -33,6 +34,7 @@ public class ItemRegister {
     public static final DeferredItem<BlockItem> WoodenFaucet = Items.register("wooden_faucet", WoodenFaucet::new);
     public static final DeferredItem<BlockItem> CopperOre = Items.register("copper_ore", CopperOre::new);
     public static final DeferredItem<BlockItem> TinOre = Items.register("tin_ore", TinOre::new);
+
     public static final DeferredItem<Item> CopperIngot = Items.register("copper_ingot", CopperIngot::new);
     public static final DeferredItem<Item> Ingot = Items.register("ingot", Ingot::new);
     public static final DeferredItem<Item> TinIngot = Items.register("tin_ingot", TinIngot::new);
@@ -40,8 +42,13 @@ public class ItemRegister {
     public static final DeferredItem<Item> GoldWire = Items.register("gold_wire", GoldWire::new);
     public static final DeferredItem<Item> TinWire = Items.register("tin_wire", TinWire::new);
     public static final DeferredItem<Item> Teleporter = Items.register("teleporter", Teleporter::new);
-    public static final DeferredItem<Item> Parachute = Items.register("parachute", Parachute::new);
+    public static final DeferredItem<Item> Glock19 = Items.register("glock19", Glock19::new);
 
+    public static final DeferredItem<ArmorItem> Parachute = Items.register("parachute", () -> ArmorRegister.Parachute);
+    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerHelm = Items.register("extreme_danger_explorer_helm", () -> ArmorRegister.ExtremeDangerExplorerHelm);
+    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerBreastplate = Items.register("extreme_danger_explorer_breastplate", () -> ArmorRegister.ExtremeDangerExplorerBreastplate);
+    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerPants = Items.register("extreme_danger_explorer_pants", () -> ArmorRegister.ExtremeDangerExplorerPants);
+    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerShoes = Items.register("extreme_danger_explorer_shoes", () -> ArmorRegister.ExtremeDangerExplorerShoes);
     public static void register(IEventBus modEventBus) {
         Items.register(modEventBus);
     }

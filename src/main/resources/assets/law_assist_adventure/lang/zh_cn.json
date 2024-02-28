@@ -1,6 +1,7 @@
 {
-  "itemGroup.lzimul.law_assist_adventure.items": "法则辅助与冒险(物品类)",
   "itemGroup.lzimul.law_assist_adventure.blocks": "法则辅助与冒险(方块类)",
+  "itemGroup.lzimul.law_assist_adventure.items": "法则辅助与冒险(物品类)",
+  "itemGroup.lzimul.law_assist_adventure.armors": "法则辅助与冒险(装备类)",
   "block.law_assist_adventure.crafting_table": "制作台",
   "block.law_assist_adventure.thermal_generators": "火力发电机",
   "block.law_assist_adventure.power_storage_box_1": "民用储电盒",
@@ -22,6 +23,7 @@
   "block.law_assist_adventure.wooden_faucet": "木龙头",
   "block.law_assist_adventure.copper_ore": "铜矿",
   "block.law_assist_adventure.tin_ore": "锡矿",
+
   "item.law_assist_adventure.copper_ingot": "铜锭",
   "item.law_assist_adventure.ingot": "钢锭",
   "item.law_assist_adventure.tin_ingot": "锡锭",
@@ -29,5 +31,11 @@
   "item.law_assist_adventure.gold_wire": "金线",
   "item.law_assist_adventure.tin_wire": "锡线",
   "item.law_assist_adventure.teleporter": "传送器",
-  "item.law_assist_adventure.parachute": "降落伞"
+  "item.law_assist_adventure.glock19": "格洛克 19",
+
+  "item.law_assist_adventure.parachute": "降落伞",
+  "item.law_assist_adventure.extreme_danger_explorer_helm": "极端危险探索者头盔",
+  "item.law_assist_adventure.extreme_danger_explorer_breastplate": "极端危险探索者胸甲",
+  "item.law_assist_adventure.extreme_danger_explorer_pants": "极端危险探索者裤子",
+  "item.law_assist_adventure.extreme_danger_explorer_shoes": "极端危险探索者鞋履"
 }
