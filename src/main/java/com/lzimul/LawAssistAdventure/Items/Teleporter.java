@@ -29,7 +29,7 @@ public class Teleporter extends Item {
 
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
-        if (!level.isClientSide) {
+        if (!level.isClientSide && player.isAlive()) {
             if (player.level().dimension() == OVERWORLD) {
                 teleportToWorld((ServerPlayer) player, THE_END, player.getOnPos());
             } else {

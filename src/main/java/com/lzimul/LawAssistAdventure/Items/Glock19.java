@@ -7,6 +7,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 public class Glock19 extends Item {
@@ -16,8 +17,10 @@ public class Glock19 extends Item {
 
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
-        if (player.isAlive()) {
-            player.sendSystemMessage(Component.literal(player.getForward().toString()));
+        if (!level.isClientSide() && player.isAlive()) {
+            Vec3 forward = player.getForward();
+            player.sendSystemMessage(Component.literal(forward.toString()));
+            player.kill();
         }
         return super.use(level, player, hand);
     };
