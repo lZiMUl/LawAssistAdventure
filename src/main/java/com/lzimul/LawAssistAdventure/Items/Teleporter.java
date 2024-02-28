@@ -2,13 +2,21 @@ package com.lzimul.LawAssistAdventure.Items;
 
 import com.lzimul.LawAssistAdventure.Dimensions.Dust;
 import com.lzimul.LawAssistAdventure.ItemRegister;
+import com.mojang.blaze3d.shaders.Effect;
+import net.minecraft.client.resources.MobEffectTextureManager;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -32,6 +40,8 @@ public class Teleporter extends Item {
             } else {
                 teleportToWorld((ServerPlayer) player, OVERWORLD, player.getOnPos());
             }
+            player.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ItemRegister.Parachute.get(), 1));
+            player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 255, 20, true, true));
             player.getCooldowns().addCooldown(ItemRegister.Teleporter.get(), 20);
         }
         return super.use(level, player, hand);
