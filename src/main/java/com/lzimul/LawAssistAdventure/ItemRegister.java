@@ -51,7 +51,7 @@ public class ItemRegister {
     public static final DeferredItem<Item> CircuitBoards1 = Items.register("circuit_boards_1", CircuitBoards1::new);
     public static final DeferredItem<Item> CircuitBoards2 = Items.register("circuit_boards_2", CircuitBoards2::new);
     public static final DeferredItem<Item> CircuitBoards3 = Items.register("circuit_boards_3", CircuitBoards3::new);
-    public static final DeferredItem<Item> BaseBoard = Items.register("base_board", BaseBoard::new);
+    public static final DeferredItem<Item> CircuitBoardsBase = Items.register("circuit_boards_base", CircuitBoardsBase::new);
     public static final DeferredItem<Item> Teleporter = Items.register("teleporter", Teleporter::new);
 
     public static final DeferredItem<ArmorItem> ExtremeDangerExplorerHelm = Items.register("extreme_danger_explorer_helm", () -> ArmorRegister.ExtremeDangerExplorerHelm);

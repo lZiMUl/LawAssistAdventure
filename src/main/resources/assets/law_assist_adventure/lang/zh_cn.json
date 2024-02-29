@@ -42,7 +42,7 @@
   "item.law_assist_adventure.circuit_boards_1": "初级电路板",
   "item.law_assist_adventure.circuit_boards_2": "中级电路板",
   "item.law_assist_adventure.circuit_boards_3": "高级电路板",
-  "item.law_assist_adventure.base_board": "基础电路板",
+  "item.law_assist_adventure.circuit_boards_base": "基础电路板基座",
   "item.law_assist_adventure.teleporter": "传送器",
 
   "item.law_assist_adventure.extreme_danger_explorer_helm": "极端危险探索者头盔",
@@ -58,5 +58,5 @@
   "item.law_assist_adventure.researcher_handbook": "研究员手册",
   "item.law_assist_adventure.researcher_note": "研究员笔记",
   "item.law_assist_adventure.researcher_note_tampered": "研究员笔记篡改",
-  "item.law_assist_adventure.researcher_note_corrupted": "研究员比较损坏"
+  "item.law_assist_adventure.researcher_note_corrupted": "研究员笔记损坏"
 }

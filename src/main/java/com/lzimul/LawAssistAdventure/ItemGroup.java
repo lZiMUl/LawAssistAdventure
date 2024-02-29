@@ -58,7 +58,7 @@ public class ItemGroup {
                 output.accept(ItemRegister.CircuitBoards1.get());
                 output.accept(ItemRegister.CircuitBoards2.get());
                 output.accept(ItemRegister.CircuitBoards3.get());
-                output.accept(ItemRegister.BaseBoard.get());
+                output.accept(ItemRegister.CircuitBoardsBase.get());
                 output.accept(ItemRegister.Teleporter.get());
             }).withTabsBefore(blocks.getId()).build());
     DeferredHolder<CreativeModeTab, CreativeModeTab> armors = Creative_Mode_Tab.register("item_group.lzimul.law_assist_adventure.armors", () -> CreativeModeTab.builder()
