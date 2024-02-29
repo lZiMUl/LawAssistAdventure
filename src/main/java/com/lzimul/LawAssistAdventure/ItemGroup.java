@@ -37,6 +37,8 @@ public class ItemGroup {
                 output.accept(ItemRegister.WoodenFaucet.get());
                 output.accept(ItemRegister.CopperOre.get());
                 output.accept(ItemRegister.TinOre.get());
+                output.accept(ItemRegister.Rollers.get());
+                output.accept(ItemRegister.Knife.get());
             }).build());
     DeferredHolder<CreativeModeTab, CreativeModeTab> items = Creative_Mode_Tab.register("item_group.lzimul.law_assist_adventure.items", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(ItemRegister.CopperIngot.get()))
@@ -64,14 +66,14 @@ public class ItemGroup {
                 output.accept(ItemRegister.BulletBox.get());
                 output.accept(ItemRegister.Parachute.get());
             }).withTabsBefore(items.getId()).build());
-    DeferredHolder<CreativeModeTab, CreativeModeTab> Experience = Creative_Mode_Tab.register("item_group.lzimul.law_assist_adventure.experience", () -> CreativeModeTab.builder()
-            .icon(() -> new ItemStack(ItemRegister.ExtremeDangerExplorerHelm.get()))
-            .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.experience"))
+    DeferredHolder<CreativeModeTab, CreativeModeTab> Experience = Creative_Mode_Tab.register("item_group.lzimul.law_assist_adventure.experiences", () -> CreativeModeTab.builder()
+            .icon(() -> new ItemStack(ItemRegister.ResearcherHandbook.get()))
+            .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.experiences"))
             .displayItems((input, output) -> {
                 output.accept(ItemRegister.ResearcherHandbook.get());
                 output.accept(ItemRegister.ResearcherNote.get());
-                output.accept(ItemRegister.ResearcherNoteCorrupted.get());
                 output.accept(ItemRegister.ResearcherNoteTampered.get());
+                output.accept(ItemRegister.ResearcherNoteCorrupted.get());
             }).withTabsBefore(armors.getId()).build());
     public static void register(IEventBus modEventBus) {
         Creative_Mode_Tab.register(modEventBus);

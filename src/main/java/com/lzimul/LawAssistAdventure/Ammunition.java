@@ -1,4 +1,4 @@
-package com.lzimul.LawAssistAdventure.ees;
+package com.lzimul.LawAssistAdventure;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
