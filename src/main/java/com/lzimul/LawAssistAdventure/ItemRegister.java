@@ -1,7 +1,7 @@
 package com.lzimul.LawAssistAdventure;
 
-import com.lzimul.LawAssistAdventure.Items.Blocks.*;
-import com.lzimul.LawAssistAdventure.Items.*;
+import com.lzimul.LawAssistAdventure.items.*;
+import com.lzimul.LawAssistAdventure.items.blocks.*;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;

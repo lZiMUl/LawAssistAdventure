@@ -26,6 +26,7 @@ public class LawAssistAdventure extends ItemGroup {
         ItemRegister.register(modEventBus);
         BlockRegister.register(modEventBus);
         Sounds.register(modEventBus);
+//        ScreenRegister.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

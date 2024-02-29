@@ -1,6 +1,6 @@
 package com.lzimul.LawAssistAdventure;
 
-import com.lzimul.LawAssistAdventure.Blocks.*;
+import com.lzimul.LawAssistAdventure.blocks.*;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
