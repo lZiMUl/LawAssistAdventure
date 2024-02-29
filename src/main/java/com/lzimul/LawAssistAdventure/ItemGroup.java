@@ -17,18 +17,20 @@ public class ItemGroup {
             .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.blocks"))
             .displayItems((input, output) -> {
                 output.accept(ItemRegister.CraftingTable.get());
-                output.accept(ItemRegister.Washer.get());
                 output.accept(ItemRegister.ThermalGenerators.get());
+                output.accept(ItemRegister.SolarPanelGenerator.get());
+                output.accept(ItemRegister.FluidFuelGenerators.get());
                 output.accept(ItemRegister.PowerStorageBox1.get());
                 output.accept(ItemRegister.PowerStorageBox2.get());
                 output.accept(ItemRegister.PowerStorageBox3.get());
                 output.accept(ItemRegister.PowerStorageBox4.get());
                 output.accept(ItemRegister.PowerStorageBox5.get());
-                output.accept(ItemRegister.SolarPanelGenerator.get());
-                output.accept(ItemRegister.FluidFuelGenerators.get());
-                output.accept(ItemRegister.PowerWire.get());
-                output.accept(ItemRegister.WindTunnelChicken.get());
                 output.accept(ItemRegister.IndustrialSmeltingFurnaces.get());
+                output.accept(ItemRegister.Washer.get());
+                output.accept(ItemRegister.Mill.get());
+                output.accept(ItemRegister.Rollers.get());
+                output.accept(ItemRegister.Knife.get());
+                output.accept(ItemRegister.PowerWire.get());
                 output.accept(ItemRegister.Oven.get());
                 output.accept(ItemRegister.Saucepan.get());
                 output.accept(ItemRegister.RubberWood.get());
@@ -37,15 +39,13 @@ public class ItemGroup {
                 output.accept(ItemRegister.WoodenFaucet.get());
                 output.accept(ItemRegister.CopperOre.get());
                 output.accept(ItemRegister.TinOre.get());
-                output.accept(ItemRegister.Rollers.get());
-                output.accept(ItemRegister.Knife.get());
             }).build());
     DeferredHolder<CreativeModeTab, CreativeModeTab> items = Creative_Mode_Tab.register("item_group.lzimul.law_assist_adventure.items", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(ItemRegister.CopperIngot.get()))
             .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.items"))
             .displayItems((input, output) -> {
                 output.accept(ItemRegister.CopperIngot.get());
-                output.accept(ItemRegister.Ingot.get());
+                output.accept(ItemRegister.SteelIngot.get());
                 output.accept(ItemRegister.TinIngot.get());
                 output.accept(ItemRegister.CopperWire.get());
                 output.accept(ItemRegister.GoldWire.get());
@@ -60,11 +60,11 @@ public class ItemGroup {
                 output.accept(ItemRegister.ExtremeDangerExplorerBreastplate.get());
                 output.accept(ItemRegister.ExtremeDangerExplorerPants.get());
                 output.accept(ItemRegister.ExtremeDangerExplorerShoes.get());
+                output.accept(ItemRegister.Parachute.get());
                 output.accept(ItemRegister.Hatchet.get());
                 output.accept(ItemRegister.Glock19.get());
                 output.accept(ItemRegister.Bullet.get());
                 output.accept(ItemRegister.BulletBox.get());
-                output.accept(ItemRegister.Parachute.get());
             }).withTabsBefore(items.getId()).build());
     DeferredHolder<CreativeModeTab, CreativeModeTab> Experience = Creative_Mode_Tab.register("item_group.lzimul.law_assist_adventure.experiences", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(ItemRegister.ResearcherHandbook.get()))

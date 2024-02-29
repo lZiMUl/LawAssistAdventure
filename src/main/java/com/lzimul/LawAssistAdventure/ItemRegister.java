@@ -24,7 +24,7 @@ public class ItemRegister {
     public static final DeferredItem<BlockItem> PowerStorageBox5 = Items.register("power_storage_box_5", PowerStorageBox5::new);
     public static final DeferredItem<BlockItem> IndustrialSmeltingFurnaces = Items.register("industrial_smelting_furnaces", IndustrialSmeltingFurnaces::new);
     public static final DeferredItem<BlockItem> Washer = Items.register("washer", Washer::new);
-    public static final DeferredItem<BlockItem> WindTunnelChicken = Items.register("wind_tunnel_chicken", WindTunnelChicken::new);
+    public static final DeferredItem<BlockItem> Mill = Items.register("mill", Mill::new);
     public static final DeferredItem<BlockItem> Rollers = Items.register("rollers", Rollers::new);
     public static final DeferredItem<BlockItem> Knife = Items.register("knife", Knife::new);
     public static final DeferredItem<BlockItem> PowerWire = Items.register("power_wire", PowerWire::new);
@@ -38,22 +38,22 @@ public class ItemRegister {
     public static final DeferredItem<BlockItem> TinOre = Items.register("tin_ore", TinOre::new);
 
     public static final DeferredItem<Item> CopperIngot = Items.register("copper_ingot", CopperIngot::new);
-    public static final DeferredItem<Item> Ingot = Items.register("ingot", Ingot::new);
+    public static final DeferredItem<Item> SteelIngot = Items.register("steel_ingot", SteelIngot::new);
     public static final DeferredItem<Item> TinIngot = Items.register("tin_ingot", TinIngot::new);
     public static final DeferredItem<Item> CopperWire = Items.register("copper_wire", CopperWire::new);
     public static final DeferredItem<Item> GoldWire = Items.register("gold_wire", GoldWire::new);
     public static final DeferredItem<Item> TinWire = Items.register("tin_wire", TinWire::new);
     public static final DeferredItem<Item> Teleporter = Items.register("teleporter", Teleporter::new);
-    public static final DeferredItem<Item> Hatchet = Items.register("hatchet", Hatchet::new);
-    public static final DeferredItem<Item> Glock19 = Items.register("glock19", Glock19::new);
-    public static final DeferredItem<Item> Bullet = Items.register("bullet", Bullet::new);
-    public static final DeferredItem<Item> BulletBox = Items.register("bullet_box", BulletBox::new);
 
-    public static final DeferredItem<ArmorItem> Parachute = Items.register("parachute", () -> ArmorRegister.Parachute);
     public static final DeferredItem<ArmorItem> ExtremeDangerExplorerHelm = Items.register("extreme_danger_explorer_helm", () -> ArmorRegister.ExtremeDangerExplorerHelm);
     public static final DeferredItem<ArmorItem> ExtremeDangerExplorerBreastplate = Items.register("extreme_danger_explorer_breastplate", () -> ArmorRegister.ExtremeDangerExplorerBreastplate);
     public static final DeferredItem<ArmorItem> ExtremeDangerExplorerPants = Items.register("extreme_danger_explorer_pants", () -> ArmorRegister.ExtremeDangerExplorerPants);
     public static final DeferredItem<ArmorItem> ExtremeDangerExplorerShoes = Items.register("extreme_danger_explorer_shoes", () -> ArmorRegister.ExtremeDangerExplorerShoes);
+    public static final DeferredItem<ArmorItem> Parachute = Items.register("parachute", () -> ArmorRegister.Parachute);
+    public static final DeferredItem<Item> Hatchet = Items.register("hatchet", Hatchet::new);
+    public static final DeferredItem<Item> Glock19 = Items.register("glock19", Glock19::new);
+    public static final DeferredItem<Item> Bullet = Items.register("bullet", Bullet::new);
+    public static final DeferredItem<Item> BulletBox = Items.register("bullet_box", BulletBox::new);
 
     public static final DeferredItem<Item> ResearcherHandbook = Items.register("researcher_handbook", ResearcherHandbook::new);
     public static final DeferredItem<Item> ResearcherNote = Items.register("researcher_note", ResearcherNote::new);

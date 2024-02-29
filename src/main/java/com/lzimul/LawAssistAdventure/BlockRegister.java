@@ -21,7 +21,7 @@ public class BlockRegister {
     public static final DeferredBlock<Block> PowerStorageBox5 = Blocks.register("power_storage_box_5", PowerStorageBox5::new);
     public static final DeferredBlock<Block> IndustrialSmeltingFurnaces = Blocks.register("industrial_smelting_furnaces", IndustrialSmeltingFurnaces::new);
     public static final DeferredBlock<Block> Washer = Blocks.register("washer", Washer::new);
-    public static final DeferredBlock<Block> WindTunnelChicken = Blocks.register("wind_tunnel_chicken", WindTunnelChicken::new);
+    public static final DeferredBlock<Block> Mill = Blocks.register("mill", Mill::new);
     public static final DeferredBlock<Block> Rollers = Blocks.register("rollers", Rollers::new);
     public static final DeferredBlock<Block> Knife = Blocks.register("knife", Knife::new);
     public static final DeferredBlock<Block> PowerWire = Blocks.register("power_wire", PowerWire::new);

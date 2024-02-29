@@ -5,6 +5,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 
 public class WoodenFaucet extends Block {
     public WoodenFaucet() {
-        super(BlockBehaviour.Properties.of().noOcclusion());
+        super(BlockBehaviour.Properties.of().noOcclusion().noCollission());
     }
 }

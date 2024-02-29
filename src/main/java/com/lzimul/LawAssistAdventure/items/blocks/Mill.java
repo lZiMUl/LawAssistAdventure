@@ -4,8 +4,8 @@ import com.lzimul.LawAssistAdventure.BlockRegister;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 
-public class WindTunnelChicken extends BlockItem {
-    public WindTunnelChicken() {
-        super(BlockRegister.WindTunnelChicken.get(), new Item.Properties());
+public class Mill extends BlockItem {
+    public Mill() {
+        super(BlockRegister.Mill.get(), new Item.Properties());
     }
 }

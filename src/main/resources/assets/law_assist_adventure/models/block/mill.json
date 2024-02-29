@@ -6,8 +6,8 @@
     64
   ],
   "textures": {
-    "0": "law_assist_adventure:block/wind_tunnel_chicken",
-    "particle": "law_assist_adventure:block/wind_tunnel_chicken"
+    "0": "law_assist_adventure:block/mill",
+    "particle": "law_assist_adventure:block/mill"
   },
   "elements": [
     {
