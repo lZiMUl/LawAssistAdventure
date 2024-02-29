@@ -40,9 +40,18 @@ public class ItemRegister {
     public static final DeferredItem<Item> CopperIngot = Items.register("copper_ingot", CopperIngot::new);
     public static final DeferredItem<Item> SteelIngot = Items.register("steel_ingot", SteelIngot::new);
     public static final DeferredItem<Item> TinIngot = Items.register("tin_ingot", TinIngot::new);
-    public static final DeferredItem<Item> CopperWire = Items.register("copper_wire", CopperWire::new);
     public static final DeferredItem<Item> GoldWire = Items.register("gold_wire", GoldWire::new);
+    public static final DeferredItem<Item> CopperWire = Items.register("copper_wire", CopperWire::new);
     public static final DeferredItem<Item> TinWire = Items.register("tin_wire", TinWire::new);
+    public static final DeferredItem<Item> IronPlates = Items.register("iron_plates", IronPlates::new);
+    public static final DeferredItem<Item> GoldPlates = Items.register("gold_plates", GoldPlates::new);
+    public static final DeferredItem<Item> CopperPlates = Items.register("copper_plates", CopperPlates::new);
+    public static final DeferredItem<Item> SteelPlates = Items.register("steel_plates", SteelPlates::new);
+    public static final DeferredItem<Item> TinPlates = Items.register("tin_plates", TinPlates::new);
+    public static final DeferredItem<Item> CircuitBoards1 = Items.register("circuit_boards_1", CircuitBoards1::new);
+    public static final DeferredItem<Item> CircuitBoards2 = Items.register("circuit_boards_2", CircuitBoards2::new);
+    public static final DeferredItem<Item> CircuitBoards3 = Items.register("circuit_boards_3", CircuitBoards3::new);
+    public static final DeferredItem<Item> BaseBoard = Items.register("base_board", BaseBoard::new);
     public static final DeferredItem<Item> Teleporter = Items.register("teleporter", Teleporter::new);
 
     public static final DeferredItem<ArmorItem> ExtremeDangerExplorerHelm = Items.register("extreme_danger_explorer_helm", () -> ArmorRegister.ExtremeDangerExplorerHelm);

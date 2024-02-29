@@ -47,9 +47,18 @@ public class ItemGroup {
                 output.accept(ItemRegister.CopperIngot.get());
                 output.accept(ItemRegister.SteelIngot.get());
                 output.accept(ItemRegister.TinIngot.get());
-                output.accept(ItemRegister.CopperWire.get());
                 output.accept(ItemRegister.GoldWire.get());
+                output.accept(ItemRegister.CopperWire.get());
                 output.accept(ItemRegister.TinWire.get());
+                output.accept(ItemRegister.IronPlates.get());
+                output.accept(ItemRegister.GoldPlates.get());
+                output.accept(ItemRegister.CopperPlates.get());
+                output.accept(ItemRegister.SteelPlates.get());
+                output.accept(ItemRegister.TinPlates.get());
+                output.accept(ItemRegister.CircuitBoards1.get());
+                output.accept(ItemRegister.CircuitBoards2.get());
+                output.accept(ItemRegister.CircuitBoards3.get());
+                output.accept(ItemRegister.BaseBoard.get());
                 output.accept(ItemRegister.Teleporter.get());
             }).withTabsBefore(blocks.getId()).build());
     DeferredHolder<CreativeModeTab, CreativeModeTab> armors = Creative_Mode_Tab.register("item_group.lzimul.law_assist_adventure.armors", () -> CreativeModeTab.builder()
