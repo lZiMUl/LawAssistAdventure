@@ -49,7 +49,7 @@ public class ItemGroup {
                 output.accept(ItemRegister.GoldWire.get());
                 output.accept(ItemRegister.TinWire.get());
                 output.accept(ItemRegister.Teleporter.get());
-            }).withTabsBefore(blocks.getId()).build());;
+            }).withTabsBefore(blocks.getId()).build());
     DeferredHolder<CreativeModeTab, CreativeModeTab> armors = Creative_Mode_Tab.register("item_group.lzimul.law_assist_adventure.armors", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(ItemRegister.ExtremeDangerExplorerHelm.get()))
             .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.armors"))
@@ -58,9 +58,21 @@ public class ItemGroup {
                 output.accept(ItemRegister.ExtremeDangerExplorerBreastplate.get());
                 output.accept(ItemRegister.ExtremeDangerExplorerPants.get());
                 output.accept(ItemRegister.ExtremeDangerExplorerShoes.get());
+                output.accept(ItemRegister.Hatchet.get());
                 output.accept(ItemRegister.Glock19.get());
+                output.accept(ItemRegister.Bullet.get());
+                output.accept(ItemRegister.BulletBox.get());
                 output.accept(ItemRegister.Parachute.get());
-            }).withTabsBefore(items.getId()).build());;
+            }).withTabsBefore(items.getId()).build());
+    DeferredHolder<CreativeModeTab, CreativeModeTab> Experience = Creative_Mode_Tab.register("item_group.lzimul.law_assist_adventure.experience", () -> CreativeModeTab.builder()
+            .icon(() -> new ItemStack(ItemRegister.ExtremeDangerExplorerHelm.get()))
+            .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.experience"))
+            .displayItems((input, output) -> {
+                output.accept(ItemRegister.ResearcherHandbook.get());
+                output.accept(ItemRegister.ResearcherNote.get());
+                output.accept(ItemRegister.ResearcherNoteCorrupted.get());
+                output.accept(ItemRegister.ResearcherNoteTampered.get());
+            }).withTabsBefore(armors.getId()).build());
     public static void register(IEventBus modEventBus) {
         Creative_Mode_Tab.register(modEventBus);
     }

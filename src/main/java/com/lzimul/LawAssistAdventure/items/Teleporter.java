@@ -1,6 +1,5 @@
 package com.lzimul.LawAssistAdventure.items;
 
-import com.lzimul.LawAssistAdventure.ItemRegister;
 import com.lzimul.LawAssistAdventure.dimensions.Dust;
 import com.lzimul.LawAssistAdventure.menus.items.TeleporterMenu;
 import net.minecraft.core.BlockPos;
@@ -52,7 +51,6 @@ public class Teleporter extends Item implements MenuProvider {
 //                player.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ItemRegister.Parachute.get(), 1));
 //            }
             player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 1, 60, true, true));
-            player.getCooldowns().addCooldown(ItemRegister.Teleporter.get(), 20);
         }
         return super.use(level, player, hand);
     }

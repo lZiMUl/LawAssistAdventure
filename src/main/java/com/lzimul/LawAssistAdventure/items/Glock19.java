@@ -1,6 +1,6 @@
 package com.lzimul.LawAssistAdventure.items;
 
-import com.lzimul.LawAssistAdventure.EES.Ammunition;
+import com.lzimul.LawAssistAdventure.ees.Ammunition;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;

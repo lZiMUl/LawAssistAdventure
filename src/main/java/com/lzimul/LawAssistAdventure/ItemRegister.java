@@ -42,7 +42,14 @@ public class ItemRegister {
     public static final DeferredItem<Item> GoldWire = Items.register("gold_wire", GoldWire::new);
     public static final DeferredItem<Item> TinWire = Items.register("tin_wire", TinWire::new);
     public static final DeferredItem<Item> Teleporter = Items.register("teleporter", Teleporter::new);
+    public static final DeferredItem<Item> Hatchet = Items.register("hatchet", Hatchet::new);
     public static final DeferredItem<Item> Glock19 = Items.register("glock19", Glock19::new);
+    public static final DeferredItem<Item> Bullet = Items.register("bullet", Bullet::new);
+    public static final DeferredItem<Item> BulletBox = Items.register("bullet_box", BulletBox::new);
+    public static final DeferredItem<Item> ResearcherHandbook = Items.register("researcher_handbook", ResearcherHandbook::new);
+    public static final DeferredItem<Item> ResearcherNote = Items.register("researcher_note", ResearcherNote::new);
+    public static final DeferredItem<Item> ResearcherNoteTampered = Items.register("researcher_note_tampered", ResearcherNoteTampered::new);
+    public static final DeferredItem<Item> ResearcherNoteCorrupted = Items.register("researcher_note_corrupted", ResearcherNoteCorrupted::new);
 
     public static final DeferredItem<ArmorItem> Parachute = Items.register("parachute", () -> ArmorRegister.Parachute);
     public static final DeferredItem<ArmorItem> ExtremeDangerExplorerHelm = Items.register("extreme_danger_explorer_helm", () -> ArmorRegister.ExtremeDangerExplorerHelm);

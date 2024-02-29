@@ -2,6 +2,8 @@
   "itemGroup.lzimul.law_assist_adventure.blocks": "法则辅助与冒险(方块类)",
   "itemGroup.lzimul.law_assist_adventure.items": "法则辅助与冒险(物品类)",
   "itemGroup.lzimul.law_assist_adventure.armors": "法则辅助与冒险(装备类)",
+  "item_group.lzimul.law_assist_adventure.experience": "法则辅助与冒险(经验类)",
+
   "block.law_assist_adventure.crafting_table": "制作台",
   "block.law_assist_adventure.thermal_generators": "火力发电机",
   "block.law_assist_adventure.power_storage_box_1": "民用储电盒",
@@ -31,7 +33,15 @@
   "item.law_assist_adventure.gold_wire": "金线",
   "item.law_assist_adventure.tin_wire": "锡线",
   "item.law_assist_adventure.teleporter": "传送器",
+  "item_group.lzimul.law_assist_adventure.hatchet": "柴刀",
   "item.law_assist_adventure.glock19": "格洛克 19",
+  "item_group.lzimul.law_assist_adventure.bullet": "子弹(格洛克 19)",
+  "item_group.lzimul.law_assist_adventure.bullet_box": "子弹盒(格洛克19)",
+  "item_group.lzimul.law_assist_adventure.researcher_handbook": "研究员手册",
+  "item_group.lzimul.law_assist_adventure.researcher_note": "研究员笔记",
+  "item_group.lzimul.law_assist_adventure.researcher_note_tampered": "研究员笔记篡改",
+  "item_group.lzimul.law_assist_adventure.researcher_note_corrupted": "研究员比较损坏",
+
 
   "item.law_assist_adventure.parachute": "降落伞",
   "item.law_assist_adventure.extreme_danger_explorer_helm": "极端危险探索者头盔",
