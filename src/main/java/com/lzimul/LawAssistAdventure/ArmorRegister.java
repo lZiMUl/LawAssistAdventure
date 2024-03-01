@@ -32,7 +32,6 @@ public class ArmorRegister {
             ArmorItem.Type.HELMET,
             new Item.Properties()
     );
-    ;
     public static final ArmorItem ExtremeDangerExplorerBreastplate = new ArmorItem(new Armors(
             new int[]{500, 1200, 600, 400},
             new int[]{11, 16, 15, 13},
@@ -46,7 +45,6 @@ public class ArmorRegister {
             ArmorItem.Type.CHESTPLATE,
             new Item.Properties()
     );
-    ;
     public static final ArmorItem ExtremeDangerExplorerPants = new ArmorItem(new Armors(
             new int[]{500, 1200, 600, 400},
             new int[]{11, 16, 15, 13},
@@ -60,7 +58,6 @@ public class ArmorRegister {
             ArmorItem.Type.LEGGINGS,
             new Item.Properties()
     );
-    ;
     public static final ArmorItem ExtremeDangerExplorerShoes = new ArmorItem(new Armors(
             new int[]{500, 1200, 600, 400},
             new int[]{11, 16, 15, 13},
@@ -72,6 +69,19 @@ public class ArmorRegister {
             0.15f
     ),
             ArmorItem.Type.BOOTS,
+            new Item.Properties()
+    );
+    public static final ArmorItem DefendTheBall = new ArmorItem(new Armors(
+            new int[]{500, 1200, 600, 400},
+            new int[]{11, 16, 15, 13},
+            20,
+            SoundEvents.FOX_TELEPORT,
+            () -> Ingredient.of(ItemRegister.DefendTheBall),
+            "defend_the_ball",
+            0.25f,
+            0.15f
+    ),
+            ArmorItem.Type.HELMET,
             new Item.Properties()
     );
 }

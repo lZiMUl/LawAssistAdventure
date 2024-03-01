@@ -5,8 +5,8 @@
     64
   ],
   "textures": {
-    "0": "law_assist_adventure:item/parachute",
-    "particle": "law_assist_adventure:item/parachute"
+    "0": "law_assist_adventure:models/armor/parachute",
+    "particle": "law_assist_adventure:models/armor/parachute"
   },
   "elements": [
     {

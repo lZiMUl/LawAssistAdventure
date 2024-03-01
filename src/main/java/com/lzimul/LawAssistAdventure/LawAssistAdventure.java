@@ -1,5 +1,8 @@
 package com.lzimul.LawAssistAdventure;
 
+import com.lzimul.LawAssistAdventure.screen.block.CraftingTableScreen;
+import com.lzimul.LawAssistAdventure.screen.item.TeleporterScreen;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Block;
@@ -25,8 +28,9 @@ public class LawAssistAdventure extends ItemGroup {
         ItemGroup.register(modEventBus);
         ItemRegister.register(modEventBus);
         BlockRegister.register(modEventBus);
-        Sounds.register(modEventBus);
-//        ScreenRegister.register(modEventBus);
+        BlockEntityRegister.register(modEventBus);
+        SoundRegister.register(modEventBus);
+        MenuRegister.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -43,11 +47,13 @@ public class LawAssistAdventure extends ItemGroup {
     public static class ClientEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) throws IllegalAccessException {
+            MenuScreens.register(MenuRegister.CraftingTableMenu.get(), CraftingTableScreen::new);
+            MenuScreens.register(MenuRegister.TeleporterMenu.get(), TeleporterScreen::new);
             LOGGER.info("Hello from client setup");
             for (Field field : BlockRegister.class.getDeclaredFields()) {
                 int fieldIndex = field.getModifiers();
                 if (Modifier.isPublic(fieldIndex) && Modifier.isStatic(fieldIndex)) {
-                    ItemBlockRenderTypes.setRenderLayer(((DeferredBlock<Block>) field.get(null)).get(), RenderType.cutout());
+                    ItemBlockRenderTypes.setRenderLayer(((DeferredBlock<Block>) field.get(null)).get(), RenderType.translucent());
                 }
             }
         }

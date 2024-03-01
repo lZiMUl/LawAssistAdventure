@@ -3,7 +3,9 @@ package com.lzimul.LawAssistAdventure;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ItemLike;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -11,8 +13,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import static com.lzimul.LawAssistAdventure.Config.MODID;
 
 public class ItemGroup {
-    private static final DeferredRegister<CreativeModeTab> Creative_Mode_Tab = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
-    DeferredHolder<CreativeModeTab, CreativeModeTab> blocks = Creative_Mode_Tab.register("item_group.lzimul.law_assist_adventure.blocks", () -> CreativeModeTab.builder()
+    private static final DeferredRegister<CreativeModeTab> CreativeTab = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
+    DeferredHolder<CreativeModeTab, CreativeModeTab> block = CreativeTab.register("item_group.lzimul.law_assist_adventure.blocks", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(BlockRegister.CraftingTable.get()))
             .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.blocks"))
             .displayItems((input, output) -> {
@@ -40,7 +42,7 @@ public class ItemGroup {
                 output.accept(ItemRegister.CopperOre.get());
                 output.accept(ItemRegister.TinOre.get());
             }).build());
-    DeferredHolder<CreativeModeTab, CreativeModeTab> items = Creative_Mode_Tab.register("item_group.lzimul.law_assist_adventure.items", () -> CreativeModeTab.builder()
+    DeferredHolder<CreativeModeTab, CreativeModeTab> item = CreativeTab.register("item_group.lzimul.law_assist_adventure.items", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(ItemRegister.CopperIngot.get()))
             .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.items"))
             .displayItems((input, output) -> {
@@ -60,8 +62,17 @@ public class ItemGroup {
                 output.accept(ItemRegister.CircuitBoards3.get());
                 output.accept(ItemRegister.CircuitBoardsBase.get());
                 output.accept(ItemRegister.Teleporter.get());
-            }).withTabsBefore(blocks.getId()).build());
-    DeferredHolder<CreativeModeTab, CreativeModeTab> armors = Creative_Mode_Tab.register("item_group.lzimul.law_assist_adventure.armors", () -> CreativeModeTab.builder()
+                /*
+                 * TODO 测试
+                 */
+                output.accept(ItemRegister.NoOccupation.get());
+                output.accept(ItemRegister.Dust.get());
+                output.accept(ItemRegister.FallIntoTheVoid.get());
+                output.accept(ItemRegister.FinalWing.get());
+                output.accept(ItemRegister.RemnantDawn.get());
+                output.accept(ItemRegister.Staring.get());
+            }).withTabsBefore(block.getId()).build());
+    DeferredHolder<CreativeModeTab, CreativeModeTab> armor = CreativeTab.register("item_group.lzimul.law_assist_adventure.armors", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(ItemRegister.ExtremeDangerExplorerHelm.get()))
             .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.armors"))
             .displayItems((input, output) -> {
@@ -69,13 +80,14 @@ public class ItemGroup {
                 output.accept(ItemRegister.ExtremeDangerExplorerBreastplate.get());
                 output.accept(ItemRegister.ExtremeDangerExplorerPants.get());
                 output.accept(ItemRegister.ExtremeDangerExplorerShoes.get());
+                output.accept(ItemRegister.DefendTheBall.get());
                 output.accept(ItemRegister.Parachute.get());
                 output.accept(ItemRegister.Hatchet.get());
                 output.accept(ItemRegister.Glock19.get());
                 output.accept(ItemRegister.Bullet.get());
                 output.accept(ItemRegister.BulletBox.get());
-            }).withTabsBefore(items.getId()).build());
-    DeferredHolder<CreativeModeTab, CreativeModeTab> Experience = Creative_Mode_Tab.register("item_group.lzimul.law_assist_adventure.experiences", () -> CreativeModeTab.builder()
+            }).withTabsBefore(item.getId()).build());
+    DeferredHolder<CreativeModeTab, CreativeModeTab> experience = CreativeTab.register("item_group.lzimul.law_assist_adventure.experiences", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(ItemRegister.ResearcherHandbook.get()))
             .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.experiences"))
             .displayItems((input, output) -> {
@@ -83,8 +95,8 @@ public class ItemGroup {
                 output.accept(ItemRegister.ResearcherNote.get());
                 output.accept(ItemRegister.ResearcherNoteTampered.get());
                 output.accept(ItemRegister.ResearcherNoteCorrupted.get());
-            }).withTabsBefore(armors.getId()).build());
+            }).withTabsBefore(armor.getId()).build());
     public static void register(IEventBus modEventBus) {
-        Creative_Mode_Tab.register(modEventBus);
+        CreativeTab.register(modEventBus);
     }
 }
