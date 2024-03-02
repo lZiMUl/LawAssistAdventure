@@ -1,5 +1,6 @@
 package com.lzimul.LawAssistAdventure;
 
+import com.lzimul.LawAssistAdventure.register.*;
 import com.lzimul.LawAssistAdventure.screen.block.CraftingTableScreen;
 import com.lzimul.LawAssistAdventure.screen.item.TeleporterScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -24,15 +25,15 @@ import static com.lzimul.LawAssistAdventure.Config.MODID;
 
 @Mod(MODID)
 public class LawAssistAdventure extends ItemGroup {
-    public LawAssistAdventure(IEventBus modEventBus) {
-        ItemGroup.register(modEventBus);
-        ItemRegister.register(modEventBus);
-        BlockRegister.register(modEventBus);
-        BlockEntityRegister.register(modEventBus);
-        SoundRegister.register(modEventBus);
-        MenuRegister.register(modEventBus);
+    public LawAssistAdventure(IEventBus eventBus) {
+        MenuRegister.register(eventBus);
+        ItemGroup.register(eventBus);
+        ItemRegister.register(eventBus);
+        BlockRegister.register(eventBus);
+        BlockEntityRegister.register(eventBus);
+        SoundRegister.register(eventBus);
 
-        modEventBus.addListener(this::commonSetup);
+        eventBus.addListener(this::commonSetup);
 
         NeoForge.EVENT_BUS.register(this);
     }

@@ -1,6 +1,6 @@
 package com.lzimul.LawAssistAdventure.block;
 
-import com.lzimul.LawAssistAdventure.ItemRegister;
+import com.lzimul.LawAssistAdventure.register.ItemRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;

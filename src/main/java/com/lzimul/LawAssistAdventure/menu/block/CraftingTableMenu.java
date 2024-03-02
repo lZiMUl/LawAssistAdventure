@@ -1,6 +1,6 @@
 package com.lzimul.LawAssistAdventure.menu.block;
 
-import com.lzimul.LawAssistAdventure.MenuRegister;
+import com.lzimul.LawAssistAdventure.register.MenuRegister;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -13,10 +13,6 @@ import org.jetbrains.annotations.NotNull;
 
 public class CraftingTableMenu extends AbstractContainerMenu {
     public CraftingTableMenu(int id, Inventory inventory, FriendlyByteBuf friendlyByteBuf) {
-        this(id, inventory, inventory.player.level().getBlockEntity(friendlyByteBuf.readBlockPos()), new SimpleContainerData(2));
-    }
-
-    public CraftingTableMenu(int id, Inventory inventory, BlockEntity blockEntity, ContainerData containerData) {
         super(MenuRegister.CraftingTableMenu.get(), id);
     }
 

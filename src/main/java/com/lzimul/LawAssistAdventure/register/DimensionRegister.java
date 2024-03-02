@@ -1,4 +1,4 @@
-package com.lzimul.LawAssistAdventure;
+package com.lzimul.LawAssistAdventure.register;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

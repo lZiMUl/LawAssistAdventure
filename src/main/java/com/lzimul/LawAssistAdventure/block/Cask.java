@@ -8,3 +8,4 @@ public class Cask extends Block {
         super(BlockBehaviour.Properties.of().noOcclusion());
     }
 }
+

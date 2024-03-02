@@ -1,10 +1,8 @@
 package com.lzimul.LawAssistAdventure.menu.item;
 
-import com.lzimul.LawAssistAdventure.ItemRegister;
-import com.lzimul.LawAssistAdventure.MenuRegister;
-import com.lzimul.LawAssistAdventure.screen.item.TeleporterScreen;
+import com.lzimul.LawAssistAdventure.register.ItemRegister;
+import com.lzimul.LawAssistAdventure.register.MenuRegister;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;

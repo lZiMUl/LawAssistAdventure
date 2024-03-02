@@ -1,5 +1,6 @@
-package com.lzimul.LawAssistAdventure;
+package com.lzimul.LawAssistAdventure.register;
 
+import com.lzimul.LawAssistAdventure.Armors;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;

@@ -1,5 +1,6 @@
-package com.lzimul.LawAssistAdventure;
+package com.lzimul.LawAssistAdventure.register;
 
+import com.lzimul.LawAssistAdventure.Config;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;

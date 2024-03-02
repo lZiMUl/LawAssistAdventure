@@ -1,9 +1,7 @@
 package com.lzimul.LawAssistAdventure.item;
 
-import com.lzimul.LawAssistAdventure.MenuRegister;
-import com.lzimul.LawAssistAdventure.block.CraftingTable;
 import com.lzimul.LawAssistAdventure.dimension.Dust;
-import com.lzimul.LawAssistAdventure.menu.item.TeleporterMenu;
+import com.lzimul.LawAssistAdventure.register.MenuRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;

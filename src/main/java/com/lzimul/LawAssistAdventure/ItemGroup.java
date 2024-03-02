@@ -1,11 +1,11 @@
 package com.lzimul.LawAssistAdventure;
 
+import com.lzimul.LawAssistAdventure.register.BlockRegister;
+import com.lzimul.LawAssistAdventure.register.ItemRegister;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.ItemLike;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -19,7 +19,7 @@ public class ItemGroup {
             .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.blocks"))
             .displayItems((input, output) -> {
                 output.accept(ItemRegister.CraftingTable.get());
-                output.accept(ItemRegister.ThermalGenerators.get());
+                output.accept(ItemRegister.ThermalGenerator.get());
                 output.accept(ItemRegister.SolarPanelGenerator.get());
                 output.accept(ItemRegister.FluidFuelGenerators.get());
                 output.accept(ItemRegister.PowerStorageBox1.get());

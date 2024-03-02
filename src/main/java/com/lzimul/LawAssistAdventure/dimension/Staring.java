@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
 
-import static com.lzimul.LawAssistAdventure.DimensionRegister.placeTeleporterWorld;
+import static com.lzimul.LawAssistAdventure.register.DimensionRegister.placeTeleporterWorld;
 
 public class Staring implements ITeleporter {
     private final BlockPos pos;
