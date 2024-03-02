@@ -1,0 +1,22 @@
+/time set day
+/difficulty peaceful
+/time set day
+/difficulty peaceful
+/time set day
+/item replace entity Dev armor.legs with law_assist_adventure:parachute
+/item replace entity Dev armor.head with law_assist_adventure:parachute
+/kill @e
+/time set day
+/item replace entity Dev armor.head with law_assist_adventure:glock19
+/effect clear @a
+/time set day
+/setblock 16 -61 25 law_assist_adventure:crafting_table
+/give Dev law_assist_adventure:defend_the_ball
+/time set day
+/give @a minecraft:command_block
+/gamerule commandBlockOutput false
+/setblock 4 -61 16 minecraft:crafting_table
+/setblock 4 -61 16 law_assist_adventure:crafting_table
+/setblock 4 -60 16 law_assist_adventure:crafting_table
+/setblock 4 -60 16 law_assist_adventure:crafting_table replace
+/setblock 4 -60 17 law_assist_adventure:crafting_table replace
