@@ -13,7 +13,6 @@ import org.jetbrains.annotations.NotNull;
 import static com.lzimul.LawAssistAdventure.Config.MODID;
 
 public class CraftingTableScreen extends AbstractContainerScreen<CraftingTableMenu> {
-    //    我启动ba
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(MODID,"textures/gui/crafting_table.png");
     public CraftingTableScreen(CraftingTableMenu craftingTableMenu, Inventory inventory, Component component) {
@@ -30,8 +29,6 @@ public class CraftingTableScreen extends AbstractContainerScreen<CraftingTableMe
     }
     @Override
     public void render(@NotNull GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
-        // 不知道 复制别人的pGuiGraphics本身就是拿来画图形的pGuiGraphics.blit();画图片pGuiGraphics.drawString()写字
-
         super.renderBackground(pGuiGraphics,pMouseX, pMouseY, pPartialTick);
         super.render(pGuiGraphics,pMouseX, pMouseY, pPartialTick);
         renderTooltip(pGuiGraphics, pMouseX, pMouseY);

@@ -26,11 +26,11 @@ import static com.lzimul.LawAssistAdventure.Config.MODID;
 @Mod(MODID)
 public class LawAssistAdventure extends ItemGroup {
     public LawAssistAdventure(IEventBus eventBus) {
-        MenuRegister.register(eventBus);
         ItemGroup.register(eventBus);
         ItemRegister.register(eventBus);
         BlockRegister.register(eventBus);
         BlockEntityRegister.register(eventBus);
+        MenuRegister.register(eventBus);
         SoundRegister.register(eventBus);
 
         eventBus.addListener(this::commonSetup);

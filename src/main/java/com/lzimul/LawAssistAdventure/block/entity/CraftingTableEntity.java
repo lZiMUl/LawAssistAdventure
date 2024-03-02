@@ -7,8 +7,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
-// 改这里的
-public class CraftingTableEntity extends BlockEntity {//这个接口是必须的绑定方块实体用的
+public class CraftingTableEntity extends BlockEntity {
     protected final ContainerData data;
     private final ItemStackHandler itemStackHandler = new ItemStackHandler(10) {
         @Override

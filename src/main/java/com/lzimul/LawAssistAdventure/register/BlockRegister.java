@@ -13,12 +13,7 @@ import static com.lzimul.LawAssistAdventure.Config.MODID;
 
 public class BlockRegister {
     private static final DeferredRegister.Blocks Block = DeferredRegister.createBlocks(MODID);
-
-//    public static final DeferredBlock<Block> CraftingTable = Block.register("crafting_table",()-> new EC_BLOCK());
-
-
-
-     public static final DeferredBlock<Block> CraftingTable = registerBlock("crafting_table", CraftingTable::new);//为什么两类名一样的？
+    public static final DeferredBlock<Block> CraftingTable = registerBlock("crafting_table", CraftingTable::new);//为什么两类名一样的？
     public static final DeferredBlock<Block> ThermalGenerators = registerBlock("thermal_generators", ThermalGenerators::new);
     public static final DeferredBlock<Block> SolarPanelGenerator = registerBlock("solar_panel_generator", SolarPanelGenerator::new);
     public static final DeferredBlock<Block> FluidFuelGenerators = registerBlock("fluid_fuel_generators", FluidFuelGenerators::new);

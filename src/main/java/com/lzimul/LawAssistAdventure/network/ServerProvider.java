@@ -5,11 +5,11 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.network.chat.Component;
 import net.neoforged.neoforge.network.handling.PlayPayloadContext;
 
-public class C2_Server_Provider {
+public class ServerProvider {
 
-    private static final C2_Server_Provider INSTANCE = new C2_Server_Provider();
+    private static final ServerProvider INSTANCE = new ServerProvider();
 
-    public static C2_Server_Provider getInstance() {
+    public static ServerProvider getInstance() {
         return INSTANCE;
     }
 
