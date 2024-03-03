@@ -1,0 +1,45 @@
+{
+  "temperature": 0.8,
+  "downfall": 0.4,
+  "has_precipitation": false,
+  "creature_spawn_probability": 1,
+  "effects": {
+    "sky_color": 15463394,
+    "fog_color": 12638463,
+    "water_color": 4159204,
+    "water_fog_color": 329011
+  },
+  "spawners": {},
+  "spawn_costs": {
+    "minecraft:pig": {
+      "energy_budget": 0.12,
+      "charge": 1
+    },
+    "minecraft:cow": {
+      "energy_budget": 0.12,
+      "charge": 1
+    },
+    "minecraft:sheep": {
+      "energy_budget": 0.12,
+      "charge": 1
+    },
+    "minecraft:chicken": {
+      "energy_budget": 0.12,
+      "charge": 1
+    },
+    "minecraft:horse": {
+      "energy_budget": 0.12,
+      "charge": 1
+    },
+    "minecraft:bat": {
+      "energy_budget": 0.12,
+      "charge": 1
+    },
+    "minecraft:wolf": {
+      "energy_budget": 0.12,
+      "charge": 1
+    }
+  },
+  "carvers": {},
+  "features": []
+}

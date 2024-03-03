@@ -1,6 +1,7 @@
 package com.lzimul.LawAssistAdventure.item;
 
 import com.lzimul.LawAssistAdventure.dimension.Dust;
+import com.lzimul.LawAssistAdventure.register.DimensionRegister;
 import com.lzimul.LawAssistAdventure.register.MenuRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -28,11 +29,11 @@ public class Teleporter extends Item implements MenuProvider {
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
         if (!level.isClientSide && player.isAlive()) {
-//            if (player.level().dimension() == OVERWORLD) {
-//                teleportToWorld((ServerPlayer) player, THE_END, player.getOnPos());
-//            } else {
-//                teleportToWorld((ServerPlayer) player, OVERWORLD, player.getOnPos());
-//            }
+            if (player.level().dimension() == DimensionRegister.Overworld) {
+                teleportToWorld((ServerPlayer) player, DimensionRegister.Dust, player.getOnPos());
+            } else {
+                teleportToWorld((ServerPlayer) player, DimensionRegister.Overworld, player.getOnPos());
+            }
             player.openMenu(this);
 //            ItemStack source = player.getItemBySlot(EquipmentSlot.HEAD);
 //            if (!source.isEmpty()) {

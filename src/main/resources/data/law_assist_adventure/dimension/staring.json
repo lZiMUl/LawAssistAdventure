@@ -1,0 +1,11 @@
+{
+  "type": "law_assist_adventure:staring",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "law_assist_adventure:staring",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "law_assist_adventure:staring"
+    }
+  }
+}

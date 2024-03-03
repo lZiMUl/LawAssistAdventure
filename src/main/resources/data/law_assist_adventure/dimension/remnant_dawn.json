@@ -1,0 +1,11 @@
+{
+  "type": "law_assist_adventure:remnant_dawn",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "law_assist_adventure:remnant_dawn",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "law_assist_adventure:remnant_dawn"
+    }
+  }
+}

@@ -12,15 +12,17 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.LevelChunk;
 import net.minecraft.world.phys.Vec3;
 
+import static com.lzimul.LawAssistAdventure.Config.MODID;
+
 public class DimensionRegister {
-    public static final ResourceKey<Level> OVERWORLD = ResourceKey.create(Registries.DIMENSION, new ResourceLocation("overworld"));
-    public static final ResourceKey<Level> THENETHER = ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_nether"));
-    public static final ResourceKey<Level> THE_END = ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_end"));
-//    public static final ResourceKey<Level> FINAL_WING = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(Config.MODID, "final_wing"));
-//    public static final ResourceKey<Level> REMNANT_DAWN = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(Config.MODID, "remnant_dawn"));
-//    public static final ResourceKey<Level> FALL_INTO_THE_VOID = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(Config.MODID, "fall_into_the_void"));
-//    public static final ResourceKey<Level> DUST = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(Config.MODID, "dust"));
-//    public static final ResourceKey<Level> STARING = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(Config.MODID, "staring"));
+    public static final ResourceKey<Level> Overworld = ResourceKey.create(Registries.DIMENSION, new ResourceLocation("overworld"));
+    public static final ResourceKey<Level> TheNether = ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_nether"));
+    public static final ResourceKey<Level> TheEnd = ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_end"));
+    public static final ResourceKey<Level> FinalWing = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(MODID, "final_wing"));
+    public static final ResourceKey<Level> RemnantDawn = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(MODID, "remnant_dawn"));
+    public static final ResourceKey<Level> FallIntoTheVoid = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(MODID, "fall_into_the_void"));
+    public static final ResourceKey<Level> Dust = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(MODID, "dust"));
+    public static final ResourceKey<Level> Staring = ResourceKey.create(Registries.DIMENSION, new ResourceLocation(MODID, "staring"));
 
 
     private static boolean isAirOrStone(LevelChunk chunk, BlockPos pos) {
