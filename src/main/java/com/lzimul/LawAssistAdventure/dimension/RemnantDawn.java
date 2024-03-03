@@ -33,7 +33,7 @@ public class RemnantDawn implements ITeleporter {
         Vec3 spawnPos;
 
         if (destWorld.dimension().equals(DimensionRegister.RemnantDawn)) {
-        spawnPos = placeTeleporterWorld(destWorld, chunk);
+            spawnPos = placeTeleporterWorld(destWorld, chunk);
         } else {
             spawnPos = placeTeleporterOverworld(destWorld, chunk);
         }

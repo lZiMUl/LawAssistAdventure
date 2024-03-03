@@ -43,11 +43,10 @@ public class DimensionRegister {
     }
 
     public static Vec3 placeTeleporterWorld(ServerLevel world, LevelChunk chunk) {
-        boolean deep = false;
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
         int min = world.getMinBuildHeight();
         int max = world.getMaxBuildHeight() - 10;
-        for (int y = deep ? min : max - 1; (deep ? y < max - 1 : y >= min); y = (deep ? y + 1 : y - 1)) {
+        for (int y = max - 1; y >= min; y = y - 1) {
             for (int x = 0; x < 16; x++) {
                 for (int z = 0; z < 16; z++) {
                     pos.set(x, y, z);
@@ -59,7 +58,7 @@ public class DimensionRegister {
             }
         }
 
-        for (int y = deep ? min : max - 1; (deep ? y < max - 1 : y >= min); y = (deep ? y + 1 : y - 1)) {
+        for (int y = max - 1; y >= min; y = y - 1) {
             for (int x = 0; x < 16; x++) {
                 for (int z = 0; z < 16; z++) {
                     pos.set(x, y, z);

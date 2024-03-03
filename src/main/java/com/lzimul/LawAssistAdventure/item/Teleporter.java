@@ -21,6 +21,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
+import static com.lzimul.LawAssistAdventure.Config.MODID;
+
 public class Teleporter extends Item implements MenuProvider {
     public Teleporter() {
         super(new Item.Properties());
@@ -29,12 +31,26 @@ public class Teleporter extends Item implements MenuProvider {
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
         if (!level.isClientSide && player.isAlive()) {
+            ResourceKey<?>[] dimension = {
+                    DimensionRegister.TheNether,
+                    DimensionRegister.TheEnd,
+                    DimensionRegister.Dust,
+                    DimensionRegister.FallIntoTheVoid,
+                    DimensionRegister.FinalWing,
+                    DimensionRegister.RemnantDawn,
+                    DimensionRegister.Staring
+            };
             if (player.level().dimension() == DimensionRegister.Overworld) {
-                teleportToWorld((ServerPlayer) player, DimensionRegister.Dust, player.getOnPos());
+                ResourceKey<Level> world = this.getWorld((ResourceKey<Level>[]) dimension);
+                String worldId = world.location().toLanguageKey();
+                if (worldId.contains(MODID)) {
+                    player.sendSystemMessage(Component.translatable(worldId));
+                }
+                teleportToWorld((ServerPlayer) player, world, player.getOnPos());
             } else {
                 teleportToWorld((ServerPlayer) player, DimensionRegister.Overworld, player.getOnPos());
             }
-            player.openMenu(this);
+//            player.openMenu(this);
 //            ItemStack source = player.getItemBySlot(EquipmentSlot.HEAD);
 //            if (!source.isEmpty()) {
 //                for (ItemStack item : player.getInventory().items) {
@@ -51,6 +67,11 @@ public class Teleporter extends Item implements MenuProvider {
 //            player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 1, 60, true, true));
         }
         return InteractionResultHolder.sidedSuccess(this.getDefaultInstance(), level.isClientSide);
+    }
+
+    private ResourceKey<Level> getWorld(ResourceKey<Level>[] dimensions) {
+        double random = Math.random() * dimensions.length;
+        return dimensions[(int) random];
     }
 
     private void teleportToWorld(ServerPlayer player, ResourceKey<Level> dimension, BlockPos pos) {

@@ -33,7 +33,7 @@ public class FinalWing implements ITeleporter {
         Vec3 spawnPos;
 
         if (destWorld.dimension().equals(DimensionRegister.FinalWing)) {
-        spawnPos = placeTeleporterWorld(destWorld, chunk);
+            spawnPos = placeTeleporterWorld(destWorld, chunk);
         } else {
             spawnPos = placeTeleporterOverworld(destWorld, chunk);
         }
