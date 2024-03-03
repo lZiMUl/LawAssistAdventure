@@ -1,4 +1,4 @@
-package com.lzimul.LawAssistAdventure.register;
+package com.lzimul.LawAssistAdventure.event;
 
 import com.lzimul.LawAssistAdventure.network.*;
 import com.lzimul.LawAssistAdventure.network.NetworkData;
@@ -10,7 +10,7 @@ import net.neoforged.neoforge.network.registration.IPayloadRegistrar;
 import static com.lzimul.LawAssistAdventure.Config.MODID;
 
 @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class NetworkRegister {
+public class NetworkEvent {
     @SubscribeEvent
     public static void register(final RegisterPayloadHandlerEvent event) {
         final IPayloadRegistrar registrar = event.registrar(MODID);
