@@ -6,8 +6,8 @@
     64
   ],
   "textures": {
-    "0": "law_assist_adventure:block/fluid_fuel_generators",
-    "particle": "law_assist_adventure:block/fluid_fuel_generators"
+    "0": "law_assist_adventure:block/fluid_fuel_generator",
+    "particle": "law_assist_adventure:block/fluid_fuel_generator"
   },
   "elements": [
     {

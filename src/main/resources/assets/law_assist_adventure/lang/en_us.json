@@ -5,9 +5,9 @@
   "itemGroup.lzimul.law_assist_adventure.experiences": "法则辅助与冒险(经验类)",
 
   "block.law_assist_adventure.crafting_table": "制作台",
-  "block.law_assist_adventure.thermal_generators": "火力发电机",
+  "block.law_assist_adventure.thermal_generator": "火力发电机",
   "block.law_assist_adventure.solar_panel_generator": "太阳能板发电机",
-  "block.law_assist_adventure.fluid_fuel_generators": "流体燃料发电机",
+  "block.law_assist_adventure.fluid_fuel_generator": "流体燃料发电机",
   "block.law_assist_adventure.power_storage_box_1": "民用储电盒",
   "block.law_assist_adventure.power_storage_box_2": "企业储电盒",
   "block.law_assist_adventure.power_storage_box_3": "工业储电盒",

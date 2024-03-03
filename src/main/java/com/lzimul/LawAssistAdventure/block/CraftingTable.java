@@ -32,17 +32,9 @@ public class CraftingTable extends BaseEntityBlock implements EntityBlock, MenuP
 
         }
     };
-
     public CraftingTable() {
         super(BlockBehaviour.Properties.of());
     }
-
-    @Nullable
-    @Override
-    public BlockEntity newBlockEntity(@NotNull BlockPos pos, @NotNull BlockState state) {
-        return new CraftingTableEntity(pos, state);
-    }
-
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState blockState, @NotNull Level level, @NotNull BlockPos blockPos, @NotNull Player player, @NotNull InteractionHand interactionHand, @NotNull BlockHitResult blockHitResult) {
         // TODO 待开发点击工作台显示界面
@@ -61,20 +53,20 @@ public class CraftingTable extends BaseEntityBlock implements EntityBlock, MenuP
 
     @Override
     public @NotNull Component getDisplayName() {
-        return Component.translatable("block.law_assist_adventure.crafting_table");
+        return Component.translatable(this.getDescriptionId());
     }
 
+    @Override
+    protected @NotNull MapCodec<? extends BaseEntityBlock> codec() {
+        return null;
+    }
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int id, @NotNull Inventory inventory, @NotNull Player player) {
         return new AbstractContainerMenu(MenuRegister.CraftingTableMenu.get(), id) {
             @Override
             public @NotNull ItemStack quickMoveStack(@NotNull Player p_38941_, int p_38942_) {
-                try {
-                    return new ItemStack(CraftingTable.class.newInstance(), 1);
-                } catch (IllegalAccessException | InstantiationException e) {
-                    throw new RuntimeException(e);
-                }
+                return new ItemStack(CraftingTable.this);
             }
 
             @Override
@@ -84,8 +76,9 @@ public class CraftingTable extends BaseEntityBlock implements EntityBlock, MenuP
         };
     }
 
+    @Nullable
     @Override
-    protected @NotNull MapCodec<? extends BaseEntityBlock> codec() {
-        return null;
+    public BlockEntity newBlockEntity(@NotNull BlockPos pos, @NotNull BlockState state) {
+        return new CraftingTableEntity(pos, state);
     }
 }

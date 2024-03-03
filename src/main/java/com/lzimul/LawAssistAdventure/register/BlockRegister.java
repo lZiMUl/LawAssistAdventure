@@ -2,7 +2,6 @@ package com.lzimul.LawAssistAdventure.register;
 
 import com.lzimul.LawAssistAdventure.block.*;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -14,9 +13,9 @@ import static com.lzimul.LawAssistAdventure.Config.MODID;
 public class BlockRegister {
     private static final DeferredRegister.Blocks Block = DeferredRegister.createBlocks(MODID);
     public static final DeferredBlock<Block> CraftingTable = registerBlock("crafting_table", CraftingTable::new);//为什么两类名一样的？
-    public static final DeferredBlock<Block> ThermalGenerators = registerBlock("thermal_generators", ThermalGenerators::new);
+    public static final DeferredBlock<Block> ThermalGenerator = registerBlock("thermal_generator", ThermalGenerator::new);
     public static final DeferredBlock<Block> SolarPanelGenerator = registerBlock("solar_panel_generator", SolarPanelGenerator::new);
-    public static final DeferredBlock<Block> FluidFuelGenerators = registerBlock("fluid_fuel_generators", FluidFuelGenerators::new);
+    public static final DeferredBlock<Block> FluidFuelGenerator = registerBlock("fluid_fuel_generator", FluidFuelGenerator::new);
     public static final DeferredBlock<Block> PowerStorageBox1 = registerBlock("power_storage_box_1", PowerStorageBox1::new);
     public static final DeferredBlock<Block> PowerStorageBox2 = registerBlock("power_storage_box_2", PowerStorageBox2::new);
     public static final DeferredBlock<Block> PowerStorageBox3 = registerBlock("power_storage_box_3", PowerStorageBox3::new);

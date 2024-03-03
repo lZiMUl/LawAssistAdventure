@@ -6,15 +6,12 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import org.jetbrains.annotations.NotNull;
 
-import static com.lzimul.LawAssistAdventure.Config.MODID;
+import static com.lzimul.LawAssistAdventure.Config.getBlockResourceLocation;
 
 public class CraftingTableScreen extends AbstractContainerScreen<CraftingTableMenu> {
-    private static final ResourceLocation TEXTURE =
-            new ResourceLocation(MODID,"textures/gui/crafting_table.png");
     public CraftingTableScreen(CraftingTableMenu craftingTableMenu, Inventory inventory, Component component) {
         super(craftingTableMenu, inventory, component);
     }
@@ -25,7 +22,7 @@ public class CraftingTableScreen extends AbstractContainerScreen<CraftingTableMe
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
 
-        guiGraphics.blit(TEXTURE,x, y, 0, 0, imageWidth, imageHeight);
+        guiGraphics.blit(getBlockResourceLocation("crafting_table"), x, y, 0, 0, imageWidth, imageHeight);
     }
     @Override
     public void render(@NotNull GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {

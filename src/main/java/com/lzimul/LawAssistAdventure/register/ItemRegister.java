@@ -14,9 +14,9 @@ import static com.lzimul.LawAssistAdventure.Config.MODID;
 public class ItemRegister {
  private static final DeferredRegister.Items Item = DeferredRegister.createItems(MODID);
  public static final DeferredItem<BlockItem> CraftingTable = Item.register("crafting_table", CraftingTable::new);
- public static final DeferredItem<BlockItem> ThermalGenerator = Item.register("thermal_generators", ThermalGenerators::new);
+ public static final DeferredItem<BlockItem> ThermalGenerator = Item.register("thermal_generator", ThermalGenerator::new);
  public static final DeferredItem<BlockItem> SolarPanelGenerator = Item.register("solar_panel_generator", SolarPanelGenerator::new);
- public static final DeferredItem<BlockItem> FluidFuelGenerators = Item.register("fluid_fuel_generators", FluidFuelGenerators::new);
+ public static final DeferredItem<BlockItem> FluidFuelGenerator = Item.register("fluid_fuel_generator", FluidFuelGenerator::new);
  public static final DeferredItem<BlockItem> PowerStorageBox1 = Item.register("power_storage_box_1", PowerStorageBox1::new);
  public static final DeferredItem<BlockItem> PowerStorageBox2 = Item.register("power_storage_box_2", PowerStorageBox2::new);
  public static final DeferredItem<BlockItem> PowerStorageBox3 = Item.register("power_storage_box_3", PowerStorageBox3::new);
@@ -114,7 +114,7 @@ public class ItemRegister {
 //    }
 //
 //    public static final DeferredItem<BlockItem> CraftingTable = createBlockItem("crafting_table", BlockRegister.CraftingTable);
-//    public static final DeferredItem<BlockItem> ThermalGenerator = createBlockItem("thermal_generators", BlockRegister.ThermalGenerators);
+//    public static final DeferredItem<BlockItem> ThermalGenerator = createBlockItem("thermal_generators", BlockRegister.ThermalGenerator);
 //    public static final DeferredItem<BlockItem> SolarPanelGenerator = createBlockItem("solar_panel_generator", BlockRegister.SolarPanelGenerator);
 //    public static final DeferredItem<BlockItem> FluidFuelGenerators = createBlockItem("fluid_fuel_generators", BlockRegister.FluidFuelGenerators);
 //    public static final DeferredItem<BlockItem> PowerStorageBox1 = createBlockItem("power_storage_box_1", BlockRegister.PowerStorageBox1);

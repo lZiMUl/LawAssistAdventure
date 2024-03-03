@@ -10,9 +10,6 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.MenuProvider;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -37,22 +34,22 @@ public class Teleporter extends Item implements MenuProvider {
 //                teleportToWorld((ServerPlayer) player, OVERWORLD, player.getOnPos());
 //            }
             player.openMenu(this);
-            ItemStack source = player.getItemBySlot(EquipmentSlot.HEAD);
-            if (!source.isEmpty()) {
-                for (ItemStack item : player.getInventory().items) {
-                    if (item.isEmpty()) {
-//                        player.setItemSlot(EquipmentSlot.Type.HAND, new ItemStack(source.getItem(), 1));
-                        break;
-                    }
-                }
-//                player.drop(source, true);
-            }
+//            ItemStack source = player.getItemBySlot(EquipmentSlot.HEAD);
+//            if (!source.isEmpty()) {
+//                for (ItemStack item : player.getInventory().items) {
+//                    if (item.isEmpty()) {
+////                        player.setItemSlot(EquipmentSlot.Type.HAND, new ItemStack(source.getItem(), 1));
+//                        break;
+//                    }
+//                }
+////                player.drop(source, true);
+//            }
 //            if (!source.equals(new ItemStack(ItemRegister.Parachute.get()))) {
 //                player.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ItemRegister.Parachute.get(), 1));
 //            }
-            player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 1, 60, true, true));
+//            player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 1, 60, true, true));
         }
-        return super.use(level, player, hand);
+        return InteractionResultHolder.sidedSuccess(this.getDefaultInstance(), level.isClientSide);
     }
     private void teleportToWorld(ServerPlayer player, ResourceKey<Level> dimension, BlockPos pos) {
         ServerLevel world = Objects.requireNonNull(player.getServer()).getLevel(dimension);
@@ -65,7 +62,7 @@ public class Teleporter extends Item implements MenuProvider {
 
     @Override
     public @NotNull Component getDisplayName() {
-        return Component.translatable("item.law_assist_adventure.teleporter");
+        return Component.translatable(this.getDescriptionId());
     }
 
     @Override
@@ -73,11 +70,7 @@ public class Teleporter extends Item implements MenuProvider {
         return new AbstractContainerMenu(MenuRegister.TeleporterMenu.get(), i) {
             @Override
             public @NotNull ItemStack quickMoveStack(@NotNull Player p_38941_, int p_38942_) {
-                try {
-                    return new ItemStack(Teleporter.class.newInstance(), 1);
-                } catch (IllegalAccessException | InstantiationException e) {
-                    throw new RuntimeException(e);
-                }
+                return new ItemStack(Teleporter.this);
             }
 
             @Override

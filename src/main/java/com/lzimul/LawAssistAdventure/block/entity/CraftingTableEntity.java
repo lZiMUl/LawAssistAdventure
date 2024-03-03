@@ -21,7 +21,7 @@ public class CraftingTableEntity extends BlockEntity {
 
 
     public CraftingTableEntity(BlockPos blockPos, BlockState blockState) {
-        super(BlockEntityRegister.CraftingTableEntity.get(), blockPos, blockState);
+        super(BlockEntityRegister.CraftingTable.get(), blockPos, blockState);
         this.data = new ContainerData() {
 
             @Override

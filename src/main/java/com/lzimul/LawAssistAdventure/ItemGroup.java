@@ -21,7 +21,7 @@ public class ItemGroup {
                 output.accept(ItemRegister.CraftingTable.get());
                 output.accept(ItemRegister.ThermalGenerator.get());
                 output.accept(ItemRegister.SolarPanelGenerator.get());
-                output.accept(ItemRegister.FluidFuelGenerators.get());
+                output.accept(ItemRegister.FluidFuelGenerator.get());
                 output.accept(ItemRegister.PowerStorageBox1.get());
                 output.accept(ItemRegister.PowerStorageBox2.get());
                 output.accept(ItemRegister.PowerStorageBox3.get());
