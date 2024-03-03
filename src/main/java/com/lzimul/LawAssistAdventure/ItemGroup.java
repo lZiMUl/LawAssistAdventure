@@ -96,6 +96,7 @@ public class ItemGroup {
                 output.accept(ItemRegister.ResearcherNoteTampered.get());
                 output.accept(ItemRegister.ResearcherNoteCorrupted.get());
             }).withTabsBefore(armor.getId()).build());
+
     public static void register(IEventBus modEventBus) {
         CreativeTab.register(modEventBus);
     }

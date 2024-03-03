@@ -15,6 +15,7 @@ public class CraftingTableScreen extends AbstractContainerScreen<CraftingTableMe
     public CraftingTableScreen(CraftingTableMenu craftingTableMenu, Inventory inventory, Component component) {
         super(craftingTableMenu, inventory, component);
     }
+
     @Override
     protected void renderBg(@NotNull GuiGraphics guiGraphics, float p_97788_, int p_97789_, int p_97790_) {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
@@ -24,10 +25,11 @@ public class CraftingTableScreen extends AbstractContainerScreen<CraftingTableMe
 
         guiGraphics.blit(getBlockResourceLocation("crafting_table"), x, y, 0, 0, imageWidth, imageHeight);
     }
+
     @Override
     public void render(@NotNull GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
-        super.renderBackground(pGuiGraphics,pMouseX, pMouseY, pPartialTick);
-        super.render(pGuiGraphics,pMouseX, pMouseY, pPartialTick);
+        super.renderBackground(pGuiGraphics, pMouseX, pMouseY, pPartialTick);
+        super.render(pGuiGraphics, pMouseX, pMouseY, pPartialTick);
         renderTooltip(pGuiGraphics, pMouseX, pMouseY);
     }
 }

@@ -26,6 +26,7 @@ public class FluidFuelGenerator extends BaseEntityBlock implements EntityBlock, 
     public FluidFuelGenerator() {
         super(BlockBehaviour.Properties.of().noOcclusion());
     }
+
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState blockState, @NotNull Level level, @NotNull BlockPos blockPos, @NotNull Player player, @NotNull InteractionHand interactionHand, @NotNull BlockHitResult blockHitResult) {
         // TODO 待开发点击流体燃料发电机显示界面

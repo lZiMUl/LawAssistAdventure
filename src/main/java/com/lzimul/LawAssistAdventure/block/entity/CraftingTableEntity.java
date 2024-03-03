@@ -19,7 +19,6 @@ public class CraftingTableEntity extends BlockEntity {
     private int progressMax = 100;
 
 
-
     public CraftingTableEntity(BlockPos blockPos, BlockState blockState) {
         super(BlockEntityRegister.CraftingTable.get(), blockPos, blockState);
         this.data = new ContainerData() {

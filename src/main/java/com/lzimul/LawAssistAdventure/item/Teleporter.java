@@ -51,6 +51,7 @@ public class Teleporter extends Item implements MenuProvider {
         }
         return InteractionResultHolder.sidedSuccess(this.getDefaultInstance(), level.isClientSide);
     }
+
     private void teleportToWorld(ServerPlayer player, ResourceKey<Level> dimension, BlockPos pos) {
         ServerLevel world = Objects.requireNonNull(player.getServer()).getLevel(dimension);
         if (world != null) {

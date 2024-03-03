@@ -13,6 +13,7 @@ public class Staring extends Item {
     public Staring() {
         super(new Item.Properties());
     }
+
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
         if (!level.isClientSide && player.isAlive()) {

@@ -39,6 +39,7 @@ public class BlockRegister {
     private static <T extends Block> DeferredBlock<Block> registerBlock(String name, Supplier<T> block) {
         return Block.register(name, block);
     }
+
     public static void register(IEventBus modEventBus) {
         Block.register(modEventBus);
     }

@@ -16,6 +16,7 @@ public class Mill extends Block {
     public Mill() {
         super(BlockBehaviour.Properties.of().noOcclusion());
     }
+
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState blockState, @NotNull Level level, @NotNull BlockPos blockPos, @NotNull Player player, @NotNull InteractionHand interactionHand, @NotNull BlockHitResult blockHitResult) {
         // TODO 待开发点击粉碎机显示界面

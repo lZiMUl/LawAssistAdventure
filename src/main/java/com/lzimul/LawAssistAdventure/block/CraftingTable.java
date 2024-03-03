@@ -32,9 +32,11 @@ public class CraftingTable extends BaseEntityBlock implements EntityBlock, MenuP
 
         }
     };
+
     public CraftingTable() {
         super(BlockBehaviour.Properties.of());
     }
+
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState blockState, @NotNull Level level, @NotNull BlockPos blockPos, @NotNull Player player, @NotNull InteractionHand interactionHand, @NotNull BlockHitResult blockHitResult) {
         // TODO 待开发点击工作台显示界面
@@ -60,6 +62,7 @@ public class CraftingTable extends BaseEntityBlock implements EntityBlock, MenuP
     protected @NotNull MapCodec<? extends BaseEntityBlock> codec() {
         return null;
     }
+
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int id, @NotNull Inventory inventory, @NotNull Player player) {

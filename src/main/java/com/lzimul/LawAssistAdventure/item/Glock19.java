@@ -15,6 +15,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class Glock19 extends Item {
     private static final Ammunition ammunition = new Ammunition(21, 120, 0);
+
     public Glock19() {
         super(new Item.Properties().food(new FoodProperties.Builder()
                 .nutrition(0)
@@ -23,6 +24,7 @@ public class Glock19 extends Item {
                 .build()
         ));
     }
+
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
         if (!level.isClientSide() && player.isAlive()) {
@@ -46,5 +48,7 @@ public class Glock19 extends Item {
             }
         }
         return super.use(level, player, hand);
-    };
+    }
+
+    ;
 }

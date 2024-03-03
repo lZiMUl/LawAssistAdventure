@@ -31,7 +31,7 @@ public class Staring implements ITeleporter {
         Vec3 spawnPos;
 
 //        if (destWorld.dimension().equals(Dimension.STARING)) {
-            spawnPos = placeTeleporterWorld(destWorld, chunk);
+        spawnPos = placeTeleporterWorld(destWorld, chunk);
 //        } else {
 //            spawnPos = placeTeleporterOverworld(destWorld, chunk);
 //        }

@@ -34,13 +34,16 @@ public class LawAssistAdventure extends ItemGroup {
 
         NeoForge.EVENT_BUS.register(this);
     }
+
     private void commonSetup(final FMLCommonSetupEvent event) {
         LOGGER.info("HELLO FROM COMMON SETUP");
     }
+
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         LOGGER.info("Hello from server setup");
     }
+
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientEvents {
         @SubscribeEvent

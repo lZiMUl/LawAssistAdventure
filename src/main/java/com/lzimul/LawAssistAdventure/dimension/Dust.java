@@ -31,7 +31,7 @@ public class Dust implements ITeleporter {
         Vec3 spawnPos;
 
 //        if (destWorld.dimension().equals(Dimension.DUST)) {
-            spawnPos = placeTeleporterWorld(destWorld, chunk);
+        spawnPos = placeTeleporterWorld(destWorld, chunk);
 //        } else {
 //            spawnPos = placeTeleporterOverworld(destWorld, chunk);
 //        }

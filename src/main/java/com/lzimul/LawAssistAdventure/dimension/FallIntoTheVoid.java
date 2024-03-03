@@ -31,7 +31,7 @@ public class FallIntoTheVoid implements ITeleporter {
         Vec3 spawnPos;
 
 //        if (destWorld.dimension().equals(Dimension.FALL_INTO_THE_VOID)) {
-            spawnPos = placeTeleporterWorld(destWorld, chunk);
+        spawnPos = placeTeleporterWorld(destWorld, chunk);
 //        } else {
 //            spawnPos = placeTeleporterOverworld(destWorld, chunk);
 //        }

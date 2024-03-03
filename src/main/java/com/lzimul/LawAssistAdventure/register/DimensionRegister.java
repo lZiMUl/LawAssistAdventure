@@ -27,6 +27,7 @@ public class DimensionRegister {
         BlockState state = chunk.getBlockState(pos);
         return state.getBlock().equals(Blocks.STONE) || state.isAir();
     }
+
     private static boolean isReplaceable(Level world, BlockPos pos) {
         BlockState state = world.getBlockState(pos);
         return state.getBlock().equals(Blocks.STONE) ||
@@ -38,6 +39,7 @@ public class DimensionRegister {
                 state.getBlock().equals(Blocks.LAVA) ||
                 state.isAir();
     }
+
     public static Vec3 placeTeleporterWorld(ServerLevel world, LevelChunk chunk) {
         boolean deep = false;
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
@@ -93,6 +95,7 @@ public class DimensionRegister {
 
         return null;
     }
+
     public static Vec3 placeTeleporterOverworld(ServerLevel world, LevelChunk chunk) {
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
         for (int x = 0; x < 16; x++) {

@@ -15,6 +15,7 @@ public class TeleporterScreen extends AbstractContainerScreen<TeleporterMenu> {
     public TeleporterScreen(TeleporterMenu teleporterMenu, Inventory inventory, Component component) {
         super(teleporterMenu, inventory, component);
     }
+
     @Override
     protected void renderBg(@NotNull GuiGraphics guiGraphics, float p_97788_, int p_97789_, int p_97790_) {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);

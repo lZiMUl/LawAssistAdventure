@@ -1,7 +1,8 @@
 package com.lzimul.LawAssistAdventure.event;
 
-import com.lzimul.LawAssistAdventure.network.*;
+import com.lzimul.LawAssistAdventure.network.ClientProvider;
 import com.lzimul.LawAssistAdventure.network.NetworkData;
+import com.lzimul.LawAssistAdventure.network.ServerProvider;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlerEvent;

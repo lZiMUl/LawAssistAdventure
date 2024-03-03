@@ -1,6 +1,5 @@
 package com.lzimul.LawAssistAdventure.network;
 
-import com.lzimul.LawAssistAdventure.block.CraftingTable;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.network.chat.Component;
 import net.neoforged.neoforge.network.handling.PlayPayloadContext;

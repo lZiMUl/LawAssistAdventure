@@ -27,6 +27,7 @@ public class Washer extends BaseEntityBlock implements EntityBlock, MenuProvider
     public Washer() {
         super(BlockBehaviour.Properties.of().noOcclusion());
     }
+
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState blockState, @NotNull Level level, @NotNull BlockPos blockPos, @NotNull Player player, @NotNull InteractionHand interactionHand, @NotNull BlockHitResult blockHitResult) {
         // TODO 待开发点击洗衣机显示界面

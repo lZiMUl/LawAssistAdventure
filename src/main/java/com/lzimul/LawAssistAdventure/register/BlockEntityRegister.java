@@ -11,6 +11,7 @@ import static com.lzimul.LawAssistAdventure.Config.MODID;
 
 public class BlockEntityRegister {
     private static final DeferredRegister<BlockEntityType<?>> BlockEntity = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, MODID);
+
     public static void register(IEventBus eventBus) {
         BlockEntity.register(eventBus);
     }

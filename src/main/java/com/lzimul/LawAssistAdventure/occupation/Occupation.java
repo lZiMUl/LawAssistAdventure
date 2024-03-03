@@ -7,7 +7,7 @@ import net.minecraft.world.entity.player.Player;
 import java.util.Objects;
 import java.util.function.Supplier;
 
-public class Occupation <T> {
+public class Occupation<T> {
     private static String occupation = "no_occupation";
 
     public Occupation(Player player, Supplier<T> occupation) {
@@ -34,15 +34,16 @@ public class Occupation <T> {
                 break;
         }
     }
+
+    public static boolean isOccupation(String occupation) {
+        return Objects.equals(Occupation.occupation, occupation);
+    }
+
     private MutableComponent to(String eventName, String l) {
         if (!Occupation.occupation.equals(eventName)) {
             Occupation.occupation = eventName;
             return Component.translatable(l, "[职业已更改]");
         }
         return Component.translatable(l, "[职业未更改]");
-    }
-
-    public static boolean isOccupation(String  occupation) {
-        return Objects.equals(Occupation.occupation, occupation);
     }
 }
