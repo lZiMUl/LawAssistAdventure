@@ -76,7 +76,7 @@ public class Teleporter extends Item implements MenuProvider {
             @Override
             public boolean stillValid(@NotNull Player p_38874_) {
                 return true;
-            };
+            }
         };
-    };
+    }
 }

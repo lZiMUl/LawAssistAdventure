@@ -38,7 +38,6 @@ public class WasherEntity extends BlockEntity {
                     case 0 -> progress = value;
                     case 1 -> progressMax = value;
                 }
-                ;
             }
 
             @Override
