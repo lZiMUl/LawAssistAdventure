@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "law_assist_adventure:block/fluid_fuel_generator"
+    }
+  }
+}

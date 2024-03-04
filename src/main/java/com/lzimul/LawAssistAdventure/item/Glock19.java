@@ -41,6 +41,4 @@ public class Glock19 extends Item {
         }
         return super.use(level, player, hand);
     }
-
-    ;
 }
