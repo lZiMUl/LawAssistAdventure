@@ -16,6 +16,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -23,6 +24,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import javax.annotation.Nonnull;
 
 
 public class CraftingTable extends BaseEntityBlock implements EntityBlock, MenuProvider {
@@ -78,10 +81,15 @@ public class CraftingTable extends BaseEntityBlock implements EntityBlock, MenuP
             }
         };
     }
-
     @Nullable
     @Override
     public BlockEntity newBlockEntity(@NotNull BlockPos pos, @NotNull BlockState state) {
         return new CraftingTableEntity(pos, state);
+    }
+
+    @Nonnull
+    @Override
+    public RenderShape getRenderShape(@Nonnull BlockState state) {
+        return RenderShape.MODEL;
     }
 }

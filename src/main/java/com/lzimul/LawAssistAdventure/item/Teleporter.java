@@ -32,13 +32,13 @@ public class Teleporter extends Item implements MenuProvider {
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
         if (!level.isClientSide && player.isAlive()) {
             ResourceKey<?>[] dimension = {
-                    DimensionRegister.TheNether,
-                    DimensionRegister.TheEnd,
+//                    DimensionRegister.TheNether,
+//                    DimensionRegister.TheEnd,
                     DimensionRegister.Dust,
-                    DimensionRegister.FallIntoTheVoid,
-                    DimensionRegister.FinalWing,
-                    DimensionRegister.RemnantDawn,
-                    DimensionRegister.Staring
+//                    DimensionRegister.FallIntoTheVoid,
+//                    DimensionRegister.FinalWing,
+//                    DimensionRegister.RemnantDawn,
+//                    DimensionRegister.Staring
             };
             if (player.level().dimension() == DimensionRegister.Overworld) {
                 ResourceKey<Level> world = this.getWorld((ResourceKey<Level>[]) dimension);

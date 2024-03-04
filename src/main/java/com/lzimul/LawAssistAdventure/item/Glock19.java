@@ -4,10 +4,7 @@ import com.lzimul.LawAssistAdventure.Ammunition;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -17,12 +14,7 @@ public class Glock19 extends Item {
     private static final Ammunition ammunition = new Ammunition(21, 120, 0);
 
     public Glock19() {
-        super(new Item.Properties().food(new FoodProperties.Builder()
-                .nutrition(0)
-                .saturationMod(0)
-                .effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 255, 1, true, true), 1)
-                .build()
-        ));
+        super(new Item.Properties());
     }
 
     @Override

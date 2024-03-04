@@ -20,3 +20,9 @@
 /setblock 4 -60 16 law_assist_adventure:crafting_table
 /setblock 4 -60 16 law_assist_adventure:crafting_table replace
 /setblock 4 -60 17 law_assist_adventure:crafting_table replace
+/effect give Dev minecraft:night_vision infinite 255 true
+/effect give Dev minecraft:night_vision
+/time set night
+/time set day
+/time set 700
+/time set 700d

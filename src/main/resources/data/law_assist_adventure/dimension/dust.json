@@ -2,7 +2,7 @@
   "type": "law_assist_adventure:dust",
   "generator": {
     "type": "minecraft:noise",
-    "settings": "law_assist_adventure:dust",
+    "settings": "minecraft:overworld",
     "biome_source": {
       "type": "minecraft:fixed",
       "biome": "law_assist_adventure:dust"
