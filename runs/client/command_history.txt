@@ -26,3 +26,7 @@
 /time set day
 /time set 700
 /time set 700d
+/effect give Dev minecraft:hunger 10 2
+/effect give Dev minecraft:hunger 10 20
+/difficulty hard
+/effect give Dev minecraft:hunger 10 20

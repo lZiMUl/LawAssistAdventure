@@ -1,13 +1,13 @@
 package com.lzimul.LawAssistAdventure.register;
 
-import com.lzimul.LawAssistAdventure.Armors;
+import com.lzimul.LawAssistAdventure.Armor;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 
 public class ArmorRegister {
-    public static final ArmorItem Parachute = new ArmorItem(new Armors(
+    public static final ArmorItem Parachute = new ArmorItem(new Armor(
             new int[]{500, 1200, 600, 400},
             new int[]{11, 16, 15, 13},
             20,
@@ -20,7 +20,7 @@ public class ArmorRegister {
             ArmorItem.Type.CHESTPLATE,
             new Item.Properties()
     );
-    public static final ArmorItem ExtremeDangerExplorerHelm = new ArmorItem(new Armors(
+    public static final ArmorItem ExtremeDangerExplorerHelm = new ArmorItem(new Armor(
             new int[]{500, 1200, 600, 400},
             new int[]{11, 16, 15, 13},
             20,
@@ -33,7 +33,7 @@ public class ArmorRegister {
             ArmorItem.Type.HELMET,
             new Item.Properties()
     );
-    public static final ArmorItem ExtremeDangerExplorerBreastplate = new ArmorItem(new Armors(
+    public static final ArmorItem ExtremeDangerExplorerBreastplate = new ArmorItem(new Armor(
             new int[]{500, 1200, 600, 400},
             new int[]{11, 16, 15, 13},
             20,
@@ -46,7 +46,7 @@ public class ArmorRegister {
             ArmorItem.Type.CHESTPLATE,
             new Item.Properties()
     );
-    public static final ArmorItem ExtremeDangerExplorerPants = new ArmorItem(new Armors(
+    public static final ArmorItem ExtremeDangerExplorerPants = new ArmorItem(new Armor(
             new int[]{500, 1200, 600, 400},
             new int[]{11, 16, 15, 13},
             20,
@@ -59,7 +59,7 @@ public class ArmorRegister {
             ArmorItem.Type.LEGGINGS,
             new Item.Properties()
     );
-    public static final ArmorItem ExtremeDangerExplorerShoes = new ArmorItem(new Armors(
+    public static final ArmorItem ExtremeDangerExplorerShoes = new ArmorItem(new Armor(
             new int[]{500, 1200, 600, 400},
             new int[]{11, 16, 15, 13},
             20,
@@ -72,7 +72,7 @@ public class ArmorRegister {
             ArmorItem.Type.BOOTS,
             new Item.Properties()
     );
-    public static final ArmorItem DefendTheBall = new ArmorItem(new Armors(
+    public static final ArmorItem DefendTheBall = new ArmorItem(new Armor(
             new int[]{500, 1200, 600, 400},
             new int[]{11, 16, 15, 13},
             20,

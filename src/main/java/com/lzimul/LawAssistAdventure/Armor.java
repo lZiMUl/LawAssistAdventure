@@ -10,7 +10,7 @@ import java.util.function.Supplier;
 
 import static com.lzimul.LawAssistAdventure.Config.MODID;
 
-public class Armors implements ArmorMaterial {
+public class Armor implements ArmorMaterial {
     public final int[] durabilityForType;
     public final int[] defenseForType;
     public final int enchantmentValue;
@@ -20,7 +20,7 @@ public class Armors implements ArmorMaterial {
     public final float toughness;
     public final float knockbackResistance;
 
-    public Armors(int[] durabilityForType, int[] defenseForType, int enchantmentValue, SoundEvent equipSound, Supplier<Ingredient> repairIngredient, String name, float toughness, float knockbackResistance) {
+    public Armor(int[] durabilityForType, int[] defenseForType, int enchantmentValue, SoundEvent equipSound, Supplier<Ingredient> repairIngredient, String name, float toughness, float knockbackResistance) {
         this.durabilityForType = durabilityForType;
         this.defenseForType = defenseForType;
         this.enchantmentValue = enchantmentValue;
