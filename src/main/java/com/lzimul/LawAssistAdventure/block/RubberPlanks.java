@@ -8,7 +8,9 @@ import org.jetbrains.annotations.NotNull;
 
 public class RubberPlanks extends Block {
     public RubberPlanks() {
-        super(BlockBehaviour.Properties.of());
+        super(BlockBehaviour.Properties.of()
+                .strength(3.0f)
+        );
     }
     @Override
     public @NotNull SoundType getSoundType(@NotNull BlockState blockState) {

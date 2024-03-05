@@ -8,8 +8,11 @@ import org.jetbrains.annotations.NotNull;
 
 public class RubberLog extends Block {
     public RubberLog() {
-        super(BlockBehaviour.Properties.of());
+        super(BlockBehaviour.Properties.of()
+                .strength(3.0f)
+        );
     }
+
     @Override
     public @NotNull SoundType getSoundType(@NotNull BlockState blockState) {
         return SoundType.WOOD;

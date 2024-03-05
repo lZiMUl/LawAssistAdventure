@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "blocks",
+  "group": "planks",
+  "show_notification": true,
+  "ingredients": [
+    {
+      "item": "law_assist_adventure:rubber_log"
+    }
+  ],
+  "result": {
+    "item": "law_assist_adventure:rubber_planks",
+    "count": 4
+  }
+}
