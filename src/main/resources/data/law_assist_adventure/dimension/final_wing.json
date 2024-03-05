@@ -2,7 +2,7 @@
   "type": "law_assist_adventure:final_wing",
   "generator": {
     "type": "minecraft:noise",
-    "settings": "law_assist_adventure:final_wing",
+    "settings": "minecraft:overworld",
     "biome_source": {
       "type": "minecraft:fixed",
       "biome": "law_assist_adventure:final_wing"

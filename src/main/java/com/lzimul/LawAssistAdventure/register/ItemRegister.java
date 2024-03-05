@@ -30,7 +30,8 @@ public class ItemRegister {
     public static final DeferredItem<BlockItem> PowerWire = Item.register("power_wire", PowerWire::new);
     public static final DeferredItem<BlockItem> Oven = Item.register("oven", Oven::new);
     public static final DeferredItem<BlockItem> Saucepan = Item.register("saucepan", Saucepan::new);
-    public static final DeferredItem<BlockItem> RubberWood = Item.register("rubber_wood", RubberWood::new);
+    public static final DeferredItem<BlockItem> RubberLog = Item.register("rubber_log", RubberLog::new);
+    public static final DeferredItem<BlockItem> RubberPlanks = Item.register("rubber_planks", RubberPlanks::new);
     public static final DeferredItem<BlockItem> RubberLeaves = Item.register("rubber_leaves", RubberLeaves::new);
     public static final DeferredItem<BlockItem> Cask = Item.register("cask", Cask::new);
     public static final DeferredItem<BlockItem> WoodenFaucet = Item.register("wooden_faucet", WoodenFaucet::new);
@@ -130,7 +131,7 @@ public class ItemRegister {
 //    public static final DeferredItem<BlockItem> PowerWire = createBlockItem("power_wire", BlockRegister.PowerWire);
 //    public static final DeferredItem<BlockItem> Oven = createBlockItem("oven", BlockRegister.Oven);
 //    public static final DeferredItem<BlockItem> Saucepan = createBlockItem("saucepan", BlockRegister.Saucepan);
-//    public static final DeferredItem<BlockItem> RubberWood = createBlockItem("rubber_wood", BlockRegister.RubberWood);
+//    public static final DeferredItem<BlockItem> RubberLog = createBlockItem("rubber_wood", BlockRegister.RubberLog);
 //    public static final DeferredItem<BlockItem> RubberLeaves = createBlockItem("rubber_leaves", BlockRegister.RubberLeaves);
 //    public static final DeferredItem<BlockItem> Cask = createBlockItem("cask", BlockRegister.Cask);
 //    public static final DeferredItem<BlockItem> WoodenFaucet = createBlockItem("wooden_faucet", BlockRegister.WoodenFaucet);

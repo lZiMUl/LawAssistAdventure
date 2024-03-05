@@ -29,7 +29,8 @@ public class BlockRegister {
     public static final DeferredBlock<Block> PowerWire = registerBlock("power_wire", PowerWire::new);
     public static final DeferredBlock<Block> Oven = registerBlock("oven", Oven::new);
     public static final DeferredBlock<Block> Saucepan = registerBlock("saucepan", Saucepan::new);
-    public static final DeferredBlock<Block> RubberWood = registerBlock("rubber_wood", RubberWood::new);
+    public static final DeferredBlock<Block> RubberLog = registerBlock("rubber_log", RubberLog::new);
+    public static final DeferredBlock<Block> RubberPlanks = registerBlock("rubber_planks", RubberPlanks::new);
     public static final DeferredBlock<Block> RubberLeaves = registerBlock("rubber_leaves", RubberLeaves::new);
     public static final DeferredBlock<Block> Cask = registerBlock("cask", Cask::new);
     public static final DeferredBlock<Block> WoodenFaucet = registerBlock("wooden_faucet", WoodenFaucet::new);

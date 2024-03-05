@@ -1,45 +1,46 @@
 {
-  "temperature": 0.8,
-  "downfall": 0.4,
-  "has_precipitation": false,
-  "creature_spawn_probability": 1,
+  "temperature": 0.5,
+  "downfall": 0.2,
+  "has_precipitation": true,
   "effects": {
-    "sky_color": 15463394,
+    "sky_color": 7907327,
     "fog_color": 12638463,
     "water_color": 4159204,
     "water_fog_color": 329011
   },
-  "spawners": {},
-  "spawn_costs": {
-    "minecraft:pig": {
-      "energy_budget": 0.12,
-      "charge": 1
-    },
-    "minecraft:cow": {
-      "energy_budget": 0.12,
-      "charge": 1
-    },
-    "minecraft:sheep": {
-      "energy_budget": 0.12,
-      "charge": 1
-    },
-    "minecraft:chicken": {
-      "energy_budget": 0.12,
-      "charge": 1
-    },
-    "minecraft:horse": {
-      "energy_budget": 0.12,
-      "charge": 1
-    },
-    "minecraft:bat": {
-      "energy_budget": 0.12,
-      "charge": 1
-    },
-    "minecraft:wolf": {
-      "energy_budget": 0.12,
-      "charge": 1
-    }
+  "spawners": {
+    "creature": [
+      {
+        "type": "minecraft:zombie",
+        "weight": 20,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:skeleton",
+        "weight": 15,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "minecraft:spider",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "minecraft:bat",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ]
   },
+  "spawn_costs": {},
   "carvers": {},
-  "features": []
+  "features": [
+    [
+      "law_assist_adventure:tree"
+    ]
+  ]
 }

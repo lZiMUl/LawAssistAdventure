@@ -1,6 +1,7 @@
 package com.lzimul.LawAssistAdventure.item;
 
 import com.lzimul.LawAssistAdventure.dimension.Dust;
+import com.lzimul.LawAssistAdventure.dimension.FinalWing;
 import com.lzimul.LawAssistAdventure.register.DimensionRegister;
 import com.lzimul.LawAssistAdventure.register.MenuRegister;
 import net.minecraft.core.BlockPos;
@@ -34,9 +35,9 @@ public class Teleporter extends Item implements MenuProvider {
             ResourceKey<?>[] dimension = {
 //                    DimensionRegister.TheNether,
 //                    DimensionRegister.TheEnd,
-                    DimensionRegister.Dust,
+//                    DimensionRegister.Dust,
 //                    DimensionRegister.FallIntoTheVoid,
-//                    DimensionRegister.FinalWing,
+                    DimensionRegister.FinalWing,
 //                    DimensionRegister.RemnantDawn,
 //                    DimensionRegister.Staring
             };
@@ -77,7 +78,7 @@ public class Teleporter extends Item implements MenuProvider {
     private void teleportToWorld(ServerPlayer player, ResourceKey<Level> dimension, BlockPos pos) {
         ServerLevel world = Objects.requireNonNull(player.getServer()).getLevel(dimension);
         if (world != null) {
-            player.changeDimension(world, new Dust(pos));
+            player.changeDimension(world, new FinalWing(pos));
         } else {
             player.displayClientMessage(Component.literal("the world not found."), true);
         }

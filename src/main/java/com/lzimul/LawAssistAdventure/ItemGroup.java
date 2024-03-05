@@ -35,7 +35,8 @@ public class ItemGroup {
                 output.accept(ItemRegister.PowerWire.get());
                 output.accept(ItemRegister.Oven.get());
                 output.accept(ItemRegister.Saucepan.get());
-                output.accept(ItemRegister.RubberWood.get());
+                output.accept(ItemRegister.RubberLog.get());
+                output.accept(ItemRegister.RubberPlanks.get());
                 output.accept(ItemRegister.RubberLeaves.get());
                 output.accept(ItemRegister.Cask.get());
                 output.accept(ItemRegister.WoodenFaucet.get());
