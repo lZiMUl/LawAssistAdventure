@@ -30,3 +30,5 @@
 /effect give Dev minecraft:hunger 10 20
 /difficulty hard
 /effect give Dev minecraft:hunger 10 20
+/give Dev teleporter
+/give Dev law_assist_adventure:teleporter

@@ -1,7 +1,7 @@
 package com.lzimul.LawAssistAdventure.block;
 
 import com.lzimul.LawAssistAdventure.block.entity.CraftingTableEntity;
-import com.lzimul.LawAssistAdventure.occupation.Occupation;
+import com.lzimul.LawAssistAdventure.Occupation;
 import com.lzimul.LawAssistAdventure.register.MenuRegister;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
