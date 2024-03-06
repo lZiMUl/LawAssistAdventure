@@ -2,9 +2,11 @@ package com.lzimul.LawAssistAdventure.block;
 
 import com.lzimul.LawAssistAdventure.block.entity.CraftingTableEntity;
 import com.lzimul.LawAssistAdventure.Occupation;
+import com.lzimul.LawAssistAdventure.menu.block.CraftingTableMenu;
 import com.lzimul.LawAssistAdventure.register.MenuRegister;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -46,7 +48,7 @@ public class CraftingTable extends BaseEntityBlock implements EntityBlock, MenuP
         if (!level.isClientSide && player.isAlive()) {
             BlockEntity entity = level.getBlockEntity(blockPos);
             if (entity instanceof CraftingTableEntity) {
-                if (Occupation.isOccupation("FinalWing")) {
+                if (Occupation.isOccupation("final_wing")) {
                     player.openMenu(this);
                 } else {
                     player.sendSystemMessage(Component.literal("当前职业无法使用！"));
@@ -69,17 +71,7 @@ public class CraftingTable extends BaseEntityBlock implements EntityBlock, MenuP
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int id, @NotNull Inventory inventory, @NotNull Player player) {
-        return new AbstractContainerMenu(MenuRegister.CraftingTableMenu.get(), id) {
-            @Override
-            public @NotNull ItemStack quickMoveStack(@NotNull Player p_38941_, int p_38942_) {
-                return new ItemStack(CraftingTable.this);
-            }
-
-            @Override
-            public boolean stillValid(@NotNull Player p_38874_) {
-                return true;
-            }
-        };
+        return new CraftingTableMenu(id, inventory, player);
     }
     @Nullable
     @Override

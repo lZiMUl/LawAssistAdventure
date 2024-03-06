@@ -60,11 +60,11 @@
   "occupation.law_assist_adventure.no_occupation": "%s [No Occupation]",
 
   "item.law_assist_adventure.dust": "Dust (right-click To Switch Occupation)",
-  "item.law_assist_adventure.fall_into_the_void": "Void (right-click To Switch To This Occupation)",
+  "item.law_assist_adventure.fall_into_the_void": "Fall Into The Void (right-click To Switch To This Occupation)",
   "item.law_assist_adventure.final_wing": "Last Wing (right-click To Switch Occupation)",
   "item.law_assist_adventure.remnant_dawn": "Remnant Dawn (right-click To Switch Occupation)",
-  "item.law_assist_adventure.staring": "Gaze (right-click To Switch To This Occupation)",
-  "item.law_assist_adventure.no_occupation": "No Class (right-click To Switch To That Occupation)",
+  "item.law_assist_adventure.staring": "Staring (right-click To Switch To This Occupation)",
+  "item.law_assist_adventure.no_occupation": "No Occupation (right-click To Switch To That Occupation)",
 
   "item.law_assist_adventure.extreme_danger_explorer_helm": "Extreme Danger Explorer Helmet",
   "item.law_assist_adventure.extreme_danger_explorer_breastplate": "Extreme Danger Explorer Breastplate",

@@ -13,6 +13,11 @@ public class WasherMenu extends AbstractContainerMenu {
         super(MenuRegister.WasherMenu.get(), id);
     }
 
+    public WasherMenu(int id, Inventory inventory, Player player) {
+
+        super(MenuRegister.WasherMenu.get(), id);
+    }
+
     @Override
     public @NotNull ItemStack quickMoveStack(@NotNull Player p_38941_, int p_38942_) {
         return ItemStack.EMPTY;

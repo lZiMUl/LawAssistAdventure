@@ -1,6 +1,7 @@
 package com.lzimul.LawAssistAdventure.block;
 
 import com.lzimul.LawAssistAdventure.block.entity.FluidFuelGeneratorEntity;
+import com.lzimul.LawAssistAdventure.menu.block.CraftingTableMenu;
 import com.lzimul.LawAssistAdventure.register.MenuRegister;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
@@ -55,17 +56,7 @@ public class FluidFuelGenerator extends BaseEntityBlock implements EntityBlock, 
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int id, @NotNull Inventory inventory, @NotNull Player player) {
-        return new AbstractContainerMenu(MenuRegister.FluidFuelGeneratorMenu.get(), id) {
-            @Override
-            public @NotNull ItemStack quickMoveStack(@NotNull Player p_38941_, int p_38942_) {
-                return new ItemStack(FluidFuelGenerator.this);
-            }
-
-            @Override
-            public boolean stillValid(@NotNull Player p_38874_) {
-                return true;
-            }
-        };
+        return new CraftingTableMenu(id, inventory, player);
     }
 
     @Nullable

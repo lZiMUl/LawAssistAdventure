@@ -1,6 +1,7 @@
 package com.lzimul.LawAssistAdventure.block;
 
 import com.lzimul.LawAssistAdventure.block.entity.WasherEntity;
+import com.lzimul.LawAssistAdventure.menu.block.WasherMenu;
 import com.lzimul.LawAssistAdventure.register.MenuRegister;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
@@ -56,17 +57,7 @@ public class Washer extends BaseEntityBlock implements EntityBlock, MenuProvider
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int id, @NotNull Inventory inventory, @NotNull Player player) {
-        return new AbstractContainerMenu(MenuRegister.WasherMenu.get(), id) {
-            @Override
-            public @NotNull ItemStack quickMoveStack(@NotNull Player p_38941_, int p_38942_) {
-                return new ItemStack(Washer.this);
-            }
-
-            @Override
-            public boolean stillValid(@NotNull Player p_38874_) {
-                return true;
-            }
-        };
+        return new WasherMenu(id, inventory, player);
     }
 
     @Nullable

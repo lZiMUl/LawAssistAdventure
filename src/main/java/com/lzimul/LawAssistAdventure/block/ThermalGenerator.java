@@ -1,6 +1,7 @@
 package com.lzimul.LawAssistAdventure.block;
 
 import com.lzimul.LawAssistAdventure.block.entity.ThermalGeneratorEntity;
+import com.lzimul.LawAssistAdventure.menu.block.ThermalGeneratorMenu;
 import com.lzimul.LawAssistAdventure.register.MenuRegister;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
@@ -54,18 +55,8 @@ public class ThermalGenerator extends BaseEntityBlock implements EntityBlock, Me
 
     @Nullable
     @Override
-    public AbstractContainerMenu createMenu(int id, @NotNull Inventory p_39955_, @NotNull Player p_39956_) {
-        return new AbstractContainerMenu(MenuRegister.ThermalGeneratorMenu.get(), id) {
-            @Override
-            public @NotNull ItemStack quickMoveStack(@NotNull Player p_38941_, int p_38942_) {
-                return new ItemStack(ThermalGenerator.this);
-            }
-
-            @Override
-            public boolean stillValid(@NotNull Player p_38874_) {
-                return true;
-            }
-        };
+    public AbstractContainerMenu createMenu(int id, @NotNull Inventory inventory, @NotNull Player player) {
+        return new ThermalGeneratorMenu(id, inventory, player);
     }
 
     @Nullable

@@ -13,6 +13,10 @@ public class FluidFuelGeneratorMenu extends AbstractContainerMenu {
         super(MenuRegister.FluidFuelGeneratorMenu.get(), id);
     }
 
+    public FluidFuelGeneratorMenu(int id, Inventory inventory, Player player) {
+        super(MenuRegister.FluidFuelGeneratorMenu.get(), id);
+    }
+
     @Override
     public @NotNull ItemStack quickMoveStack(@NotNull Player player, int p_38942_) {
         return ItemStack.EMPTY;

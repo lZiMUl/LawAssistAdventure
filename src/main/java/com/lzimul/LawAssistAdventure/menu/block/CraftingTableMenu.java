@@ -12,6 +12,9 @@ public class CraftingTableMenu extends AbstractContainerMenu {
     public CraftingTableMenu(int id, Inventory inventory, FriendlyByteBuf friendlyByteBuf) {
         super(MenuRegister.CraftingTableMenu.get(), id);
     }
+    public CraftingTableMenu(int id, Inventory inventory, Player player) {
+        super(MenuRegister.CraftingTableMenu.get(), id);
+    }
 
     @Override
     public @NotNull ItemStack quickMoveStack(@NotNull Player p_38941_, int p_38942_) {
