@@ -3,11 +3,13 @@
   "itemGroup.lzimul.law_assist_adventure.items": "法则辅助与冒险(物品类)",
   "itemGroup.lzimul.law_assist_adventure.armors": "法则辅助与冒险(装备类)",
   "itemGroup.lzimul.law_assist_adventure.experiences": "法则辅助与冒险(经验类)",
+
   "law_assist_adventure.dust": "已传送到 [败尘]",
   "law_assist_adventure.fall_into_the_void": "已传送到 [落虚]",
   "law_assist_adventure.final_wing": "已传送到 [末翼]",
   "law_assist_adventure.remnant_dawn": "已传送到 [残晓]",
   "law_assist_adventure.staring": "已传送到 [凝望]",
+
   "block.law_assist_adventure.crafting_table": "制作台",
   "block.law_assist_adventure.thermal_generator": "火力发电机",
   "block.law_assist_adventure.solar_panel_generator": "太阳能板发电机",
@@ -32,6 +34,7 @@
   "block.law_assist_adventure.wooden_faucet": "木龙头",
   "block.law_assist_adventure.copper_ore": "铜矿",
   "block.law_assist_adventure.tin_ore": "锡矿",
+
   "item.law_assist_adventure.copper_ingot": "铜锭",
   "item.law_assist_adventure.steel_ingot": "钢锭",
   "item.law_assist_adventure.tin_ingot": "锡锭",
@@ -48,11 +51,13 @@
   "item.law_assist_adventure.circuit_boards_3": "高级电路板",
   "item.law_assist_adventure.circuit_boards_base": "基础电路板基座",
   "item.law_assist_adventure.teleporter": "传送器",
+
   "occupation.law_assist_adventure.dust": "%s [败尘]",
   "occupation.law_assist_adventure.fall_into_the_void": "%s [落虚]",
   "occupation.law_assist_adventure.final_wing": "%s [末翼]",
   "occupation.law_assist_adventure.remnant_dawn": "%s [残晓]",
   "occupation.law_assist_adventure.staring": "%s [凝望]",
+
   "occupation.law_assist_adventure.no_occupation": "%s [无职业]",
   "item.law_assist_adventure.dust": "败尘 (右键切换该职业)",
   "item.law_assist_adventure.fall_into_the_void": "落虚 (右键切换该职业)",
@@ -60,6 +65,7 @@
   "item.law_assist_adventure.remnant_dawn": "残晓 (右键切换该职业)",
   "item.law_assist_adventure.staring": "凝望 (右键切换该职业)",
   "item.law_assist_adventure.no_occupation": "无职业 (右键切换该职业)",
+
   "item.law_assist_adventure.extreme_danger_explorer_helm": "极端危险探索者头盔",
   "item.law_assist_adventure.extreme_danger_explorer_breastplate": "极端危险探索者胸甲",
   "item.law_assist_adventure.extreme_danger_explorer_pants": "极端危险探索者裤子",
@@ -70,6 +76,7 @@
   "item.law_assist_adventure.glock19": "格洛克 19",
   "item.law_assist_adventure.bullet": "子弹(格洛克 19)",
   "item.law_assist_adventure.bullet_box": "子弹盒(格洛克19)",
+
   "item.law_assist_adventure.researcher_handbook": "研究员手册",
   "item.law_assist_adventure.researcher_note": "研究员笔记",
   "item.law_assist_adventure.researcher_note_tampered": "研究员笔记篡改",
