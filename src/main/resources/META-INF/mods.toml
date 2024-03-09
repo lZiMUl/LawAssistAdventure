@@ -23,7 +23,7 @@ displayName = "${mod_name}" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://docs.neoforge.net/docs/misc/updatechecker/
 updateJSONURL = "https://mods.minecraft.lzimul.top/LawAssistAdventure/update.json" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
-displayURL = "https://lzimul.top" #optional
+displayURL = "https://mods.minecraft.lzimul.top/LawAssistAdventure/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile = "pack.png" #optional
 # A text field displayed in the mod UI

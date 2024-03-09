@@ -26,6 +26,12 @@ public class CraftingTableScreen extends AbstractContainerScreen<CraftingTableMe
         guiGraphics.blit(getBlockResourceLocation("crafting_table"), x, y, 0, 0, imageWidth, imageHeight);
     }
 
+    public void renderProgressArrow(@NotNull GuiGraphics guiGraphics, int x, int y) {
+//        if (super.menu.isCrafting()) {
+        guiGraphics.blit(getBlockResourceLocation("arrow"), x, y, 0, 0, 16, 16);
+//        }
+    }
+
     @Override
     public void render(@NotNull GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
         super.renderBackground(pGuiGraphics, pMouseX, pMouseY, pPartialTick);

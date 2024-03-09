@@ -38,11 +38,11 @@ public class Occupation<T> {
         return Objects.equals(Occupation.occupation, occupation);
     }
 
-    private static MutableComponent showMessage(String l) {
-        if (!Occupation.occupation.equals(l)) {
-            Occupation.occupation = l;
-            return Component.translatable("occupation.law_assist_adventure." + l, "[职业已更改]");
+    private static MutableComponent showMessage(String occupation) {
+        if (!Occupation.occupation.equals(occupation)) {
+            Occupation.occupation = occupation;
+            return Component.translatable("occupation.law_assist_adventure." + occupation, "[职业已更改]");
         }
-        return Component.translatable("occupation.law_assist_adventure." + l, "[职业未更改]");
+        return Component.translatable("occupation.law_assist_adventure." + occupation, "[职业未更改]");
     }
 }

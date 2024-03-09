@@ -33,3 +33,6 @@
 /give Dev teleporter
 /give Dev law_assist_adventure:teleporter
 /give Dev minecraft:acacia_planks
+/time set day
+/difficulty peaceful
+/time set day
