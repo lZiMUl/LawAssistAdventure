@@ -34,7 +34,6 @@ public class ThermalGenerator extends BaseEntityBlock implements EntityBlock, Me
 
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState blockState, @NotNull Level level, @NotNull BlockPos blockPos, @NotNull Player player, @NotNull InteractionHand interactionHand, @NotNull BlockHitResult blockHitResult) {
-        // TODO 待开发点击火力发电机显示界面
         if (!level.isClientSide && player.isAlive()) {
             BlockEntity entity = level.getBlockEntity(blockPos);
             if (entity instanceof ThermalGeneratorEntity) {

@@ -35,7 +35,6 @@ public class Washer extends BaseEntityBlock implements EntityBlock, MenuProvider
 
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState blockState, @NotNull Level level, @NotNull BlockPos blockPos, @NotNull Player player, @NotNull InteractionHand interactionHand, @NotNull BlockHitResult blockHitResult) {
-        // TODO 待开发点击洗衣机显示界面
         if (!level.isClientSide && player.isAlive()) {
             BlockEntity entity = level.getBlockEntity(blockPos);
             if (entity instanceof WasherEntity) {
