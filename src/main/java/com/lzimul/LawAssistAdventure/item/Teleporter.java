@@ -11,6 +11,8 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.MenuProvider;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -31,7 +33,7 @@ public class Teleporter extends Item implements MenuProvider {
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
         if (!level.isClientSide && player.isAlive()) {
-            ResourceKey<?>[] dimension = {
+            ResourceKey<Level>[] dimension = new ResourceKey[] {
 //                    DimensionRegister.TheNether,
 //                    DimensionRegister.TheEnd,
 //                    DimensionRegister.Dust,
@@ -41,7 +43,7 @@ public class Teleporter extends Item implements MenuProvider {
 //                    DimensionRegister.Staring
             };
             if (player.level().dimension() == DimensionRegister.Overworld) {
-                ResourceKey<Level> world = this.getWorld((ResourceKey<Level>[]) dimension);
+                ResourceKey<Level> world = this.getWorld(dimension);
                 String worldId = world.location().toLanguageKey();
                 if (worldId.contains(MODID)) {
                     player.sendSystemMessage(Component.translatable(worldId));
@@ -64,7 +66,7 @@ public class Teleporter extends Item implements MenuProvider {
 //            if (!source.equals(new ItemStack(ItemRegister.Parachute.get()))) {
 //                player.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ItemRegister.Parachute.get(), 1));
 //            }
-//            player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 1, 60, true, true));
+            player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 1, 60, true, true));
         }
         return InteractionResultHolder.sidedSuccess(this.getDefaultInstance(), level.isClientSide);
     }
