@@ -1,1 +1,69 @@
-{"stats":{"minecraft:used":{"minecraft:apple":1,"minecraft:flint_and_steel":1,"minecraft:iron_pickaxe":2,"law_assist_adventure:power_storage_box_1":5,"minecraft:iron_chestplate":1,"law_assist_adventure:washer":8,"law_assist_adventure:solar_panel_generator":11,"law_assist_adventure:crafting_table":22,"law_assist_adventure:rubber_log":9,"law_assist_adventure:knife":3,"law_assist_adventure:saucepan":4,"minecraft:crafting_table":1,"law_assist_adventure:fluid_fuel_generator":12,"law_assist_adventure:rubber_leaves":136,"minecraft:white_bed":1,"minecraft:acacia_planks":6,"law_assist_adventure:thermal_generator":8,"law_assist_adventure:rubber_planks":40},"minecraft:custom":{"minecraft:time_since_rest":45459,"minecraft:sprint_one_cm":30642,"minecraft:damage_taken":8740,"minecraft:walk_one_cm":114284,"minecraft:damage_dealt":50,"minecraft:interact_with_crafting_table":6,"minecraft:fly_one_cm":118676,"minecraft:open_chest":1,"minecraft:crouch_one_cm":7677,"minecraft:play_time":61401,"minecraft:deaths":7,"minecraft:sneak_time":2085,"minecraft:jump":519,"minecraft:leave_game":16,"minecraft:time_since_death":45411,"minecraft:sleep_in_bed":1,"minecraft:total_world_time":70096,"minecraft:fall_one_cm":101814},"minecraft:picked_up":{"minecraft:white_bed":2,"law_assist_adventure:rubber_log":103,"minecraft:dirt":2,"law_assist_adventure:teleporter":4,"law_assist_adventure:rubber_planks":6,"law_assist_adventure:rubber_leaves":372},"minecraft:crafted":{"law_assist_adventure:rubber_planks":260},"minecraft:killed_by":{"minecraft:skeleton":1},"minecraft:broken":{"minecraft:shears":1},"minecraft:mined":{"law_assist_adventure:rubber_log":117,"law_assist_adventure:rubber_planks":6,"minecraft:white_bed":2,"minecraft:grass_block":2,"law_assist_adventure:rubber_leaves":452}},"DataVersion":3700}
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:apple": 1,
+      "minecraft:flint_and_steel": 1,
+      "minecraft:iron_pickaxe": 2,
+      "law_assist_adventure:power_storage_box_1": 5,
+      "minecraft:iron_chestplate": 1,
+      "law_assist_adventure:washer": 8,
+      "law_assist_adventure:solar_panel_generator": 11,
+      "law_assist_adventure:crafting_table": 22,
+      "law_assist_adventure:rubber_log": 9,
+      "law_assist_adventure:knife": 3,
+      "law_assist_adventure:saucepan": 4,
+      "minecraft:crafting_table": 1,
+      "law_assist_adventure:fluid_fuel_generator": 12,
+      "law_assist_adventure:rubber_leaves": 136,
+      "minecraft:white_bed": 1,
+      "minecraft:acacia_planks": 6,
+      "law_assist_adventure:thermal_generator": 8,
+      "law_assist_adventure:rubber_planks": 40
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 45459,
+      "minecraft:sprint_one_cm": 30642,
+      "minecraft:damage_taken": 8740,
+      "minecraft:walk_one_cm": 114284,
+      "minecraft:damage_dealt": 50,
+      "minecraft:interact_with_crafting_table": 6,
+      "minecraft:fly_one_cm": 118676,
+      "minecraft:open_chest": 1,
+      "minecraft:crouch_one_cm": 7677,
+      "minecraft:play_time": 61401,
+      "minecraft:deaths": 7,
+      "minecraft:sneak_time": 2085,
+      "minecraft:jump": 519,
+      "minecraft:leave_game": 16,
+      "minecraft:time_since_death": 45411,
+      "minecraft:sleep_in_bed": 1,
+      "minecraft:total_world_time": 70096,
+      "minecraft:fall_one_cm": 101814
+    },
+    "minecraft:picked_up": {
+      "minecraft:white_bed": 2,
+      "law_assist_adventure:rubber_log": 103,
+      "minecraft:dirt": 2,
+      "law_assist_adventure:teleporter": 4,
+      "law_assist_adventure:rubber_planks": 6,
+      "law_assist_adventure:rubber_leaves": 372
+    },
+    "minecraft:crafted": {
+      "law_assist_adventure:rubber_planks": 260
+    },
+    "minecraft:killed_by": {
+      "minecraft:skeleton": 1
+    },
+    "minecraft:broken": {
+      "minecraft:shears": 1
+    },
+    "minecraft:mined": {
+      "law_assist_adventure:rubber_log": 117,
+      "law_assist_adventure:rubber_planks": 6,
+      "minecraft:white_bed": 2,
+      "minecraft:grass_block": 2,
+      "law_assist_adventure:rubber_leaves": 452
+    }
+  },
+  "DataVersion": 3700
+}
