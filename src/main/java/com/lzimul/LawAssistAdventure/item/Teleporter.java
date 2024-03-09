@@ -1,7 +1,6 @@
 package com.lzimul.LawAssistAdventure.item;
 
 import com.lzimul.LawAssistAdventure.dimension.FinalWing;
-import com.lzimul.LawAssistAdventure.register.ArmorRegister;
 import com.lzimul.LawAssistAdventure.register.DimensionRegister;
 import com.lzimul.LawAssistAdventure.register.ItemRegister;
 import com.lzimul.LawAssistAdventure.register.MenuRegister;
@@ -36,7 +35,7 @@ public class Teleporter extends Item implements MenuProvider {
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
         if (!level.isClientSide && player.isAlive()) {
-            ResourceKey<Level>[] dimension = new ResourceKey[] {
+            ResourceKey<Level>[] dimension = new ResourceKey[]{
 //                    DimensionRegister.TheNether,
 //                    DimensionRegister.TheEnd,
 //                    DimensionRegister.Dust,

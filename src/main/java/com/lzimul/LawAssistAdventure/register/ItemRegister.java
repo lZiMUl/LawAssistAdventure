@@ -60,7 +60,7 @@ public class ItemRegister {
     public static final DeferredItem<ArmorItem> ExtremeDangerExplorerPants = Item.register("extreme_danger_explorer_pants", () -> new ArmorItem(ArmorRegister.ExtremeDangerExplorerPants, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final DeferredItem<ArmorItem> ExtremeDangerExplorerShoes = Item.register("extreme_danger_explorer_shoes", () -> new ArmorItem(ArmorRegister.ExtremeDangerExplorerShoes, ArmorItem.Type.BOOTS, new Item.Properties()));
     public static final DeferredItem<ArmorItem> DefendTheBall = Item.register("defend_the_ball", () -> new ArmorItem(ArmorRegister.DefendTheBall, ArmorItem.Type.HELMET, new Item.Properties()));
-    public static final DeferredItem<ArmorItem> Parachute = Item.register("parachute",() -> new ArmorItem(ArmorRegister.Parachute, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final DeferredItem<ArmorItem> Parachute = Item.register("parachute", () -> new ArmorItem(ArmorRegister.Parachute, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
     public static final DeferredItem<Item> Hatchet = Item.register("hatchet", Hatchet::new);
     public static final DeferredItem<Item> Glock19 = Item.register("glock19", Glock19::new);

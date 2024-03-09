@@ -1,7 +1,6 @@
 package com.lzimul.LawAssistAdventure.register;
 
 import com.lzimul.LawAssistAdventure.Armor;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.crafting.Ingredient;
 
 public class ArmorRegister {
