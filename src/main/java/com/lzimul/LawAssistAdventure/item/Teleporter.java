@@ -4,7 +4,9 @@ import com.lzimul.LawAssistAdventure.dimension.FinalWing;
 import com.lzimul.LawAssistAdventure.register.DimensionRegister;
 import com.lzimul.LawAssistAdventure.register.ItemRegister;
 import com.lzimul.LawAssistAdventure.register.MenuRegister;
+import com.lzimul.LawAssistAdventure.register.SoundRegister;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
@@ -20,6 +22,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
@@ -55,23 +58,43 @@ public class Teleporter extends Item implements MenuProvider {
                 teleportToWorld((ServerPlayer) player, DimensionRegister.Overworld, player.getOnPos());
             }
 //            player.openMenu(this);
-            ItemStack source = player.getItemBySlot(EquipmentSlot.CHEST);
-            if (!source.isEmpty()) {
-                for (ItemStack item : player.getInventory().items) {
-                    if (item.isEmpty()) {
-                        player.setItemSlot(EquipmentSlot.CHEST, new ItemStack(source.getItem(), 1));
-                        break;
+            ItemStack slot = player.getItemBySlot(EquipmentSlot.CHEST);
+            ItemStack source = new ItemStack(slot.getItem());
+            ItemStack target = new ItemStack(ItemRegister.Parachute.get());
+            Inventory playerInventory = player.getInventory();
+            if (!slot.isEmpty()) {
+                if (!source.getItem().equals(target.getItem())) {
+                    if (hasEmptySlot(playerInventory)) {
+                        for (ItemStack item : playerInventory.items) {
+                            if (item.isEmpty()) {
+                                playerInventory.setItem(playerInventory.items.indexOf(item), source);
+                                player.setItemSlot(EquipmentSlot.CHEST, target);
+                                break;
+                            }
+                        }
+                    } else {
+                        player.drop(source, true);
+                        player.setItemSlot(EquipmentSlot.CHEST, target);
                     }
                 }
-                player.drop(source, true);
+            } else {
+                player.setItemSlot(EquipmentSlot.CHEST, target);
+                player.playSound(SoundRegister.Demo.get());
             }
-            if (!source.equals(new ItemStack(ItemRegister.Parachute.get()))) {
-                player.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ItemRegister.Parachute.get(), 1));
-            }
-            player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 1, 60, true, true));
+            player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 240, 1, true, true));
         }
         return InteractionResultHolder.sidedSuccess(this.getDefaultInstance(), level.isClientSide);
     }
+
+    public boolean hasEmptySlot(Inventory inventory) {
+        for (ItemStack itemStack : inventory.items) {
+            if (itemStack.isEmpty()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     private ResourceKey<Level> getWorld(ResourceKey<Level>[] dimensions) {
         double random = Math.random() * dimensions.length;

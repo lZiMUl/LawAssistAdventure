@@ -36,3 +36,6 @@
 /time set day
 /difficulty peaceful
 /time set day
+/playsound law_assist_adventure:sound.demo
+/playsound law_assist_adventure:sound.demo player Dev
+/playsound law_assist_adventure:sound.demo player Dev ~ ~ ~

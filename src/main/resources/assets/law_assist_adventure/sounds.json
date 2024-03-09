@@ -1,17 +1,17 @@
 {
   "sound.demo": {
     "category": "voice",
-    "subtitle": "subtitle.lzimul.sound.demo",
+    "subtitle": "subtitle.law_assist_adventure.sound.demo",
     "sounds": [
       {
-        "name": "lzimul:demo1",
+        "name": "law_assist_adventure:demo1",
         "volume": 1.0,
         "pitch": 1.0,
         "stream": true,
         "preload": true
       },
       {
-        "name": "lzimul:demo2",
+        "name": "law_assist_adventure:demo2",
         "volume": 1.0,
         "pitch": 1.0,
         "stream": true,
