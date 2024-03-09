@@ -3,6 +3,7 @@ package com.lzimul.LawAssistAdventure.item;
 import com.lzimul.LawAssistAdventure.dimension.FinalWing;
 import com.lzimul.LawAssistAdventure.register.ArmorRegister;
 import com.lzimul.LawAssistAdventure.register.DimensionRegister;
+import com.lzimul.LawAssistAdventure.register.ItemRegister;
 import com.lzimul.LawAssistAdventure.register.MenuRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -65,8 +66,8 @@ public class Teleporter extends Item implements MenuProvider {
                 }
                 player.drop(source, true);
             }
-            if (!source.equals(new ItemStack(ArmorRegister.Parachute))) {
-                player.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ArmorRegister.Parachute, 1));
+            if (!source.equals(new ItemStack(ItemRegister.Parachute.get()))) {
+                player.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ItemRegister.Parachute.get(), 1));
             }
             player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 1, 60, true, true));
         }
