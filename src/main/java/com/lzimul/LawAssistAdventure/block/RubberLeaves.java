@@ -12,6 +12,7 @@ public class RubberLeaves extends Block {
                 .strength(1.0f)
         );
     }
+
     @Override
     public @NotNull SoundType getSoundType(@NotNull BlockState blockState) {
         return SoundType.AZALEA_LEAVES;

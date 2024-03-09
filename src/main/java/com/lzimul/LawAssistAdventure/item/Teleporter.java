@@ -1,6 +1,5 @@
 package com.lzimul.LawAssistAdventure.item;
 
-import com.lzimul.LawAssistAdventure.dimension.Dust;
 import com.lzimul.LawAssistAdventure.dimension.FinalWing;
 import com.lzimul.LawAssistAdventure.register.DimensionRegister;
 import com.lzimul.LawAssistAdventure.register.MenuRegister;

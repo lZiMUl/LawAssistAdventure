@@ -16,6 +16,7 @@ public class ThermalGeneratorMenu extends AbstractContainerMenu {
     public ThermalGeneratorMenu(int id, Inventory inventory, Player player) {
         super(MenuRegister.ThermalGeneratorMenu.get(), id);
     }
+
     @Override
     public @NotNull ItemStack quickMoveStack(@NotNull Player p_38941_, int p_38942_) {
         return ItemStack.EMPTY;

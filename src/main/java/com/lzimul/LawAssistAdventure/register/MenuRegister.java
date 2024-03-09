@@ -15,6 +15,7 @@ import static com.lzimul.LawAssistAdventure.Config.MODID;
 
 public class MenuRegister {
     public static final DeferredRegister<MenuType<?>> Menu = DeferredRegister.create(Registries.MENU, MODID);
+
     private static <T extends AbstractContainerMenu> DeferredHolder<MenuType<?>, MenuType<T>> registerMenu(String name, IContainerFactory<T> factory) {
         return Menu.register(name, () -> new MenuType<>(factory, FeatureFlags.DEFAULT_FLAGS));
     }

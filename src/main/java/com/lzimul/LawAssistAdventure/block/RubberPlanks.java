@@ -12,6 +12,7 @@ public class RubberPlanks extends Block {
                 .strength(3.0f)
         );
     }
+
     @Override
     public @NotNull SoundType getSoundType(@NotNull BlockState blockState) {
         return SoundType.WOOD;

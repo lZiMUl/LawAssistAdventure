@@ -72,6 +72,7 @@ public class CraftingTable extends BaseEntityBlock implements EntityBlock, MenuP
     public AbstractContainerMenu createMenu(int id, @NotNull Inventory inventory, @NotNull Player player) {
         return new CraftingTableMenu(id, inventory, player);
     }
+
     @Nullable
     @Override
     public BlockEntity newBlockEntity(@NotNull BlockPos pos, @NotNull BlockState state) {
