@@ -1,6 +1,7 @@
 package com.lzimul.LawAssistAdventure.item;
 
 import com.lzimul.LawAssistAdventure.dimension.FinalWing;
+import com.lzimul.LawAssistAdventure.register.ArmorRegister;
 import com.lzimul.LawAssistAdventure.register.DimensionRegister;
 import com.lzimul.LawAssistAdventure.register.MenuRegister;
 import net.minecraft.core.BlockPos;
@@ -13,6 +14,7 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -53,19 +55,19 @@ public class Teleporter extends Item implements MenuProvider {
                 teleportToWorld((ServerPlayer) player, DimensionRegister.Overworld, player.getOnPos());
             }
 //            player.openMenu(this);
-//            ItemStack source = player.getItemBySlot(EquipmentSlot.HEAD);
-//            if (!source.isEmpty()) {
-//                for (ItemStack item : player.getInventory().items) {
-//                    if (item.isEmpty()) {
-////                        player.setItemSlot(EquipmentSlot.Type.HAND, new ItemStack(source.getItem(), 1));
-//                        break;
-//                    }
-//                }
-////                player.drop(source, true);
-//            }
-//            if (!source.equals(new ItemStack(ItemRegister.Parachute.get()))) {
-//                player.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ItemRegister.Parachute.get(), 1));
-//            }
+            ItemStack source = player.getItemBySlot(EquipmentSlot.CHEST);
+            if (!source.isEmpty()) {
+                for (ItemStack item : player.getInventory().items) {
+                    if (item.isEmpty()) {
+                        player.setItemSlot(EquipmentSlot.CHEST, new ItemStack(source.getItem(), 1));
+                        break;
+                    }
+                }
+                player.drop(source, true);
+            }
+            if (!source.equals(new ItemStack(ArmorRegister.Parachute))) {
+                player.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ArmorRegister.Parachute, 1));
+            }
             player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 1, 60, true, true));
         }
         return InteractionResultHolder.sidedSuccess(this.getDefaultInstance(), level.isClientSide);

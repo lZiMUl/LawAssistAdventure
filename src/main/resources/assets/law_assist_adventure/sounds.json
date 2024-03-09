@@ -1,0 +1,22 @@
+{
+  "sound.demo": {
+    "category": "voice",
+    "subtitle": "subtitle.lzimul.sound.demo",
+    "sounds": [
+      {
+        "name": "lzimul:demo1",
+        "volume": 1.0,
+        "pitch": 1.0,
+        "stream": true,
+        "preload": true
+      },
+      {
+        "name": "lzimul:demo2",
+        "volume": 1.0,
+        "pitch": 1.0,
+        "stream": true,
+        "preload": true
+      }
+    ]
+  }
+}

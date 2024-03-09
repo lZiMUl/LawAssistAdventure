@@ -55,19 +55,18 @@ public class ItemRegister {
     public static final DeferredItem<Item> CircuitBoardsBase = Item.register("circuit_boards_base", CircuitBoardsBase::new);
     public static final DeferredItem<Item> Teleporter = Item.register("teleporter", Teleporter::new);
 
-    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerHelm = Item.register("extreme_danger_explorer_helm", () -> ArmorRegister.ExtremeDangerExplorerHelm);
-    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerBreastplate = Item.register("extreme_danger_explorer_breastplate", () -> ArmorRegister.ExtremeDangerExplorerBreastplate);
-    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerPants = Item.register("extreme_danger_explorer_pants", () -> ArmorRegister.ExtremeDangerExplorerPants);
-    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerShoes = Item.register("extreme_danger_explorer_shoes", () -> ArmorRegister.ExtremeDangerExplorerShoes);
-    public static final DeferredItem<ArmorItem> DefendTheBall = Item.register("defend_the_ball", () -> ArmorRegister.DefendTheBall);
-    public static final DeferredItem<ArmorItem> Parachute = Item.register("parachute", () -> ArmorRegister.Parachute);
+    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerHelm = Item.register("extreme_danger_explorer_helm", () -> new ArmorItem(ArmorRegister.ExtremeDangerExplorerHelm, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerBreastplate = Item.register("extreme_danger_explorer_breastplate", () -> new ArmorItem(ArmorRegister.ExtremeDangerExplorerBreastplate, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerPants = Item.register("extreme_danger_explorer_pants", () -> new ArmorItem(ArmorRegister.ExtremeDangerExplorerPants, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerShoes = Item.register("extreme_danger_explorer_shoes", () -> new ArmorItem(ArmorRegister.ExtremeDangerExplorerShoes, ArmorItem.Type.BOOTS, new Item.Properties()));
+    public static final DeferredItem<ArmorItem> DefendTheBall = Item.register("defend_the_ball", () -> new ArmorItem(ArmorRegister.DefendTheBall, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final DeferredItem<ArmorItem> Parachute = Item.register("parachute",() -> new ArmorItem(ArmorRegister.Parachute, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+
     public static final DeferredItem<Item> Hatchet = Item.register("hatchet", Hatchet::new);
     public static final DeferredItem<Item> Glock19 = Item.register("glock19", Glock19::new);
     public static final DeferredItem<Item> Bullet = Item.register("bullet", Bullet::new);
     public static final DeferredItem<Item> BulletBox = Item.register("bullet_box", BulletBox::new);
-    /*
-     * TODO 测试
-     */
+
     public static final DeferredItem<Item> NoOccupation = Item.register("no_occupation", NoOccupation::new);
     public static final DeferredItem<Item> Dust = Item.register("dust", Dust::new);
     public static final DeferredItem<Item> FallIntoTheVoid = Item.register("fall_into_the_void", FallIntoTheVoid::new);
@@ -84,102 +83,3 @@ public class ItemRegister {
         Item.register(modEventBus);
     }
 }
-
-
-//package com.lzimul.LawAssistAdventure.register;
-//
-////import com.lzimul.LawAssistAdventure.item.*;
-//
-//import net.minecraft.world.item.ArmorItem;
-//import net.minecraft.world.item.BlockItem;
-//import net.minecraft.world.item.Item;
-//import net.minecraft.world.level.block.Block;
-//import net.neoforged.bus.api.IEventBus;
-//import net.neoforged.neoforge.registries.DeferredBlock;
-//import net.neoforged.neoforge.registries.DeferredItem;
-//import net.neoforged.neoforge.registries.DeferredRegister;
-//
-//import static com.lzimul.LawAssistAdventure.Config.MODID;
-//
-//public class ItemRegister {
-//   private static final DeferredRegister.Items Item = DeferredRegister.createItems(MODID);
-//    private static <T extends Item> DeferredItem<T> registerItem(String name, Item item) {
-//        return (DeferredItem<T>) Item.register(name, () -> item);
-//    }
-//
-//    private static DeferredItem<Item> createItem(String name) {
-//        return registerItem(name, new Item(new Item.Properties()));
-//    }
-//    private static  DeferredItem<BlockItem> createBlockItem(String name, DeferredBlock<Block> block) {
-//       return registerItem(name, new BlockItem(block.get(), new Item.Properties()));
-//    }
-//
-//    public static final DeferredItem<BlockItem> CraftingTable = createBlockItem("crafting_table", BlockRegister.CraftingTable);
-//    public static final DeferredItem<BlockItem> ThermalGenerator = createBlockItem("thermal_generators", BlockRegister.ThermalGenerator);
-//    public static final DeferredItem<BlockItem> SolarPanelGenerator = createBlockItem("solar_panel_generator", BlockRegister.SolarPanelGenerator);
-//    public static final DeferredItem<BlockItem> FluidFuelGenerators = createBlockItem("fluid_fuel_generators", BlockRegister.FluidFuelGenerators);
-//    public static final DeferredItem<BlockItem> PowerStorageBox1 = createBlockItem("power_storage_box_1", BlockRegister.PowerStorageBox1);
-//    public static final DeferredItem<BlockItem> PowerStorageBox2 = createBlockItem("power_storage_box_2", BlockRegister.PowerStorageBox2);
-//    public static final DeferredItem<BlockItem> PowerStorageBox3 = createBlockItem("power_storage_box_3", BlockRegister.PowerStorageBox3);
-//    public static final DeferredItem<BlockItem> PowerStorageBox4 = createBlockItem("power_storage_box_4", BlockRegister.PowerStorageBox4);
-//    public static final DeferredItem<BlockItem> PowerStorageBox5 = createBlockItem("power_storage_box_5", BlockRegister.PowerStorageBox5);
-//    public static final DeferredItem<BlockItem> IndustrialSmeltingFurnaces = createBlockItem("industrial_smelting_furnaces", BlockRegister.IndustrialSmeltingFurnaces);
-//    public static final DeferredItem<BlockItem> Washer = createBlockItem("washer", BlockRegister.Washer);
-//    public static final DeferredItem<BlockItem> Mill = createBlockItem("mill", BlockRegister.Mill);
-//    public static final DeferredItem<BlockItem> Rollers = createBlockItem("rollers", BlockRegister.Rollers);
-//    public static final DeferredItem<BlockItem> Knife = createBlockItem("knife", BlockRegister.Knife);
-//    public static final DeferredItem<BlockItem> PowerWire = createBlockItem("power_wire", BlockRegister.PowerWire);
-//    public static final DeferredItem<BlockItem> Oven = createBlockItem("oven", BlockRegister.Oven);
-//    public static final DeferredItem<BlockItem> Saucepan = createBlockItem("saucepan", BlockRegister.Saucepan);
-//    public static final DeferredItem<BlockItem> RubberLog = createBlockItem("rubber_wood", BlockRegister.RubberLog);
-//    public static final DeferredItem<BlockItem> RubberLeaves = createBlockItem("rubber_leaves", BlockRegister.RubberLeaves);
-//    public static final DeferredItem<BlockItem> Cask = createBlockItem("cask", BlockRegister.Cask);
-//    public static final DeferredItem<BlockItem> WoodenFaucet = createBlockItem("wooden_faucet", BlockRegister.WoodenFaucet);
-//    public static final DeferredItem<BlockItem> CopperOre = createBlockItem("copper_ore", BlockRegister.CopperOre);
-//    public static final DeferredItem<BlockItem> TinOre = createBlockItem("tin_ore", BlockRegister.TinOre);
-//
-//    public static final DeferredItem<Item> CopperIngot = createItem("copper_ingot");
-//    public static final DeferredItem<Item> SteelIngot = createItem("steel_ingot");
-//    public static final DeferredItem<Item> TinIngot = createItem("tin_ingot");
-//    public static final DeferredItem<Item> GoldWire = createItem("gold_wire");
-//    public static final DeferredItem<Item> CopperWire = createItem("copper_wire");
-//    public static final DeferredItem<Item> TinWire = createItem("tin_wire");
-//    public static final DeferredItem<Item> IronPlates = createItem("iron_plates");
-//    public static final DeferredItem<Item> GoldPlates = createItem("gold_plates");
-//    public static final DeferredItem<Item> CopperPlates = createItem("copper_plates");
-//    public static final DeferredItem<Item> SteelPlates = createItem("steel_plates");
-//    public static final DeferredItem<Item> TinPlates = createItem("tin_plates");
-//    public static final DeferredItem<Item> CircuitBoards1 = createItem("circuit_boards_1");
-//    public static final DeferredItem<Item> CircuitBoards2 = createItem("circuit_boards_2");
-//    public static final DeferredItem<Item> CircuitBoards3 = createItem("circuit_boards_3");
-//    public static final DeferredItem<Item> CircuitBoardsBase = createItem("circuit_boards_base");
-//    public static final DeferredItem<Item> Teleporter = createItem("teleporter");
-//
-//    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerHelm = registerItem("extreme_danger_explorer_helm", ArmorRegister.ExtremeDangerExplorerHelm);
-//    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerBreastplate = registerItem("extreme_danger_explorer_breastplate", ArmorRegister.ExtremeDangerExplorerBreastplate);
-//    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerPants = registerItem("extreme_danger_explorer_pants", ArmorRegister.ExtremeDangerExplorerPants);
-//    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerShoes = registerItem("extreme_danger_explorer_shoes", ArmorRegister.ExtremeDangerExplorerShoes);
-//    public static final DeferredItem<ArmorItem> DefendTheBall = registerItem("defend_the_ball", ArmorRegister.DefendTheBall);
-//    public static final DeferredItem<ArmorItem> Parachute = registerItem("parachute", ArmorRegister.Parachute);
-//    public static final DeferredItem<Item> Hatchet = createItem("hatchet");
-//    public static final DeferredItem<Item> Glock19 = createItem("glock19");
-//    public static final DeferredItem<Item> Bullet = createItem("bullet");
-//    public static final DeferredItem<Item> BulletBox = createItem("bullet_box");
-//    /*
-//     * TODO 测试
-//     */
-//    public static final DeferredItem<Item> NoOccupation = createItem("no_occupation");
-//    public static final DeferredItem<Item> Dust = createItem("dust");
-//    public static final DeferredItem<Item> FallIntoTheVoid = createItem("fall_into_the_void");
-//    public static final DeferredItem<Item> FinalWing = createItem("final_wing");
-//    public static final DeferredItem<Item> RemnantDawn = createItem("remnant_dawn");
-//    public static final DeferredItem<Item> Staring = createItem("staring");
-//
-//    public static final DeferredItem<Item> ResearcherHandbook = createItem("researcher_handbook");
-//    public static final DeferredItem<Item> ResearcherNote = createItem("researcher_note");
-//    public static final DeferredItem<Item> ResearcherNoteTampered = createItem("researcher_note_tampered");
-//    public static final DeferredItem<Item> ResearcherNoteCorrupted = createItem("researcher_note_corrupted");
-//    public static void register(IEventBus modEventBus) {
-//        Item.register(modEventBus);
-//    }
-//}
