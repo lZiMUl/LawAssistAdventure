@@ -341,12 +341,6 @@
     },
     "done": true
   },
-  "minecraft:adventure/shoot_arrow": {
-    "criteria": {
-      "shot_arrow": "2024-03-09 09:05:10 -0800"
-    },
-    "done": true
-  },
   "minecraft:story/shiny_gear": {
     "criteria": {
       "diamond_chestplate": "2024-03-09 09:04:47 -0800"
@@ -356,6 +350,12 @@
   "minecraft:recipes/redstone/dispenser": {
     "criteria": {
       "has_bow": "2024-03-09 09:05:04 -0800"
+    },
+    "done": true
+  },
+  "minecraft:adventure/shoot_arrow": {
+    "criteria": {
+      "shot_arrow": "2024-03-09 09:05:10 -0800"
     },
     "done": true
   },
