@@ -1,14 +1,20 @@
 package com.lzimul.LawAssistAdventure.entity;
 
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
 import org.jetbrains.annotations.NotNull;
 
-public class Demo extends Entity {
+public class Demo<T extends Entity> extends Entity {
+    private final T parent;
+    public Demo(T parent) {
+        super(parent.getType(), parent.level());
+        this.parent = parent;
+    }
 
-    public Demo() {
-        super(EntityType.CREEPER, null);
+    public T getParent() {
+        return parent;
     }
 
     @Override
@@ -24,5 +30,10 @@ public class Demo extends Entity {
     @Override
     protected void addAdditionalSaveData(@NotNull CompoundTag p_20139_) {
 
+    }
+
+    @Override
+    public @NotNull Packet<ClientGamePacketListener> getAddEntityPacket() {
+        throw new UnsupportedOperationException();
     }
 }
