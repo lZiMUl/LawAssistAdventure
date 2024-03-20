@@ -40,3 +40,4 @@
 /playsound law_assist_adventure:sound.demo player Dev
 /playsound law_assist_adventure:sound.demo player Dev ~ ~ ~
 /time set day
+/summon law_assist_adventure:demo
