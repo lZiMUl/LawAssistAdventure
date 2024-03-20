@@ -41,3 +41,8 @@
 /playsound law_assist_adventure:sound.demo player Dev ~ ~ ~
 /time set day
 /summon law_assist_adventure:demo
+/kill @e[type=!minecraft:player]
+/summon law_assist_adventure:demo
+/weather clear
+/summon law_assist_adventure:demo1
+/summon law_assist_adventure:demo2

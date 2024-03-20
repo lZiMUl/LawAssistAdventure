@@ -80,5 +80,8 @@
   "item.law_assist_adventure.researcher_handbook": "Researcher Handbook",
   "item.law_assist_adventure.researcher_note": "Researcher Note",
   "item.law_assist_adventure.researcher_note_tampered": "Researcher Notes Tampered With",
-  "item.law_assist_adventure.researcher_note_corrupted": "Researcher Notes Are Corrupted"
+  "item.law_assist_adventure.researcher_note_corrupted": "Researcher Notes Are Corrupted",
+
+  "entity.law_assist_adventure.demo1": "Demo1",
+  "entity.law_assist_adventure.demo2": "Demo2"
 }

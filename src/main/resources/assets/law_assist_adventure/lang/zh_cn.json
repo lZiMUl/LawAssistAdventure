@@ -80,5 +80,8 @@
   "item.law_assist_adventure.researcher_handbook": "研究员手册",
   "item.law_assist_adventure.researcher_note": "研究员笔记",
   "item.law_assist_adventure.researcher_note_tampered": "研究员笔记篡改",
-  "item.law_assist_adventure.researcher_note_corrupted": "研究员笔记损坏"
+  "item.law_assist_adventure.researcher_note_corrupted": "研究员笔记损坏",
+
+  "entity.law_assist_adventure.demo1": "演示1",
+  "entity.law_assist_adventure.demo2": "演示2"
 }
