@@ -9,13 +9,9 @@ import org.jetbrains.annotations.NotNull;
 import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.getHudResourceLocation;
 
 public class MainHud implements IGuiOverlay {
-    private final int width;
-    private final int height;
     private final Minecraft minecraft;
 
     public MainHud() {
-        this.width = Minecraft.getInstance().getWindow().getScreenWidth();
-        this.height = Minecraft.getInstance().getWindow().getScreenHeight();
         this.minecraft = Minecraft.getInstance();
     }
 
