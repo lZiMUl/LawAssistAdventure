@@ -1,4 +1,4 @@
 package com.lzimul.LawAssistAdventure.occupation;
 
-public class RemnantDawn {
+public class FallIntoTheVoidOccupation {
 }
