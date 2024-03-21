@@ -26,9 +26,13 @@
 ***
 
 - ## Alipay (支付宝)
-<img src="./support/Alipay.jpg" alt="Alipay" width="250" height="370"/>
+<div>
+    <img src="./support/Alipay.jpg" alt="Alipay" width="250" height="370"/>
+</div>
 
 ***
 
-- ## WeChat (微信) 
-<img src="./support/WeChat.jpg" alt="WeChat" width="250" height="300"/>
+- ## WeChat (微信)
+<div>
+    <img src="./support/WeChat.jpg" alt="WeChat" width="250" height="300"/>
+</div>
