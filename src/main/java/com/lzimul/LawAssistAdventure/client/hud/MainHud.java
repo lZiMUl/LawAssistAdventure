@@ -24,6 +24,7 @@ public class MainHud implements IGuiOverlay {
         assert this.minecraft.level != null;
         if (this.minecraft.level.isClientSide()) {
             guiGraphics.setColor(1, 1, 1, 1);
+            // TODO Fix the issue
             guiGraphics.blit(getHudResourceLocation("main_hud"), 0, 0, 0, 0, 64, 64, 64, 64);
         }
     }
