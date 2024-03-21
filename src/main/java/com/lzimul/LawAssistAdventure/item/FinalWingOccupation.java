@@ -1,7 +1,7 @@
 package com.lzimul.LawAssistAdventure.item;
 
 import com.lzimul.LawAssistAdventure.client.helper.OccupationHelper;
-import com.lzimul.LawAssistAdventure.occupation.StaringOccupation;
+import com.lzimul.LawAssistAdventure.occupation.FinalWing;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -10,15 +10,15 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class Staring extends Item {
-    public Staring() {
+public class FinalWingOccupation extends Item {
+    public FinalWingOccupation() {
         super(new Item.Properties());
     }
 
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
         if (!level.isClientSide && player.isAlive()) {
-            new OccupationHelper(player, StaringOccupation::new);
+            new OccupationHelper(player, FinalWing::new);
         }
         return super.use(level, player, hand);
     }
