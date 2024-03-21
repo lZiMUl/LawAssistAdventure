@@ -1,8 +1,6 @@
 /time set day
 /difficulty peaceful
 /time set day
-/difficulty peaceful
-/time set day
 /item replace entity Dev armor.legs with law_assist_adventure:parachute
 /item replace entity Dev armor.head with law_assist_adventure:parachute
 /kill @e
@@ -48,3 +46,5 @@
 /summon law_assist_adventure:demo2
 /weather clear
 /time set day
+/summon law_assist_adventure:demo1
+/kill @e[type=!minecraft:player]
