@@ -13,20 +13,20 @@ public class OccupationHelper <T> {
     public OccupationHelper(Player player, Supplier<T> occupation) {
         String name = occupation.get().getClass().getName();
         switch (name.substring(name.lastIndexOf(".") + 1)) {
-            case "DustOccupation":
-                player.sendSystemMessage(OccupationHelper.showMessage("dust_occupation"));
+            case "Dust":
+                player.sendSystemMessage(OccupationHelper.showMessage("dust"));
                 break;
-            case "FallIntoTheVoidOccupation":
-                player.sendSystemMessage(OccupationHelper.showMessage("fall_into_the_void_occupation"));
+            case "FallIntoTheVoid":
+                player.sendSystemMessage(OccupationHelper.showMessage("fall_into_the_void"));
                 break;
-            case "FinalWingOccupation":
-                player.sendSystemMessage(OccupationHelper.showMessage("final_wing_occupation"));
+            case "FinalWing":
+                player.sendSystemMessage(OccupationHelper.showMessage("final_wing"));
                 break;
-            case "RemnantDawnOccupation":
-                player.sendSystemMessage(OccupationHelper.showMessage("remnant_dawn_occupation"));
+            case "RemnantDawn":
+                player.sendSystemMessage(OccupationHelper.showMessage("remnant_dawn"));
                 break;
-            case "StaringOccupation":
-                player.sendSystemMessage(OccupationHelper.showMessage("staring_occupation"));
+            case "Staring":
+                player.sendSystemMessage(OccupationHelper.showMessage("staring"));
                 break;
             default:
                 player.sendSystemMessage(OccupationHelper.showMessage("no_occupation"));
