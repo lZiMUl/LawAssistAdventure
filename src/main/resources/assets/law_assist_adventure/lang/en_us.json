@@ -83,5 +83,7 @@
   "item.law_assist_adventure.researcher_note_corrupted": "Researcher Notes Are Corrupted",
 
   "entity.law_assist_adventure.demo1": "Demo1",
-  "entity.law_assist_adventure.demo2": "Demo2"
+  "entity.law_assist_adventure.demo2": "Demo2",
+
+  "subtitle.law_assist_adventure.sound.demo": "Unknown sound effect"
 }

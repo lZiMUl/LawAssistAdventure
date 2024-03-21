@@ -83,5 +83,7 @@
   "item.law_assist_adventure.researcher_note_corrupted": "研究员笔记损坏",
 
   "entity.law_assist_adventure.demo1": "演示1",
-  "entity.law_assist_adventure.demo2": "演示2"
+  "entity.law_assist_adventure.demo2": "演示2",
+
+  "subtitle.law_assist_adventure.sound.demo": "未知音效"
 }
