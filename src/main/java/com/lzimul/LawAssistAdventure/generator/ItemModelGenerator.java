@@ -21,8 +21,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        this.basicItem(ItemRegister.CopperOre.get());
-        this.magic(gets(ItemRegister.CraftingTable.get()));
+        this.basicItem(ItemRegister.CopperOre.get().asItem());
+        this.magic(gets(ItemRegister.CraftingTable.get().asItem()));
     }
 
     private ResourceLocation gets(Item item) {

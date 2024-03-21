@@ -15,87 +15,87 @@ import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.MODID;
 public class ItemGroupUtil {
     private static final DeferredRegister<CreativeModeTab> CreativeTab = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
     DeferredHolder<CreativeModeTab, CreativeModeTab> block = CreativeTab.register("item_group.lzimul.law_assist_adventure.blocks", () -> CreativeModeTab.builder()
-            .icon(() -> new ItemStack(BlockRegister.CraftingTable.get()))
+            .icon(() -> new ItemStack(BlockRegister.CraftingTable.get().asItem()))
             .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.blocks"))
             .displayItems((input, output) -> {
-                output.accept(ItemRegister.CraftingTable.get());
-                output.accept(ItemRegister.ThermalGenerator.get());
-                output.accept(ItemRegister.SolarPanelGenerator.get());
-                output.accept(ItemRegister.FluidFuelGenerator.get());
-                output.accept(ItemRegister.PowerStorageBox1.get());
-                output.accept(ItemRegister.PowerStorageBox2.get());
-                output.accept(ItemRegister.PowerStorageBox3.get());
-                output.accept(ItemRegister.PowerStorageBox4.get());
-                output.accept(ItemRegister.PowerStorageBox5.get());
-                output.accept(ItemRegister.IndustrialSmeltingFurnaces.get());
-                output.accept(ItemRegister.Washer.get());
-                output.accept(ItemRegister.Mill.get());
-                output.accept(ItemRegister.Rollers.get());
-                output.accept(ItemRegister.Knife.get());
-                output.accept(ItemRegister.PowerWire.get());
-                output.accept(ItemRegister.Oven.get());
-                output.accept(ItemRegister.Saucepan.get());
-                output.accept(ItemRegister.RubberLog.get());
-                output.accept(ItemRegister.RubberPlanks.get());
-                output.accept(ItemRegister.RubberLeaves.get());
-                output.accept(ItemRegister.Cask.get());
-                output.accept(ItemRegister.WoodenFaucet.get());
-                output.accept(ItemRegister.CopperOre.get());
-                output.accept(ItemRegister.TinOre.get());
+                output.accept(ItemRegister.CraftingTable.get().asItem());
+                output.accept(ItemRegister.ThermalGenerator.get().asItem());
+                output.accept(ItemRegister.SolarPanelGenerator.get().asItem());
+                output.accept(ItemRegister.FluidFuelGenerator.get().asItem());
+                output.accept(ItemRegister.PowerStorageBox1.get().asItem());
+                output.accept(ItemRegister.PowerStorageBox2.get().asItem());
+                output.accept(ItemRegister.PowerStorageBox3.get().asItem());
+                output.accept(ItemRegister.PowerStorageBox4.get().asItem());
+                output.accept(ItemRegister.PowerStorageBox5.get().asItem());
+                output.accept(ItemRegister.IndustrialSmeltingFurnaces.get().asItem());
+                output.accept(ItemRegister.Washer.get().asItem());
+                output.accept(ItemRegister.Mill.get().asItem());
+                output.accept(ItemRegister.Rollers.get().asItem());
+                output.accept(ItemRegister.Knife.get().asItem());
+                output.accept(ItemRegister.PowerWire.get().asItem());
+                output.accept(ItemRegister.Oven.get().asItem());
+                output.accept(ItemRegister.Saucepan.get().asItem());
+                output.accept(ItemRegister.RubberLog.get().asItem());
+                output.accept(ItemRegister.RubberPlanks.get().asItem());
+                output.accept(ItemRegister.RubberLeaves.get().asItem());
+                output.accept(ItemRegister.Cask.get().asItem());
+                output.accept(ItemRegister.WoodenFaucet.get().asItem());
+                output.accept(ItemRegister.CopperOre.get().asItem());
+                output.accept(ItemRegister.TinOre.get().asItem());
             }).build());
     DeferredHolder<CreativeModeTab, CreativeModeTab> item = CreativeTab.register("item_group.lzimul.law_assist_adventure.items", () -> CreativeModeTab.builder()
-            .icon(() -> new ItemStack(ItemRegister.CopperIngot.get()))
+            .icon(() -> new ItemStack(ItemRegister.CopperIngot.get().asItem()))
             .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.items"))
             .displayItems((input, output) -> {
-                output.accept(ItemRegister.CopperIngot.get());
-                output.accept(ItemRegister.SteelIngot.get());
-                output.accept(ItemRegister.TinIngot.get());
-                output.accept(ItemRegister.GoldWire.get());
-                output.accept(ItemRegister.CopperWire.get());
-                output.accept(ItemRegister.TinWire.get());
-                output.accept(ItemRegister.IronPlates.get());
-                output.accept(ItemRegister.GoldPlates.get());
-                output.accept(ItemRegister.CopperPlates.get());
-                output.accept(ItemRegister.SteelPlates.get());
-                output.accept(ItemRegister.TinPlates.get());
-                output.accept(ItemRegister.CircuitBoards1.get());
-                output.accept(ItemRegister.CircuitBoards2.get());
-                output.accept(ItemRegister.CircuitBoards3.get());
-                output.accept(ItemRegister.CircuitBoardsBase.get());
-                output.accept(ItemRegister.Teleporter.get());
+                output.accept(ItemRegister.CopperIngot.get().asItem());
+                output.accept(ItemRegister.SteelIngot.get().asItem());
+                output.accept(ItemRegister.TinIngot.get().asItem());
+                output.accept(ItemRegister.GoldWire.get().asItem());
+                output.accept(ItemRegister.CopperWire.get().asItem());
+                output.accept(ItemRegister.TinWire.get().asItem());
+                output.accept(ItemRegister.IronPlates.get().asItem());
+                output.accept(ItemRegister.GoldPlates.get().asItem());
+                output.accept(ItemRegister.CopperPlates.get().asItem());
+                output.accept(ItemRegister.SteelPlates.get().asItem());
+                output.accept(ItemRegister.TinPlates.get().asItem());
+                output.accept(ItemRegister.CircuitBoards1.get().asItem());
+                output.accept(ItemRegister.CircuitBoards2.get().asItem());
+                output.accept(ItemRegister.CircuitBoards3.get().asItem());
+                output.accept(ItemRegister.CircuitBoardsBase.get().asItem());
+                output.accept(ItemRegister.Teleporter.get().asItem());
                 /*
                  * TODO 测试
                  */
-                output.accept(ItemRegister.NoOccupation.get());
-                output.accept(ItemRegister.Dust.get());
-                output.accept(ItemRegister.FallIntoTheVoid.get());
-                output.accept(ItemRegister.FinalWing.get());
-                output.accept(ItemRegister.RemnantDawn.get());
-                output.accept(ItemRegister.Staring.get());
+                output.accept(ItemRegister.NoOccupation.get().asItem());
+                output.accept(ItemRegister.Dust.get().asItem());
+                output.accept(ItemRegister.FallIntoTheVoid.get().asItem());
+                output.accept(ItemRegister.FinalWing.get().asItem());
+                output.accept(ItemRegister.RemnantDawn.get().asItem());
+                output.accept(ItemRegister.Staring.get().asItem());
             }).withTabsBefore(block.getId()).build());
     DeferredHolder<CreativeModeTab, CreativeModeTab> armor = CreativeTab.register("item_group.lzimul.law_assist_adventure.armors", () -> CreativeModeTab.builder()
-            .icon(() -> new ItemStack(ItemRegister.ExtremeDangerExplorerHelm.get()))
+            .icon(() -> new ItemStack(ItemRegister.ExtremeDangerExplorerHelm.get().asItem()))
             .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.armors"))
             .displayItems((input, output) -> {
-                output.accept(ItemRegister.ExtremeDangerExplorerHelm.get());
-                output.accept(ItemRegister.ExtremeDangerExplorerBreastplate.get());
-                output.accept(ItemRegister.ExtremeDangerExplorerPants.get());
-                output.accept(ItemRegister.ExtremeDangerExplorerShoes.get());
-                output.accept(ItemRegister.DefendTheBall.get());
-                output.accept(ItemRegister.Parachute.get());
-                output.accept(ItemRegister.Hatchet.get());
-                output.accept(ItemRegister.Glock19.get());
-                output.accept(ItemRegister.Bullet.get());
-                output.accept(ItemRegister.BulletBox.get());
+                output.accept(ItemRegister.ExtremeDangerExplorerHelm.get().asItem());
+                output.accept(ItemRegister.ExtremeDangerExplorerBreastplate.get().asItem());
+                output.accept(ItemRegister.ExtremeDangerExplorerPants.get().asItem());
+                output.accept(ItemRegister.ExtremeDangerExplorerShoes.get().asItem());
+                output.accept(ItemRegister.DefendTheBall.get().asItem());
+                output.accept(ItemRegister.Parachute.get().asItem());
+                output.accept(ItemRegister.Hatchet.get().asItem());
+                output.accept(ItemRegister.Glock19.get().asItem());
+                output.accept(ItemRegister.Bullet.get().asItem());
+                output.accept(ItemRegister.BulletBox.get().asItem());
             }).withTabsBefore(item.getId()).build());
     DeferredHolder<CreativeModeTab, CreativeModeTab> experience = CreativeTab.register("item_group.lzimul.law_assist_adventure.experiences", () -> CreativeModeTab.builder()
-            .icon(() -> new ItemStack(ItemRegister.ResearcherHandbook.get()))
+            .icon(() -> new ItemStack(ItemRegister.ResearcherHandbook.get().asItem()))
             .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.experiences"))
             .displayItems((input, output) -> {
-                output.accept(ItemRegister.ResearcherHandbook.get());
-                output.accept(ItemRegister.ResearcherNote.get());
-                output.accept(ItemRegister.ResearcherNoteTampered.get());
-                output.accept(ItemRegister.ResearcherNoteCorrupted.get());
+                output.accept(ItemRegister.ResearcherHandbook.get().asItem());
+                output.accept(ItemRegister.ResearcherNote.get().asItem());
+                output.accept(ItemRegister.ResearcherNoteTampered.get().asItem());
+                output.accept(ItemRegister.ResearcherNoteCorrupted.get().asItem());
             }).withTabsBefore(armor.getId()).build());
 
     public static void register(IEventBus modEventBus) {

@@ -9,7 +9,7 @@ public class ArmorRegister {
             new int[]{11, 16, 15, 13},
             20,
             SoundRegister.Demo.get(),
-            () -> Ingredient.of(ItemRegister.ExtremeDangerExplorerHelm),
+            () -> Ingredient.of(ItemRegister.ExtremeDangerExplorerHelm.asItem()),
             "extreme_danger_explorer_helm",
             0.25f,
             0.15f
@@ -19,7 +19,7 @@ public class ArmorRegister {
             new int[]{11, 16, 15, 13},
             20,
             SoundRegister.Demo.get(),
-            () -> Ingredient.of(ItemRegister.ExtremeDangerExplorerBreastplate),
+            () -> Ingredient.of(ItemRegister.ExtremeDangerExplorerBreastplate.asItem()),
             "extreme_danger_explorer_breastplate",
             0.25f,
             0.15f
@@ -29,7 +29,7 @@ public class ArmorRegister {
             new int[]{11, 16, 15, 13},
             20,
             SoundRegister.Demo.get(),
-            () -> Ingredient.of(ItemRegister.ExtremeDangerExplorerPants),
+            () -> Ingredient.of(ItemRegister.ExtremeDangerExplorerPants.asItem()),
             "extreme_danger_explorer_pants",
             0.25f,
             0.15f
@@ -39,7 +39,7 @@ public class ArmorRegister {
             new int[]{11, 16, 15, 13},
             20,
             SoundRegister.Demo.get(),
-            () -> Ingredient.of(ItemRegister.ExtremeDangerExplorerPants),
+            () -> Ingredient.of(ItemRegister.ExtremeDangerExplorerPants.asItem()),
             "extreme_danger_explorer_shoes",
             0.25f,
             0.15f
@@ -49,7 +49,7 @@ public class ArmorRegister {
             new int[]{11, 16, 15, 13},
             20,
             SoundRegister.Demo.get(),
-            () -> Ingredient.of(ItemRegister.DefendTheBall),
+            () -> Ingredient.of(ItemRegister.DefendTheBall.asItem()),
             "defend_the_ball",
             0.25f,
             0.15f
@@ -59,7 +59,7 @@ public class ArmorRegister {
             new int[]{11, 16, 15, 13},
             20,
             SoundRegister.Demo.get(),
-            () -> Ingredient.of(ItemRegister.Parachute),
+            () -> Ingredient.of(ItemRegister.Parachute.asItem()),
             "parachute",
             0.25f,
             0.15f

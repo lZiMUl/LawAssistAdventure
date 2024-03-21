@@ -58,7 +58,7 @@ public class Teleporter extends Item implements MenuProvider {
 //            player.openMenu(this);
             ItemStack slot = player.getItemBySlot(EquipmentSlot.CHEST);
             ItemStack source = new ItemStack(slot.getItem());
-            ItemStack target = new ItemStack(ItemRegister.Parachute.get());
+            ItemStack target = new ItemStack(ItemRegister.Parachute.get().asItem());
             Inventory playerInventory = player.getInventory();
             if (!slot.isEmpty()) {
                 if (!source.getItem().equals(target.getItem())) {

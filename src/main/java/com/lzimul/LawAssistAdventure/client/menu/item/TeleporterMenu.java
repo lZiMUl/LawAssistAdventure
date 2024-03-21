@@ -21,7 +21,7 @@ public class TeleporterMenu extends AbstractContainerMenu {
 
     @Override
     public @NotNull ItemStack quickMoveStack(@NotNull Player p_38941_, int p_38942_) {
-        return new ItemStack(ItemRegister.Teleporter.get());
+        return new ItemStack(ItemRegister.Teleporter.get().asItem());
     }
 
     @Override
