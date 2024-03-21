@@ -21,6 +21,6 @@
 
 
 ## Support Us(支持我们)
-- ## [Paypal (贝宝)](https://www.paypal.me/lzimul)
-- ## Alipay (支付宝) - ![Alipay](/support/Alipay.jpg)
-- ## WeChat (微信) - ![WeChat](/support/WeChat.jpg)
+- ## Paypal (贝宝) - [Click the link](https://www.paypal.me/lzimul)
+- ## Alipay (支付宝) - <img src="./support/Alipay.jpg" alt="Alipay" width="250" height="400"/>
+- ## WeChat (微信) - <img src="./support/WeChat.jpg" alt="WeChat" width="250" height="300"/>
