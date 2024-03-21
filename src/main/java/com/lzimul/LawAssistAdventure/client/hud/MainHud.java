@@ -15,6 +15,10 @@ public class MainHud implements IGuiOverlay {
         this.minecraft = Minecraft.getInstance();
     }
 
+    public static MainHud getInstance() {
+        return new MainHud();
+    }
+
     @Override
     public void render(@NotNull ExtendedGui extendedGui, @NotNull GuiGraphics guiGraphics, float partialTick, int screenWidth, int screenHeight) {
         assert this.minecraft.level != null;
@@ -23,9 +27,5 @@ public class MainHud implements IGuiOverlay {
             // TODO Fix the issue
             guiGraphics.blit(getHudResourceLocation("main_hud"), 0, 0, 0, 0, 64, 64, 64, 64);
         }
-    }
-
-    public static MainHud getInstance() {
-        return new MainHud();
     }
 }

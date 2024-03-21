@@ -10,5 +10,5 @@ public class KeyBinding {
     public static final String KEY_DRINK_WATER = "key.example_mod.drink_water";
 
     public static final KeyMapping DRINKING_KEY = new KeyMapping(KEY_CATEGORY_EXAMPLE_MOD, KeyConflictContext.IN_GAME,
-            InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_O,KEY_DRINK_WATER);
+            InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_O, KEY_DRINK_WATER);
 }

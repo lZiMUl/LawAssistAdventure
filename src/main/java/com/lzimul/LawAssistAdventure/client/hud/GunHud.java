@@ -3,12 +3,10 @@ package com.lzimul.LawAssistAdventure.client.hud;
 import com.lzimul.LawAssistAdventure.register.ItemRegister;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.client.gui.overlay.ExtendedGui;
 import net.neoforged.neoforge.client.gui.overlay.IGuiOverlay;
 import org.jetbrains.annotations.NotNull;
 
-import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.MODID;
 import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.getHudResourceLocation;
 
 public class GunHud implements IGuiOverlay {
@@ -22,6 +20,10 @@ public class GunHud implements IGuiOverlay {
         this.minecraft = Minecraft.getInstance();
     }
 
+    public static GunHud getInstance() {
+        return new GunHud();
+    }
+
     @Override
     public void render(@NotNull ExtendedGui extendedGui, @NotNull GuiGraphics guiGraphics, float partialTick, int screenWidth, int screenHeight) {
         assert minecraft.player != null;
@@ -29,9 +31,5 @@ public class GunHud implements IGuiOverlay {
             guiGraphics.setColor(1, 1, 1, 1);
             guiGraphics.blit(getHudResourceLocation("gun_hud"), screenWidth / 2, screenHeight / 2, 0, 0, 50, 50, 1080, 607);
         }
-    }
-
-    public static GunHud getInstance() {
-        return new GunHud();
     }
 }

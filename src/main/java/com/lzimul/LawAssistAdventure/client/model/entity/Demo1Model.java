@@ -16,6 +16,7 @@ import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.MODID;
 public class Demo1Model<T extends Demo1> extends EntityModel<T> {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(MODID, "demo1"), "main");
     private final ModelPart Body;
+
     public Demo1Model(ModelPart root) {
         this.Body = root.getChild("Body");
     }

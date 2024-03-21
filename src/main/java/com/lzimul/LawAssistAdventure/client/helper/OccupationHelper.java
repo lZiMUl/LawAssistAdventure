@@ -7,7 +7,7 @@ import net.minecraft.world.entity.player.Player;
 import java.util.Objects;
 import java.util.function.Supplier;
 
-public class OccupationHelper <T> {
+public class OccupationHelper<T> {
     private static String occupation = "no_occupation";
 
     public OccupationHelper(Player player, Supplier<T> occupation) {

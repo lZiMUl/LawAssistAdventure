@@ -1,9 +1,12 @@
 package com.lzimul.LawAssistAdventure.event;
 
-import com.lzimul.LawAssistAdventure.client.hud.*;
+import com.lzimul.LawAssistAdventure.client.hud.GunHud;
+import com.lzimul.LawAssistAdventure.client.hud.MainHud;
 import com.lzimul.LawAssistAdventure.client.key.KeyBinding;
-import com.lzimul.LawAssistAdventure.client.renderer.entity.*;
-import com.lzimul.LawAssistAdventure.client.model.entity.*;
+import com.lzimul.LawAssistAdventure.client.model.entity.Demo1Model;
+import com.lzimul.LawAssistAdventure.client.model.entity.Demo2Model;
+import com.lzimul.LawAssistAdventure.client.renderer.entity.Demo1Renderer;
+import com.lzimul.LawAssistAdventure.client.renderer.entity.Demo2Renderer;
 import com.lzimul.LawAssistAdventure.register.EntityRegister;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
@@ -35,7 +38,7 @@ public class RendererEvent {
     }
 
     @SubscribeEvent
-    public static void onModelBaked(ModelEvent.ModifyBakingResult modifyBakingResult){
+    public static void onModelBaked(ModelEvent.ModifyBakingResult modifyBakingResult) {
 //        for(BlockState blockState: ModBlocks.HIDDEN_BLOCK.get().getStateDefinition().getPossibleStates()){
 //            ModelResourceLocation modelResourceLocation = BlockModelShaper.stateToModelLocation(blockState);
 //            BakedModel existingModel = event.getModels().get(modelResourceLocation);
@@ -65,8 +68,8 @@ public class RendererEvent {
 
     @SubscribeEvent
     public static void registerGuiOverlays(RegisterGuiOverlaysEvent registerGuiOverlaysEvent) {
-        registerGuiOverlaysEvent.registerAboveAll(new ResourceLocation(MODID,"main_hud"), MainHud.getInstance());
-        registerGuiOverlaysEvent.registerAboveAll(new ResourceLocation(MODID,"gun_hud"), GunHud.getInstance());
+        registerGuiOverlaysEvent.registerAboveAll(new ResourceLocation(MODID, "main_hud"), MainHud.getInstance());
+        registerGuiOverlaysEvent.registerAboveAll(new ResourceLocation(MODID, "gun_hud"), GunHud.getInstance());
     }
 
 

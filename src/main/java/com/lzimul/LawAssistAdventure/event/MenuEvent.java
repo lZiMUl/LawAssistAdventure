@@ -1,8 +1,8 @@
 package com.lzimul.LawAssistAdventure.event;
 
-import com.lzimul.LawAssistAdventure.register.MenuRegister;
 import com.lzimul.LawAssistAdventure.client.screen.block.*;
 import com.lzimul.LawAssistAdventure.client.screen.item.TeleporterScreen;
+import com.lzimul.LawAssistAdventure.register.MenuRegister;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
