@@ -8,7 +8,8 @@
         {
           "type": "minecraft:item",
           "name": "law_assist_adventure:iron_plates"
-        }, {
+        },
+        {
           "type": "minecraft:item",
           "name": "law_assist_adventure:circuit_boards_2"
         }

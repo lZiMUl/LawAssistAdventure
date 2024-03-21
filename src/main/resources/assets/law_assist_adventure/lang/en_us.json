@@ -3,13 +3,11 @@
   "itemGroup.lzimul.law_assist_adventure.items": "Law Support & Adventure (Items)",
   "itemGroup.lzimul.law_assist_adventure.armors": "Law Support & Adventure (Equipment)",
   "itemGroup.lzimul.law_assist_adventure.experiences": "Law Support & Adventure (Experience)",
-
   "law_assist_adventure.dust": "Teleported To [Dust]",
   "law_assist_adventure.fall_into_the_void": "Teleported To [Falling Void]",
   "law_assist_adventure.final_wing": "Teleported To [Last Wing]",
   "law_assist_adventure.remnant_dawn": "Teleported To [Remnant]",
   "law_assist_adventure.staring": "Teleported To [Gaze]",
-
   "block.law_assist_adventure.crafting_table": "Crafting Table",
   "block.law_assist_adventure.thermal_generator": "Thermal Generator",
   "block.law_assist_adventure.solar_panel_generator": "Solar Panel Generator",
@@ -34,7 +32,6 @@
   "block.law_assist_adventure.wooden_faucet": "Wooden Faucet",
   "block.law_assist_adventure.copper_ore": "Copper Ore",
   "block.law_assist_adventure.tin_ore": "Tin Ore",
-
   "item.law_assist_adventure.copper_ingot": "Copper Ingot",
   "item.law_assist_adventure.steel_ingot": "Steel Ingot",
   "item.law_assist_adventure.tin_ingot": "Tin Ingot",
@@ -51,13 +48,11 @@
   "item.law_assist_adventure.circuit_boards_3": "Advanced Circuit Boards",
   "item.law_assist_adventure.circuit_boards_base": "Base Board Base",
   "item.law_assist_adventure.teleporter": "Teleporter",
-
   "occupation.law_assist_adventure.dust": "%s [Dust]",
   "occupation.law_assist_adventure.fall_into_the_void": "%s [Fall Void]",
   "occupation.law_assist_adventure.final_wing": "%s [last Wing]",
   "occupation.law_assist_adventure.remnant_dawn": "%s [Remnant]",
   "occupation.law_assist_adventure.staring": "%s [Gaze]",
-
   "occupation.law_assist_adventure.no_occupation": "%s [No Occupation]",
   "item.law_assist_adventure.dust": "Dust (right-click To Switch Occupation)",
   "item.law_assist_adventure.fall_into_the_void": "Fall Into The Void (right-click To Switch To This Occupation)",
@@ -65,7 +60,6 @@
   "item.law_assist_adventure.remnant_dawn": "Remnant Dawn (right-click To Switch Occupation)",
   "item.law_assist_adventure.staring": "Staring (right-click To Switch To This Occupation)",
   "item.law_assist_adventure.no_occupation": "No Occupation (right-click To Switch To That Occupation)",
-
   "item.law_assist_adventure.extreme_danger_explorer_helm": "Extreme Danger Explorer Helmet",
   "item.law_assist_adventure.extreme_danger_explorer_breastplate": "Extreme Danger Explorer Breastplate",
   "item.law_assist_adventure.extreme_danger_explorer_pants": "Extreme Danger Explorer Pants",
@@ -76,12 +70,10 @@
   "item.law_assist_adventure.glock19": "Glock 19",
   "item.law_assist_adventure.bullet": "Bullet (Glock 19)",
   "item.law_assist_adventure.bullet_box": "Bullet Box (Glock 19)",
-
   "item.law_assist_adventure.researcher_handbook": "Researcher Handbook",
   "item.law_assist_adventure.researcher_note": "Researcher Note",
   "item.law_assist_adventure.researcher_note_tampered": "Researcher Notes Tampered With",
   "item.law_assist_adventure.researcher_note_corrupted": "Researcher Notes Are Corrupted",
-
   "entity.law_assist_adventure.demo1": "Demo1",
   "entity.law_assist_adventure.demo2": "Demo2"
 }
