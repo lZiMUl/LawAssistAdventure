@@ -8,7 +8,7 @@ import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
-import static com.lzimul.LawAssistAdventure.Config.MODID;
+import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.MODID;
 
 public class BlockStateGenerator extends BlockStateProvider {
     public BlockStateGenerator(PackOutput output, String modid, ExistingFileHelper exFileHelper) {

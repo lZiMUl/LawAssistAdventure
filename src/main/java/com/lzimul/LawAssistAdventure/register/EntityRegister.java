@@ -9,7 +9,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-import static com.lzimul.LawAssistAdventure.Config.MODID;
+import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.MODID;
 
 public class EntityRegister {
     public static final DeferredRegister<EntityType<?>> Entity = DeferredRegister.create(Registries.ENTITY_TYPE, MODID);

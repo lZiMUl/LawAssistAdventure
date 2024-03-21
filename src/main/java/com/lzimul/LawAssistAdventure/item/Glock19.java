@@ -1,6 +1,6 @@
 package com.lzimul.LawAssistAdventure.item;
 
-import com.lzimul.LawAssistAdventure.Ammunition;
+import com.lzimul.LawAssistAdventure.client.helper.AmmunitionHelper;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -11,7 +11,7 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class Glock19 extends Item {
-    private static final Ammunition ammunition = new Ammunition(21, 120, 0);
+    private static final AmmunitionHelper ammunitionHelper = new AmmunitionHelper(21, 120, 0);
 
     public Glock19() {
         super(new Item.Properties());
@@ -20,12 +20,12 @@ public class Glock19 extends Item {
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
         if (!level.isClientSide() && player.isAlive()) {
-            ammunition.setPlayer(player);
-            player.sendSystemMessage(Component.literal("弹药: " + "[" + ammunition.getCurrent() + "/" + ammunition.getLimit() + "/" + ammunition.getTotal() + "]"));
+            ammunitionHelper.setPlayer(player);
+            player.sendSystemMessage(Component.literal("弹药: " + "[" + ammunitionHelper.getCurrent() + "/" + ammunitionHelper.getLimit() + "/" + ammunitionHelper.getTotal() + "]"));
             if (player.isCrouching()) {
-                if (ammunition.getCurrent() != ammunition.getLimit()) {
-                    if (ammunition.getTotal() != 0) {
-                        ammunition.reload();
+                if (ammunitionHelper.getCurrent() != ammunitionHelper.getLimit()) {
+                    if (ammunitionHelper.getTotal() != 0) {
+                        ammunitionHelper.reload();
                         player.sendSystemMessage(Component.literal("已装弹。"));
                     } else {
                         player.sendSystemMessage(Component.literal("备弹空"));
@@ -33,8 +33,8 @@ public class Glock19 extends Item {
                 } else {
                     player.sendSystemMessage(Component.literal("弹药已满。"));
                 }
-            } else if (ammunition.getCurrent() != 0) {
-                ammunition.fire(1);
+            } else if (ammunitionHelper.getCurrent() != 0) {
+                ammunitionHelper.fire(1);
             } else {
                 player.sendSystemMessage(Component.literal("弹药不足。"));
             }

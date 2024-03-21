@@ -1,10 +1,10 @@
 package com.lzimul.LawAssistAdventure.register;
 
-import com.lzimul.LawAssistAdventure.Armor;
+import com.lzimul.LawAssistAdventure.client.helper.ArmorHelper;
 import net.minecraft.world.item.crafting.Ingredient;
 
 public class ArmorRegister {
-    public static final Armor ExtremeDangerExplorerHelm = new Armor(
+    public static final ArmorHelper ExtremeDangerExplorerHelm = new ArmorHelper(
             new int[]{500, 1200, 600, 400},
             new int[]{11, 16, 15, 13},
             20,
@@ -14,7 +14,7 @@ public class ArmorRegister {
             0.25f,
             0.15f
     );
-    public static final Armor ExtremeDangerExplorerBreastplate = new Armor(
+    public static final ArmorHelper ExtremeDangerExplorerBreastplate = new ArmorHelper(
             new int[]{500, 1200, 600, 400},
             new int[]{11, 16, 15, 13},
             20,
@@ -24,7 +24,7 @@ public class ArmorRegister {
             0.25f,
             0.15f
     );
-    public static final Armor ExtremeDangerExplorerPants = new Armor(
+    public static final ArmorHelper ExtremeDangerExplorerPants = new ArmorHelper(
             new int[]{500, 1200, 600, 400},
             new int[]{11, 16, 15, 13},
             20,
@@ -34,7 +34,7 @@ public class ArmorRegister {
             0.25f,
             0.15f
     );
-    public static final Armor ExtremeDangerExplorerShoes = new Armor(
+    public static final ArmorHelper ExtremeDangerExplorerShoes = new ArmorHelper(
             new int[]{500, 1200, 600, 400},
             new int[]{11, 16, 15, 13},
             20,
@@ -44,7 +44,7 @@ public class ArmorRegister {
             0.25f,
             0.15f
     );
-    public static final Armor DefendTheBall = new Armor(
+    public static final ArmorHelper DefendTheBall = new ArmorHelper(
             new int[]{500, 1200, 600, 400},
             new int[]{11, 16, 15, 13},
             20,
@@ -54,7 +54,7 @@ public class ArmorRegister {
             0.25f,
             0.15f
     );
-    public static final Armor Parachute = new Armor(
+    public static final ArmorHelper Parachute = new ArmorHelper(
             new int[]{500, 1200, 600, 400},
             new int[]{11, 16, 15, 13},
             20,

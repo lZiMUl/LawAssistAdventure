@@ -10,7 +10,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
-import static com.lzimul.LawAssistAdventure.Config.MODID;
+import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.MODID;
 
 @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGenerateEvent {

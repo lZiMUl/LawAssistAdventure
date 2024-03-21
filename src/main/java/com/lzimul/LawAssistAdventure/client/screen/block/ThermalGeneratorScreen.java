@@ -1,6 +1,6 @@
-package com.lzimul.LawAssistAdventure.screen.block;
+package com.lzimul.LawAssistAdventure.client.screen.block;
 
-import com.lzimul.LawAssistAdventure.menu.block.ThermalGeneratorMenu;
+import com.lzimul.LawAssistAdventure.client.menu.block.ThermalGeneratorMenu;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -9,7 +9,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import org.jetbrains.annotations.NotNull;
 
-import static com.lzimul.LawAssistAdventure.Config.getBlockResourceLocation;
+import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.getBlockResourceLocation;
 
 public class ThermalGeneratorScreen extends AbstractContainerScreen<ThermalGeneratorMenu> {
     public ThermalGeneratorScreen(ThermalGeneratorMenu craftingTableMenu, Inventory inventory, Component component) {

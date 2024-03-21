@@ -1,6 +1,6 @@
-package com.lzimul.LawAssistAdventure.screen.block;
+package com.lzimul.LawAssistAdventure.client.screen.item;
 
-import com.lzimul.LawAssistAdventure.menu.block.SolarPanelGeneratorMenu;
+import com.lzimul.LawAssistAdventure.client.menu.item.TeleporterMenu;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -9,11 +9,11 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import org.jetbrains.annotations.NotNull;
 
-import static com.lzimul.LawAssistAdventure.Config.getBlockResourceLocation;
+import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.getItemResourceLocation;
 
-public class SolarPanelGeneratorScreen extends AbstractContainerScreen<SolarPanelGeneratorMenu> {
-    public SolarPanelGeneratorScreen(SolarPanelGeneratorMenu solarPanelGenerator, Inventory inventory, Component component) {
-        super(solarPanelGenerator, inventory, component);
+public class TeleporterScreen extends AbstractContainerScreen<TeleporterMenu> {
+    public TeleporterScreen(TeleporterMenu teleporterMenu, Inventory inventory, Component component) {
+        super(teleporterMenu, inventory, component);
     }
 
     @Override
@@ -23,13 +23,7 @@ public class SolarPanelGeneratorScreen extends AbstractContainerScreen<SolarPane
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
 
-        guiGraphics.blit(getBlockResourceLocation("solar_panel_generator"), x, y, 0, 0, imageWidth, imageHeight);
-    }
-
-    public void renderProgressArrow(@NotNull GuiGraphics guiGraphics, int x, int y) {
-//        if (super.menu.isCrafting()) {
-        guiGraphics.blit(getBlockResourceLocation("arrow"), x, y, 0, 0, 16, 16);
-//        }
+        guiGraphics.blit(getItemResourceLocation("teleporter"), x, y, 0, 0, imageWidth, imageHeight);
     }
 
     @Override

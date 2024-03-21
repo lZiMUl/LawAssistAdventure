@@ -1,6 +1,6 @@
-package com.lzimul.LawAssistAdventure.screen.block;
+package com.lzimul.LawAssistAdventure.client.screen.block;
 
-import com.lzimul.LawAssistAdventure.menu.block.CraftingTableMenu;
+import com.lzimul.LawAssistAdventure.client.menu.block.WasherMenu;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -9,11 +9,11 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import org.jetbrains.annotations.NotNull;
 
-import static com.lzimul.LawAssistAdventure.Config.getBlockResourceLocation;
+import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.getBlockResourceLocation;
 
-public class CraftingTableScreen extends AbstractContainerScreen<CraftingTableMenu> {
-    public CraftingTableScreen(CraftingTableMenu craftingTableMenu, Inventory inventory, Component component) {
-        super(craftingTableMenu, inventory, component);
+public class WasherScreen extends AbstractContainerScreen<WasherMenu> {
+    public WasherScreen(WasherMenu washerMenu, Inventory inventory, Component component) {
+        super(washerMenu, inventory, component);
     }
 
     @Override
@@ -23,7 +23,7 @@ public class CraftingTableScreen extends AbstractContainerScreen<CraftingTableMe
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
 
-        guiGraphics.blit(getBlockResourceLocation("crafting_table"), x, y, 0, 0, imageWidth, imageHeight);
+        guiGraphics.blit(getBlockResourceLocation("washer"), x, y, 0, 0, imageWidth, imageHeight);
     }
 
     public void renderProgressArrow(@NotNull GuiGraphics guiGraphics, int x, int y) {

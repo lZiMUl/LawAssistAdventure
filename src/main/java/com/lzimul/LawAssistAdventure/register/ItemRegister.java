@@ -9,7 +9,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import static com.lzimul.LawAssistAdventure.Config.MODID;
+import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.MODID;
 
 public class ItemRegister {
     private static final DeferredRegister.Items Item = DeferredRegister.createItems(MODID);

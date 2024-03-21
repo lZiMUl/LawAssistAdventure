@@ -1,15 +1,15 @@
-package com.lzimul.LawAssistAdventure;
+package com.lzimul.LawAssistAdventure.client.helper;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 
-public class Ammunition {
+public class AmmunitionHelper {
     private final int limit;
     private Player player;
     private int current;
     private int total;
 
-    public Ammunition(int current, int total, int limit) {
+    public AmmunitionHelper(int current, int total, int limit) {
         this.current = current;
         this.total = total;
         this.limit = current + limit;

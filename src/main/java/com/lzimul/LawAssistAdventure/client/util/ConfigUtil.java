@@ -1,10 +1,10 @@
-package com.lzimul.LawAssistAdventure;
+package com.lzimul.LawAssistAdventure.client.util;
 
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.logging.Logger;
 
-public class Config {
+public class ConfigUtil {
     public static final String MODID = "law_assist_adventure";
     public static final Logger LOGGER = Logger.getLogger(MODID);
 

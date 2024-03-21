@@ -1,4 +1,4 @@
-package com.lzimul.LawAssistAdventure;
+package com.lzimul.LawAssistAdventure.client.helper;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.ArmorItem;
@@ -8,9 +8,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
-import static com.lzimul.LawAssistAdventure.Config.MODID;
+import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.MODID;
 
-public class Armor implements ArmorMaterial {
+public class ArmorHelper implements ArmorMaterial {
     public final int[] durabilityForType;
     public final int[] defenseForType;
     public final int enchantmentValue;
@@ -20,7 +20,7 @@ public class Armor implements ArmorMaterial {
     public final float toughness;
     public final float knockbackResistance;
 
-    public Armor(int[] durabilityForType, int[] defenseForType, int enchantmentValue, SoundEvent equipSound, Supplier<Ingredient> repairIngredient, String name, float toughness, float knockbackResistance) {
+    public ArmorHelper(int[] durabilityForType, int[] defenseForType, int enchantmentValue, SoundEvent equipSound, Supplier<Ingredient> repairIngredient, String name, float toughness, float knockbackResistance) {
         this.durabilityForType = durabilityForType;
         this.defenseForType = defenseForType;
         this.enchantmentValue = enchantmentValue;

@@ -1,8 +1,8 @@
 package com.lzimul.LawAssistAdventure.block;
 
-import com.lzimul.LawAssistAdventure.Occupation;
+import com.lzimul.LawAssistAdventure.client.helper.OccupationHelper;
 import com.lzimul.LawAssistAdventure.block.entity.CraftingTableEntity;
-import com.lzimul.LawAssistAdventure.menu.block.CraftingTableMenu;
+import com.lzimul.LawAssistAdventure.client.menu.block.CraftingTableMenu;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -47,7 +47,7 @@ public class CraftingTable extends BaseEntityBlock implements EntityBlock, MenuP
         if (!level.isClientSide && player.isAlive()) {
             BlockEntity entity = level.getBlockEntity(blockPos);
             if (entity instanceof CraftingTableEntity) {
-                if (Occupation.isOccupation("final_wing")) {
+                if (OccupationHelper.isOccupation("final_wing")) {
                     player.openMenu(this);
                 } else {
                     player.sendSystemMessage(Component.literal("当前职业无法使用！"));

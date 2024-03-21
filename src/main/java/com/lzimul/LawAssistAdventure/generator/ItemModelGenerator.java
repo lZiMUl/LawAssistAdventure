@@ -11,7 +11,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import java.util.Objects;
 
-import static com.lzimul.LawAssistAdventure.Config.MODID;
+import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.MODID;
 
 public class ItemModelGenerator extends ItemModelProvider {
 

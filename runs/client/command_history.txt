@@ -46,3 +46,5 @@
 /weather clear
 /summon law_assist_adventure:demo1
 /summon law_assist_adventure:demo2
+/weather clear
+/time set day

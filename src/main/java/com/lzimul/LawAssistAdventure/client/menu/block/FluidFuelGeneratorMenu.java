@@ -1,4 +1,4 @@
-package com.lzimul.LawAssistAdventure.menu.block;
+package com.lzimul.LawAssistAdventure.client.menu.block;
 
 import com.lzimul.LawAssistAdventure.register.MenuRegister;
 import net.minecraft.network.FriendlyByteBuf;
@@ -8,12 +8,12 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-public class SolarPanelGeneratorMenu extends AbstractContainerMenu {
-    public SolarPanelGeneratorMenu(int id, Inventory inventory, FriendlyByteBuf friendlyByteBuf) {
+public class FluidFuelGeneratorMenu extends AbstractContainerMenu {
+    public FluidFuelGeneratorMenu(int id, Inventory inventory, FriendlyByteBuf friendlyByteBuf) {
         super(MenuRegister.FluidFuelGeneratorMenu.get(), id);
     }
 
-    public SolarPanelGeneratorMenu(int id, Inventory inventory, Player player) {
+    public FluidFuelGeneratorMenu(int id, Inventory inventory, Player player) {
         super(MenuRegister.FluidFuelGeneratorMenu.get(), id);
     }
 

@@ -1,7 +1,7 @@
 package com.lzimul.LawAssistAdventure.block;
 
 import com.lzimul.LawAssistAdventure.block.entity.WasherEntity;
-import com.lzimul.LawAssistAdventure.menu.block.WasherMenu;
+import com.lzimul.LawAssistAdventure.client.menu.block.WasherMenu;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;

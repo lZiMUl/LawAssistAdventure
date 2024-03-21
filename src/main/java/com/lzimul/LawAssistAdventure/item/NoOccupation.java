@@ -1,6 +1,6 @@
 package com.lzimul.LawAssistAdventure.item;
 
-import com.lzimul.LawAssistAdventure.Occupation;
+import com.lzimul.LawAssistAdventure.client.helper.OccupationHelper;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -17,7 +17,7 @@ public class NoOccupation extends Item {
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
         if (!level.isClientSide && player.isAlive()) {
-            new Occupation(player, com.lzimul.LawAssistAdventure.occupation.NoOccupation::new);
+            new OccupationHelper(player, NoOccupation::new);
         }
         return super.use(level, player, hand);
     }

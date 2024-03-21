@@ -1,6 +1,6 @@
-package com.lzimul.LawAssistAdventure.screen.block;
+package com.lzimul.LawAssistAdventure.client.screen.block;
 
-import com.lzimul.LawAssistAdventure.menu.block.WasherMenu;
+import com.lzimul.LawAssistAdventure.client.menu.block.FluidFuelGeneratorMenu;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -9,11 +9,11 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import org.jetbrains.annotations.NotNull;
 
-import static com.lzimul.LawAssistAdventure.Config.getBlockResourceLocation;
+import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.getBlockResourceLocation;
 
-public class WasherScreen extends AbstractContainerScreen<WasherMenu> {
-    public WasherScreen(WasherMenu washerMenu, Inventory inventory, Component component) {
-        super(washerMenu, inventory, component);
+public class FluidFuelGeneratorScreen extends AbstractContainerScreen<FluidFuelGeneratorMenu> {
+    public FluidFuelGeneratorScreen(FluidFuelGeneratorMenu fluidFuelGeneratorMenu, Inventory inventory, Component component) {
+        super(fluidFuelGeneratorMenu, inventory, component);
     }
 
     @Override
@@ -23,7 +23,7 @@ public class WasherScreen extends AbstractContainerScreen<WasherMenu> {
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
 
-        guiGraphics.blit(getBlockResourceLocation("washer"), x, y, 0, 0, imageWidth, imageHeight);
+        guiGraphics.blit(getBlockResourceLocation("fluid_fuel_generator"), x, y, 0, 0, imageWidth, imageHeight);
     }
 
     public void renderProgressArrow(@NotNull GuiGraphics guiGraphics, int x, int y) {
