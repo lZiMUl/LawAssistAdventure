@@ -27,7 +27,7 @@ displayURL = "https://mods.minecraft.lzimul.top/LawAssistAdventure/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile = "pack.png" #optional
 # A text field displayed in the mod UI
-credits = "${mod_authors}, Jige" #optional
+credits = "${mod_credits}" #optional
 # A text field displayed in the mod UI
 authors = "${mod_authors}" #optional
 # Display Test controls the display for your mod in the server connection screen
