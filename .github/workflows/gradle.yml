@@ -11,6 +11,7 @@ jobs:
 
     runs-on: ubuntu-latest
     permissions:
+      actions: write
       contents: read
 
     steps:
@@ -27,7 +28,7 @@ jobs:
         gradle-version: '3.1.0'
 
     - name: Build with Gradle
-      run: /gradlew build
+      run: gradlew build
 
   dependency-submission:
 
