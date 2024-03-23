@@ -1,4 +1,3 @@
-/kill @e
 /time set day
 /item replace entity Dev armor.head with law_assist_adventure:glock19
 /effect clear @a
@@ -48,3 +47,4 @@
 /playsound law_assist_adventure:sound.demo player Dev ~ ~ ~
 /time set day
 /playsound law_assist_adventure:sound.demo player Dev ~ ~ ~
+/time set day

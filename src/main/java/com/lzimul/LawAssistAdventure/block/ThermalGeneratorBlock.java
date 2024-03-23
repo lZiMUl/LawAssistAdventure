@@ -9,7 +9,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
-import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -23,7 +22,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.annotation.Nonnull;
 import java.util.Objects;
 
-public class ThermalGeneratorBlock extends BaseEntityBlock implements EntityBlock {
+public class ThermalGeneratorBlock extends BaseEntityBlock {
     public ThermalGeneratorBlock() {
         super(BlockBehaviour.Properties.of().noOcclusion());
     }
