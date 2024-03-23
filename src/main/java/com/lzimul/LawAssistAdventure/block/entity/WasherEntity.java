@@ -1,6 +1,5 @@
 package com.lzimul.LawAssistAdventure.block.entity;
 
-import com.lzimul.LawAssistAdventure.client.menu.block.FluidFuelGeneratorMenu;
 import com.lzimul.LawAssistAdventure.client.menu.block.WasherMenu;
 import com.lzimul.LawAssistAdventure.register.BlockEntityRegister;
 import net.minecraft.core.BlockPos;

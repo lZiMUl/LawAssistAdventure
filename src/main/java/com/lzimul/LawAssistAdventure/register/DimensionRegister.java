@@ -75,7 +75,6 @@ public class DimensionRegister {
                                 isReplaceable(world, absolutePos.above(2).relative(Direction.EAST)) &&
                                 isReplaceable(world, absolutePos.above(2).relative(Direction.WEST))
                         ) {
-//                            world.setBlockAndUpdate(absolutePos, Main.TELEPORTER.get().defaultBlockState());
                             world.setBlockAndUpdate(absolutePos.above(1), Blocks.AIR.defaultBlockState());
                             world.setBlockAndUpdate(absolutePos.above(2), Blocks.AIR.defaultBlockState());
                             world.setBlockAndUpdate(absolutePos.above(3), Blocks.STONE.defaultBlockState());

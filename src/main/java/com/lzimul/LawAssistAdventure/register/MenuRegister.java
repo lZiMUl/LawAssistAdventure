@@ -24,11 +24,11 @@ public class MenuRegister {
         Menu.register(modEventBus);
     }
 
-    public static final DeferredHolder<MenuType<?>, MenuType<CraftingTableMenu>> CraftingTableMenu = registerMenu("crafting_table_menu", CraftingTableMenu::new);
-    public static final DeferredHolder<MenuType<?>, MenuType<FluidFuelGeneratorMenu>> FluidFuelGeneratorMenu = registerMenu("fluid_fuel_generator_menu", FluidFuelGeneratorMenu::new);
-    public static final DeferredHolder<MenuType<?>, MenuType<ThermalGeneratorMenu>> ThermalGeneratorMenu = registerMenu("thermal_generator_menu", ThermalGeneratorMenu::new);
-    public static final DeferredHolder<MenuType<?>, MenuType<WasherMenu>> WasherMenu = registerMenu("washer_menu", WasherMenu::new);
-    public static final DeferredHolder<MenuType<?>, MenuType<SolarPanelGeneratorMenu>> SolarPanelGeneratorMenu = registerMenu("solar_panel_generator_menu", SolarPanelGeneratorMenu::new);
+    public static final DeferredHolder<MenuType<?>, MenuType<CraftingTableMenu>> CraftingTableMenu = registerMenu("crafting_table", CraftingTableMenu::new);
+    public static final DeferredHolder<MenuType<?>, MenuType<FluidFuelGeneratorMenu>> FluidFuelGeneratorMenu = registerMenu("fluid_fuel_generator", FluidFuelGeneratorMenu::new);
+    public static final DeferredHolder<MenuType<?>, MenuType<ThermalGeneratorMenu>> ThermalGeneratorMenu = registerMenu("thermal_generator", ThermalGeneratorMenu::new);
+    public static final DeferredHolder<MenuType<?>, MenuType<WasherMenu>> WasherMenu = registerMenu("washer", WasherMenu::new);
+    public static final DeferredHolder<MenuType<?>, MenuType<SolarPanelGeneratorMenu>> SolarPanelGeneratorMenu = registerMenu("solar_panel_generator", SolarPanelGeneratorMenu::new);
     public static final DeferredHolder<MenuType<?>, MenuType<TeleporterMenu>> TeleporterMenu = registerMenu("teleporter", TeleporterMenu::new);
 
 

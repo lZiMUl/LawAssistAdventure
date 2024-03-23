@@ -1,8 +1,8 @@
 package com.lzimul.LawAssistAdventure.event;
 
-import com.lzimul.LawAssistAdventure.network.ClientProvider;
-import com.lzimul.LawAssistAdventure.network.NetworkData;
-import com.lzimul.LawAssistAdventure.network.ServerProvider;
+import com.lzimul.LawAssistAdventure.network.ClientProviderNetwork;
+import com.lzimul.LawAssistAdventure.network.DataNetwork;
+import com.lzimul.LawAssistAdventure.network.ServerProviderNetwork;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlerEvent;
@@ -15,9 +15,9 @@ public class NetworkEvent {
     @SubscribeEvent
     public static void register(final RegisterPayloadHandlerEvent event) {
         final IPayloadRegistrar registrar = event.registrar(MODID);
-        registrar.play(NetworkData.ID, NetworkData::new, handler -> {
-            handler.client(ClientProvider.getInstance()::handleData);
-            handler.server(ServerProvider.getInstance()::handleData);
+        registrar.play(DataNetwork.ID, DataNetwork::new, handler -> {
+            handler.client(ClientProviderNetwork.getInstance()::handleData);
+            handler.server(ServerProviderNetwork.getInstance()::handleData);
         });
     }
 }

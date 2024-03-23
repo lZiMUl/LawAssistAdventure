@@ -16,6 +16,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class FluidFuelGeneratorMenu extends AbstractContainerMenu {
     private final ContainerData containerData;
+
     public FluidFuelGeneratorMenu(int id, Inventory inventory, FriendlyByteBuf friendlyByteBuf) {
         this(id, inventory, inventory.player.level().getBlockEntity(friendlyByteBuf.readBlockPos()), new SimpleContainerData(1));
     }

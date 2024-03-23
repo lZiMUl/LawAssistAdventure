@@ -16,27 +16,24 @@ public class BlockEntityRegister {
         BlockEntity.register(eventBus);
     }
 
-    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CraftingTableEntity>> CraftingTable = BlockEntity.register("crafting_table_entity", () -> BlockEntityType.Builder.of(
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CraftingTableEntity>> CraftingTable = BlockEntity.register("crafting_table", () -> BlockEntityType.Builder.of(
             CraftingTableEntity::new,
             BlockRegister.CraftingTable.get()
     ).build(null));
-    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<FluidFuelGeneratorEntity>> FluidFuelGenerator = BlockEntity.register("fluid_fuel_generator_entity", () -> BlockEntityType.Builder.of(
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<FluidFuelGeneratorEntity>> FluidFuelGenerator = BlockEntity.register("fluid_fuel_generator", () -> BlockEntityType.Builder.of(
             FluidFuelGeneratorEntity::new,
             BlockRegister.FluidFuelGenerator.get()
     ).build(null));
-    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<WasherEntity>> Washer = BlockEntity.register("washer_entity", () -> BlockEntityType.Builder.of(
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<WasherEntity>> Washer = BlockEntity.register("washer", () -> BlockEntityType.Builder.of(
             WasherEntity::new,
             BlockRegister.Washer.get()
     ).build(null));
-    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SolarPanelGeneratorEntity>> SolarPanelGenerator = BlockEntity.register("solar_panel_generator_entity", () -> BlockEntityType.Builder.of(
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SolarPanelGeneratorEntity>> SolarPanelGenerator = BlockEntity.register("solar_panel_generator", () -> BlockEntityType.Builder.of(
             SolarPanelGeneratorEntity::new,
             BlockRegister.SolarPanelGenerator.get()
     ).build(null));
-    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ThermalGeneratorEntity>> ThermalGenerator = BlockEntity.register("thermal_generator_entity", () -> BlockEntityType.Builder.of(
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ThermalGeneratorEntity>> ThermalGenerator = BlockEntity.register("thermal_generator", () -> BlockEntityType.Builder.of(
             ThermalGeneratorEntity::new,
             BlockRegister.ThermalGenerator.get()
     ).build(null));
-
-
-    ;
 }
