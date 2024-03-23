@@ -17,7 +17,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class CraftingTableEntity extends BlockEntity implements MenuProvider {
     protected final ContainerData containerData;
-    private final ItemStackHandler itemStackHandler = new ItemStackHandler(13);
+    private final ItemStackHandler itemStackHandler = new ItemStackHandler(1);
     private int progress = 0;
     private int progressMax = 100;
     private String descriptionId;

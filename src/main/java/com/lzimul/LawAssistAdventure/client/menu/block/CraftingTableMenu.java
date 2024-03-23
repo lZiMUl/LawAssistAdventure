@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 public class CraftingTableMenu extends AbstractContainerMenu {
     private final ContainerData containerData;
     public CraftingTableMenu(int id, Inventory inventory, FriendlyByteBuf friendlyByteBuf) {
-        this(id, inventory, inventory.player.level().getBlockEntity(friendlyByteBuf.readBlockPos()), new SimpleContainerData(1));
+        this(id, inventory, inventory.player.level().getBlockEntity(friendlyByteBuf.readBlockPos()), new SimpleContainerData(13));
     }
 
     public CraftingTableMenu(int id, Inventory inventory, BlockEntity blockEntity, ContainerData containerData) {

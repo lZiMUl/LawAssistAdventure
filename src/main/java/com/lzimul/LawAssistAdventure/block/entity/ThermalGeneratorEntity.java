@@ -18,7 +18,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class ThermalGeneratorEntity extends BlockEntity implements MenuProvider {
     protected final ContainerData containerData;
-    private final ItemStackHandler itemStackHandler = new ItemStackHandler(10) {
+    private final ItemStackHandler itemStackHandler = new ItemStackHandler(1) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
