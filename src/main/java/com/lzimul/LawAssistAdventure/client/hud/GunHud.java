@@ -31,8 +31,6 @@ public class GunHud implements IGuiOverlay {
     public void render(@NotNull ExtendedGui extendedGui, @NotNull GuiGraphics guiGraphics, float partialTick, int screenWidth, int screenHeight) {
         assert minecraft.player != null;
         if (minecraft.player.getMainHandItem().getItem() == ItemRegister.Glock19.get().asItem()) {
-            assert Minecraft.getInstance().level != null;
-            Minecraft.getInstance().level.players().get(0).sendSystemMessage(Component.literal("[" + screenWidth + ", " + screenHeight + "] | [" + imageWidth + "," + imageHeight + "]"));
             guiGraphics.setColor(1, 1, 1, 1);
             guiGraphics.blit(getHudResourceLocation("gun_hud"), screenWidth - imageWidth, screenHeight - imageHeight, 0, 0, screenWidth - 10, screenHeight - 10, imageWidth, imageHeight);
         }
