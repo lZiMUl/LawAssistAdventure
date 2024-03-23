@@ -1,4 +1,3 @@
-/item replace entity Dev armor.legs with law_assist_adventure:parachute
 /item replace entity Dev armor.head with law_assist_adventure:parachute
 /kill @e
 /time set day
@@ -48,3 +47,4 @@
 /weather clear
 /playsound law_assist_adventure:sound.demo
 /playsound law_assist_adventure:sound.demo player Dev ~ ~ ~
+/time set day

@@ -11,14 +11,16 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.MODID;
 
 @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class MenuEvent {
+public class ScreenEvent {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
-        MenuScreens.register(MenuRegister.CraftingTableMenu.get(), CraftingTableScreen::new);
-        MenuScreens.register(MenuRegister.FluidFuelGeneratorMenu.get(), FluidFuelGeneratorScreen::new);
-        MenuScreens.register(MenuRegister.ThermalGeneratorMenu.get(), ThermalGeneratorScreen::new);
-        MenuScreens.register(MenuRegister.WasherMenu.get(), WasherScreen::new);
-        MenuScreens.register(MenuRegister.SolarPanelGeneratorMenu.get(), SolarPanelGeneratorScreen::new);
-        MenuScreens.register(MenuRegister.TeleporterMenu.get(), TeleporterScreen::new);
+        event.enqueueWork(() -> {
+            MenuScreens.register(MenuRegister.CraftingTableMenu.get(), CraftingTableScreen::new);
+            MenuScreens.register(MenuRegister.FluidFuelGeneratorMenu.get(), FluidFuelGeneratorScreen::new);
+            MenuScreens.register(MenuRegister.ThermalGeneratorMenu.get(), ThermalGeneratorScreen::new);
+            MenuScreens.register(MenuRegister.WasherMenu.get(), WasherScreen::new);
+            MenuScreens.register(MenuRegister.SolarPanelGeneratorMenu.get(), SolarPanelGeneratorScreen::new);
+            MenuScreens.register(MenuRegister.TeleporterMenu.get(), TeleporterScreen::new);
+        });
     }
 }

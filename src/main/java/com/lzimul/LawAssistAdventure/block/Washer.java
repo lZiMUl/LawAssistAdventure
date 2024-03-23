@@ -1,16 +1,11 @@
 package com.lzimul.LawAssistAdventure.block;
 
 import com.lzimul.LawAssistAdventure.block.entity.WasherEntity;
-import com.lzimul.LawAssistAdventure.client.menu.block.WasherMenu;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.MenuProvider;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
@@ -26,9 +21,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
+import java.util.Objects;
 
 
-public class Washer extends BaseEntityBlock implements EntityBlock, MenuProvider {
+public class Washer extends BaseEntityBlock implements EntityBlock {
     public Washer() {
         super(BlockBehaviour.Properties.of().noOcclusion());
     }
@@ -38,15 +34,10 @@ public class Washer extends BaseEntityBlock implements EntityBlock, MenuProvider
         if (!level.isClientSide && player.isAlive()) {
             BlockEntity entity = level.getBlockEntity(blockPos);
             if (entity instanceof WasherEntity) {
-                player.openMenu(this);
+                player.openMenu(Objects.requireNonNull(this.getMenuProvider(blockState, level, blockPos)), blockPos);
             }
         }
         return InteractionResult.sidedSuccess(level.isClientSide);
-    }
-
-    @Override
-    public @NotNull Component getDisplayName() {
-        return Component.translatable(this.getDescriptionId());
     }
 
     @Override
@@ -56,14 +47,8 @@ public class Washer extends BaseEntityBlock implements EntityBlock, MenuProvider
 
     @Nullable
     @Override
-    public AbstractContainerMenu createMenu(int id, @NotNull Inventory inventory, @NotNull Player player) {
-        return new WasherMenu(id, inventory, player);
-    }
-
-    @Nullable
-    @Override
     public BlockEntity newBlockEntity(@NotNull BlockPos blockPos, @NotNull BlockState blockState) {
-        return new WasherEntity(blockPos, blockState);
+        return new WasherEntity(blockPos, blockState, this.getDescriptionId());
     }
 
     @Override

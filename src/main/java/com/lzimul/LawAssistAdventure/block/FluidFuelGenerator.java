@@ -1,16 +1,11 @@
 package com.lzimul.LawAssistAdventure.block;
 
 import com.lzimul.LawAssistAdventure.block.entity.FluidFuelGeneratorEntity;
-import com.lzimul.LawAssistAdventure.client.menu.block.FluidFuelGeneratorMenu;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.MenuProvider;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
@@ -26,8 +21,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
+import java.util.Objects;
 
-public class FluidFuelGenerator extends BaseEntityBlock implements EntityBlock, MenuProvider {
+public class FluidFuelGenerator extends BaseEntityBlock implements EntityBlock {
     public FluidFuelGenerator() {
         super(BlockBehaviour.Properties.of().noOcclusion());
     }
@@ -37,15 +33,10 @@ public class FluidFuelGenerator extends BaseEntityBlock implements EntityBlock, 
         if (!level.isClientSide && player.isAlive()) {
             BlockEntity entity = level.getBlockEntity(blockPos);
             if (entity instanceof FluidFuelGeneratorEntity) {
-                player.openMenu(this);
+                player.openMenu(Objects.requireNonNull(this.getMenuProvider(blockState, level, blockPos)), blockPos);
             }
         }
         return InteractionResult.sidedSuccess(level.isClientSide);
-    }
-
-    @Override
-    public @NotNull Component getDisplayName() {
-        return Component.translatable(this.getDescriptionId());
     }
 
     @Override
@@ -55,14 +46,8 @@ public class FluidFuelGenerator extends BaseEntityBlock implements EntityBlock, 
 
     @Nullable
     @Override
-    public AbstractContainerMenu createMenu(int id, @NotNull Inventory inventory, @NotNull Player player) {
-        return new FluidFuelGeneratorMenu(id, inventory, player);
-    }
-
-    @Nullable
-    @Override
     public BlockEntity newBlockEntity(@NotNull BlockPos blockPos, @NotNull BlockState blockState) {
-        return new FluidFuelGeneratorEntity(blockPos, blockState);
+        return new FluidFuelGeneratorEntity(blockPos, blockState, this.getDescriptionId());
     }
 
     @Override

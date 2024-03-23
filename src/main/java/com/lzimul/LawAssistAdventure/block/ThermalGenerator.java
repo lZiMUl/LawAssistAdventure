@@ -1,16 +1,11 @@
 package com.lzimul.LawAssistAdventure.block;
 
 import com.lzimul.LawAssistAdventure.block.entity.ThermalGeneratorEntity;
-import com.lzimul.LawAssistAdventure.client.menu.block.ThermalGeneratorMenu;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.MenuProvider;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
@@ -26,8 +21,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
+import java.util.Objects;
 
-public class ThermalGenerator extends BaseEntityBlock implements EntityBlock, MenuProvider {
+public class ThermalGenerator extends BaseEntityBlock implements EntityBlock {
     public ThermalGenerator() {
         super(BlockBehaviour.Properties.of().noOcclusion());
     }
@@ -37,15 +33,10 @@ public class ThermalGenerator extends BaseEntityBlock implements EntityBlock, Me
         if (!level.isClientSide && player.isAlive()) {
             BlockEntity entity = level.getBlockEntity(blockPos);
             if (entity instanceof ThermalGeneratorEntity) {
-                player.openMenu(this);
+                player.openMenu(Objects.requireNonNull(this.getMenuProvider(blockState, level, blockPos)), blockPos);
             }
         }
         return InteractionResult.sidedSuccess(level.isClientSide);
-    }
-
-    @Override
-    public Component getDisplayName() {
-        return Component.translatable(this.getDescriptionId());
     }
 
     @Override
@@ -55,14 +46,8 @@ public class ThermalGenerator extends BaseEntityBlock implements EntityBlock, Me
 
     @Nullable
     @Override
-    public AbstractContainerMenu createMenu(int id, @NotNull Inventory inventory, @NotNull Player player) {
-        return new ThermalGeneratorMenu(id, inventory, player);
-    }
-
-    @Nullable
-    @Override
     public BlockEntity newBlockEntity(@NotNull BlockPos blockPos, @NotNull BlockState blockState) {
-        return new ThermalGeneratorEntity(blockPos, blockState);
+        return new ThermalGeneratorEntity(blockPos, blockState, this.getDescriptionId());
     }
 
     @Override
