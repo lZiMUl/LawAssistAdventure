@@ -6,6 +6,10 @@
 
 ***
 
+## Download Link (下载地址) - [Click the link](https://www.curseforge.com/minecraft/mc-mods/law-assist-adventure)
+
+***
+
 ## Help Us (帮助我们)
 - Item (物品)
 - Block (方块)
