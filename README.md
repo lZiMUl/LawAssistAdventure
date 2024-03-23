@@ -1,4 +1,4 @@
-# LawAssist & Adventure
+# Law Assist Adventure
 
 ***
 
