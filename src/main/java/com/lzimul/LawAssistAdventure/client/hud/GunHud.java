@@ -3,12 +3,9 @@ package com.lzimul.LawAssistAdventure.client.hud;
 import com.lzimul.LawAssistAdventure.register.ItemRegister;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.network.chat.Component;
 import net.neoforged.neoforge.client.gui.overlay.ExtendedGui;
 import net.neoforged.neoforge.client.gui.overlay.IGuiOverlay;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Objects;
 
 import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.getHudResourceLocation;
 

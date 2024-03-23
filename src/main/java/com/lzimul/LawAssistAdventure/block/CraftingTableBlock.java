@@ -30,6 +30,7 @@ public class CraftingTableBlock extends BaseEntityBlock {
     public CraftingTableBlock() {
         super(BlockBehaviour.Properties.of());
     }
+
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState blockState, @NotNull Level level, @NotNull BlockPos blockPos, @NotNull Player player, @NotNull InteractionHand interactionHand, @NotNull BlockHitResult blockHitResult) {
         if (!level.isClientSide && player.isAlive()) {
