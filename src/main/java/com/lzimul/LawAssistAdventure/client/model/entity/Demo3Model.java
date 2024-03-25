@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import static com.lzimul.LawAssistAdventure.Config.MODID;
 
 public class Demo3Model<T extends Demo3Animal> extends EntityModel<T> {
-    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(MODID, "demo2"), "main");
+    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(MODID, "demo3"), "main");
     private final ModelPart bone;
     private final ModelPart zhandou;
 

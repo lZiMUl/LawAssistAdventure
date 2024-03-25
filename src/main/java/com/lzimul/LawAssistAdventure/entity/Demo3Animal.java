@@ -1,6 +1,6 @@
 package com.lzimul.LawAssistAdventure.entity;
 
-import com.lzimul.LawAssistAdventure.entity.ai.DemoAi;
+import com.lzimul.LawAssistAdventure.entity.ai.*;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
@@ -19,17 +19,18 @@ public class Demo3Animal extends Animal {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 20.0);
+                .add(Attributes.MAX_HEALTH, 300);
     }
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(0, new DemoAi(this));
+        this.goalSelector.addGoal(0, new AttackPlayerAi(this, 1, 30));
+        this.goalSelector.addGoal(1, new MoveToPlayerAi(this, 1, 30));
     }
 
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(@NotNull ServerLevel serverLevel, @NotNull AgeableMob ageableMob) {
-        return null;
+        return ageableMob;
     }
 }

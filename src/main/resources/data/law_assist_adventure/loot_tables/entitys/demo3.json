@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 2,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "law_assist_adventure:circuit_boards_2"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "law_assist_adventure:iron_plates"
+        }
+      ]
+    }
+  ],
+  "random_sequence": "law_assist_adventure:entities/demo3"
+}
