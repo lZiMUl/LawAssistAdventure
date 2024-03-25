@@ -12,8 +12,8 @@ import org.jetbrains.annotations.NotNull;
 public class Demo1Entity extends Entity {
     private static final EntityDataAccessor<Integer> entityDataAccessor = SynchedEntityData.defineId(Demo1Entity.class, EntityDataSerializers.INT);
 
-    public Demo1Entity(EntityType<?> entityType, Level level) {
-        super(entityType, level);
+    public Demo1Entity(EntityType<Demo1Entity> entity, Level level) {
+        super(entity, level);
     }
 
     @Override

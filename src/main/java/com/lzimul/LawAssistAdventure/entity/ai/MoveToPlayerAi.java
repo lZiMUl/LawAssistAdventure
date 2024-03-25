@@ -28,17 +28,9 @@ public class MoveToPlayerAi extends MoveToBlockGoal {
     @Override
     public void tick() {
         Player target = this.pathfinderMob.level().getNearestPlayer(this.pathfinderMob, this.searchRange);
-        if (target != null && target.isAlive()) {
-            if (isDistanceExceeded(this.pathfinderMob, target, 8)) {
-                this.pathfinderMob.lookAt(target, 30.0F, 30.0F);
-                this.pathfinderMob.getNavigation().moveTo(target, this.speedModifier);
-            } else if (this.pathfinderMob.getNavigation().isDone() && !this.pathfinderMob.getNavigation().isInProgress()) {
-                super.stop();
-                this.pathfinderMob.getNavigation().stop();
-            }
-        } else {
-            super.stop();
-            this.pathfinderMob.getNavigation().stop();
+        if (target != null && target.isAlive() && isDistanceExceeded(this.pathfinderMob, target, 8)) {
+            this.pathfinderMob.lookAt(target, 30.0F, 30.0F);
+            this.pathfinderMob.getNavigation().moveTo(target, this.speedModifier);
         }
         super.tick();
     }
