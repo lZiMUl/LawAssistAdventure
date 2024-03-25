@@ -9,7 +9,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import org.jetbrains.annotations.NotNull;
 
-import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.getBlockResourceLocation;
+import static com.lzimul.LawAssistAdventure.Config.getBlockResourceLocation;
 
 public class FluidFuelGeneratorScreen extends AbstractContainerScreen<FluidFuelGeneratorMenu> {
     public FluidFuelGeneratorScreen(FluidFuelGeneratorMenu fluidFuelGeneratorMenu, Inventory inventory, Component component) {

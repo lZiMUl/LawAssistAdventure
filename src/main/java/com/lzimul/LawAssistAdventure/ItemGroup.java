@@ -1,4 +1,4 @@
-package com.lzimul.LawAssistAdventure.client.util;
+package com.lzimul.LawAssistAdventure;
 
 import com.lzimul.LawAssistAdventure.register.BlockRegister;
 import com.lzimul.LawAssistAdventure.register.ItemRegister;
@@ -10,9 +10,9 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.MODID;
+import static com.lzimul.LawAssistAdventure.Config.MODID;
 
-public class ItemGroupUtil {
+public class ItemGroup {
     private static final DeferredRegister<CreativeModeTab> CreativeTab = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
     DeferredHolder<CreativeModeTab, CreativeModeTab> block = CreativeTab.register("item_group.lzimul.law_assist_adventure.blocks", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(BlockRegister.CraftingTable.get().asItem()))

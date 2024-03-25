@@ -5,8 +5,10 @@ import com.lzimul.LawAssistAdventure.client.hud.MainHud;
 import com.lzimul.LawAssistAdventure.client.key.KeyBinding;
 import com.lzimul.LawAssistAdventure.client.model.entity.Demo1Model;
 import com.lzimul.LawAssistAdventure.client.model.entity.Demo2Model;
+import com.lzimul.LawAssistAdventure.client.model.entity.Demo3Model;
 import com.lzimul.LawAssistAdventure.client.renderer.entity.Demo1Renderer;
 import com.lzimul.LawAssistAdventure.client.renderer.entity.Demo2Renderer;
+import com.lzimul.LawAssistAdventure.client.renderer.entity.Demo3Renderer;
 import com.lzimul.LawAssistAdventure.register.EntityRegister;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
@@ -19,7 +21,7 @@ import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.event.RegisterGuiOverlaysEvent;
 import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
 
-import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.MODID;
+import static com.lzimul.LawAssistAdventure.Config.MODID;
 
 @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class RendererEvent {
@@ -28,6 +30,7 @@ public class RendererEvent {
         event.enqueueWork(() -> {
             EntityRenderers.register(EntityRegister.DEMO1.get(), Demo1Renderer::new);
             EntityRenderers.register(EntityRegister.DEMO2.get(), Demo2Renderer::new);
+            EntityRenderers.register(EntityRegister.DEMO3.get(), Demo3Renderer::new);
         });
     }
 
@@ -35,6 +38,7 @@ public class RendererEvent {
     public static void registerEntityLayers(EntityRenderersEvent.RegisterLayerDefinitions registerLayerDefinitions) {
         registerLayerDefinitions.registerLayerDefinition(Demo1Model.LAYER_LOCATION, Demo1Model::createBodyLayer);
         registerLayerDefinitions.registerLayerDefinition(Demo2Model.LAYER_LOCATION, Demo2Model::createBodyLayer);
+        registerLayerDefinitions.registerLayerDefinition(Demo3Model.LAYER_LOCATION, Demo3Model::createBodyLayer);
     }
 
     @SubscribeEvent

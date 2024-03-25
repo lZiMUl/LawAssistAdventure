@@ -10,7 +10,7 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class Demo1Entity extends Entity {
-    private static final EntityDataAccessor<Integer> COUNTER = SynchedEntityData.defineId(Demo1Entity.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> entityDataAccessor = SynchedEntityData.defineId(Demo1Entity.class, EntityDataSerializers.INT);
 
     public Demo1Entity(EntityType<?> entityType, Level level) {
         super(entityType, level);
@@ -23,17 +23,15 @@ public class Demo1Entity extends Entity {
 
     @Override
     protected void defineSynchedData() {
-        this.entityData.define(COUNTER, 0);
+        this.entityData.define(entityDataAccessor, 0);
     }
 
     @Override
     protected void readAdditionalSaveData(@NotNull CompoundTag compoundTag) {
-
-        this.entityData.set(COUNTER, compoundTag.getInt("counter"));
+        this.entityData.set(entityDataAccessor, compoundTag.getInt("counter"));
     }
-
     @Override
     protected void addAdditionalSaveData(@NotNull CompoundTag compoundTag) {
-        compoundTag.putInt("counter", this.entityData.get(COUNTER));
+        compoundTag.putInt("counter", this.entityData.get(entityDataAccessor));
     }
 }

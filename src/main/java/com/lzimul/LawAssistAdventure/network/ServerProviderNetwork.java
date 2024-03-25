@@ -15,7 +15,7 @@ public class ServerProviderNetwork {
 
     public void handleData(final DataNetwork networkData, final PlayPayloadContext playPayloadContext) {
         try {
-            playPayloadContext.player().ifPresent(player -> {
+            playPayloadContext.player().ifPresent((player) -> {
                 playPayloadContext.workHandler().submitAsync(() -> {
                     String data = networkData.data();
                     player.sendSystemMessage(Component.literal("我从服务端得到了这个数据:" + data));

@@ -26,7 +26,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
-import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.MODID;
+import static com.lzimul.LawAssistAdventure.Config.MODID;
 
 public class TeleporterItem extends Item implements MenuProvider {
     public TeleporterItem() {

@@ -43,7 +43,7 @@ public class CraftingTableBlock extends BaseEntityBlock {
                 }
             }
         }
-        return InteractionResult.sidedSuccess(level.isClientSide);
+        return InteractionResult.SUCCESS;
     }
 
     @Override
@@ -54,7 +54,7 @@ public class CraftingTableBlock extends BaseEntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(@NotNull BlockPos pos, @NotNull BlockState state) {
-        return new CraftingTableEntity(pos, state, this.getDescriptionId());
+        return new CraftingTableEntity(pos, state);
     }
 
     @Override

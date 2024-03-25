@@ -9,7 +9,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import org.jetbrains.annotations.NotNull;
 
-import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.getItemResourceLocation;
+import static com.lzimul.LawAssistAdventure.Config.getItemResourceLocation;
 
 public class TeleporterScreen extends AbstractContainerScreen<TeleporterMenu> {
     public TeleporterScreen(TeleporterMenu teleporterMenu, Inventory inventory, Component component) {

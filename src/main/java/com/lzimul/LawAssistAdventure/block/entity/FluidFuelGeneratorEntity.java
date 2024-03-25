@@ -15,6 +15,8 @@ import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import static com.lzimul.LawAssistAdventure.Config.getDescriptionId;
+
 public class FluidFuelGeneratorEntity extends BlockEntity implements MenuProvider {
     protected final ContainerData containerData;
     private final ItemStackHandler itemStackHandler = new ItemStackHandler(1) {
@@ -25,12 +27,6 @@ public class FluidFuelGeneratorEntity extends BlockEntity implements MenuProvide
     };
     private int progress = 0;
     private int progressMax = 100;
-    private String descriptionId;
-
-    public FluidFuelGeneratorEntity(BlockPos blockPos, BlockState blockState, String descriptionId) {
-        this(blockPos, blockState);
-        this.descriptionId = descriptionId;
-    }
 
     public FluidFuelGeneratorEntity(BlockPos blockPos, BlockState blockState) {
         super(BlockEntityRegister.FluidFuelGenerator.get(), blockPos, blockState);
@@ -66,7 +62,7 @@ public class FluidFuelGeneratorEntity extends BlockEntity implements MenuProvide
 
     @Override
     public @NotNull Component getDisplayName() {
-        return Component.translatable(this.descriptionId);
+        return Component.translatable(getDescriptionId(super.level, getBlockPos()));
     }
 
     @Nullable

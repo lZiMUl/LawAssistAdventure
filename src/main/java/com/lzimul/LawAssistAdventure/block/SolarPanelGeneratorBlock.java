@@ -36,7 +36,7 @@ public class SolarPanelGeneratorBlock extends BaseEntityBlock implements EntityB
                 player.openMenu(Objects.requireNonNull(this.getMenuProvider(blockState, level, blockPos)), blockPos);
             }
         }
-        return InteractionResult.sidedSuccess(level.isClientSide);
+        return InteractionResult.SUCCESS;
     }
 
     @Override
@@ -47,7 +47,7 @@ public class SolarPanelGeneratorBlock extends BaseEntityBlock implements EntityB
     @Nullable
     @Override
     public BlockEntity newBlockEntity(@NotNull BlockPos blockPos, @NotNull BlockState blockState) {
-        return new SolarPanelGeneratorEntity(blockPos, blockState, this.getDescriptionId());
+        return new SolarPanelGeneratorEntity(blockPos, blockState);
     }
 
     @Override

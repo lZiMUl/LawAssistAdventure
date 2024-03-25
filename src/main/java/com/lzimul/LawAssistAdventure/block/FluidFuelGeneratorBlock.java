@@ -35,7 +35,7 @@ public class FluidFuelGeneratorBlock extends BaseEntityBlock {
                 player.openMenu(Objects.requireNonNull(this.getMenuProvider(blockState, level, blockPos)), blockPos);
             }
         }
-        return InteractionResult.sidedSuccess(level.isClientSide);
+        return InteractionResult.SUCCESS;
     }
 
     @Override
@@ -46,7 +46,7 @@ public class FluidFuelGeneratorBlock extends BaseEntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(@NotNull BlockPos blockPos, @NotNull BlockState blockState) {
-        return new FluidFuelGeneratorEntity(blockPos, blockState, this.getDescriptionId());
+        return new FluidFuelGeneratorEntity(blockPos, blockState);
     }
 
     @Override

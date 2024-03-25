@@ -7,7 +7,7 @@ import net.neoforged.neoforge.client.gui.overlay.ExtendedGui;
 import net.neoforged.neoforge.client.gui.overlay.IGuiOverlay;
 import org.jetbrains.annotations.NotNull;
 
-import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.getHudResourceLocation;
+import static com.lzimul.LawAssistAdventure.Config.getHudResourceLocation;
 
 public class GunHud implements IGuiOverlay {
     private final Minecraft minecraft;

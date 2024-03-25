@@ -8,7 +8,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlerEvent;
 import net.neoforged.neoforge.network.registration.IPayloadRegistrar;
 
-import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.MODID;
+import static com.lzimul.LawAssistAdventure.Config.MODID;
 
 @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class NetworkEvent {

@@ -8,7 +8,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.MODID;
+import static com.lzimul.LawAssistAdventure.Config.MODID;
 
 public class SoundRegister {
     public static final DeferredRegister<SoundEvent> Sound = DeferredRegister.create(Registries.SOUND_EVENT, MODID);

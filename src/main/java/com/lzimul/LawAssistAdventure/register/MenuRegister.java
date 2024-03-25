@@ -11,7 +11,7 @@ import net.neoforged.neoforge.network.IContainerFactory;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.MODID;
+import static com.lzimul.LawAssistAdventure.Config.MODID;
 
 public class MenuRegister {
     public static final DeferredRegister<MenuType<?>> Menu = DeferredRegister.create(Registries.MENU, MODID);

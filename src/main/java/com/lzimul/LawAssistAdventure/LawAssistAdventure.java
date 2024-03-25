@@ -1,6 +1,5 @@
 package com.lzimul.LawAssistAdventure;
 
-import com.lzimul.LawAssistAdventure.client.util.ItemGroupUtil;
 import com.lzimul.LawAssistAdventure.register.*;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -11,13 +10,13 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
-import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.LOGGER;
-import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.MODID;
+import static com.lzimul.LawAssistAdventure.Config.LOGGER;
+import static com.lzimul.LawAssistAdventure.Config.MODID;
 
 @Mod(MODID)
-public class LawAssistAdventure extends ItemGroupUtil {
+public class LawAssistAdventure extends ItemGroup {
     public LawAssistAdventure(IEventBus eventBus) {
-        ItemGroupUtil.register(eventBus);
+        ItemGroup.register(eventBus);
         ItemRegister.register(eventBus);
         BlockRegister.register(eventBus);
         BlockEntityRegister.register(eventBus);

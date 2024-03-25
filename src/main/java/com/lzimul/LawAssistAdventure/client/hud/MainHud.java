@@ -6,8 +6,6 @@ import net.neoforged.neoforge.client.gui.overlay.ExtendedGui;
 import net.neoforged.neoforge.client.gui.overlay.IGuiOverlay;
 import org.jetbrains.annotations.NotNull;
 
-import static com.lzimul.LawAssistAdventure.client.util.ConfigUtil.getHudResourceLocation;
-
 public class MainHud implements IGuiOverlay {
     private final Minecraft minecraft;
 

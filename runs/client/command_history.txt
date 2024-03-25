@@ -1,7 +1,4 @@
 /time set day
-/item replace entity Dev armor.head with law_assist_adventure:glock19
-/effect clear @a
-/time set day
 /setblock 16 -61 25 law_assist_adventure:crafting_table
 /give Dev law_assist_adventure:defend_the_ball
 /time set day
@@ -48,3 +45,6 @@
 /time set day
 /playsound law_assist_adventure:sound.demo player Dev ~ ~ ~
 /time set day
+/summon law_assist_adventure:demo3
+/kill @e
+/summon law_assist_adventure:demo3

@@ -15,17 +15,19 @@ import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import static com.lzimul.LawAssistAdventure.Config.getDescriptionId;
+
 public class CraftingTableEntity extends BlockEntity implements MenuProvider {
+    public static ContainerData containerData_;
     protected final ContainerData containerData;
-    private final ItemStackHandler itemStackHandler = new ItemStackHandler(1);
+    private final ItemStackHandler itemStackHandler = new ItemStackHandler(1) {
+        @Override
+        protected void onContentsChanged(int slot) {
+            setChanged();
+        }
+    };
     private int progress = 0;
     private int progressMax = 100;
-    private String descriptionId;
-
-    public CraftingTableEntity(BlockPos blockPos, BlockState blockState, String descriptionId) {
-        this(blockPos, blockState);
-        this.descriptionId = descriptionId;
-    }
 
     public CraftingTableEntity(BlockPos blockPos, BlockState blockState) {
         super(BlockEntityRegister.CraftingTable.get(), blockPos, blockState);
@@ -52,6 +54,7 @@ public class CraftingTableEntity extends BlockEntity implements MenuProvider {
                 return 1;
             }
         };
+        CraftingTableEntity.containerData_ = this.containerData;
     }
 
     public ItemStackHandler getItemHandler() {
@@ -60,7 +63,7 @@ public class CraftingTableEntity extends BlockEntity implements MenuProvider {
 
     @Override
     public @NotNull Component getDisplayName() {
-        return Component.translatable(this.descriptionId);
+        return Component.translatable(getDescriptionId(super.level, getBlockPos()));
     }
 
     @Nullable

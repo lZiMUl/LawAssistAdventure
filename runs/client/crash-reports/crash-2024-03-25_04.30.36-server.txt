@@ -1,0 +1,183 @@
+---- Minecraft Crash Report ----
+// Why did you do that?
+
+Time: 2024-03-25 04:30:36
+Description: Ticking entity
+
+java.lang.ClassCastException: class com.lzimul.LawAssistAdventure.entity.ai.DemoAi$1$1 cannot be cast to class com.lzimul.LawAssistAdventure.block.entity.CraftingTableEntity (com.lzimul.LawAssistAdventure.entity.ai.DemoAi$1$1 and com.lzimul.LawAssistAdventure.block.entity.CraftingTableEntity are in module law_assist_adventure@1.0.0 of loader 'TRANSFORMER' @48e8c32a)
+	at com.lzimul.LawAssistAdventure.client.menu.block.CraftingTableMenu.<init>(CraftingTableMenu.java:28) ~[%23193!/:?] {re:classloading}
+	at com.lzimul.LawAssistAdventure.entity.ai.DemoAi$1.createMenu(DemoAi.java:44) ~[%23193!/:?] {re:classloading}
+	at net.minecraft.server.level.ServerPlayer.openMenu(ServerPlayer.java:1018) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerPlayer.openMenu(ServerPlayer.java:1002) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at com.lzimul.LawAssistAdventure.entity.ai.DemoAi.canUse(DemoAi.java:36) ~[%23193!/:?] {re:classloading}
+	at net.minecraft.world.entity.ai.goal.Goal.canContinueToUse(Goal.java:12) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading}
+	at net.minecraft.world.entity.ai.goal.WrappedGoal.canContinueToUse(WrappedGoal.java:27) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading}
+	at net.minecraft.world.entity.ai.goal.GoalSelector.tick(GoalSelector.java:81) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading}
+	at net.minecraft.world.entity.Mob.serverAiStep(Mob.java:766) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.entity.LivingEntity.aiStep(LivingEntity.java:2615) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading}
+	at net.minecraft.world.entity.Mob.aiStep(Mob.java:539) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.entity.AgeableMob.aiStep(AgeableMob.java:130) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading}
+	at net.minecraft.world.entity.animal.Animal.aiStep(Animal.java:56) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading}
+	at net.minecraft.world.entity.LivingEntity.tick(LivingEntity.java:2366) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading}
+	at net.minecraft.world.entity.Mob.tick(Mob.java:334) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.tickNonPassenger(ServerLevel.java:755) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.Level.guardEntityTick(Level.java:556) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.lambda$tick$2(ServerLevel.java:401) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.entity.EntityTickList.forEach(EntityTickList.java:53) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading}
+	at net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:381) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:969) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:855) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:106) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:700) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:255) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:833) ~[?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at com.lzimul.LawAssistAdventure.client.menu.block.CraftingTableMenu.<init>(CraftingTableMenu.java:28) ~[%23193!/:?] {re:classloading}
+	at com.lzimul.LawAssistAdventure.entity.ai.DemoAi$1.createMenu(DemoAi.java:44) ~[%23193!/:?] {re:classloading}
+	at net.minecraft.server.level.ServerPlayer.openMenu(ServerPlayer.java:1018) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerPlayer.openMenu(ServerPlayer.java:1002) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at com.lzimul.LawAssistAdventure.entity.ai.DemoAi.canUse(DemoAi.java:36) ~[%23193!/:?] {re:classloading}
+	at net.minecraft.world.entity.ai.goal.Goal.canContinueToUse(Goal.java:12) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading}
+	at net.minecraft.world.entity.ai.goal.WrappedGoal.canContinueToUse(WrappedGoal.java:27) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading}
+	at net.minecraft.world.entity.ai.goal.GoalSelector.tick(GoalSelector.java:81) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading}
+	at net.minecraft.world.entity.Mob.serverAiStep(Mob.java:766) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.entity.LivingEntity.aiStep(LivingEntity.java:2615) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading}
+	at net.minecraft.world.entity.Mob.aiStep(Mob.java:539) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.entity.AgeableMob.aiStep(AgeableMob.java:130) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading}
+	at net.minecraft.world.entity.animal.Animal.aiStep(Animal.java:56) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading}
+	at net.minecraft.world.entity.LivingEntity.tick(LivingEntity.java:2366) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading}
+	at net.minecraft.world.entity.Mob.tick(Mob.java:334) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.tickNonPassenger(ServerLevel.java:755) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.Level.guardEntityTick(Level.java:556) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.lambda$tick$2(ServerLevel.java:401) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.entity.EntityTickList.forEach(EntityTickList.java:53) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading}
+-- Entity being ticked --
+Details:
+	Entity Type: law_assist_adventure:demo3 (com.lzimul.LawAssistAdventure.entity.Demo3Animal)
+	Entity ID: 18
+	Entity Name: entity.law_assist_adventure.demo3
+	Entity's Exact location: -101.00, 71.00, -224.41
+	Entity's Block location: World: (-101,71,-225), Section: (at 11,7,15 in -7,4,-15; chunk contains blocks -112,-64,-240 to -97,319,-225), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,-64,-512 to -1,319,-1)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: null
+Stacktrace:
+	at net.minecraft.world.level.Level.guardEntityTick(Level.java:556) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.lambda$tick$2(ServerLevel.java:401) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.entity.EntityTickList.forEach(EntityTickList.java:53) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading}
+	at net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:381) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:969) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:855) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:106) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:700) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:255) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:833) ~[?:?] {}
+
+
+-- Affected level --
+Details:
+	All players: 1 total; [ServerPlayer['Dev'/16, l='ServerLevel[New World]', x=-100.52, y=73.16, z=-233.96]]
+	Chunk stats: 1720
+	Level dimension: law_assist_adventure:final_wing
+	Derived: true
+	Level spawn location: World: (0,-60,0), Section: (at 0,4,0 in 0,-4,0; chunk contains blocks 0,-64,0 to 15,319,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Level time: 326183 game time, 37541 day time
+	Level name: New World
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+	Level weather: Rain time: 12396 (now: true), thunder time: 114243 (now: false)
+	Known server brands: neoforge
+	Removed feature flags: 
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+	Loaded entity count: 3
+Stacktrace:
+	at net.minecraft.server.level.ServerLevel.fillReportDetails(ServerLevel.java:1695) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:972) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:855) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:106) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:700) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:255) ~[neoforge-20.4.183.jar%23192!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:833) ~[?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.4
+	Minecraft Version ID: 1.20.4
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 17.0.6, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 490705000 bytes (467 MiB) / 1677721600 bytes (1600 MiB) up to 3676307456 bytes (3506 MiB)
+	CPUs: 16
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 7 6800H with Radeon Graphics         
+	Identifier: AuthenticAMD Family 25 Model 68 Stepping 1
+	Microarchitecture: Zen 3
+	Frequency (GHz): 3.19
+	Number of physical packages: 1
+	Number of physical CPUs: 8
+	Number of logical CPUs: 16
+	Graphics card #0 name: Parsec Virtual Display Adapter
+	Graphics card #0 vendor: Parsec Cloud, Inc.
+	Graphics card #0 VRAM (MB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: DriverVersion=0.41.0.0
+	Graphics card #1 name: AMD Radeon(TM) Graphics
+	Graphics card #1 vendor: Advanced Micro Devices, Inc. (0x1002)
+	Graphics card #1 VRAM (MB): 2048.00
+	Graphics card #1 deviceId: 0x1681
+	Graphics card #1 versionInfo: DriverVersion=31.0.24027.1012
+	Memory slot #0 capacity (MB): 4096.00
+	Memory slot #0 clockSpeed (GHz): 6.40
+	Memory slot #0 type: Unknown
+	Memory slot #1 capacity (MB): 4096.00
+	Memory slot #1 clockSpeed (GHz): 6.40
+	Memory slot #1 type: Unknown
+	Memory slot #2 capacity (MB): 4096.00
+	Memory slot #2 clockSpeed (GHz): 6.40
+	Memory slot #2 type: Unknown
+	Memory slot #3 capacity (MB): 4096.00
+	Memory slot #3 clockSpeed (GHz): 6.40
+	Memory slot #3 type: Unknown
+	Virtual memory max (MB): 36548.95
+	Virtual memory used (MB): 25094.90
+	Swap memory total (MB): 22528.00
+	Swap memory used (MB): 2197.22
+	JVM Flags: 1 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+	Server Running: true
+	Player Count: 1 / 8; [ServerPlayer['Dev'/16, l='ServerLevel[New World]', x=-100.52, y=73.16, z=-233.96]]
+	Data Packs: vanilla, mod_data, mod:law_assist_adventure, mod:neoforge
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Experimental
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'neoforge'; Server brand changed to 'neoforge'
+	Launched Version: 20.4.183
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeclientuserdev
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		loader-2.0.11.jar slf4jfixer PLUGINSERVICE 
+		loader-2.0.11.jar runtime_enum_extender PLUGINSERVICE 
+		at-modlauncher-10.0.1.jar accesstransformer PLUGINSERVICE 
+		loader-2.0.11.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		javafml@2.0
+		lowcodefml@2.0
+		minecraft@2.0
+	Mod List: 
+		neoforge-20.4.183.jar                             |Minecraft                     |minecraft                     |1.20.4              |DONE      |Manifest: a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		main                                              |Law Assist Adventure          |law_assist_adventure          |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		                                                  |NeoForge                      |neoforge                      |20.4.183            |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: a5a49f4e-47fb-44df-85c6-0cf950b8e6a1
+	FML: 20.4
+	NeoForge: net.neoforged:20.4.183

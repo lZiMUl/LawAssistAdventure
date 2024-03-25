@@ -37,7 +37,7 @@ public class WasherBlock extends BaseEntityBlock implements EntityBlock {
                 player.openMenu(Objects.requireNonNull(this.getMenuProvider(blockState, level, blockPos)), blockPos);
             }
         }
-        return InteractionResult.sidedSuccess(level.isClientSide);
+        return InteractionResult.SUCCESS;
     }
 
     @Override
@@ -48,7 +48,7 @@ public class WasherBlock extends BaseEntityBlock implements EntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(@NotNull BlockPos blockPos, @NotNull BlockState blockState) {
-        return new WasherEntity(blockPos, blockState, this.getDescriptionId());
+        return new WasherEntity(blockPos, blockState);
     }
 
     @Override
