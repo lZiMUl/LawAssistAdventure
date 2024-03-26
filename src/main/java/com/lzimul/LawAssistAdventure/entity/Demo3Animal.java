@@ -1,6 +1,6 @@
 package com.lzimul.LawAssistAdventure.entity;
 
-import com.lzimul.LawAssistAdventure.entity.ai.AttackPlayerAi;
+import com.lzimul.LawAssistAdventure.entity.ai.AttackAndFollowAi;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
@@ -24,7 +24,7 @@ public class Demo3Animal extends Animal {
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(0, new AttackPlayerAi(this, 1, 30));
+        this.goalSelector.addGoal(0, new AttackAndFollowAi(this, 1, 30));
     }
 
     @Nullable

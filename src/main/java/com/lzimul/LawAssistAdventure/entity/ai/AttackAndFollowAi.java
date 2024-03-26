@@ -11,18 +11,23 @@ import net.minecraft.world.entity.player.Player;
 
 import static com.lzimul.LawAssistAdventure.Config.isDistanceExceeded;
 
-public class AttackPlayerAi extends MeleeAttackGoal {
+public class AttackAndFollowAi extends MeleeAttackGoal {
 
     public final PathfinderMob pathfinderMob;
     private final int searchRange;
     private final double speedModifier;
     private Player nearestPlayer;
+    private DamageSource tempDamageSource = null;
+    PathNavigation pathNavigation;
+    LookControl lookControl;
 
-    public AttackPlayerAi(PathfinderMob pathfinderMob, double speedModifier, int searchRange) {
+    public AttackAndFollowAi(PathfinderMob pathfinderMob, double speedModifier, int searchRange) {
         super(pathfinderMob, speedModifier, true);
         this.pathfinderMob = pathfinderMob;
         this.speedModifier = speedModifier;
         this.searchRange = searchRange;
+        this.pathNavigation = this.pathfinderMob.getNavigation();
+        this.lookControl = this.pathfinderMob.getLookControl();
     }
 
     @Override
@@ -33,22 +38,26 @@ public class AttackPlayerAi extends MeleeAttackGoal {
 
     @Override
     public void tick() {
-        PathNavigation pathNavigation = this.pathfinderMob.getNavigation();
-        if (pathNavigation.isDone()) {
-            pathNavigation.stop();
+        if (this.pathNavigation.isDone()) {
+            this.pathNavigation.stop();
+        }
+        if (this.tempDamageSource == null) {
+            this.tempDamageSource = this.pathfinderMob.getLastDamageSource();
+        }
+        if (!this.nearestPlayer.isAlive()) {
+            this.tempDamageSource = null;
         }
         if (isDistanceExceeded(this.pathfinderMob, this.nearestPlayer, 8D)) {
-            this.pathfinderMob.lookAt(this.nearestPlayer, 30.0F, 30.0F);
-            pathNavigation.moveTo(this.nearestPlayer, this.speedModifier);
-        }
-        LookControl lookControl = this.pathfinderMob.getLookControl();
-        lookControl.setLookAt(this.nearestPlayer, 30.0F, 30.0F);
-        DamageSource damageSource = this.pathfinderMob.getLastDamageSource();
-        if (lookControl.isLookingAtTarget() && damageSource != null && isCS(this.nearestPlayer)) {
-            if (this.pathfinderMob.doHurtTarget(this.nearestPlayer)) {
-                this.nearestPlayer.addEffect(new MobEffectInstance(MobEffects.JUMP, 3, 3, true, true));
+            this.pathNavigation.moveTo(this.nearestPlayer, this.speedModifier);
+        } else {
+            this.lookControl.setLookAt(this.nearestPlayer);
+            if (this.lookControl.isLookingAtTarget() && this.tempDamageSource != null && isCS(this.nearestPlayer)) {
+                if (this.nearestPlayer.hurt(this.tempDamageSource,3F)) {
+                    this.nearestPlayer.addEffect(new MobEffectInstance(MobEffects.JUMP, 3, 3, true, true));
+                }
             }
         }
+
     }
 
     private boolean isCS(Player player) {
