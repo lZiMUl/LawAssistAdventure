@@ -30,7 +30,7 @@ public class Config {
         return Objects.requireNonNull(level).getBlockState(blockPos).getBlock().getDescriptionId();
     }
 
-    public static boolean isDistanceExceeded(PathfinderMob source, Player target, int range) {
+    public static boolean isDistanceExceeded(PathfinderMob source, Player target, double range) {
         Vec3 sourcePosition = source.getPosition(0.5F);
         Vec3 targetPosition = target.getPosition(0.5F);
         double x = Math.pow(targetPosition.x - sourcePosition.x, 2);
