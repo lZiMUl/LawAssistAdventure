@@ -38,6 +38,7 @@ public class AttackAndFollowAi extends MeleeAttackGoal {
 
     @Override
     public void tick() {
+        this.lookControl.setLookAt(this.nearestPlayer);
         if (this.pathNavigation.isDone()) {
             this.pathNavigation.stop();
         }
@@ -50,7 +51,6 @@ public class AttackAndFollowAi extends MeleeAttackGoal {
         if (isDistanceExceeded(this.pathfinderMob, this.nearestPlayer, 8D)) {
             this.pathNavigation.moveTo(this.nearestPlayer, this.speedModifier);
         } else {
-            this.lookControl.setLookAt(this.nearestPlayer);
             if (this.lookControl.isLookingAtTarget() && this.tempDamageSource != null && isCS(this.nearestPlayer)) {
                 if (this.nearestPlayer.hurt(this.tempDamageSource,3F)) {
                     this.nearestPlayer.addEffect(new MobEffectInstance(MobEffects.JUMP, 3, 3, true, true));
