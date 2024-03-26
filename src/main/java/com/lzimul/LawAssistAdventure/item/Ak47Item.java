@@ -2,6 +2,7 @@ package com.lzimul.LawAssistAdventure.item;
 
 import com.lzimul.LawAssistAdventure.client.helper.AmmunitionHelper;
 import com.lzimul.LawAssistAdventure.register.SoundRegister;
+import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -11,10 +12,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class Glock19Item extends Item {
-    private static final AmmunitionHelper ammunitionHelper = new AmmunitionHelper(21, 120, 0);
-
-    public Glock19Item() {
+public class Ak47Item extends Item {
+    private static final AmmunitionHelper ammunitionHelper = new AmmunitionHelper(30, 270, 0);
+    public Ak47Item() {
         super(new Item.Properties());
     }
 

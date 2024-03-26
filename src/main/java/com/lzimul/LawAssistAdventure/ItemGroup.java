@@ -84,6 +84,7 @@ public class ItemGroup {
                 output.accept(ItemRegister.DefendTheBall.get().asItem());
                 output.accept(ItemRegister.Parachute.get().asItem());
                 output.accept(ItemRegister.Hatchet.get().asItem());
+                output.accept(ItemRegister.Ak47.get().asItem());
                 output.accept(ItemRegister.Glock19.get().asItem());
                 output.accept(ItemRegister.Bullet.get().asItem());
                 output.accept(ItemRegister.BulletBox.get().asItem());
