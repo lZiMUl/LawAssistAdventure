@@ -2,41 +2,40 @@ package com.lzimul.LawAssistAdventure.entity.ai;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.PathfinderMob;
-import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.MoveToBlockGoal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.LevelReader;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.EnumSet;
-
 import static com.lzimul.LawAssistAdventure.Config.isDistanceExceeded;
 
-public class MoveToPlayerAi extends MoveToBlockGoal {
+public class FollowPlayerAi extends MoveToBlockGoal {
     private final PathfinderMob pathfinderMob;
     private final double speedModifier;
     private final int searchRange;
+    private Player nearestPlayer;
 
-    public MoveToPlayerAi(PathfinderMob pathfinderMob, double speedModifier, int searchRange) {
+    public FollowPlayerAi(PathfinderMob pathfinderMob, double speedModifier, int searchRange) {
         super(pathfinderMob, speedModifier, searchRange);
         this.pathfinderMob = pathfinderMob;
         this.speedModifier = speedModifier;
         this.searchRange = searchRange;
-        super.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.JUMP));
+    }
+
+    @Override
+    public boolean canUse() {
+        this.nearestPlayer = this.pathfinderMob.level().getNearestPlayer(this.pathfinderMob, this.searchRange);
+        return this.nearestPlayer != null && this.nearestPlayer.isAlive() && isDistanceExceeded(this.pathfinderMob, this.nearestPlayer, 8);
     }
 
     @Override
     public void tick() {
-        Player target = this.pathfinderMob.level().getNearestPlayer(this.pathfinderMob, this.searchRange);
-        if (target != null && target.isAlive() && isDistanceExceeded(this.pathfinderMob, target, 8)) {
-            this.pathfinderMob.lookAt(target, 30.0F, 30.0F);
-            this.pathfinderMob.getNavigation().moveTo(target, this.speedModifier);
-        }
-        super.tick();
+        this.pathfinderMob.lookAt(this.nearestPlayer, 30.0F, 30.0F);
+        this.pathfinderMob.getNavigation().moveTo(this.nearestPlayer, this.speedModifier);
     }
 
     @Override
-    protected boolean isValidTarget(@NotNull LevelReader p_25619_, @NotNull BlockPos p_25620_) {
+    protected boolean isValidTarget(@NotNull LevelReader levelReader, @NotNull BlockPos blockPos) {
         return true;
     }
 }
