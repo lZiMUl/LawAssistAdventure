@@ -1,7 +1,5 @@
 package com.lzimul.LawAssistAdventure.dimension;
 
-import com.lzimul.LawAssistAdventure.register.DimensionRegister;
-import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
@@ -12,31 +10,20 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
 
-import static com.lzimul.LawAssistAdventure.register.DimensionRegister.placeTeleporterOverworld;
 import static com.lzimul.LawAssistAdventure.register.DimensionRegister.placeTeleporterWorld;
 
 public class Dust implements ITeleporter {
-    private final BlockPos pos;
-
-    public Dust(BlockPos pos) {
-        this.pos = pos;
+    public Dust() {
     }
 
     @Override
-    public @NotNull Entity placeEntity(@NotNull Entity rawEntity, @NotNull ServerLevel currentWorld, @NotNull ServerLevel destWorld, float yaw, Function<Boolean, Entity> repositionEntity) {
-        Entity entity = repositionEntity.apply(false);
+    public @NotNull Entity placeEntity(@NotNull Entity entity, @NotNull ServerLevel currentWorld, @NotNull ServerLevel destWorld, float yaw, Function<Boolean, Entity> repositionEntity) {
 
         if (!(entity instanceof ServerPlayer player)) {
             return entity;
         }
-        LevelChunk chunk = (LevelChunk) destWorld.getChunk(pos);
-        Vec3 spawnPos;
-
-        if (destWorld.dimension().equals(DimensionRegister.Dust)) {
-            spawnPos = placeTeleporterWorld(destWorld, chunk);
-        } else {
-            spawnPos = placeTeleporterOverworld(destWorld, chunk);
-        }
+        LevelChunk chunk = (LevelChunk) destWorld.getChunk(player.getOnPos());
+        Vec3 spawnPos = placeTeleporterWorld(destWorld, chunk);
 
         if (spawnPos == null) {
             return entity;

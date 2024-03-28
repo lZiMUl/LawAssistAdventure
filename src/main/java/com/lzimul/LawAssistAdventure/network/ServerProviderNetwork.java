@@ -1,6 +1,5 @@
 package com.lzimul.LawAssistAdventure.network;
 
-import com.lzimul.LawAssistAdventure.dimension.FinalWing;
 import com.lzimul.LawAssistAdventure.register.DimensionRegister;
 import com.lzimul.LawAssistAdventure.register.ItemRegister;
 import com.lzimul.LawAssistAdventure.register.SoundRegister;
@@ -17,6 +16,7 @@ import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.network.handling.PlayPayloadContext;
 
 import java.util.Objects;
+import java.util.regex.Pattern;
 
 import static com.lzimul.LawAssistAdventure.Config.MODID;
 
@@ -28,19 +28,11 @@ public class ServerProviderNetwork {
         return INSTANCE;
     }
 
-
     public void handleData(final DataNetwork networkData, final PlayPayloadContext playPayloadContext) {
         playPayloadContext.player().ifPresent((player) -> playPayloadContext.workHandler().submitAsync(() -> {
             String data = networkData.data();
             player.sendSystemMessage(Component.literal("我从服务端得到了这个数据:" + data));
             switch (data) {
-                case "server:menu/CraftingTableBlock": {
-                }
-                break;
-                case "server:menu/114514": {
-                    player.sendSystemMessage(Component.literal("114514"));
-                }
-                break;
                 case "server:occupation/Dust":
                     teleportToWorld(player, DimensionRegister.Dust);
                     break;
@@ -65,6 +57,8 @@ public class ServerProviderNetwork {
                 case "server:occupation/TheEnd":
                     teleportToWorld(player, DimensionRegister.TheEnd);
                     break;
+                default:
+                    playPayloadContext.packetHandler().disconnect(Component.literal("network.law_assist_adventure.no_occupation"));
             }
         }).exceptionally(e -> {
             playPayloadContext.packetHandler().disconnect(Component.literal("network.law_assist_adventure." + e.getMessage()));
@@ -74,35 +68,36 @@ public class ServerProviderNetwork {
 
     private void teleportToWorld(Player player, ResourceKey<Level> levelResourceKey) {
         String worldId = levelResourceKey.location().toLanguageKey();
-        if (worldId.contains(MODID) && player.level().dimension() != levelResourceKey) {
+        Pattern pattern = Pattern.compile("minecraft|" + MODID);
+        if (pattern.matcher(worldId).find() && player.level().dimension() != levelResourceKey) {
             player.sendSystemMessage(Component.translatable(worldId));
             ServerLevel world = Objects.requireNonNull(player.getServer()).getLevel(levelResourceKey);
             if (world != null) {
-                player.changeDimension(world, new FinalWing(player.getOnPos()));
-                ItemStack slot = player.getItemBySlot(EquipmentSlot.CHEST);
-                ItemStack source = new ItemStack(slot.getItem());
-                ItemStack target = new ItemStack(ItemRegister.Parachute.get().asItem());
-                Inventory playerInventory = player.getInventory();
-                if (!slot.isEmpty()) {
-                    if (!source.getItem().equals(target.getItem())) {
-                        if (hasEmptySlot(playerInventory)) {
-                            for (ItemStack item : playerInventory.items) {
-                                if (item.isEmpty()) {
-                                    playerInventory.setItem(playerInventory.items.indexOf(item), source);
-                                    player.setItemSlot(EquipmentSlot.CHEST, target);
-                                    break;
-                                }
-                            }
-                        } else {
-                            player.drop(source, true);
-                            player.setItemSlot(EquipmentSlot.CHEST, target);
-                        }
-                    }
-                } else {
-                    player.setItemSlot(EquipmentSlot.CHEST, target);
-                    player.playSound(SoundRegister.Demo.get());
-                }
-                player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 240, 1, true, true));
+                player.changeDimension(world);
+//                ItemStack slot = player.getItemBySlot(EquipmentSlot.CHEST);
+//                ItemStack source = new ItemStack(slot.getItem());
+//                ItemStack target = new ItemStack(ItemRegister.Parachute.get().asItem());
+//                Inventory playerInventory = player.getInventory();
+//                if (!slot.isEmpty()) {
+//                    if (!source.getItem().equals(target.getItem())) {
+//                        if (hasEmptySlot(playerInventory)) {
+//                            for (ItemStack item : playerInventory.items) {
+//                                if (item.isEmpty()) {
+//                                    playerInventory.setItem(playerInventory.items.indexOf(item), source);
+//                                    player.setItemSlot(EquipmentSlot.CHEST, target);
+//                                    break;
+//                                }
+//                            }
+//                        } else {
+//                            player.drop(source, true);
+//                            player.setItemSlot(EquipmentSlot.CHEST, target);
+//                        }
+//                    }
+//                } else {
+//                    player.setItemSlot(EquipmentSlot.CHEST, target);
+//                    player.playSound(SoundRegister.Demo.get());
+//                }
+//                player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 240, 1, true, true));
             } else {
                 player.displayClientMessage(Component.literal("the world not found."), true);
             }

@@ -95,24 +95,4 @@ public class DimensionRegister {
 
         return null;
     }
-
-    public static Vec3 placeTeleporterOverworld(ServerLevel world, LevelChunk chunk) {
-        BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
-        for (int x = 0; x < 16; x++) {
-            for (int z = 0; z < 16; z++) {
-                for (int y = world.getMaxBuildHeight(); y >= world.getMinBuildHeight(); y--) {
-                    pos.set(x, y, z);
-
-                    if (chunk.getBlockState(pos).isAir() &&
-                            chunk.getBlockState(pos.above(1)).isAir() &&
-                            chunk.getBlockState(pos.above(2)).isAir() &&
-                            !chunk.getBlockState(pos.below()).isAir()) {
-                        BlockPos absolutePos = chunk.getPos().getWorldPosition().offset(pos.getX(), pos.getY(), pos.getZ());
-                        return new Vec3(absolutePos.getX() + 0.5, absolutePos.getY() + 1, absolutePos.getZ() + 0.5);
-                    }
-                }
-            }
-        }
-        return null;
-    }
 }

@@ -1,7 +1,5 @@
 package com.lzimul.LawAssistAdventure.dimension;
 
-import com.lzimul.LawAssistAdventure.register.DimensionRegister;
-import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
@@ -12,14 +10,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
 
-import static com.lzimul.LawAssistAdventure.register.DimensionRegister.placeTeleporterOverworld;
 import static com.lzimul.LawAssistAdventure.register.DimensionRegister.placeTeleporterWorld;
 
 public class FinalWing implements ITeleporter {
-    private final BlockPos pos;
-
-    public FinalWing(BlockPos pos) {
-        this.pos = pos;
+    public FinalWing() {
     }
 
     @Override
@@ -29,14 +23,8 @@ public class FinalWing implements ITeleporter {
         if (!(entity instanceof ServerPlayer player)) {
             return entity;
         }
-        LevelChunk chunk = (LevelChunk) destWorld.getChunk(pos);
-        Vec3 spawnPos;
-
-        if (destWorld.dimension().equals(DimensionRegister.FinalWing)) {
-            spawnPos = placeTeleporterWorld(destWorld, chunk);
-        } else {
-            spawnPos = placeTeleporterOverworld(destWorld, chunk);
-        }
+        LevelChunk chunk = (LevelChunk) destWorld.getChunk(player.getOnPos());
+        Vec3 spawnPos = placeTeleporterWorld(destWorld, chunk);
 
         if (spawnPos == null) {
             return entity;
