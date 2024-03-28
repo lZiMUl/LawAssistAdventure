@@ -42,7 +42,7 @@ public class DimensionRegister {
                 state.isAir();
     }
 
-    public static Vec3 placeTeleporterWorld(ServerLevel world, LevelChunk chunk) {
+    public static Vec3 getASafeArea(ServerLevel world, LevelChunk chunk) {
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
         int min = world.getMinBuildHeight();
         int max = world.getMaxBuildHeight() - 10;
@@ -92,7 +92,6 @@ public class DimensionRegister {
                 }
             }
         }
-
         return null;
     }
 }
