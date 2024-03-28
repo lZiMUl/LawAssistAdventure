@@ -3,6 +3,7 @@ package com.lzimul.LawAssistAdventure.network;
 import com.lzimul.LawAssistAdventure.register.DimensionRegister;
 import com.lzimul.LawAssistAdventure.register.ItemRegister;
 import com.lzimul.LawAssistAdventure.register.SoundRegister;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
@@ -81,7 +82,7 @@ public class ServerProviderNetwork {
             player.sendSystemMessage(Component.translatable(worldId));
             ServerLevel world = Objects.requireNonNull(player.getServer()).getLevel(levelResourceKey);
             if (world != null) {
-                player.changeDimension(world, new Dimension());
+                player.changeDimension(world, new Dimension(player.getOnPos()));
                 ItemStack slot = player.getItemBySlot(EquipmentSlot.CHEST);
                 ItemStack source = new ItemStack(slot.getItem());
                 ItemStack target = new ItemStack(ItemRegister.Parachute.get().asItem());
@@ -123,19 +124,23 @@ public class ServerProviderNetwork {
 }
 
 class Dimension implements ITeleporter {
+    private final BlockPos blockPos;
+
+    public Dimension(BlockPos blockPos) {
+        this.blockPos = blockPos;
+    }
     @Override
     public @NotNull Entity placeEntity(@NotNull Entity entity, @NotNull ServerLevel currentWorld, @NotNull ServerLevel destWorld, float yaw, @NotNull Function<Boolean, Entity> repositionEntity) {
         if (!(entity instanceof ServerPlayer player)) {
             return entity;
         }
-        LevelChunk chunk = (LevelChunk) destWorld.getChunk(player.getOnPos());
+        LevelChunk chunk = (LevelChunk) destWorld.getChunk(blockPos);
         Vec3 spawnPos = getASafeArea(destWorld, chunk);
 
         if (spawnPos == null) {
             return entity;
         }
 
-        player.giveExperienceLevels(0);
         player.teleportTo(spawnPos.x(), spawnPos.y(), spawnPos.z());
         return entity;
     }
