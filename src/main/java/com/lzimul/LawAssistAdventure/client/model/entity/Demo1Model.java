@@ -1,6 +1,6 @@
 package com.lzimul.LawAssistAdventure.client.model.entity;
 
-import com.lzimul.LawAssistAdventure.entity.Demo1Entity;
+import com.lzimul.LawAssistAdventure.entity.Demo1Animal;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 import static com.lzimul.LawAssistAdventure.Config.MODID;
 
-public class Demo1Model<T extends Demo1Entity> extends EntityModel<T> {
+public class Demo1Model<T extends Demo1Animal> extends EntityModel<T> {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(MODID, "demo1"), "main");
     private final ModelPart Body;
 

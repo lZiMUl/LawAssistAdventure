@@ -35,25 +35,25 @@ public class AmmunitionHelper {
         int differ = limit - current;
         if (differ > 0) {
             if (total - differ >= 0) {
-                this.player.sendSystemMessage(Component.literal("成功补充了 " + differ + " 发弹药。"));
+                this.player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.replenished", differ));
                 this.current += differ;
                 this.total -= differ;
             } else {
-                this.player.sendSystemMessage(Component.literal("成功补充了 " + this.total + " 发弹药。"));
+                this.player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.replenished", this.total));
                 this.current += this.total;
                 this.total = 0;
             }
         } else {
-            this.player.sendSystemMessage(Component.literal("库存已满，无法继续补充弹药。"));
+            this.player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.stock_full"));
         }
     }
 
     public void fire(int num) {
         if (this.current > 0) {
             this.current -= num;
-            this.player.sendSystemMessage(Component.literal("射击了 " + num + " 发子弹。"));
+            this.player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.fire", num));
         } else {
-            this.player.sendSystemMessage(Component.literal("弹药不足，无法射击。"));
+            this.player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.not_enough"));
         }
     }
 }

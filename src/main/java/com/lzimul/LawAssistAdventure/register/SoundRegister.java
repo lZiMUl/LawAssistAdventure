@@ -12,10 +12,14 @@ import static com.lzimul.LawAssistAdventure.Config.MODID;
 
 public class SoundRegister {
     public static final DeferredRegister<SoundEvent> Sound = DeferredRegister.create(Registries.SOUND_EVENT, MODID);
-    public static final Supplier<SoundEvent> Demo = registerSound("sound.demo");
+    public static final Supplier<SoundEvent> Demo = registerSound("demo");
+    public static final Supplier<SoundEvent> AK47Fire = registerSound("ak47_fire");
+    public static final Supplier<SoundEvent> AK47Reload = registerSound("ak47_reload");
+    public static final Supplier<SoundEvent> Glock19Fire = registerSound("glock19_fire");
+    public static final Supplier<SoundEvent> Glock19Reload = registerSound("glock19_reload");
 
     private static Supplier<SoundEvent> registerSound(String name) {
-        return Sound.register(name, () -> SoundEvent.createFixedRangeEvent(new ResourceLocation(MODID, name), 16.0F));
+        return Sound.register("sound." + name, () -> SoundEvent.createFixedRangeEvent(new ResourceLocation(MODID, "sound." + name), 16.0F));
     }
 
     public static void register(IEventBus eventBus) {

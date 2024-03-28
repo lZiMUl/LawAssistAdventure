@@ -18,5 +18,57 @@
         "preload": true
       }
     ]
+  },
+  "sound.ak47_fire": {
+    "category": "voice",
+    "subtitle": "subtitle.law_assist_adventure.sound.ak47_fire",
+    "sounds": [
+      {
+        "name": "law_assist_adventure:ak47_fire",
+        "volume": 1.0,
+        "pitch": 1.0,
+        "stream": true,
+        "preload": true
+      }
+    ]
+  },
+  "sound.ak47_reload": {
+    "category": "voice",
+    "subtitle": "subtitle.law_assist_adventure.sound.ak47_reload",
+    "sounds": [
+      {
+        "name": "law_assist_adventure:ak47_reload",
+        "volume": 1.0,
+        "pitch": 1.0,
+        "stream": true,
+        "preload": true
+      }
+    ]
+  },
+  "sound.glock19_fire": {
+  "category": "voice",
+  "subtitle": "subtitle.law_assist_adventure.sound.glock19_fire",
+  "sounds": [
+    {
+      "name": "law_assist_adventure:glock19_fire",
+      "volume": 1.0,
+      "pitch": 1.0,
+      "stream": true,
+      "preload": true
+    }
+  ]
+},
+  "sound.glock19_reload": {
+    "category": "voice",
+    "subtitle": "subtitle.law_assist_adventure.sound.glock19_reload",
+    "sounds": [
+      {
+        "name": "law_assist_adventure:glock19_reload",
+        "volume": 1.0,
+        "pitch": 1.0,
+        "stream": true,
+        "preload": true
+      }
+    ]
   }
 }

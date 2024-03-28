@@ -22,23 +22,24 @@ public class Glock19Item extends Item {
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
         if (!level.isClientSide() && player.isAlive()) {
             ammunitionHelper.setPlayer(player);
-            player.sendSystemMessage(Component.literal("弹药: " + "[" + ammunitionHelper.getCurrent() + "/" + ammunitionHelper.getLimit() + "/" + ammunitionHelper.getTotal() + "]"));
+            player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition", ammunitionHelper.getCurrent(), ammunitionHelper.getLimit(), ammunitionHelper.getTotal()));
             if (player.isCrouching()) {
                 if (ammunitionHelper.getCurrent() != ammunitionHelper.getLimit()) {
                     if (ammunitionHelper.getTotal() != 0) {
                         ammunitionHelper.reload();
-                        player.sendSystemMessage(Component.literal("已装弹。"));
+                        player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegister.Glock19Reload.get(), player.getSoundSource(), 1.0F, 1.0F);
+                        player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.reloaded"));
                     } else {
-                        player.sendSystemMessage(Component.literal("备弹空"));
+                        player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.empty"));
                     }
                 } else {
-                    player.sendSystemMessage(Component.literal("弹药已满。"));
+                    player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.full"));
                 }
             } else if (ammunitionHelper.getCurrent() != 0) {
                 ammunitionHelper.fire(1);
-                player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegister.Demo.get(), player.getSoundSource(), 1.0F, 1.0F);
+                player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegister.Glock19Fire.get(), player.getSoundSource(), 1.0F, 1.0F);
             } else {
-                player.sendSystemMessage(Component.literal("弹药不足。"));
+                player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.low"));
             }
         }
         return super.use(level, player, hand);

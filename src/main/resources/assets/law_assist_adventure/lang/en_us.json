@@ -83,8 +83,22 @@
   "item.law_assist_adventure.researcher_note_tampered": "Researcher Notes Tampered With",
   "item.law_assist_adventure.researcher_note_corrupted": "Researcher Notes Are Corrupted",
 
+  "event.law_assist_adventure.ammunition": "Ammunition: [%s/%s/%s]",
+  "event.law_assist_adventure.ammunition.fire": "[%s] rounds were fired",
+  "event.law_assist_adventure.ammunition.not_enough": "There was not enough ammunition to shoot",
+  "event.law_assist_adventure.ammunition.low": "Ammunition is low",
+  "event.law_assist_adventure.ammunition.reloaded": "Reloaded",
+  "event.law_assist_adventure.ammunition.replenished": "Successfully replenished [%s] rounds of ammunition",
+  "event.law_assist_adventure.ammunition.full": "The ammunition is full",
+  "event.law_assist_adventure.ammunition.stock_full": "The stocks are full and it is not possible to continue replenishing ammunition",
+  "event.law_assist_adventure.ammunition.empty": "Empty stock",
+
   "entity.law_assist_adventure.demo1": "Demo1",
   "entity.law_assist_adventure.demo2": "Demo2",
 
-  "subtitle.law_assist_adventure.sound.demo": "Unknown sound effect"
+  "subtitle.law_assist_adventure.sound.demo": "Unknown sound effect",
+  "subtitle.law_assist_adventure.sound.ak47_fire": "AK47 fire sound effect",
+  "subtitle.law_assist_adventure.sound.ak47_reload": "AK47 reload sound effect",
+  "subtitle.law_assist_adventure.sound.glock19_fire": "Glock19 fire sound effect",
+  "subtitle.law_assist_adventure.sound.glock19_reload": "Glock19 reload sound effect"
 }
