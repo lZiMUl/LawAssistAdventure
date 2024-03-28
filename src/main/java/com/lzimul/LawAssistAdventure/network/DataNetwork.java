@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import static com.lzimul.LawAssistAdventure.Config.MODID;
 
 public record DataNetwork(String data, int value) implements CustomPacketPayload {
-    public static final ResourceLocation ID = new ResourceLocation(MODID, "data");
+    public static final ResourceLocation ID = new ResourceLocation(MODID, "data_network");
 
     public DataNetwork(final FriendlyByteBuf friendlyByteBuf) {
         this(friendlyByteBuf.readUtf(), friendlyByteBuf.readInt());
