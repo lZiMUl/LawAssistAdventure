@@ -36,7 +36,8 @@ public class TeleporterItem extends Item implements MenuProvider {
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
         if (!level.isClientSide && player.isAlive()) {
-            ResourceKey<Level>[] dimension = new ResourceKey[]{
+            if (player.isCrouching()) {
+                ResourceKey<Level>[] dimension = new ResourceKey[]{
 //                    DimensionRegister.TheNether,
 //                    DimensionRegister.TheEnd,
 //                    DimensionRegister.Dust,
@@ -55,7 +56,6 @@ public class TeleporterItem extends Item implements MenuProvider {
             } else {
                 teleportToWorld((ServerPlayer) player, DimensionRegister.Overworld, player.getOnPos());
             }
-//            player.openMenu(this);
             ItemStack slot = player.getItemBySlot(EquipmentSlot.CHEST);
             ItemStack source = new ItemStack(slot.getItem());
             ItemStack target = new ItemStack(ItemRegister.Parachute.get().asItem());
@@ -80,8 +80,11 @@ public class TeleporterItem extends Item implements MenuProvider {
                 player.playSound(SoundRegister.Demo.get());
             }
             player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 240, 1, true, true));
+            } else {
+                player.openMenu(this);
+            }
         }
-        return InteractionResultHolder.sidedSuccess(this.getDefaultInstance(), level.isClientSide);
+        return super.use(level, player, hand);
     }
 
     public boolean hasEmptySlot(Inventory inventory) {

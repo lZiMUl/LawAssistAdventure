@@ -57,7 +57,6 @@ public class AttackAndFollowAi extends MeleeAttackGoal {
                 }
             }
         }
-
     }
 
     private boolean isCS(Player player) {

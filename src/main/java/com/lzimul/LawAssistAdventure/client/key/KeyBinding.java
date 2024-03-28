@@ -2,13 +2,11 @@ package com.lzimul.LawAssistAdventure.client.key;
 
 import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.KeyMapping;
-import net.neoforged.neoforge.client.settings.KeyConflictContext;
 import org.lwjgl.glfw.GLFW;
 
 public class KeyBinding {
-    public static final String KEY_CATEGORY_EXAMPLE_MOD = "key.category.example_mod";
-    public static final String KEY_DRINK_WATER = "key.example_mod.drink_water";
+    public static final KeyMapping KeyboardR = new KeyMapping("key.law_assist_adventure.mouse.r", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_R, "key.law_assist_adventure.category.misc");
+    public static final KeyMapping MouseLeftButton = new KeyMapping("key.law_assist_adventure.mouse.left", InputConstants.Type.MOUSE, GLFW.GLFW_MOUSE_BUTTON_LEFT, "key.law_assist_adventure.category.misc");
+    public static final KeyMapping MouseRightButton = new KeyMapping("key.law_assist_adventure.mouse.right",InputConstants.Type.MOUSE, GLFW.GLFW_MOUSE_BUTTON_RIGHT, "key.law_assist_adventure.category.misc");
 
-    public static final KeyMapping DRINKING_KEY = new KeyMapping(KEY_CATEGORY_EXAMPLE_MOD, KeyConflictContext.IN_GAME,
-            InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_O, KEY_DRINK_WATER);
 }
