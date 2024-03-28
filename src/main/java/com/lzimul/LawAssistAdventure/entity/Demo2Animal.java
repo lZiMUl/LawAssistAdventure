@@ -12,8 +12,8 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class Demo3Animal extends Animal {
-    public Demo3Animal(EntityType<Demo3Animal> entity, Level level) {
+public class Demo2Animal extends Animal {
+    public Demo2Animal(EntityType<Demo2Animal> entity, Level level) {
         super(entity, level);
     }
 

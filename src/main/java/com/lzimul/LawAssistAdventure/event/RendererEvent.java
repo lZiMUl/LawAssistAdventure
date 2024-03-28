@@ -25,7 +25,6 @@ public class RendererEvent {
         event.enqueueWork(() -> {
             EntityRenderers.register(EntityRegister.DEMO1.get(), Demo1Renderer::new);
             EntityRenderers.register(EntityRegister.DEMO2.get(), Demo2Renderer::new);
-            EntityRenderers.register(EntityRegister.DEMO3.get(), Demo3Renderer::new);
         });
     }
 
@@ -33,7 +32,7 @@ public class RendererEvent {
     public static void registerEntityLayers(EntityRenderersEvent.RegisterLayerDefinitions registerLayerDefinitions) {
         registerLayerDefinitions.registerLayerDefinition(Demo1Model.LAYER_LOCATION, Demo1Model::createBodyLayer);
         registerLayerDefinitions.registerLayerDefinition(Demo2Model.LAYER_LOCATION, Demo2Model::createBodyLayer);
-        registerLayerDefinitions.registerLayerDefinition(Demo3Model.LAYER_LOCATION, Demo3Model::createBodyLayer);
+        registerLayerDefinitions.registerLayerDefinition(Demo2Model.LAYER_LOCATION, Demo2Model::createBodyLayer);
     }
 
     @SubscribeEvent

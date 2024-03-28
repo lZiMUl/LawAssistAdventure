@@ -14,6 +14,6 @@ public class EntityEvent {
     @SubscribeEvent
     public static void setupAttributes(EntityAttributeCreationEvent entityAttributeCreationEvent) {
         entityAttributeCreationEvent.put(EntityRegister.DEMO1.get(), Demo1Animal.createAttributes().build());
-        entityAttributeCreationEvent.put(EntityRegister.DEMO3.get(), Demo3Animal.createAttributes().build());
+        entityAttributeCreationEvent.put(EntityRegister.DEMO2.get(), Demo2Animal.createAttributes().build());
     }
 }
