@@ -1,35 +1,42 @@
 package com.lzimul.LawAssistAdventure.client.screen.item;
 
 import com.lzimul.LawAssistAdventure.client.menu.item.TeleporterMenu;
+import com.lzimul.LawAssistAdventure.network.DataNetwork;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.WidgetSprites;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
+import net.neoforged.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.NotNull;
 
-import static com.lzimul.LawAssistAdventure.Config.MODID;
 import static com.lzimul.LawAssistAdventure.Config.getItemResourceLocation;
 
 public class TeleporterScreen extends AbstractContainerScreen<TeleporterMenu> {
-    private final Inventory inventory;
 
     public TeleporterScreen(TeleporterMenu teleporterMenu, Inventory inventory, Component component) {
         super(teleporterMenu, inventory, component);
-        this.inventory = inventory;
     }
 
     @Override
     protected void init() {
-        this.addRenderableWidget(new ImageButton(30,30,30,30, new WidgetSprites(getItemResourceLocation("glock19"), getItemResourceLocation("glock19")), (button) -> {
+        int width = super.width / 2;
+        int height = super.height / 2;
+        super.addRenderableWidget(new ImageButton(width - width / 3, height - height / 2, 15, 15, new WidgetSprites(getItemResourceLocation("glock19"), getItemResourceLocation("glock19")), (button) -> this.send("Dust", 0), Component.literal("Dust")));
+        super.addRenderableWidget(new ImageButton(width - width / 2, height - height / 2, 15, 15, new WidgetSprites(getItemResourceLocation("glock19"), getItemResourceLocation("glock19")), (button) -> this.send("FallIntoTheVoid", 1), Component.literal("FallIntoTheVoid")));
+        super.addRenderableWidget(new ImageButton(width + width / 2, height - height / 2, 15, 15, new WidgetSprites(getItemResourceLocation("glock19"), getItemResourceLocation("glock19")), (button) -> this.send("FinalWing", 2), Component.literal("FinalWing")));
+        super.addRenderableWidget(new ImageButton(width + width / 3, height - height / 2, 15, 15, new WidgetSprites(getItemResourceLocation("glock19"), getItemResourceLocation("glock19")), (button) -> this.send("RemnantDawn", 3), Component.literal("RemnantDawn")));
+        super.addRenderableWidget(new ImageButton(width - width / 3, height + height / 2, 15, 15, new WidgetSprites(getItemResourceLocation("glock19"), getItemResourceLocation("glock19")), (button) -> this.send("Staring", 4), Component.literal("Staring")));
+        super.addRenderableWidget(new ImageButton(width - width / 2, height + height / 2, 15, 15, new WidgetSprites(getItemResourceLocation("glock19"), getItemResourceLocation("glock19")), (button) -> this.send("Overworld", 5), Component.literal("Overworld")));
+        super.addRenderableWidget(new ImageButton(width + width / 2, height + height / 2, 15, 15, new WidgetSprites(getItemResourceLocation("glock19"), getItemResourceLocation("glock19")), (button) -> this.send("TheNether", 6), Component.literal("TheNether")));
+        super.addRenderableWidget(new ImageButton(width + width / 3, height + height / 2, 15, 15, new WidgetSprites(getItemResourceLocation("glock19"), getItemResourceLocation("glock19")), (button) -> this.send("TheEnd", 7), Component.literal("TheEnd")));
+    }
 
-        }, Component.literal("cookie")));
+    private void send(String occupation, int id) {
+        PacketDistributor.SERVER.noArg().send(new DataNetwork("server:occupation/" + occupation, id));
     }
 
     @Override
