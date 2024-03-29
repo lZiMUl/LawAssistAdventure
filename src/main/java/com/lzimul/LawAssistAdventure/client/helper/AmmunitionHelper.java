@@ -31,6 +31,10 @@ public class AmmunitionHelper {
         return this.limit;
     }
 
+    public void add(int num) {
+        this.total += num;
+    }
+
     public void reload() {
         int differ = limit - current;
         if (differ > 0) {
