@@ -130,18 +130,15 @@ class Dimension implements ITeleporter {
         this.blockPos = blockPos;
     }
     @Override
-    public @NotNull Entity placeEntity(@NotNull Entity entity, @NotNull ServerLevel currentWorld, @NotNull ServerLevel destWorld, float yaw, @NotNull Function<Boolean, Entity> repositionEntity) {
+    public @NotNull Entity placeEntity(@NotNull Entity rawEntity, @NotNull ServerLevel currentWorld, @NotNull ServerLevel destWorld, float yaw, @NotNull Function<Boolean, Entity> repositionEntity) {
+        Entity entity = repositionEntity.apply(true);
         if (!(entity instanceof ServerPlayer player)) {
             return entity;
         }
-        LevelChunk chunk = (LevelChunk) destWorld.getChunk(blockPos);
-        Vec3 spawnPos = getASafeArea(destWorld, chunk);
-
-        if (spawnPos == null) {
-            return entity;
+        Vec3 spawnPos = getASafeArea(destWorld, (LevelChunk) destWorld.getChunk(blockPos));
+        if (spawnPos != null) {
+            player.teleportTo(spawnPos.x(), spawnPos.y(), spawnPos.z());
         }
-
-        player.teleportTo(spawnPos.x(), spawnPos.y(), spawnPos.z());
         return entity;
     }
 }
