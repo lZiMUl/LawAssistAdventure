@@ -1,8 +1,6 @@
 package com.lzimul.LawAssistAdventure.item;
 
 import com.lzimul.LawAssistAdventure.client.helper.AmmunitionHelper;
-import com.lzimul.LawAssistAdventure.client.helper.WeaponHelper;
-import com.lzimul.LawAssistAdventure.register.ItemRegister;
 import com.lzimul.LawAssistAdventure.register.SoundRegister;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
@@ -10,17 +8,14 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class PearFlowerGun extends SwordItem {
-    private static final AmmunitionHelper ammunitionHelper = new AmmunitionHelper(1, 3, 0);
-    public PearFlowerGun() {
-        super(new WeaponHelper(1, 400, 1F, 5F, 1, () -> Ingredient.of(ItemRegister.PearFlowerGun.asItem())), 3,-2.4f, new Item.Properties());
+public class Harquebus extends Item {
+    private static final AmmunitionHelper ammunitionHelper = new AmmunitionHelper(1, 10, 0);
+    public Harquebus() {
+        super(new Item.Properties());
     }
-
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand interactionHand) {
         if (!level.isClientSide() && player.isAlive()) {

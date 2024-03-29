@@ -63,6 +63,7 @@ public class ItemRegister {
     public static final DeferredItem<ArmorItem> Parachute = Item.register("parachute", () -> new ArmorItem(ArmorRegister.Parachute, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final DeferredItem<Item> Hatchet = Item.register("hatchet", HatchetItem::new);
     public static final DeferredItem<Item> PearFlowerGun = Item.register("pear_flower_gun", PearFlowerGun::new);
+    public static final DeferredItem<Item> Harquebus = Item.register("harquebus", Harquebus::new);
     public static final DeferredItem<Item> Ak47 = Item.register("ak47", Ak47Item::new);
     public static final DeferredItem<Item> Glock19 = Item.register("glock19", Glock19Item::new);
     public static final DeferredItem<Item> Bullet = Item.register("bullet", BulletItem::new);
