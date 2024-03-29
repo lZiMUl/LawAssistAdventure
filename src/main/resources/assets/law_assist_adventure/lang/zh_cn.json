@@ -93,6 +93,7 @@
   "event.law_assist_adventure.ammunition.full": "弹药已满",
   "event.law_assist_adventure.ammunition.stock_full": "库存已满，无法继续补充弹药",
   "event.law_assist_adventure.ammunition.empty": "备弹空",
+  "event.law_assist_adventure.world.not_found": "世界未发现",
 
   "entity.law_assist_adventure.demo1": "演示1",
   "entity.law_assist_adventure.demo2": "演示2",

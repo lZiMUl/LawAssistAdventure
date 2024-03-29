@@ -108,7 +108,7 @@ public class ServerProviderNetwork {
                 }
                 player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 240, 1, true, true));
             } else {
-                player.displayClientMessage(Component.literal("the world not found."), true);
+                player.displayClientMessage(Component.translatable("world_not_found"), true);
             }
         }
     }

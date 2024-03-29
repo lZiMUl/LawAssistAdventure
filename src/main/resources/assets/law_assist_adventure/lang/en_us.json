@@ -93,6 +93,7 @@
   "event.law_assist_adventure.ammunition.full": "The ammunition is full",
   "event.law_assist_adventure.ammunition.stock_full": "The stocks are full and it is not possible to continue replenishing ammunition",
   "event.law_assist_adventure.ammunition.empty": "Empty stock",
+  "event.law_assist_adventure.world.not_found": "The world not found",
 
   "entity.law_assist_adventure.demo1": "Demo1",
   "entity.law_assist_adventure.demo2": "Demo2",
