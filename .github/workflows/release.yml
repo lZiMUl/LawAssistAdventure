@@ -42,7 +42,7 @@ jobs:
       run: ./gradlew tasks --all
 
     - name: Build with gradle
-      run: ./gradlew build --info -Prelease.useAutomaticVersion=true \
+      run: ./gradlew Build --info -Prelease.useAutomaticVersion=true \
         -Prelease.releaseVersion=${{ env.CURRENT_VERSION }} \
         -Prelease.newVersion=${{ env.NEXT_VERSION }}
 
