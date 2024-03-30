@@ -46,6 +46,13 @@ jobs:
         title: ${{ env.CURRENT_VERSION }}
         prerelease: false
         files: ./build/libs/law_assist_adventure-${{ env.CURRENT_VERSION }}.jar
-              
+
+
+  dependency-submission:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4.1.1
+
     - name: Generate and submit dependency graph
       uses: gradle/actions/dependency-submission@v3.1.0
