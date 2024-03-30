@@ -44,8 +44,7 @@ jobs:
         automatic_release_tag: ${{ env.CURRENT_VERSION }}
         title: ${{ env.CURRENT_VERSION }}
         prerelease: false
-        files: |
-              ./build/libs/law_assist_adventure-${{ env.CURRENT_VERSION }}.jar
+        files: ./build/libs/law_assist_adventure-${{ env.CURRENT_VERSION }}.jar
               
     - name: Generate and submit dependency graph
-      uses: actions/dependency-submission@v3.1.0
+      uses: gradle/actions/dependency-submission@v3.1.0
