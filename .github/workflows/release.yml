@@ -34,6 +34,12 @@ jobs:
 
     - name: Grant execute permission for gradlew
       run: chmod 777 ./gradlew
+      
+    - name: View tasks with gradle
+      run: ./gradlew tasks
+
+    - name: View all tasks with gradle
+      run: ./gradlew tasks --all
 
     - name: Build with gradle
       run: ./gradlew build --info -Prelease.useAutomaticVersion=true \
