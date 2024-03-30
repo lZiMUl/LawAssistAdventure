@@ -42,8 +42,8 @@ jobs:
       uses: marvinpinto/action-automatic-releases@v1.2.1
       with:
         repo_token: "${{ secrets.ACCESS_TOKEN }}"
-        automatic_release_tag: ${{ env.CURRENT_VERSION }}
-        title: ${{ env.CURRENT_VERSION }}
+        automatic_release_tag: "v${{ env.CURRENT_VERSION }}"
+        title: "Law Assist Adventure ${{ env.CURRENT_VERSION }}"
         prerelease: false
         files: ./build/libs/law_assist_adventure-${{ env.CURRENT_VERSION }}.jar
 
