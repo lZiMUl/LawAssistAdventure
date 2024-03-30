@@ -23,7 +23,7 @@ jobs:
         distribution: 'temurin'
 
     - name: Generate versions
-      uses: HardNorth/github-version-generate@latest
+      uses: HardNorth/github-version-generate@1.4.0
       with:
         version-source: file
         version-file: gradle.properties
