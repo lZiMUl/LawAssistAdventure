@@ -2,10 +2,13 @@ name: "main"
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: [ "release" ]
+    types: [ "closed" ]
 
 jobs:
   analyze:
+
+    if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == "main"
     name: "Analyze (${{ matrix.language }})"
     runs-on: "ubuntu-latest"
 
@@ -15,7 +18,7 @@ jobs:
       contents: "read"
 
     strategy:
-      fail-fast: "false"
+      fail-fast: false
       matrix:
         include:
           - language: "java"

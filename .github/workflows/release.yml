@@ -2,11 +2,13 @@ name: "release"
 
 on:
   pull_request:
-    branches: [ "release" ]
+    branches: [ "test" ]
+    types: [ "closed" ]
 
 jobs:
   build:
 
+    if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == "release"
     runs-on: "ubuntu-latest"
     permissions:
       actions: "write"
