@@ -7,8 +7,8 @@ on:
 jobs:
   analyze:
     name: "Analyze (${{ matrix.language }})"
-    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
-    timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
+    runs-on: "${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}"
+    timeout-minutes: "${{ (matrix.language == 'swift' && 120) || 360 }}"
     permissions:
       security-events: "write"
       actions: "read"
@@ -31,7 +31,7 @@ jobs:
           languages: "${{ matrix.language }}"
           build-mode: "${{ matrix.build-mode }}"
 
-      - if: matrix.build-mode == 'manual'
+      - if: matrix.build-mode == "manual"
         run: |
           echo "If you are using a 'manual' build mode for one or more of the" \
             "languages you are analyzing, replace this with the commands to build" \
