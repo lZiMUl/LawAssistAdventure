@@ -1,0 +1,49 @@
+name: "main"
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  analyze:
+    name: "Analyze (${{ matrix.language }})"
+    runs-on: "ubuntu-latest"
+
+    permissions:
+      security-events: "write"
+      actions: "read"
+      contents: "read"
+
+    strategy:
+      fail-fast: "false"
+      matrix:
+        include:
+          - language: "java"
+
+    steps:
+      - name: "Checkout repository"
+        uses: "actions/checkout@v4.1.1"
+
+      - name: "Initialize CodeQL"
+        uses: "github/codeql-action/init@v3.24.9"
+        with:
+          languages: "${{ matrix.language }}"
+
+      - name: "Perform CodeQL Analysis"
+        uses: "github/codeql-action/analyze@v3.24.9"
+        with:
+          category: "/language:${{matrix.language}}"
+
+
+  dependency-submission:
+    runs-on: "ubuntu-latest"
+    needs: [ "analyze" ]
+    permissions:
+      contents: "write"
+
+    steps:
+      - name: "Checkout repository"
+        uses: "actions/checkout@v4.1.1"
+
+      - name: "Generate and submit dependency graph"
+        uses: "gradle/actions/dependency-submission@v3.1.0"
