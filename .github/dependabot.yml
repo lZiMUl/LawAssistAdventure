@@ -1,4 +1,4 @@
-version: "2"
+version: 2
 updates:
   - package-ecosystem: "gradle" # See documentation for possible values
     directory: "./build" # Location of package manifests
