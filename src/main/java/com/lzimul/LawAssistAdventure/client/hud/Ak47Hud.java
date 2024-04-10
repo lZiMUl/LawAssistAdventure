@@ -1,5 +1,6 @@
 package com.lzimul.LawAssistAdventure.client.hud;
 
+import com.lzimul.LawAssistAdventure.Config;
 import com.lzimul.LawAssistAdventure.register.ItemRegister;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -7,7 +8,7 @@ import net.neoforged.neoforge.client.gui.overlay.ExtendedGui;
 import net.neoforged.neoforge.client.gui.overlay.IGuiOverlay;
 import org.jetbrains.annotations.NotNull;
 
-import static com.lzimul.LawAssistAdventure.Config.getHudResourceLocation;
+import static com.lzimul.LawAssistAdventure.Config.getResourceLocation;
 
 public class Ak47Hud implements IGuiOverlay {
     private final Minecraft minecraft;
@@ -29,7 +30,7 @@ public class Ak47Hud implements IGuiOverlay {
         assert minecraft.player != null;
         if (minecraft.player.getMainHandItem().getItem() == ItemRegister.Ak47.get().asItem()) {
             guiGraphics.setColor(1, 1, 1, 1);
-            guiGraphics.blit(getHudResourceLocation("ak47_hud"), screenWidth - imageWidth, screenHeight - imageHeight, 0, 0, screenWidth - 10, screenHeight - 10, imageWidth, imageHeight);
+            guiGraphics.blit(getResourceLocation(Config.Mode.HUD, "ak47_hud"), screenWidth - imageWidth, screenHeight - imageHeight, 0, 0, screenWidth - 10, screenHeight - 10, imageWidth, imageHeight);
         }
     }
 }

@@ -12,20 +12,24 @@ import net.minecraft.world.phys.Vec3;
 import java.util.Objects;
 import java.util.logging.Logger;
 
+
 public class Config {
     public static final String MODID = "law_assist_adventure";
     public static final Logger LOGGER = Logger.getLogger(MODID);
 
-    public static ResourceLocation getHudResourceLocation(String name) {
-        return new ResourceLocation(MODID, "textures/gui/hud/" + name + ".png");
+
+    public static ResourceLocation getResourceLocation(Mode mode, String name) {
+        return switch (mode) {
+            case HUD -> new ResourceLocation(MODID, "textures/gui/hud/" + name + ".png");
+            case ITEM -> new ResourceLocation(MODID, "textures/gui/item/" + name + ".png");
+            case BLOCK -> new ResourceLocation(MODID, "textures/gui/block/" + name + ".png");
+        };
     }
 
-    public static ResourceLocation getItemResourceLocation(String name) {
-        return new ResourceLocation(MODID, "textures/gui/item/" + name + ".png");
-    }
-
-    public static ResourceLocation getBlockResourceLocation(String name) {
-        return new ResourceLocation(MODID, "textures/gui/block/" + name + ".png");
+    public enum Mode {
+        HUD,
+        ITEM,
+        BLOCK;
     }
 
     public static String getDescriptionId(Level level, BlockPos blockPos) {
