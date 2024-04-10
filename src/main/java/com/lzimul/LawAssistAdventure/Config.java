@@ -48,10 +48,11 @@ public class Config {
         }
         return false;
     }
-    public static void shrinkItem(Player player, Item item, int num) {
+    public static void shrinkItem(Player player, Item item, Item repliItem, int num) {
         for (ItemStack itemStack : player.getInventory().items) {
             if (itemStack.getItem().asItem().equals(item)) {
                 player.getInventory().getItem(player.getInventory().items.indexOf(itemStack)).shrink(num);
+                player.getInventory().add(new ItemStack(repliItem));
                 break;
             }
         }
