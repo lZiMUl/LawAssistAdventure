@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "law_assist_adventure:empty_bullet_box"
+    },
+    {
+      "item": "minecraft:bullet",
+      "count": 21
+    }
+  ],
+  "result": {
+    "item": "law_assist_adventure:bullet_box",
+    "count": 1
+  }
+}

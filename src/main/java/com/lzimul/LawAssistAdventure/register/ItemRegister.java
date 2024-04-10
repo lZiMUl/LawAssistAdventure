@@ -68,6 +68,7 @@ public class ItemRegister {
     public static final DeferredItem<Item> Glock19 = Item.register("glock19", Glock19Item::new);
     public static final DeferredItem<Item> Bullet = Item.register("bullet", BulletItem::new);
     public static final DeferredItem<Item> BulletBox = Item.register("bullet_box", BulletBoxItem::new);
+    public static final DeferredItem<Item> EmptyBulletBox = Item.register("empty_bullet_box", EmptyBulletBoxItem::new);
 
     public static final DeferredItem<Item> NoOccupation = Item.register("no_occupation", NoOccupationsItem::new);
     public static final DeferredItem<Item> Dust = Item.register("dust", DustOccupationItem::new);
