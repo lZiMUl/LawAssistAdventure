@@ -63,9 +63,6 @@ public class ItemGroup {
                 output.accept(ItemRegister.CircuitBoards3.get().asItem());
                 output.accept(ItemRegister.CircuitBoardsBase.get().asItem());
                 output.accept(ItemRegister.Teleporter.get().asItem());
-                /*
-                 * TODO 测试
-                 */
                 output.accept(ItemRegister.NoOccupation.get().asItem());
                 output.accept(ItemRegister.Dust.get().asItem());
                 output.accept(ItemRegister.FallIntoTheVoid.get().asItem());

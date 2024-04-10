@@ -12,7 +12,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-import static com.lzimul.LawAssistAdventure.Config.*;
+import static com.lzimul.LawAssistAdventure.Config.hasItem;
+import static com.lzimul.LawAssistAdventure.Config.shrinkItem;
 
 public class Glock19Item extends Item {
     private static final AmmunitionHelper ammunitionHelper = new AmmunitionHelper(21, 120, 0);
@@ -26,7 +27,7 @@ public class Glock19Item extends Item {
         if (!level.isClientSide() && player.isAlive()) {
             ammunitionHelper.setPlayer(player);
             player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition", ammunitionHelper.getCurrent(), ammunitionHelper.getLimit(), ammunitionHelper.getTotal()));
-            Item item = ItemRegister.BulletBox.get().asItem();
+//            Item item = ItemRegister.BulletBox.get().asItem();
             if (player.isCrouching()) {
                 if (ammunitionHelper.getCurrent() != ammunitionHelper.getLimit()) {
                     if (ammunitionHelper.getTotal() != 0) {
