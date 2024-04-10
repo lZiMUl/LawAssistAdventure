@@ -26,6 +26,7 @@ public class Glock19Item extends Item {
         if (!level.isClientSide() && player.isAlive()) {
             ammunitionHelper.setPlayer(player);
             player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition", ammunitionHelper.getCurrent(), ammunitionHelper.getLimit(), ammunitionHelper.getTotal()));
+            Item item = ItemRegister.BulletBox.get().asItem();
             if (player.isCrouching()) {
                 if (ammunitionHelper.getCurrent() != ammunitionHelper.getLimit()) {
                     if (ammunitionHelper.getTotal() != 0) {
@@ -41,8 +42,8 @@ public class Glock19Item extends Item {
             } else if (ammunitionHelper.getCurrent() != 0) {
                 ammunitionHelper.fire(1);
                 level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegister.Glock19Fire.get(), player.getSoundSource(), 1.0F, 1.0F);
-            } else if (hasItem(player, ItemRegister.BulletBox.get())) {
-                shrinkItem(player, ItemRegister.BulletBox.get(), 1);
+            } else if (hasItem(player, ItemRegister.BulletBox.get().asItem())) {
+                shrinkItem(player, ItemRegister.BulletBox.get().asItem(), ItemRegister.EmptyBulletBox.get().asItem(), 1);
                 ammunitionHelper.add(21);
             } else {
                 player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.low"));
