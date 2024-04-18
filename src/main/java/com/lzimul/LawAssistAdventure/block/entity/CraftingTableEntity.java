@@ -19,7 +19,7 @@ import org.jetbrains.annotations.Nullable;
 import static com.lzimul.LawAssistAdventure.Config.getDescriptionId;
 
 public class CraftingTableEntity extends BlockEntity implements MenuProvider {
-    protected final ContainerData containerData;
+    private final ContainerData containerData;
     private final ItemStackHandler itemStackHandler = new ItemStackHandler(13) {
         @Override
         protected void onContentsChanged(int slot) {

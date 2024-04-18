@@ -23,7 +23,7 @@ public class MainHud implements IGuiOverlay {
         if (this.minecraft.level.isClientSide()) {
             guiGraphics.setColor(1, 1, 1, 1);
             // TODO Fix the issue
-//            guiGraphics.blit(getHudResourceLocation("main_hud"), 0, 0, 0, 0, screenWidth, screenHeight, screenWidth / 64, screenHeight / 64);
+//            guiGraphics.blit(getResourceLocation(Config.ResourceType.HUD, "main_hud"), 0, 0, 0, 0, screenWidth, screenHeight, screenWidth / 64, screenHeight / 64);
         }
     }
 }

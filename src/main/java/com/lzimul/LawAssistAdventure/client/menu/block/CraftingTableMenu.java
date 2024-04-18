@@ -1,5 +1,6 @@
 package com.lzimul.LawAssistAdventure.client.menu.block;
 
+import com.lzimul.LawAssistAdventure.Config.Array;
 import com.lzimul.LawAssistAdventure.block.entity.CraftingTableEntity;
 import com.lzimul.LawAssistAdventure.register.MenuRegister;
 import net.minecraft.network.FriendlyByteBuf;
@@ -30,24 +31,22 @@ public class CraftingTableMenu extends AbstractContainerMenu {
         layoutPlayerInventorySlots(inventory);
 
         ItemStackHandler handler = craftingTableBlockEntity.getItemHandler();
-
-        this.addSlot(new SlotItemHandler(handler, 0, 11, 19));
-        this.addSlot(new SlotItemHandler(handler, 1, 29, 19));
-        this.addSlot(new SlotItemHandler(handler, 2, 47, 19));
-
-        this.addSlot(new SlotItemHandler(handler, 3, 11, 37));
-        this.addSlot(new SlotItemHandler(handler, 4, 29, 37));
-        this.addSlot(new SlotItemHandler(handler, 5, 47, 37));
-
-        this.addSlot(new SlotItemHandler(handler, 6, 11, 55));
-        this.addSlot(new SlotItemHandler(handler, 7, 29, 55));
-        this.addSlot(new SlotItemHandler(handler, 8, 47, 55));
-
-        this.addSlot(new SlotItemHandler(handler, 9, 125, 20));
-
-        this.addSlot(new SlotItemHandler(handler, 10, 82, 58));
-        this.addSlot(new SlotItemHandler(handler, 11, 103, 58));
-        this.addSlot(new SlotItemHandler(handler, 12, 124, 58));
+        int[][] positions = {
+                {11, 19},
+                {29, 19},
+                {47, 19},
+                {11, 37},
+                {29, 37},
+                {47, 37},
+                {11, 55},
+                {29, 55},
+                {47, 55},
+                {125, 20},
+                {82, 58},
+                {103, 58},
+                {124, 58}
+        };
+        new Array<>(positions).forEach((data, index, source) -> this.addSlot(new SlotItemHandler(handler, index, data[0], data[1])));
     }
 
     private void layoutPlayerInventorySlots(Inventory playerInventory) {

@@ -55,7 +55,6 @@ public class AmmunitionHelper {
     public void fire(int num) {
         if (this.current > 0) {
             this.current -= num;
-            this.player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.fire", num));
         } else {
             this.player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.not_enough"));
         }

@@ -8,6 +8,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import org.apache.commons.lang3.function.TriConsumer;
 
 import java.util.Objects;
 import java.util.logging.Logger;
@@ -57,6 +58,20 @@ public class Config {
                 player.getInventory().getItem(player.getInventory().items.indexOf(itemStack)).shrink(num);
                 player.getInventory().add(new ItemStack(repliItem));
                 break;
+            }
+        }
+    }
+
+    public static class Array<T> {
+        private final T[] data;
+
+        public Array(T[] data) {
+            this.data = data;
+        }
+
+        public void forEach(TriConsumer<T, Integer, T[]> callback) {
+            for (int index = 0; index < this.data.length; index++) {
+                callback.accept(this.data[index], index, this.data);
             }
         }
     }
