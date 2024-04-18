@@ -3,6 +3,7 @@ package com.lzimul.LawAssistAdventure.block.entity;
 import com.lzimul.LawAssistAdventure.client.menu.block.CraftingTableMenu;
 import com.lzimul.LawAssistAdventure.register.BlockEntityRegister;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
@@ -18,9 +19,8 @@ import org.jetbrains.annotations.Nullable;
 import static com.lzimul.LawAssistAdventure.Config.getDescriptionId;
 
 public class CraftingTableEntity extends BlockEntity implements MenuProvider {
-    public static ContainerData containerData_;
     protected final ContainerData containerData;
-    private final ItemStackHandler itemStackHandler = new ItemStackHandler(1) {
+    private final ItemStackHandler itemStackHandler = new ItemStackHandler(13) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -54,7 +54,6 @@ public class CraftingTableEntity extends BlockEntity implements MenuProvider {
                 return 1;
             }
         };
-        CraftingTableEntity.containerData_ = this.containerData;
     }
 
     public ItemStackHandler getItemHandler() {
@@ -70,5 +69,15 @@ public class CraftingTableEntity extends BlockEntity implements MenuProvider {
     @Override
     public AbstractContainerMenu createMenu(int id, @NotNull Inventory inventory, @NotNull Player player) {
         return new CraftingTableMenu(id, inventory, this, this.containerData);
+    }
+
+    @Override
+    public void load(@NotNull CompoundTag compoundTag) {
+        super.load(compoundTag);
+        this.itemStackHandler.deserializeNBT(compoundTag.getCompound("Inventory"));
+    }
+
+    protected void saveAdditional(@NotNull CompoundTag compoundTag) {
+        compoundTag.put("Inventory", this.itemStackHandler.serializeNBT());
     }
 }
