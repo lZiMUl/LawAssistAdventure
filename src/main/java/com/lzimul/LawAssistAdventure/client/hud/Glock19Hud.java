@@ -30,7 +30,7 @@ public class Glock19Hud implements IGuiOverlay {
         assert minecraft.player != null;
         if (minecraft.player.getMainHandItem().getItem() == ItemRegister.Glock19.get().asItem()) {
             guiGraphics.setColor(1, 1, 1, 1);
-            guiGraphics.blit(getResourceLocation(Config.Mode.HUD, "glock19_hud"), screenWidth - imageWidth, screenHeight - imageHeight, 0, 0, screenWidth - 10, screenHeight - 10, imageWidth, imageHeight);
+            guiGraphics.blit(getResourceLocation(Config.ResourceType.HUD, "glock19_hud"), screenWidth - imageWidth, screenHeight - imageHeight, 0, 0, screenWidth - 10, screenHeight - 10, imageWidth, imageHeight);
             guiGraphics.drawString(this.minecraft.font, "Hello", 1, 1, 0x404040);
         }
     }

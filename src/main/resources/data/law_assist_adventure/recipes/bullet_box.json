@@ -1,5 +1,8 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "items",
+  "group": "boxes",
+  "show_notification": true,
   "ingredients": [
     {
       "item": "law_assist_adventure:empty_bullet_box"

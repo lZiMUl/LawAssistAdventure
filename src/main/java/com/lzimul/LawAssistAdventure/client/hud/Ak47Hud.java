@@ -30,7 +30,7 @@ public class Ak47Hud implements IGuiOverlay {
         assert minecraft.player != null;
         if (minecraft.player.getMainHandItem().getItem() == ItemRegister.Ak47.get().asItem()) {
             guiGraphics.setColor(1, 1, 1, 1);
-            guiGraphics.blit(getResourceLocation(Config.Mode.HUD, "ak47_hud"), screenWidth - imageWidth, screenHeight - imageHeight, 0, 0, screenWidth - 10, screenHeight - 10, imageWidth, imageHeight);
+            guiGraphics.blit(getResourceLocation(Config.ResourceType.HUD, "ak47_hud"), screenWidth - imageWidth, screenHeight - imageHeight, 0, 0, screenWidth - 10, screenHeight - 10, imageWidth, imageHeight);
         }
     }
 }

@@ -17,8 +17,7 @@ public class Config {
     public static final String MODID = "law_assist_adventure";
     public static final Logger LOGGER = Logger.getLogger(MODID);
 
-
-    public static ResourceLocation getResourceLocation(Mode mode, String name) {
+    public static ResourceLocation getResourceLocation(ResourceType mode, String name) {
         return switch (mode) {
             case HUD -> new ResourceLocation(MODID, "textures/gui/hud/" + name + ".png");
             case ITEM -> new ResourceLocation(MODID, "textures/gui/item/" + name + ".png");
@@ -26,10 +25,10 @@ public class Config {
         };
     }
 
-    public enum Mode {
+    public enum ResourceType {
         HUD,
         ITEM,
-        BLOCK;
+        BLOCK
     }
 
     public static String getDescriptionId(Level level, BlockPos blockPos) {

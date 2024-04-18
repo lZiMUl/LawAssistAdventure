@@ -24,12 +24,12 @@ public class SolarPanelGeneratorScreen extends AbstractContainerScreen<SolarPane
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
 
-        guiGraphics.blit(getResourceLocation(Config.Mode.BLOCK, "solar_panel_generator"), x, y, 0, 0, imageWidth, imageHeight);
+        guiGraphics.blit(getResourceLocation(Config.ResourceType.BLOCK, "solar_panel_generator"), x, y, 0, 0, imageWidth, imageHeight);
     }
 
     public void renderProgressArrow(@NotNull GuiGraphics guiGraphics, int x, int y) {
 //        if (super.menu.isCrafting()) {
-        guiGraphics.blit(getResourceLocation(Config.Mode.HUD, "arrow"), x, y, 0, 0, 16, 16);
+        guiGraphics.blit(getResourceLocation(Config.ResourceType.HUD, "arrow"), x, y, 0, 0, 16, 16);
 //        }
     }
 

@@ -24,12 +24,12 @@ public class FluidFuelGeneratorScreen extends AbstractContainerScreen<FluidFuelG
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
 
-        guiGraphics.blit(getResourceLocation(Config.Mode.BLOCK, "fluid_fuel_generator"), x, y, 0, 0, imageWidth, imageHeight);
+        guiGraphics.blit(getResourceLocation(Config.ResourceType.BLOCK, "fluid_fuel_generator"), x, y, 0, 0, imageWidth, imageHeight);
     }
 
     public void renderProgressArrow(@NotNull GuiGraphics guiGraphics, int x, int y) {
 //        if (super.menu.isCrafting()) {
-        guiGraphics.blit(getResourceLocation(Config.Mode.HUD, "arrow"), x, y, 0, 0, 16, 16);
+        guiGraphics.blit(getResourceLocation(Config.ResourceType.HUD, "arrow"), x, y, 0, 0, 16, 16);
 //        }
     }
 
