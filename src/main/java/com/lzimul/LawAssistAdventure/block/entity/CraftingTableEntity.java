@@ -85,7 +85,9 @@ public class CraftingTableEntity extends BlockEntity implements MenuProvider {
         this.itemStackHandler.deserializeNBT(compoundTag.getCompound("Inventory"));
     }
 
+    @Override
     protected void saveAdditional(@NotNull CompoundTag compoundTag) {
+        super.saveAdditional(compoundTag);
         compoundTag.put("Inventory", this.itemStackHandler.serializeNBT());
     }
 }

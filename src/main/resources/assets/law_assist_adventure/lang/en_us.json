@@ -1,8 +1,8 @@
 {
-  "itemGroup.lzimul.law_assist_adventure.blocks": "Law Support & Adventure (Blocks)",
-  "itemGroup.lzimul.law_assist_adventure.items": "Law Support & Adventure (Items)",
-  "itemGroup.lzimul.law_assist_adventure.armors": "Law Support & Adventure (Equipment)",
-  "itemGroup.lzimul.law_assist_adventure.experiences": "Law Support & Adventure (Experience)",
+  "itemGroup.lzimul.law_assist_adventure.blocks": "Law Assist Adventure (Blocks)",
+  "itemGroup.lzimul.law_assist_adventure.items": "Law Assist Adventure (Items)",
+  "itemGroup.lzimul.law_assist_adventure.armors": "Law Assist Adventure (Equipment)",
+  "itemGroup.lzimul.law_assist_adventure.experiences": "Law Assist Adventure (Experience)",
 
   "law_assist_adventure.dust": "Teleported To [Dust]",
   "law_assist_adventure.fall_into_the_void": "Teleported To [Falling Void]",
@@ -93,6 +93,13 @@
   "event.law_assist_adventure.ammunition.stock_full": "The stocks are full and it is not possible to continue replenishing ammunition",
   "event.law_assist_adventure.ammunition.empty": "Empty stock",
   "event.law_assist_adventure.world.not_found": "The world not found",
+  "key.law_assist_adventure": "Law Assist Adventure",
+  "key.law_assist_adventure.keyboard.r": "Reload",
+  "key.law_assist_adventure.mouse.left": "Fire",
+  "key.law_assist_adventure.mouse.right": "Aim",
+  "tip.law_assist_adventure.item.shift": "Press SHIFT for more info",
+  "tip.law_assist_adventure.item.ak47.full": "The AK-47 assault rifle is an automatic rifle designed by the Soviet firearms designer Kalashnikov. Compared to World War II rifles, it has a shorter body and a shorter range, making it suitable for closer combat. The AK-47 has high reliability, is solid and durable, has a low failure rate, and has good firing performance both in high and low conditions.",
+  "tip.law_assist_adventure.item.glock19.full": "The entire bottom handle, including the grip, is injection molded from engineering plastic, reinforced with steel only in the chute in contact with the sleeve, and the trigger and magazine are also plastic. This not only reduces the production cost, but also greatly improves the accuracy of the combination with other parts. Since the grip part is integrated with the magazine slot, the grip size is not too large, although it uses a high-capacity double-row magazine.",
 
   "entity.law_assist_adventure.demo1": "Demo1",
   "entity.law_assist_adventure.demo2": "Demo2",

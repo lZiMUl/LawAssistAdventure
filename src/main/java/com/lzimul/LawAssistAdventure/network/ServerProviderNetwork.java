@@ -1,5 +1,7 @@
 package com.lzimul.LawAssistAdventure.network;
 
+import com.lzimul.LawAssistAdventure.item.Ak47Item;
+import com.lzimul.LawAssistAdventure.item.Glock19Item;
 import com.lzimul.LawAssistAdventure.register.DimensionRegister;
 import com.lzimul.LawAssistAdventure.register.ItemRegister;
 import com.lzimul.LawAssistAdventure.register.SoundRegister;
@@ -65,6 +67,16 @@ public class ServerProviderNetwork {
                     break;
                 case "server:occupation/TheEnd":
                     teleportToWorld(player, DimensionRegister.TheEnd);
+                    break;
+                case "server:key/R":
+                    switch (player.getMainHandItem().getItem().getDescriptionId()) {
+                        case "item.law_assist_adventure.ak47":
+                            Ak47Item.reload(player);
+                            break;
+                        case "item.law_assist_adventure.glock19":
+                            Glock19Item.reload(player);
+                            break;
+                    }
                     break;
                 default:
                     playPayloadContext.packetHandler().disconnect(Component.literal("network.law_assist_adventure.no_occupation"));
