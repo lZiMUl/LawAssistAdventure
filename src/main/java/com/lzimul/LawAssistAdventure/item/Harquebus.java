@@ -13,9 +13,11 @@ import org.jetbrains.annotations.NotNull;
 
 public class Harquebus extends Item {
     private static final AmmunitionHelper ammunitionHelper = new AmmunitionHelper(1, 10, 0);
+
     public Harquebus() {
         super(new Item.Properties());
     }
+
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand interactionHand) {
         if (!level.isClientSide() && player.isAlive()) {

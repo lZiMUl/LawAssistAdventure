@@ -17,8 +17,9 @@ import org.jetbrains.annotations.NotNull;
 
 public class PearFlowerGun extends SwordItem {
     private static final AmmunitionHelper ammunitionHelper = new AmmunitionHelper(1, 3, 0);
+
     public PearFlowerGun() {
-        super(new WeaponHelper(1, 400, 1F, 5F, 1, () -> Ingredient.of(ItemRegister.PearFlowerGun.asItem())), 3,-2.4f, new Item.Properties());
+        super(new WeaponHelper(1, 400, 1F, 5F, 1, () -> Ingredient.of(ItemRegister.PearFlowerGun.asItem())), 3, -2.4f, new Item.Properties());
     }
 
     @Override

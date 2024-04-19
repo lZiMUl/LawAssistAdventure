@@ -16,10 +16,10 @@ public class AttackAndFollowAi extends MeleeAttackGoal {
     public final PathfinderMob pathfinderMob;
     private final int searchRange;
     private final double speedModifier;
-    private Player nearestPlayer;
-    private DamageSource tempDamageSource = null;
     PathNavigation pathNavigation;
     LookControl lookControl;
+    private Player nearestPlayer;
+    private DamageSource tempDamageSource = null;
 
     public AttackAndFollowAi(PathfinderMob pathfinderMob, double speedModifier, int searchRange) {
         super(pathfinderMob, speedModifier, true);
@@ -52,7 +52,7 @@ public class AttackAndFollowAi extends MeleeAttackGoal {
             this.pathNavigation.moveTo(this.nearestPlayer, this.speedModifier);
         } else {
             if (this.lookControl.isLookingAtTarget() && this.tempDamageSource != null && isCS(this.nearestPlayer)) {
-                if (this.nearestPlayer.hurt(this.tempDamageSource,3F)) {
+                if (this.nearestPlayer.hurt(this.tempDamageSource, 3F)) {
                     this.nearestPlayer.addEffect(new MobEffectInstance(MobEffects.JUMP, 3, 3, true, true));
                 }
             }

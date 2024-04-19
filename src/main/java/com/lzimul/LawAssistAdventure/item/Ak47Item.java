@@ -18,6 +18,7 @@ import java.util.List;
 
 public class Ak47Item extends Item {
     public static final AmmunitionHelper ammunitionHelper = new AmmunitionHelper(30, 270, 0);
+
     public Ak47Item() {
         super(new Item.Properties().stacksTo(1));
     }

@@ -8,6 +8,6 @@ import net.minecraft.world.item.crafting.Ingredient;
 
 public class HatchetItem extends SwordItem {
     public HatchetItem() {
-        super(new WeaponHelper(3, 200, 1F, 1.1F, 30, () -> Ingredient.of(ItemRegister.Hatchet.asItem())), 3,-2.4f, new Item.Properties());
+        super(new WeaponHelper(3, 200, 1F, 1.1F, 30, () -> Ingredient.of(ItemRegister.Hatchet.asItem())), 3, -2.4f, new Item.Properties());
     }
 }

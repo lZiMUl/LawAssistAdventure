@@ -140,6 +140,7 @@ class Dimension implements ITeleporter {
     public Dimension(BlockPos blockPos) {
         this.blockPos = blockPos;
     }
+
     @Override
     public @NotNull Entity placeEntity(@NotNull Entity rawEntity, @NotNull ServerLevel currentWorld, @NotNull ServerLevel destWorld, float yaw, @NotNull Function<Boolean, Entity> repositionEntity) {
         Entity entity = repositionEntity.apply(true);

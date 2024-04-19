@@ -26,12 +26,6 @@ public class Config {
         };
     }
 
-    public enum ResourceType {
-        HUD,
-        ITEM,
-        BLOCK
-    }
-
     public static String getDescriptionId(Level level, BlockPos blockPos) {
         return Objects.requireNonNull(level).getBlockState(blockPos).getBlock().getDescriptionId();
     }
@@ -44,6 +38,7 @@ public class Config {
         double z = Math.pow(targetPosition.z - sourcePosition.z, 2);
         return Math.sqrt(x + y + z) > range;
     }
+
     public static boolean hasItem(Player player, Item item) {
         for (ItemStack itemStack : player.getInventory().items) {
             if (itemStack.getItem().asItem().equals(item)) {
@@ -52,6 +47,7 @@ public class Config {
         }
         return false;
     }
+
     public static void shrinkItem(Player player, Item item, Item repliItem, int num) {
         for (ItemStack itemStack : player.getInventory().items) {
             if (itemStack.getItem().asItem().equals(item)) {
@@ -60,6 +56,12 @@ public class Config {
                 break;
             }
         }
+    }
+
+    public enum ResourceType {
+        HUD,
+        ITEM,
+        BLOCK
     }
 
     public static class Array<T> {
