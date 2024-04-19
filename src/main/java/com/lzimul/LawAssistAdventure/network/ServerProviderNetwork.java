@@ -42,7 +42,6 @@ public class ServerProviderNetwork {
     public void handleData(final DataNetwork networkData, final PlayPayloadContext playPayloadContext) {
         playPayloadContext.player().ifPresent((player) -> playPayloadContext.workHandler().submitAsync(() -> {
             String data = networkData.data();
-            player.sendSystemMessage(Component.literal("我从服务端得到了这个数据:" + data));
             switch (data) {
                 case "server:occupation/Dust":
                     teleportToWorld(player, DimensionRegister.Dust);
