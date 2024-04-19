@@ -8,11 +8,15 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -24,7 +28,7 @@ public class Glock19Item extends Item {
     public static final AmmunitionHelper ammunitionHelper = new AmmunitionHelper(21, 120, 0);
 
     public Glock19Item() {
-        super(new Item.Properties().stacksTo(1));
+        super(new Properties().stacksTo(1));
     }
 
     public static void reload(Player player) {
@@ -47,6 +51,16 @@ public class Glock19Item extends Item {
             ammunitionHelper.setPlayer(player);
             if (ammunitionHelper.getCurrent() != 0) {
                 ammunitionHelper.fire(1);
+                Vec3 playerPosition = player.getPosition(0);
+                Vec3 playerLookDirection = player.getLookAngle();
+
+                Vec3 rayStart = playerPosition.add(0, player.getEyeHeight(), 0);
+                Vec3 rayEnd = rayStart.add(playerLookDirection.scale(100));
+
+                Entity hitEntity = getEntityAtPoint(player, level.clip(new ClipContext(rayStart, rayEnd, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, player)).getLocation());
+                if (hitEntity != null) {
+                    player.attack(hitEntity);
+                }
                 level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegister.Glock19Fire.get(), player.getSoundSource(), 1.0F, 1.0F);
             } else if (hasItem(player, ItemRegister.BulletBox.get().asItem())) {
                 shrinkItem(player, ItemRegister.BulletBox.get().asItem(), ItemRegister.EmptyBulletBox.get().asItem(), 1);
@@ -56,6 +70,17 @@ public class Glock19Item extends Item {
             }
         }
         return super.use(level, player, hand);
+    }
+
+    private Entity getEntityAtPoint(Player player, Vec3 hitVec) {
+        List<Entity> entities = player.level().getEntities(player, AABB.unitCubeFromLowerCorner(hitVec));
+        player.sendSystemMessage(Component.literal("Entities: " + entities).withStyle(ChatFormatting.GREEN));
+        for (Entity entity : entities) {
+            if (entity.isAlive()) {
+                return entity;
+            }
+        }
+        return null;
     }
 
     @Override
