@@ -41,10 +41,10 @@ public class CraftingTableMenu extends AbstractContainerMenu {
                 {11, 55},
                 {29, 55},
                 {47, 55},
-                {125, 20},
                 {82, 58},
                 {103, 58},
-                {124, 58}
+                {124, 58},
+                {125, 20}
         };
         new Array<>(positions).forEach((data, index, source) -> this.addSlot(new SlotItemHandler(handler, index, data[0], data[1])));
     }
