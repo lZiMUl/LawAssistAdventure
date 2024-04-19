@@ -2,6 +2,7 @@ package com.lzimul.LawAssistAdventure.block.entity;
 
 import com.lzimul.LawAssistAdventure.client.menu.block.CraftingTableMenu;
 import com.lzimul.LawAssistAdventure.register.BlockEntityRegister;
+import com.lzimul.LawAssistAdventure.register.ItemRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -10,6 +11,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
@@ -24,6 +26,12 @@ public class CraftingTableEntity extends BlockEntity implements MenuProvider {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
+            if (slot == 4 && itemStackHandler.getStackInSlot(4).getItem() == ItemRegister.Glock19.get().asItem()) {
+                itemStackHandler.setStackInSlot(12, ItemRegister.Ak47.toStack());
+            }
+            if (slot == 12 && itemStackHandler.getStackInSlot(12).getItem() == ItemStack.EMPTY.getItem()) {
+                itemStackHandler.setStackInSlot(4, ItemStack.EMPTY);
+            }
         }
     };
     private int progress = 0;
