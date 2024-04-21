@@ -5,6 +5,8 @@ import com.lzimul.LawAssistAdventure.register.ItemRegister;
 import com.lzimul.LawAssistAdventure.register.SoundRegister;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Vec3i;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -13,19 +15,21 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Arrays;
 import java.util.List;
 
-import static com.lzimul.LawAssistAdventure.Config.hasItem;
-import static com.lzimul.LawAssistAdventure.Config.shrinkItem;
+import static com.lzimul.LawAssistAdventure.Config.*;
 
 public class Glock19Item extends Item {
     public static final AmmunitionHelper ammunitionHelper = new AmmunitionHelper(21, 120, 0);
+
+    private static final List<Block> targetBlocks = Arrays.stream(new Block[]{Blocks.GLASS, Blocks.GLASS_PANE}).distinct().toList();
 
     public Glock19Item() {
         super(new Properties().stacksTo(1));
@@ -51,17 +55,19 @@ public class Glock19Item extends Item {
             ammunitionHelper.setPlayer(player);
             if (ammunitionHelper.getCurrent() != 0) {
                 ammunitionHelper.fire(1);
-                Vec3 playerPosition = player.getPosition(0);
-                Vec3 playerLookDirection = player.getLookAngle();
-
-                Vec3 rayStart = playerPosition.add(0, player.getEyeHeight(), 0);
-                Vec3 rayEnd = rayStart.add(playerLookDirection.scale(100));
-
-                Entity hitEntity = getEntityAtPoint(player, level.clip(new ClipContext(rayStart, rayEnd, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, player)).getLocation());
-                if (hitEntity != null) {
-                    player.attack(hitEntity);
-                }
                 level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegister.Glock19Fire.get(), player.getSoundSource(), 1.0F, 1.0F);
+                //TODO Test Function
+                for (Vec3 point : getRay(player)) {
+                    BlockPos blockPos = new BlockPos(new Vec3i((int) point.x, (int) point.y, (int) point.z));
+                    level.setBlock(blockPos, Blocks.GLASS.defaultBlockState(), 0);
+                    level.sendBlockUpdated(blockPos, level.getBlockState(blockPos), level.getBlockState(blockPos), 0);
+                    //TODO Test Function End
+
+                    Entity hitEntity = getEntityAtPoint(player, point);
+                    if (hitEntity != null && isAir(level, blockPos, targetBlocks)) {
+                        player.attack(hitEntity);
+                    }
+                }
             } else if (hasItem(player, ItemRegister.BulletBox.get().asItem())) {
                 shrinkItem(player, ItemRegister.BulletBox.get().asItem(), ItemRegister.EmptyBulletBox.get().asItem(), 1);
                 ammunitionHelper.add(21);
@@ -70,17 +76,6 @@ public class Glock19Item extends Item {
             }
         }
         return super.use(level, player, hand);
-    }
-
-    private Entity getEntityAtPoint(Player player, Vec3 hitVec) {
-        List<Entity> entities = player.level().getEntities(player, AABB.unitCubeFromLowerCorner(hitVec));
-        player.sendSystemMessage(Component.literal("Entities: " + entities).withStyle(ChatFormatting.GREEN));
-        for (Entity entity : entities) {
-            if (entity.isAlive()) {
-                return entity;
-            }
-        }
-        return null;
     }
 
     @Override

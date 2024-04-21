@@ -1,6 +1,5 @@
 package com.lzimul.LawAssistAdventure.client.menu.block;
 
-import com.lzimul.LawAssistAdventure.Config.Array;
 import com.lzimul.LawAssistAdventure.block.entity.CraftingTableEntity;
 import com.lzimul.LawAssistAdventure.register.MenuRegister;
 import net.minecraft.network.FriendlyByteBuf;
@@ -14,6 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.neoforged.neoforge.items.SlotItemHandler;
+import org.apache.commons.lang3.function.TriConsumer;
 import org.jetbrains.annotations.NotNull;
 
 public class CraftingTableMenu extends AbstractContainerMenu {
@@ -46,7 +46,13 @@ public class CraftingTableMenu extends AbstractContainerMenu {
                 {124, 58},
                 {125, 20}
         };
-        new Array<>(positions).forEach((data, index, source) -> this.addSlot(new SlotItemHandler(handler, index, data[0], data[1])));
+        forEachWithIndex(positions, (data, index, source) -> this.addSlot(new SlotItemHandler(handler, index, data[0], data[1])));
+    }
+
+    public static <T> void forEachWithIndex(T[] array, TriConsumer<T, Integer, T[]> consumer) {
+        for (int i = 0; i < array.length; i++) {
+            consumer.accept(array[i], i, array);
+        }
     }
 
     private void layoutPlayerInventorySlots(Inventory playerInventory) {
