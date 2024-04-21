@@ -53,7 +53,7 @@ public class HarquebusItem extends Item {
             if (ammunitionHelper.getCurrent() != 0) {
                 ammunitionHelper.fire(1, (index) -> {
                     level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegister.Glock19Fire.get(), player.getSoundSource(), 1.0F, 1.0F);
-                    for (Vec3 point : getRay(player, 37, 0.7)) {
+                    for (Vec3 point : getRay(player, 37)) {
                         BlockPos blockPos = Vec3ToBlockPos(new Vec3(point.x, point.y, point.z));
                         Entity hitEntity = getEntityAtPoint(player, point);
                         if (DestroyObstacles(level, blockPos, targetBlocks) && hitEntity != null) {

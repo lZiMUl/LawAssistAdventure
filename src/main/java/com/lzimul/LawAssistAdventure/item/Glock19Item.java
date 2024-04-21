@@ -55,7 +55,7 @@ public class Glock19Item extends Item {
             if (ammunitionHelper.getCurrent() != 0) {
                 ammunitionHelper.fire(fireNum, (index) -> {
                     level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegister.Glock19Fire.get(), player.getSoundSource(), 1.0F, 1.0F);
-                    for (Vec3 point : getRay(player, 50, 0.5)) {
+                    for (Vec3 point : getRay(player, 50)) {
                         BlockPos blockPos = Vec3ToBlockPos(new Vec3(point.x, point.y, point.z));
                         Entity hitEntity = getEntityAtPoint(player, point);
                         if (DestroyObstacles(level, blockPos, targetBlocks) && hitEntity != null) {
