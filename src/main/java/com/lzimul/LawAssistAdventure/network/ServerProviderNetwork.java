@@ -2,6 +2,8 @@ package com.lzimul.LawAssistAdventure.network;
 
 import com.lzimul.LawAssistAdventure.item.Ak47Item;
 import com.lzimul.LawAssistAdventure.item.Glock19Item;
+import com.lzimul.LawAssistAdventure.item.HarquebusItem;
+import com.lzimul.LawAssistAdventure.item.PearFlowerGunItem;
 import com.lzimul.LawAssistAdventure.register.DimensionRegister;
 import com.lzimul.LawAssistAdventure.register.ItemRegister;
 import com.lzimul.LawAssistAdventure.register.SoundRegister;
@@ -74,6 +76,12 @@ public class ServerProviderNetwork {
                             break;
                         case "item.law_assist_adventure.glock19":
                             Glock19Item.reload(player);
+                            break;
+                        case "item.law_assist_adventure.pear_flower_gun":
+                            PearFlowerGunItem.reload(player);
+                            break;
+                        case "item.law_assist_adventure.harquebus":
+                            HarquebusItem.reload(player);
                             break;
                     }
                     break;

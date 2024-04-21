@@ -1,7 +1,6 @@
 package com.lzimul.LawAssistAdventure.item;
 
 import com.lzimul.LawAssistAdventure.client.helper.AmmunitionHelper;
-import com.lzimul.LawAssistAdventure.register.ItemRegister;
 import com.lzimul.LawAssistAdventure.register.SoundRegister;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -25,19 +24,19 @@ import java.util.List;
 
 import static com.lzimul.LawAssistAdventure.Config.*;
 
-public class Glock19Item extends Item {
-    public static final AmmunitionHelper ammunitionHelper = new AmmunitionHelper(21, 120, 0);
-    private static final List<Block> targetBlocks = Arrays.stream(new Block[]{Blocks.GLASS, Blocks.GLASS_PANE}).distinct().toList();
+public class HarquebusItem extends Item {
+    private static final AmmunitionHelper ammunitionHelper = new AmmunitionHelper(1, 10, 0);
+    private static final List<Block> targetBlocks = Arrays.stream(new Block[]{Blocks.GLASS, Blocks.GLASS_PANE, Blocks.OAK_LOG, Blocks.STONE}).distinct().toList();
 
-    public Glock19Item() {
-        super(new Properties().stacksTo(1));
+    public HarquebusItem() {
+        super(new Item.Properties());
     }
 
     public static void reload(Player player) {
         if (ammunitionHelper.getCurrent() != ammunitionHelper.getLimit()) {
             if (ammunitionHelper.getTotal() != 0) {
                 ammunitionHelper.reload();
-                player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegister.AK47Reload.get(), player.getSoundSource(), 1.0F, 1.0F);
+                player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegister.Glock19Reload.get(), player.getSoundSource(), 1.0F, 1.0F);
                 player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.reloaded"));
             } else {
                 player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.empty"));
@@ -54,16 +53,13 @@ public class Glock19Item extends Item {
             if (ammunitionHelper.getCurrent() != 0) {
                 ammunitionHelper.fire(1);
                 level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegister.Glock19Fire.get(), player.getSoundSource(), 1.0F, 1.0F);
-                for (Vec3 point : getRay(player, 50)) {
+                for (Vec3 point : getRay(player, 120)) {
                     BlockPos blockPos = Vec3ToBlockPos(new Vec3(point.x, point.y, point.z));
                     Entity hitEntity = getEntityAtPoint(player, point);
                     if (DestroyObstacles(level, blockPos, targetBlocks) && hitEntity != null) {
                         player.attack(hitEntity);
                     }
                 }
-            } else if (hasItem(player, ItemRegister.BulletBox.get().asItem())) {
-                shrinkItem(player, ItemRegister.BulletBox.get().asItem(), ItemRegister.EmptyBulletBox.get().asItem(), 1);
-                ammunitionHelper.add(21);
             } else {
                 player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.low"));
             }
@@ -76,7 +72,7 @@ public class Glock19Item extends Item {
         if (!Screen.hasShiftDown()) {
             componentList.add(Component.translatable("tip.law_assist_adventure.item.shift").withStyle(ChatFormatting.AQUA));
         } else {
-            componentList.add(Component.translatable("tip.law_assist_adventure.item.glock19.full").withStyle(ChatFormatting.YELLOW));
+            componentList.add(Component.literal("不知道").withStyle(ChatFormatting.YELLOW));
         }
         super.appendHoverText(itemStack, level, componentList, tooltipFlag);
     }

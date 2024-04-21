@@ -27,6 +27,7 @@ import static com.lzimul.LawAssistAdventure.Config.*;
 public class Ak47Item extends Item {
     public static final AmmunitionHelper ammunitionHelper = new AmmunitionHelper(30, 270, 0);
     private static final List<Block> targetBlocks = Arrays.stream(new Block[]{Blocks.GLASS, Blocks.GLASS_PANE, Blocks.OAK_LOG, Blocks.STONE}).distinct().toList();
+
     public Ak47Item() {
         super(new Item.Properties().stacksTo(1));
     }
@@ -46,7 +47,7 @@ public class Ak47Item extends Item {
     }
 
     @Override
-    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand interactionHand) {
         if (!level.isClientSide() && player.isAlive()) {
             ammunitionHelper.setPlayer(player);
             if (ammunitionHelper.getCurrent() != 0) {
@@ -63,7 +64,7 @@ public class Ak47Item extends Item {
                 player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.low"));
             }
         }
-        return super.use(level, player, hand);
+        return super.use(level, player, interactionHand);
     }
 
     @Override
