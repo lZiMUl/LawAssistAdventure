@@ -3,6 +3,8 @@ package com.lzimul.LawAssistAdventure.client.helper;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 
+import java.util.function.Consumer;
+
 public class AmmunitionHelper {
     private final int limit;
     private Player player;
@@ -39,11 +41,9 @@ public class AmmunitionHelper {
         int differ = limit - current;
         if (differ > 0) {
             if (total - differ >= 0) {
-                this.player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.replenished", differ));
                 this.current += differ;
                 this.total -= differ;
             } else {
-                this.player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.replenished", this.total));
                 this.current += this.total;
                 this.total = 0;
             }
@@ -52,11 +52,15 @@ public class AmmunitionHelper {
         }
     }
 
-    public void fire(int num) {
-        if (this.current > 0) {
-            this.current -= num;
-        } else {
-            this.player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.not_enough"));
+    public void fire(int num, Consumer<Integer> callBack) {
+        for (int index = 0; index < num; index++) {
+            if (this.current > 0) {
+                this.current--;
+                callBack.accept(index);
+            } else {
+                this.player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.not_enough"));
+                break;
+            }
         }
     }
 }

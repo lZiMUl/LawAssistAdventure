@@ -51,15 +51,16 @@ public class Ak47Item extends Item {
         if (!level.isClientSide() && player.isAlive()) {
             ammunitionHelper.setPlayer(player);
             if (ammunitionHelper.getCurrent() != 0) {
-                ammunitionHelper.fire(1);
-                level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegister.AK47Fire.get(), player.getSoundSource(), 1.0F, 1.0F);
-                for (Vec3 point : getRay(player, 120)) {
-                    BlockPos blockPos = Vec3ToBlockPos(new Vec3(point.x, point.y, point.z));
-                    Entity hitEntity = getEntityAtPoint(player, point);
-                    if (DestroyObstacles(level, blockPos, targetBlocks) && hitEntity != null) {
-                        player.attack(hitEntity);
+                ammunitionHelper.fire(1, (index) -> {
+                    level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegister.AK47Fire.get(), player.getSoundSource(), 1.0F, 1.0F);
+                    for (Vec3 point : getRay(player, 120, 0.9)) {
+                        BlockPos blockPos = Vec3ToBlockPos(new Vec3(point.x, point.y, point.z));
+                        Entity hitEntity = getEntityAtPoint(player, point);
+                        if (DestroyObstacles(level, blockPos, targetBlocks) && hitEntity != null) {
+                            player.attack(hitEntity);
+                        }
                     }
-                }
+                });
             } else {
                 player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.low"));
             }

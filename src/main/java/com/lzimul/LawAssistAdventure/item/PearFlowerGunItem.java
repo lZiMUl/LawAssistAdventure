@@ -29,7 +29,7 @@ import java.util.List;
 import static com.lzimul.LawAssistAdventure.Config.*;
 
 public class PearFlowerGunItem extends SwordItem {
-    private static final AmmunitionHelper ammunitionHelper = new AmmunitionHelper(1, 3, 0);
+    public static final AmmunitionHelper ammunitionHelper = new AmmunitionHelper(1, 3, 0);
     private static final List<Block> targetBlocks = Arrays.stream(new Block[]{Blocks.GLASS, Blocks.GLASS_PANE, Blocks.OAK_LOG, Blocks.STONE}).distinct().toList();
 
     public PearFlowerGunItem() {
@@ -55,15 +55,17 @@ public class PearFlowerGunItem extends SwordItem {
         if (!level.isClientSide() && player.isAlive()) {
             ammunitionHelper.setPlayer(player);
             if (ammunitionHelper.getCurrent() != 0) {
-                ammunitionHelper.fire(1);
-                level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegister.Glock19Fire.get(), player.getSoundSource(), 1.0F, 1.0F);
-                for (Vec3 point : getRay(player, 120)) {
-                    BlockPos blockPos = Vec3ToBlockPos(new Vec3(point.x, point.y, point.z));
-                    Entity hitEntity = getEntityAtPoint(player, point);
-                    if (DestroyObstacles(level, blockPos, targetBlocks) && hitEntity != null) {
-                        player.attack(hitEntity);
+                ammunitionHelper.fire(1, (index) -> {
+                    level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegister.Glock19Fire.get(), player.getSoundSource(), 1.0F, 1.0F);
+                    for (Vec3 point : getRay(player, 20, 1.4)) {
+                        BlockPos blockPos = Vec3ToBlockPos(new Vec3(point.x, point.y, point.z));
+                        Entity hitEntity = getEntityAtPoint(player, point);
+                        if (DestroyObstacles(level, blockPos, targetBlocks) && hitEntity != null) {
+                            player.attack(hitEntity);
+                        }
                     }
-                }
+                });
+
             } else {
                 player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.low"));
             }

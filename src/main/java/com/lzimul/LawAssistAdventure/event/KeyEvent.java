@@ -14,14 +14,17 @@ import static com.lzimul.LawAssistAdventure.Config.MODID;
 public class KeyEvent {
     @SubscribeEvent
     public static void onKeyInput(InputEvent.Key inputEvent) {
+        if (KeyRegister.MouseLeft.consumeClick() && inputEvent.getKey() == KeyRegister.MouseLeft.getKey().getValue()) {
+            PacketDistributor.SERVER.noArg().send(new DataNetwork("server:mouse/Left", 1000));
+        }
+        if (KeyRegister.MouseRight.consumeClick() && inputEvent.getKey() == KeyRegister.MouseRight.getKey().getValue()) {
+            PacketDistributor.SERVER.noArg().send(new DataNetwork("server:mouse/Right", 1001));
+        }
         if (KeyRegister.KeyboardR.consumeClick() && inputEvent.getKey() == KeyRegister.KeyboardR.getKey().getValue()) {
-            PacketDistributor.SERVER.noArg().send(new DataNetwork("server:key/R", 1000));
+            PacketDistributor.SERVER.noArg().send(new DataNetwork("server:keyBoard/R", 1002));
         }
-        if (KeyRegister.MouseLeftButton.consumeClick() && inputEvent.getKey() == KeyRegister.MouseLeftButton.getKey().getValue()) {
-            PacketDistributor.SERVER.noArg().send(new DataNetwork("server:key/MouseLeftButton", 1001));
-        }
-        if (KeyRegister.MouseRightButton.consumeClick() && inputEvent.getKey() == KeyRegister.MouseRightButton.getKey().getValue()) {
-            PacketDistributor.SERVER.noArg().send(new DataNetwork("server:key/MouseRightButton", 1002));
+        if (KeyRegister.KeyboardC.consumeClick() && inputEvent.getKey() == KeyRegister.KeyboardC.getKey().getValue()) {
+            PacketDistributor.SERVER.noArg().send(new DataNetwork("server:keyBoard/C", 1003));
         }
     }
 }

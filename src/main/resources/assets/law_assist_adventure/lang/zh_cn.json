@@ -93,10 +93,13 @@
   "event.law_assist_adventure.ammunition.stock_full": "库存已满，无法继续补充弹药",
   "event.law_assist_adventure.ammunition.empty": "备弹空",
   "event.law_assist_adventure.world.not_found": "世界未发现",
+
   "key.law_assist_adventure": "法则辅助与冒险",
-  "key.law_assist_adventure.keyboard.r": "换弹",
   "key.law_assist_adventure.mouse.left": "开火",
   "key.law_assist_adventure.mouse.right": "瞄准",
+  "key.law_assist_adventure.keyboard.r": "换弹",
+  "key.law_assist_adventure.keyboard.c": "开火模式",
+
   "tip.law_assist_adventure.item.shift": "按下 SHIFT 获取更多信息",
   "tip.law_assist_adventure.item.ak47.full": "AK-47突击步枪，是由苏联枪械设计师卡拉什尼科夫设计的自动步枪。它与第二次世界大战时期的步枪相比，枪身短小、射程较短，适合较近距离的战斗。AK-47的可靠性高，坚实耐用，故障率低，无论是在高温还是低温条件下，射击性能都很好。",
   "tip.law_assist_adventure.item.glock19.full": "GLOCK的整个底把包括握把都是由工程塑料整体注塑成型的，只是在与套筒接触的滑槽部位才用钢增强；扳机和弹匣也是塑料的。这样不但降低生产成本，而且与其他零件的结合精度也大大提高。由于握把部位与弹匣槽是一体的，因此尽管它使用大容量的双排弹匣，握把尺寸并不太大。",

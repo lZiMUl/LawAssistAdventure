@@ -27,6 +27,7 @@ import static com.lzimul.LawAssistAdventure.Config.*;
 
 public class Glock19Item extends Item {
     public static final AmmunitionHelper ammunitionHelper = new AmmunitionHelper(21, 120, 0);
+    public static int fireNum = 1;
     private static final List<Block> targetBlocks = Arrays.stream(new Block[]{Blocks.GLASS, Blocks.GLASS_PANE}).distinct().toList();
 
     public Glock19Item() {
@@ -52,15 +53,16 @@ public class Glock19Item extends Item {
         if (!level.isClientSide() && player.isAlive()) {
             ammunitionHelper.setPlayer(player);
             if (ammunitionHelper.getCurrent() != 0) {
-                ammunitionHelper.fire(1);
-                level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegister.Glock19Fire.get(), player.getSoundSource(), 1.0F, 1.0F);
-                for (Vec3 point : getRay(player, 50)) {
-                    BlockPos blockPos = Vec3ToBlockPos(new Vec3(point.x, point.y, point.z));
-                    Entity hitEntity = getEntityAtPoint(player, point);
-                    if (DestroyObstacles(level, blockPos, targetBlocks) && hitEntity != null) {
-                        player.attack(hitEntity);
+                ammunitionHelper.fire(fireNum, (index) -> {
+                    level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegister.Glock19Fire.get(), player.getSoundSource(), 1.0F, 1.0F);
+                    for (Vec3 point : getRay(player, 50, 0.5)) {
+                        BlockPos blockPos = Vec3ToBlockPos(new Vec3(point.x, point.y, point.z));
+                        Entity hitEntity = getEntityAtPoint(player, point);
+                        if (DestroyObstacles(level, blockPos, targetBlocks) && hitEntity != null) {
+                            player.attack(hitEntity);
+                        }
                     }
-                }
+                });
             } else if (hasItem(player, ItemRegister.BulletBox.get().asItem())) {
                 shrinkItem(player, ItemRegister.BulletBox.get().asItem(), ItemRegister.EmptyBulletBox.get().asItem(), 1);
                 ammunitionHelper.add(21);

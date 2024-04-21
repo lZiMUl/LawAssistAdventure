@@ -66,14 +66,14 @@ public class Config {
 
     public static ArrayList<Vec3> getRay(Player player, int distance) {
         Vec3 rayStart = player.getPosition(0).add(-1, player.getEyeHeight() - 1, -1);
-        Vec3 rayEnd = rayStart.add(player.getLookAngle().scale(distance).add(-1, 0, 0));
+        Vec3 rayEnd = rayStart.add(player.getLookAngle().scale(distance).add(0, 0, 0));
         int numPoints = (int) Math.sqrt(Math.pow(rayEnd.x - rayStart.x, 2) + Math.pow(rayEnd.y - rayStart.y, 2) + Math.pow(rayEnd.z - rayStart.z, 2));
         ArrayList<Vec3> points = new ArrayList<>(numPoints);
         for (int index = 0; index < numPoints; index++) {
-            double t = (double) index / numPoints;
-            double x = rayStart.x + t * (rayEnd.x - rayStart.x);
-            double y = rayStart.y + t * (rayEnd.y - rayStart.y);
-            double z = rayStart.z + t * (rayEnd.z - rayStart.z);
+            double interpolation = (double) index / numPoints;
+            double x = rayStart.x + (rayEnd.x - rayStart.x) * interpolation;
+            double y = rayStart.y + (rayEnd.y - rayStart.y) * interpolation;
+            double z = rayStart.z + (rayEnd.z - rayStart.z) * interpolation;
             points.add(new Vec3(x, y, z));
         }
         return points;

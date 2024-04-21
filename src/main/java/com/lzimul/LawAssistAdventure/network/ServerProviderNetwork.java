@@ -69,7 +69,7 @@ public class ServerProviderNetwork {
                 case "server:occupation/TheEnd":
                     teleportToWorld(player, DimensionRegister.TheEnd);
                     break;
-                case "server:key/R":
+                case "server:keyBoard/R":
                     switch (player.getMainHandItem().getItem().getDescriptionId()) {
                         case "item.law_assist_adventure.ak47":
                             Ak47Item.reload(player);
@@ -83,6 +83,15 @@ public class ServerProviderNetwork {
                         case "item.law_assist_adventure.harquebus":
                             HarquebusItem.reload(player);
                             break;
+                    }
+                    break;
+                case "server:keyBoard/C":
+                    if (player.getMainHandItem().getItem().getDescriptionId().equals("item.law_assist_adventure.glock19")) {
+                        if (Glock19Item.fireNum == 1) {
+                            Glock19Item.fireNum = 3;
+                        } else {
+                            Glock19Item.fireNum = 1;
+                        }
                     }
                     break;
                 default:
