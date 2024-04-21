@@ -5,7 +5,6 @@ import com.lzimul.LawAssistAdventure.register.SoundRegister;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Vec3i;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -53,9 +52,10 @@ public class Ak47Item extends Item {
             if (ammunitionHelper.getCurrent() != 0) {
                 ammunitionHelper.fire(1);
                 level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegister.AK47Fire.get(), player.getSoundSource(), 1.0F, 1.0F);
-                for (Vec3 point : getRay(player)) {
+                for (Vec3 point : getRay(player, 120)) {
+                    BlockPos blockPos = Vec3ToBlockPos(new Vec3(point.x, point.y, point.z));
                     Entity hitEntity = getEntityAtPoint(player, point);
-                    if (hitEntity != null && isAir(level, new BlockPos(new Vec3i((int) point.x, (int) point.y, (int) point.z)), targetBlocks)) {
+                    if (DestroyObstacles(level, blockPos, targetBlocks) && hitEntity != null) {
                         player.attack(hitEntity);
                     }
                 }

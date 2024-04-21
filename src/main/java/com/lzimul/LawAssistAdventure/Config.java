@@ -1,6 +1,7 @@
 package com.lzimul.LawAssistAdventure;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Vec3i;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.PathfinderMob;
@@ -63,9 +64,9 @@ public class Config {
         }
     }
 
-    public static ArrayList<Vec3> getRay(Player player) {
+    public static ArrayList<Vec3> getRay(Player player, int distance) {
         Vec3 rayStart = player.getPosition(0).add(-1, player.getEyeHeight() - 1, -1);
-        Vec3 rayEnd = rayStart.add(player.getLookAngle().scale(100));
+        Vec3 rayEnd = rayStart.add(player.getLookAngle().scale(distance).add(-1, 0, 0));
         int numPoints = (int) Math.sqrt(Math.pow(rayEnd.x - rayStart.x, 2) + Math.pow(rayEnd.y - rayStart.y, 2) + Math.pow(rayEnd.z - rayStart.z, 2));
         ArrayList<Vec3> points = new ArrayList<>(numPoints);
         for (int index = 0; index < numPoints; index++) {
@@ -88,10 +89,15 @@ public class Config {
         return null;
     }
 
-    public static boolean isAir(Level level, BlockPos blockPos, List<Block> blocks) {
-        if (blocks.contains(level.getBlockState(blockPos).getBlock())) {
-            level.destroyBlock(blockPos, true);
-            return true;
+    public static BlockPos Vec3ToBlockPos(Vec3 vec3) {
+        return new BlockPos(new Vec3i((int) vec3.x, (int) vec3.y, (int) vec3.z));
+    }
+
+    public static boolean DestroyObstacles(Level level, BlockPos blockPos, List<Block> blocks) {
+        for (Block block : blocks) {
+            if (block.getDescriptionId().equals(getDescriptionId(level, blockPos))) {
+                return level.destroyBlock(blockPos, true);
+            }
         }
         return level.getBlockState(blockPos).is(Blocks.AIR);
     }
