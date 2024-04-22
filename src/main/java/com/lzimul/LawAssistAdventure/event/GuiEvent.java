@@ -1,8 +1,6 @@
 package com.lzimul.LawAssistAdventure.event;
 
-import com.lzimul.LawAssistAdventure.client.hud.Ak47Hud;
-import com.lzimul.LawAssistAdventure.client.hud.Glock19Hud;
-import com.lzimul.LawAssistAdventure.client.hud.MainHud;
+import com.lzimul.LawAssistAdventure.client.hud.*;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -15,8 +13,10 @@ import static com.lzimul.LawAssistAdventure.Config.MODID;
 public class GuiEvent {
     @SubscribeEvent
     public static void registerGuiOverlays(RegisterGuiOverlaysEvent registerGuiOverlaysEvent) {
-        registerGuiOverlaysEvent.registerAboveAll(new ResourceLocation(MODID, "main_hud"), MainHud.getInstance());
-        registerGuiOverlaysEvent.registerAboveAll(new ResourceLocation(MODID, "glock19_hud"), Glock19Hud.getInstance());
-        registerGuiOverlaysEvent.registerAboveAll(new ResourceLocation(MODID, "ak47_hud"), Ak47Hud.getInstance());
+        registerGuiOverlaysEvent.registerAboveAll(new ResourceLocation(MODID, "main"), MainHud.getInstance());
+        registerGuiOverlaysEvent.registerAboveAll(new ResourceLocation(MODID, "ak47"), Ak47Hud.getInstance());
+        registerGuiOverlaysEvent.registerAboveAll(new ResourceLocation(MODID, "glock19"), Glock19Hud.getInstance());
+        registerGuiOverlaysEvent.registerAboveAll(new ResourceLocation(MODID, "pear_flower_gun"), PearFlowerGunHud.getInstance());
+        registerGuiOverlaysEvent.registerAboveAll(new ResourceLocation(MODID, "harquebus"), HarquebusHud.getInstance());
     }
 }

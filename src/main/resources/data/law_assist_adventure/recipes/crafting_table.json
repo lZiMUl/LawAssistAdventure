@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "blocks",
+  "group": "crafting_table",
+  "show_notification": true,
+  "pattern": [
+    "## ",
+    "@@ ",
+    "@@ "
+  ],
+  "key": {
+    "#": {
+      "item": "law_assist_adventure:copper_ingot"
+    },
+    "@": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "law_assist_adventure:crafting_table",
+    "count": 1
+  }
+}

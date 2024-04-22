@@ -23,6 +23,7 @@ public class LawAssistAdventure extends ItemGroup {
         EntityRegister.register(eventBus);
         MenuRegister.register(eventBus);
         SoundRegister.register(eventBus);
+        TriggerRegister.register(eventBus);
 
         eventBus.addListener(this::commonSetup);
 

@@ -1,5 +1,9 @@
 package com.lzimul.LawAssistAdventure.network;
 
+import com.lzimul.LawAssistAdventure.item.Ak47Item;
+import com.lzimul.LawAssistAdventure.item.Glock19Item;
+import com.lzimul.LawAssistAdventure.item.HarquebusItem;
+import com.lzimul.LawAssistAdventure.item.PearFlowerGunItem;
 import com.lzimul.LawAssistAdventure.register.DimensionRegister;
 import com.lzimul.LawAssistAdventure.register.ItemRegister;
 import com.lzimul.LawAssistAdventure.register.SoundRegister;
@@ -40,7 +44,6 @@ public class ServerProviderNetwork {
     public void handleData(final DataNetwork networkData, final PlayPayloadContext playPayloadContext) {
         playPayloadContext.player().ifPresent((player) -> playPayloadContext.workHandler().submitAsync(() -> {
             String data = networkData.data();
-            player.sendSystemMessage(Component.literal("我从服务端得到了这个数据:" + data));
             switch (data) {
                 case "server:occupation/Dust":
                     teleportToWorld(player, DimensionRegister.Dust);
@@ -65,6 +68,31 @@ public class ServerProviderNetwork {
                     break;
                 case "server:occupation/TheEnd":
                     teleportToWorld(player, DimensionRegister.TheEnd);
+                    break;
+                case "server:keyBoard/R":
+                    switch (player.getMainHandItem().getItem().getDescriptionId()) {
+                        case "item.law_assist_adventure.ak47":
+                            Ak47Item.reload(player);
+                            break;
+                        case "item.law_assist_adventure.glock19":
+                            Glock19Item.reload(player);
+                            break;
+                        case "item.law_assist_adventure.pear_flower_gun":
+                            PearFlowerGunItem.reload(player);
+                            break;
+                        case "item.law_assist_adventure.harquebus":
+                            HarquebusItem.reload(player);
+                            break;
+                    }
+                    break;
+                case "server:keyBoard/C":
+                    if (player.getMainHandItem().getItem().getDescriptionId().equals("item.law_assist_adventure.glock19")) {
+                        if (Glock19Item.fireNum == 1) {
+                            Glock19Item.fireNum = 3;
+                        } else {
+                            Glock19Item.fireNum = 1;
+                        }
+                    }
                     break;
                 default:
                     playPayloadContext.packetHandler().disconnect(Component.literal("network.law_assist_adventure.no_occupation"));
@@ -129,6 +157,7 @@ class Dimension implements ITeleporter {
     public Dimension(BlockPos blockPos) {
         this.blockPos = blockPos;
     }
+
     @Override
     public @NotNull Entity placeEntity(@NotNull Entity rawEntity, @NotNull ServerLevel currentWorld, @NotNull ServerLevel destWorld, float yaw, @NotNull Function<Boolean, Entity> repositionEntity) {
         Entity entity = repositionEntity.apply(true);

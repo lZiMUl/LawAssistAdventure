@@ -1,0 +1,19 @@
+{
+  "criteria": {
+    "law_assist_adventure:crafting_table": {
+      "trigger": "law_assist_adventure:demo"
+    }
+  },
+  "display": {
+    "icon": {
+      "item": "law_assist_adventure:crafting_table"
+    },
+    "title": "新的开始?",
+    "description": "才刚刚开始",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "frame": "task",
+    "hidden": true
+  },
+  "sends_telemetry_event": true
+}

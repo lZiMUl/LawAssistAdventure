@@ -1,6 +1,7 @@
 package com.lzimul.LawAssistAdventure.event;
 
-import com.lzimul.LawAssistAdventure.entity.*;
+import com.lzimul.LawAssistAdventure.entity.Demo1Animal;
+import com.lzimul.LawAssistAdventure.entity.Demo2Animal;
 import com.lzimul.LawAssistAdventure.register.EntityRegister;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;

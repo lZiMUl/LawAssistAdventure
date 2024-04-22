@@ -1,5 +1,6 @@
 package com.lzimul.LawAssistAdventure.client.screen.block;
 
+import com.lzimul.LawAssistAdventure.Config;
 import com.lzimul.LawAssistAdventure.client.menu.block.WasherMenu;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.GuiGraphics;
@@ -9,7 +10,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import org.jetbrains.annotations.NotNull;
 
-import static com.lzimul.LawAssistAdventure.Config.getBlockResourceLocation;
+import static com.lzimul.LawAssistAdventure.Config.getResourceLocation;
 
 public class WasherScreen extends AbstractContainerScreen<WasherMenu> {
     public WasherScreen(WasherMenu washerMenu, Inventory inventory, Component component) {
@@ -23,12 +24,12 @@ public class WasherScreen extends AbstractContainerScreen<WasherMenu> {
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
 
-        guiGraphics.blit(getBlockResourceLocation("washer"), x, y, 0, 0, imageWidth, imageHeight);
+        guiGraphics.blit(getResourceLocation(Config.ResourceType.BLOCK, "washer"), x, y, 0, 0, imageWidth, imageHeight);
     }
 
     public void renderProgressArrow(@NotNull GuiGraphics guiGraphics, int x, int y) {
 //        if (super.menu.isCrafting()) {
-        guiGraphics.blit(getBlockResourceLocation("arrow"), x, y, 0, 0, 16, 16);
+        guiGraphics.blit(getResourceLocation(Config.ResourceType.HUD, "arrow"), x, y, 0, 0, 16, 16);
 //        }
     }
 

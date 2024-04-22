@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.function.Supplier;
 
 public class OccupationHelper<T> {
-    private static String occupation = "no_occupation";
+    public static String occupation = "no_occupation";
 
     public OccupationHelper(Player player, Supplier<T> occupation) {
         String name = occupation.get().getClass().getName();

@@ -1,5 +1,8 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "items",
+  "group": "wires",
+  "show_notification": true,
   "ingredients": [
     {
       "item": "law_assist_adventure:copper_ingot"
