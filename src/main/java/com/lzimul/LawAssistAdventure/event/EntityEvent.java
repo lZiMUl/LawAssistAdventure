@@ -3,13 +3,14 @@ package com.lzimul.LawAssistAdventure.event;
 import com.lzimul.LawAssistAdventure.entity.Demo1Animal;
 import com.lzimul.LawAssistAdventure.entity.Demo2Animal;
 import com.lzimul.LawAssistAdventure.register.EntityRegister;
+import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 
 import static com.lzimul.LawAssistAdventure.Config.MODID;
 
-@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class EntityEvent {
 
     @SubscribeEvent

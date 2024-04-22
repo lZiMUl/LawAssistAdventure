@@ -28,14 +28,14 @@ public class TeleporterScreen extends AbstractContainerScreen<TeleporterMenu> {
         int height = super.height / 2;
         WidgetSprites widgetSprites = new WidgetSprites(getResourceLocation(Config.ResourceType.ITEM, "teleporter"), getResourceLocation(Config.ResourceType.ITEM, "teleporter"));
 
-        super.addRenderableWidget(new ImageButton(width - width / 3, height - height / 2, 30, 30, widgetSprites, (button) -> this.send("Dust", 0), Component.literal("Dust")));
-        super.addRenderableWidget(new ImageButton(width - width / 2, height - height / 2, 30, 30, widgetSprites, (button) -> this.send("FallIntoTheVoid", 1), Component.literal("FallIntoTheVoid")));
-        super.addRenderableWidget(new ImageButton(width + width / 2, height - height / 2, 30, 30, widgetSprites, (button) -> this.send("FinalWing", 2), Component.literal("FinalWing")));
-        super.addRenderableWidget(new ImageButton(width + width / 3, height - height / 2, 30, 30, widgetSprites, (button) -> this.send("RemnantDawn", 3), Component.literal("RemnantDawn")));
-        super.addRenderableWidget(new ImageButton(width - width / 3, height + height / 2, 30, 30, widgetSprites, (button) -> this.send("Staring", 4), Component.literal("Staring")));
-        super.addRenderableWidget(new ImageButton(width - width / 2, height + height / 2, 30, 30, widgetSprites, (button) -> this.send("Dimension", 5), Component.literal("Dimension")));
-        super.addRenderableWidget(new ImageButton(width + width / 2, height + height / 2, 30, 30, widgetSprites, (button) -> this.send("TheNether", 6), Component.literal("TheNether")));
-        super.addRenderableWidget(new ImageButton(width + width / 3, height + height / 2, 30, 30, widgetSprites, (button) -> this.send("TheEnd", 7), Component.literal("TheEnd")));
+        super.addRenderableWidget(new ImageButton(width - width / 3, height - height / 2, 30, 30, widgetSprites, (button) -> this.send("Dust", 100), Component.literal("Dust")));
+        super.addRenderableWidget(new ImageButton(width - width / 2, height - height / 2, 30, 30, widgetSprites, (button) -> this.send("FallIntoTheVoid", 101), Component.literal("FallIntoTheVoid")));
+        super.addRenderableWidget(new ImageButton(width + width / 2, height - height / 2, 30, 30, widgetSprites, (button) -> this.send("FinalWing", 102), Component.literal("FinalWing")));
+        super.addRenderableWidget(new ImageButton(width + width / 3, height - height / 2, 30, 30, widgetSprites, (button) -> this.send("RemnantDawn", 103), Component.literal("RemnantDawn")));
+        super.addRenderableWidget(new ImageButton(width - width / 3, height + height / 2, 30, 30, widgetSprites, (button) -> this.send("Staring", 104), Component.literal("Staring")));
+        super.addRenderableWidget(new ImageButton(width - width / 2, height + height / 2, 30, 30, widgetSprites, (button) -> this.send("Dimension", 105), Component.literal("Dimension")));
+        super.addRenderableWidget(new ImageButton(width + width / 2, height + height / 2, 30, 30, widgetSprites, (button) -> this.send("TheNether", 106), Component.literal("TheNether")));
+        super.addRenderableWidget(new ImageButton(width + width / 3, height + height / 2, 30, 30, widgetSprites, (button) -> this.send("TheEnd", 107), Component.literal("TheEnd")));
     }
 
     private void send(String occupation, int id) {
