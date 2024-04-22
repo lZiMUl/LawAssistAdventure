@@ -25,7 +25,6 @@ import java.util.logging.Logger;
 public class Config {
     public static final String MODID = "law_assist_adventure";
     public static final Logger LOGGER = Logger.getLogger(MODID);
-    public static boolean isClient = true;
 
     public static ResourceLocation getResourceLocation(ResourceType mode, String name) {
         return switch (mode) {
