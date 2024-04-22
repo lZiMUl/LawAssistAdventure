@@ -1,6 +1,9 @@
 package com.lzimul.LawAssistAdventure.event;
 
-import com.lzimul.LawAssistAdventure.generator.*;
+import com.lzimul.LawAssistAdventure.generator.BlockModelGenerator;
+import com.lzimul.LawAssistAdventure.generator.BlockStateGenerator;
+import com.lzimul.LawAssistAdventure.generator.ItemModelGenerator;
+import com.lzimul.LawAssistAdventure.generator.LanguageGenerator;
 import net.minecraft.data.DataProvider;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;

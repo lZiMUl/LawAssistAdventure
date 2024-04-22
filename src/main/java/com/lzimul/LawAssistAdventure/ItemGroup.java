@@ -14,7 +14,7 @@ import static com.lzimul.LawAssistAdventure.Config.MODID;
 
 public class ItemGroup {
     private static final DeferredRegister<CreativeModeTab> CreativeTab = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
-    DeferredHolder<CreativeModeTab, CreativeModeTab> block = CreativeTab.register("item_group.lzimul.law_assist_adventure.blocks", () -> CreativeModeTab.builder()
+    private static final DeferredHolder<CreativeModeTab, CreativeModeTab> block = CreativeTab.register("item_group.lzimul.law_assist_adventure.blocks", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(BlockRegister.CraftingTable.get().asItem()))
             .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.blocks"))
             .displayItems((input, output) -> {
@@ -43,7 +43,7 @@ public class ItemGroup {
                 output.accept(ItemRegister.CopperOre.get().asItem());
                 output.accept(ItemRegister.TinOre.get().asItem());
             }).build());
-    DeferredHolder<CreativeModeTab, CreativeModeTab> item = CreativeTab.register("item_group.lzimul.law_assist_adventure.items", () -> CreativeModeTab.builder()
+    private static final DeferredHolder<CreativeModeTab, CreativeModeTab> item = CreativeTab.register("item_group.lzimul.law_assist_adventure.items", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(ItemRegister.CopperIngot.get().asItem()))
             .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.items"))
             .displayItems((input, output) -> {
@@ -63,9 +63,6 @@ public class ItemGroup {
                 output.accept(ItemRegister.CircuitBoards3.get().asItem());
                 output.accept(ItemRegister.CircuitBoardsBase.get().asItem());
                 output.accept(ItemRegister.Teleporter.get().asItem());
-                /*
-                 * TODO 测试
-                 */
                 output.accept(ItemRegister.NoOccupation.get().asItem());
                 output.accept(ItemRegister.Dust.get().asItem());
                 output.accept(ItemRegister.FallIntoTheVoid.get().asItem());
@@ -73,7 +70,7 @@ public class ItemGroup {
                 output.accept(ItemRegister.RemnantDawn.get().asItem());
                 output.accept(ItemRegister.Staring.get().asItem());
             }).withTabsBefore(block.getId()).build());
-    DeferredHolder<CreativeModeTab, CreativeModeTab> armor = CreativeTab.register("item_group.lzimul.law_assist_adventure.armors", () -> CreativeModeTab.builder()
+    private static final DeferredHolder<CreativeModeTab, CreativeModeTab> armor = CreativeTab.register("item_group.lzimul.law_assist_adventure.armors", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(ItemRegister.ExtremeDangerExplorerHelm.get().asItem()))
             .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.armors"))
             .displayItems((input, output) -> {
@@ -91,7 +88,7 @@ public class ItemGroup {
                 output.accept(ItemRegister.Bullet.get().asItem());
                 output.accept(ItemRegister.BulletBox.get().asItem());
             }).withTabsBefore(item.getId()).build());
-    DeferredHolder<CreativeModeTab, CreativeModeTab> experience = CreativeTab.register("item_group.lzimul.law_assist_adventure.experiences", () -> CreativeModeTab.builder()
+    private static final DeferredHolder<CreativeModeTab, CreativeModeTab> experience = CreativeTab.register("item_group.lzimul.law_assist_adventure.experiences", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(ItemRegister.ResearcherHandbook.get().asItem()))
             .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.experiences"))
             .displayItems((input, output) -> {

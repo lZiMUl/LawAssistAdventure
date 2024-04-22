@@ -40,7 +40,7 @@ public class SolarPanelGeneratorBlock extends BaseEntityBlock implements EntityB
     }
 
     @Override
-    protected MapCodec<? extends BaseEntityBlock> codec() {
+    protected @NotNull MapCodec<? extends BaseEntityBlock> codec() {
         return null;
     }
 

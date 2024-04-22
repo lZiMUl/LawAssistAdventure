@@ -25,7 +25,6 @@ public class WeaponHelper implements Tier {
     }
 
 
-
     @Override
     public int getUses() {
         return this.uses;

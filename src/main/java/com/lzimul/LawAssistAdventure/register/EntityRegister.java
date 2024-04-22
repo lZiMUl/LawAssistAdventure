@@ -1,6 +1,7 @@
 package com.lzimul.LawAssistAdventure.register;
 
-import com.lzimul.LawAssistAdventure.entity.*;
+import com.lzimul.LawAssistAdventure.entity.Demo1Animal;
+import com.lzimul.LawAssistAdventure.entity.Demo2Animal;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;

@@ -1,18 +1,19 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "items",
-  "group": "wires",
+  "group": "boxes",
   "show_notification": true,
   "ingredients": [
     {
-      "item": "law_assist_adventure:copper_ingot"
+      "item": "law_assist_adventure:empty_bullet_box"
     },
     {
-      "item": "minecraft:shears"
+      "item": "minecraft:bullet",
+      "count": 21
     }
   ],
   "result": {
-    "item": "law_assist_adventure:copper_wire",
+    "item": "law_assist_adventure:bullet_box",
     "count": 1
   }
 }
