@@ -5,6 +5,7 @@ import net.minecraft.core.Vec3i;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -24,6 +25,7 @@ import java.util.logging.Logger;
 public class Config {
     public static final String MODID = "law_assist_adventure";
     public static final Logger LOGGER = Logger.getLogger(MODID);
+    public static boolean isClient = true;
 
     public static ResourceLocation getResourceLocation(ResourceType mode, String name) {
         return switch (mode) {
@@ -44,6 +46,15 @@ public class Config {
         double y = Math.pow(targetPosition.y - sourcePosition.y, 2);
         double z = Math.pow(targetPosition.z - sourcePosition.z, 2);
         return Math.sqrt(x + y + z) > range;
+    }
+
+    public static boolean hasEmptySlot(Inventory inventory) {
+        for (ItemStack itemStack : inventory.items) {
+            if (itemStack.isEmpty()) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static boolean hasItem(Player player, Item item) {
@@ -75,7 +86,7 @@ public class Config {
         double cosPitch = Math.cos(-Math.toRadians(playerRotation.x));
 
         Vec3 direction = new Vec3(sinYaw * cosPitch, sinPitch, cosYaw * cosPitch).normalize();
-        Vec3 rayStart = playerPosition.add(new Vec3(0, player.getEyeHeight() - 1, -1));
+        Vec3 rayStart = playerPosition.add(new Vec3(0, player.getEyeHeight(), 0));
         Vec3 rayEnd = rayStart.add(direction.multiply(new Vec3(distance, distance, distance)));
 
         int numPoints = distance + 1;
@@ -97,7 +108,7 @@ public class Config {
 
     public static Entity getEntityAtPoint(Player player, Vec3 point) {
         // TODO point.add(不准确, 需要手动调整)
-        List<Entity> entities = player.level().getEntities(player, AABB.ofSize(point.add(0, 1, 0), 0.5, 0.5, 0.5));
+        List<Entity> entities = player.level().getEntities(player, AABB.ofSize(point, 0.5, 0.5, 0.5));
         for (Entity entity : entities) {
             if (entity.isAlive()) {
                 return entity;
