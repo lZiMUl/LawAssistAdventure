@@ -46,18 +46,18 @@
     ]
   },
   "sound.glock19_fire": {
-  "category": "voice",
-  "subtitle": "subtitle.law_assist_adventure.sound.glock19_fire",
-  "sounds": [
-    {
-      "name": "law_assist_adventure:glock19_fire",
-      "volume": 1.0,
-      "pitch": 1.0,
-      "stream": true,
-      "preload": true
-    }
-  ]
-},
+    "category": "voice",
+    "subtitle": "subtitle.law_assist_adventure.sound.glock19_fire",
+    "sounds": [
+      {
+        "name": "law_assist_adventure:glock19_fire",
+        "volume": 1.0,
+        "pitch": 1.0,
+        "stream": true,
+        "preload": true
+      }
+    ]
+  },
   "sound.glock19_reload": {
     "category": "voice",
     "subtitle": "subtitle.law_assist_adventure.sound.glock19_reload",

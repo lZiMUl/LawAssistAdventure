@@ -23,6 +23,7 @@ import static com.lzimul.LawAssistAdventure.Config.getDescriptionId;
 public class CraftingTableEntity extends BlockEntity implements MenuProvider {
     private final ContainerData containerData;
     private int progress = 0;
+    private int progressMax = 100;
     private final ItemStackHandler itemStackHandler = new ItemStackHandler(13) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -35,7 +36,6 @@ public class CraftingTableEntity extends BlockEntity implements MenuProvider {
             }
         }
     };
-    private int progressMax = 100;
     public CraftingTableEntity(BlockPos blockPos, BlockState blockState) {
         super(BlockEntityRegister.CraftingTable.get(), blockPos, blockState);
         this.containerData = new ContainerData() {

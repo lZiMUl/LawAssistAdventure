@@ -62,11 +62,11 @@ public class ItemRegister {
     public static final DeferredItem<ArmorItem> DefendTheBall = Item.register("defend_the_ball", () -> new ArmorItem(ArmorRegister.DefendTheBall, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final DeferredItem<ArmorItem> Parachute = Item.register("parachute", () -> new ArmorItem(ArmorRegister.Parachute, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final DeferredItem<Item> Harquebus = Item.register("harquebus", HarquebusItem::new);
-    public static final DeferredItem<Item> Hatchet = Item.register("hatchet", HatchetItem::new);
     public static final DeferredItem<Item> Ak47 = Item.register("ak47", Ak47Item::new);
-    public static final DeferredItem<Item> PearFlowerGun = Item.register("pear_flower_gun", PearFlowerGunItem::new);
+    public static final DeferredItem<Item> Hatchet = Item.register("hatchet", HatchetItem::new);
     public static final DeferredItem<Item> Glock19 = Item.register("glock19", Glock19Item::new);
     public static final DeferredItem<Item> Bullet = Item.register("bullet", BulletItem::new);
+    public static final DeferredItem<Item> PearFlowerGun = Item.register("pear_flower_gun", PearFlowerGunItem::new);
     public static final DeferredItem<Item> BulletBox = Item.register("bullet_box", BulletBoxItem::new);
     public static final DeferredItem<Item> EmptyBulletBox = Item.register("empty_bullet_box", EmptyBulletBoxItem::new);
     public static final DeferredItem<Item> NoOccupation = Item.register("no_occupation", NoOccupationsItem::new);
