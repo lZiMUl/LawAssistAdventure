@@ -26,7 +26,12 @@ import static com.lzimul.LawAssistAdventure.Config.*;
 
 public class HarquebusItem extends Item {
     public static final AmmunitionHelper ammunitionHelper = new AmmunitionHelper(1, 10, 0);
-    private static final List<Block> targetBlocks = Arrays.stream(new Block[]{Blocks.GLASS, Blocks.GLASS_PANE, Blocks.OAK_LOG, Blocks.STONE}).distinct().toList();
+    private static final List<Block> targetBlocks = Arrays.stream(new Block[]{
+            Blocks.GLASS,
+            Blocks.GLASS_PANE,
+            Blocks.OAK_LOG,
+            Blocks.STONE
+    }).distinct().toList();
 
     public HarquebusItem() {
         super(new Item.Properties());

@@ -30,7 +30,12 @@ import static com.lzimul.LawAssistAdventure.Config.*;
 
 public class PearFlowerGunItem extends SwordItem {
     public static final AmmunitionHelper ammunitionHelper = new AmmunitionHelper(1, 3, 0);
-    private static final List<Block> targetBlocks = Arrays.stream(new Block[]{Blocks.GLASS, Blocks.GLASS_PANE, Blocks.OAK_LOG, Blocks.STONE}).distinct().toList();
+    private static final List<Block> targetBlocks = Arrays.stream(new Block[]{
+            Blocks.GLASS,
+            Blocks.GLASS_PANE,
+            Blocks.OAK_LOG,
+            Blocks.STONE
+    }).distinct().toList();
 
     public PearFlowerGunItem() {
         super(new WeaponHelper(1, 400, 1F, 5F, 1, () -> Ingredient.of(ItemRegister.PearFlowerGun.asItem())), 3, -2.4f, new Item.Properties());

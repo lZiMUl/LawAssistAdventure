@@ -28,7 +28,10 @@ import static com.lzimul.LawAssistAdventure.Config.*;
 public class Glock19Item extends Item {
     public static final AmmunitionHelper ammunitionHelper = new AmmunitionHelper(21, 120, 0);
     public static int fireNum = 1;
-    private static final List<Block> targetBlocks = Arrays.stream(new Block[]{Blocks.GLASS, Blocks.GLASS_PANE}).distinct().toList();
+    private static final List<Block> targetBlocks = Arrays.stream(new Block[]{
+            Blocks.GLASS,
+            Blocks.GLASS_PANE
+    }).distinct().toList();
 
     public Glock19Item() {
         super(new Properties().stacksTo(1));

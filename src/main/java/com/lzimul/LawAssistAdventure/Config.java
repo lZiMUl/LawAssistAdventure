@@ -12,6 +12,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.ArrayList;
@@ -65,22 +66,38 @@ public class Config {
     }
 
     public static ArrayList<Vec3> getRay(Player player, int distance) {
-        Vec3 rayStart = player.getPosition(1).add(-1, player.getEyeHeight() - 1, -1);
-        Vec3 rayEnd = rayStart.add(player.getLookAngle().scale(distance).add(-1, 0, 0));
-        int numPoints = (int) Math.sqrt(Math.pow(rayEnd.x - rayStart.x, 2) + Math.pow(rayEnd.y - rayStart.y, 2) + Math.pow(rayEnd.z - rayStart.z, 2));
+        Vec3 playerPosition = player.getPosition(0);
+        Vec2 playerRotation = player.getRotationVector();
+
+        double sinYaw = Math.sin(-Math.toRadians(playerRotation.y));
+        double cosYaw = Math.cos(-Math.toRadians(playerRotation.y));
+        double sinPitch = Math.sin(-Math.toRadians(playerRotation.x));
+        double cosPitch = Math.cos(-Math.toRadians(playerRotation.x));
+
+        Vec3 direction = new Vec3(sinYaw * cosPitch, sinPitch, cosYaw * cosPitch).normalize();
+        Vec3 rayStart = playerPosition.add(new Vec3(0, player.getEyeHeight() - 1, -1));
+        Vec3 rayEnd = rayStart.add(direction.multiply(new Vec3(distance, distance, distance)));
+
+        int numPoints = distance + 1;
+
         ArrayList<Vec3> points = new ArrayList<>(numPoints);
+
         for (int index = 0; index < numPoints; index++) {
-            double interpolation = (double) index / numPoints;
+            double interpolation = (double) index / (numPoints - 1);
+
             double x = rayStart.x + (rayEnd.x - rayStart.x) * interpolation;
             double y = rayStart.y + (rayEnd.y - rayStart.y) * interpolation;
             double z = rayStart.z + (rayEnd.z - rayStart.z) * interpolation;
+
             points.add(new Vec3(x, y, z));
         }
+
         return points;
     }
 
     public static Entity getEntityAtPoint(Player player, Vec3 point) {
-        List<Entity> entities = player.level().getEntities(player, AABB.ofSize(point.add(1.15, 1, 1), 0.5, 0.5, 0.5));
+        // TODO point.add(不准确, 需要手动调整)
+        List<Entity> entities = player.level().getEntities(player, AABB.ofSize(point.add(0, 1, 0), 0.5, 0.5, 0.5));
         for (Entity entity : entities) {
             if (entity.isAlive()) {
                 return entity;

@@ -26,7 +26,12 @@ import static com.lzimul.LawAssistAdventure.Config.*;
 
 public class Ak47Item extends Item {
     public static final AmmunitionHelper ammunitionHelper = new AmmunitionHelper(30, 270, 0);
-    private static final List<Block> targetBlocks = Arrays.stream(new Block[]{Blocks.GLASS, Blocks.GLASS_PANE, Blocks.OAK_LOG, Blocks.STONE}).distinct().toList();
+    private static final List<Block> targetBlocks = Arrays.stream(new Block[]{
+            Blocks.GLASS,
+            Blocks.GLASS_PANE,
+            Blocks.OAK_LOG,
+            Blocks.STONE
+    }).distinct().toList();
 
     public Ak47Item() {
         super(new Item.Properties().stacksTo(1));
@@ -54,6 +59,9 @@ public class Ak47Item extends Item {
                 ammunitionHelper.fire(1, (index) -> {
                     level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegister.AK47Fire.get(), player.getSoundSource(), 1.0F, 1.0F);
                     for (Vec3 point : getRay(player, 120)) {
+                        player.level().setBlock(new BlockPos((int) point.x, (int) point.y, (int) point.z), Blocks.GLASS.defaultBlockState(), 3);
+                        player.level().sendBlockUpdated(new BlockPos((int) point.x, (int) point.y, (int) point.z), Blocks.GLASS.defaultBlockState(), Blocks.GLASS.defaultBlockState(), 3);
+
                         BlockPos blockPos = Vec3ToBlockPos(new Vec3(point.x, point.y, point.z));
                         Entity hitEntity = getEntityAtPoint(player, point);
                         if (DestroyObstacles(level, blockPos, targetBlocks) && hitEntity != null) {

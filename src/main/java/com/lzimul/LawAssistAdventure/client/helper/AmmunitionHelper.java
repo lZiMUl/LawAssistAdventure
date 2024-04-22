@@ -56,7 +56,7 @@ public class AmmunitionHelper {
         for (int index = 0; index < num; index++) {
             if (this.current > 0) {
                 this.current--;
-                callBack.accept(index);
+                callBack.accept(num);
             } else {
                 this.player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.not_enough"));
                 break;
