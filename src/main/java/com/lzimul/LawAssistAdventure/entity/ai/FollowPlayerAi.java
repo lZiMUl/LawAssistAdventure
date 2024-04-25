@@ -7,7 +7,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.LevelReader;
 import org.jetbrains.annotations.NotNull;
 
-import static com.lzimul.LawAssistAdventure.Config.isDistanceExceeded;
+import static com.lzimul.LawAssistAdventure.Config.IsDistanceExceeded;
 
 public class FollowPlayerAi extends MoveToBlockGoal {
     private final PathfinderMob pathfinderMob;
@@ -25,7 +25,7 @@ public class FollowPlayerAi extends MoveToBlockGoal {
     @Override
     public boolean canUse() {
         this.nearestPlayer = this.pathfinderMob.level().getNearestPlayer(this.pathfinderMob, this.searchRange);
-        return this.nearestPlayer != null && this.nearestPlayer.isAlive() && isDistanceExceeded(this.pathfinderMob, this.nearestPlayer, 8);
+        return this.nearestPlayer != null && this.nearestPlayer.isAlive() && IsDistanceExceeded(this.pathfinderMob, this.nearestPlayer, 8);
     }
 
     @Override

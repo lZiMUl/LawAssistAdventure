@@ -9,7 +9,7 @@ import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.player.Player;
 
-import static com.lzimul.LawAssistAdventure.Config.isDistanceExceeded;
+import static com.lzimul.LawAssistAdventure.Config.IsDistanceExceeded;
 
 public class AttackAndFollowAi extends MeleeAttackGoal {
 
@@ -48,7 +48,7 @@ public class AttackAndFollowAi extends MeleeAttackGoal {
         if (!this.nearestPlayer.isAlive()) {
             this.tempDamageSource = null;
         }
-        if (isDistanceExceeded(this.pathfinderMob, this.nearestPlayer, 8D)) {
+        if (IsDistanceExceeded(this.pathfinderMob, this.nearestPlayer, 8D)) {
             this.pathNavigation.moveTo(this.nearestPlayer, this.speedModifier);
         } else {
             if (this.lookControl.isLookingAtTarget() && this.tempDamageSource != null && isCS(this.nearestPlayer)) {

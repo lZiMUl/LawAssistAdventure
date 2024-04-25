@@ -1,6 +1,5 @@
 package com.lzimul.LawAssistAdventure.client.screen.item;
 
-import com.lzimul.LawAssistAdventure.Config;
 import com.lzimul.LawAssistAdventure.client.menu.item.TeleporterMenu;
 import com.lzimul.LawAssistAdventure.network.DataNetwork;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -14,7 +13,8 @@ import net.minecraft.world.entity.player.Inventory;
 import net.neoforged.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.NotNull;
 
-import static com.lzimul.LawAssistAdventure.Config.getResourceLocation;
+import static com.lzimul.LawAssistAdventure.Config.GetResourceLocation;
+import static com.lzimul.LawAssistAdventure.Config.ResourceType;
 
 public class TeleporterScreen extends AbstractContainerScreen<TeleporterMenu> {
 
@@ -26,7 +26,7 @@ public class TeleporterScreen extends AbstractContainerScreen<TeleporterMenu> {
     protected void init() {
         int width = super.width / 2;
         int height = super.height / 2;
-        WidgetSprites widgetSprites = new WidgetSprites(getResourceLocation(Config.ResourceType.ITEM, "teleporter"), getResourceLocation(Config.ResourceType.ITEM, "teleporter"));
+        WidgetSprites widgetSprites = new WidgetSprites(GetResourceLocation(ResourceType.ITEM, "teleporter"), GetResourceLocation(ResourceType.ITEM, "teleporter"));
 
         super.addRenderableWidget(new ImageButton(width - width / 3, height - height / 2, 30, 30, widgetSprites, (button) -> this.send("Dust", 100), Component.literal("Dust")));
         super.addRenderableWidget(new ImageButton(width - width / 2, height - height / 2, 30, 30, widgetSprites, (button) -> this.send("FallIntoTheVoid", 101), Component.literal("FallIntoTheVoid")));
@@ -46,7 +46,7 @@ public class TeleporterScreen extends AbstractContainerScreen<TeleporterMenu> {
     protected void renderBg(@NotNull GuiGraphics guiGraphics, float p_97788_, int p_97789_, int p_97790_) {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-        guiGraphics.blit(getResourceLocation(Config.ResourceType.ITEM, "teleporter"), 0, 0, 0, 0, imageWidth - 149, imageHeight - 170, imageWidth, imageHeight);
+        guiGraphics.blit(GetResourceLocation(ResourceType.ITEM, "teleporter"), 0, 0, 0, 0, imageWidth - 149, imageHeight - 170, imageWidth, imageHeight);
     }
 
     @Override

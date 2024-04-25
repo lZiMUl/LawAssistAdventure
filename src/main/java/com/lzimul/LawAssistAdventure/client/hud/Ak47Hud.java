@@ -1,6 +1,5 @@
 package com.lzimul.LawAssistAdventure.client.hud;
 
-import com.lzimul.LawAssistAdventure.Config;
 import com.lzimul.LawAssistAdventure.register.ItemRegister;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -8,7 +7,8 @@ import net.neoforged.neoforge.client.gui.overlay.ExtendedGui;
 import net.neoforged.neoforge.client.gui.overlay.IGuiOverlay;
 import org.jetbrains.annotations.NotNull;
 
-import static com.lzimul.LawAssistAdventure.Config.getResourceLocation;
+import static com.lzimul.LawAssistAdventure.Config.GetResourceLocation;
+import static com.lzimul.LawAssistAdventure.Config.ResourceType;
 import static com.lzimul.LawAssistAdventure.item.Ak47Item.ammunitionHelper;
 
 public class Ak47Hud implements IGuiOverlay {
@@ -34,7 +34,7 @@ public class Ak47Hud implements IGuiOverlay {
         assert minecraft.player != null;
         if (minecraft.player.getMainHandItem().getItem() == ItemRegister.Ak47.get().asItem()) {
             guiGraphics.setColor(1, 1, 1, 1);
-            guiGraphics.blit(getResourceLocation(Config.ResourceType.HUD, "ak47"), screenWidth - imageWidth, screenHeight - imageHeight, 0, 0, screenWidth - 10, screenHeight - 10, imageWidth, imageHeight);
+            guiGraphics.blit(GetResourceLocation(ResourceType.HUD, "ak47"), screenWidth - imageWidth, screenHeight - imageHeight, 0, 0, screenWidth - 10, screenHeight - 10, imageWidth, imageHeight);
             guiGraphics.drawString(this.minecraft.font, String.valueOf(ammunitionHelper.getCurrent()), positionZ + 28, positionY + 28, 0x00ff00);
             guiGraphics.drawString(this.minecraft.font, String.valueOf(ammunitionHelper.getTotal()), positionZ + 60, positionY + 43, 0x00ff00);
         }

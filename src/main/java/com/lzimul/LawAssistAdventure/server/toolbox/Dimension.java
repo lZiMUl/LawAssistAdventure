@@ -27,8 +27,8 @@ import java.util.Objects;
 import java.util.function.Function;
 import java.util.regex.Pattern;
 
+import static com.lzimul.LawAssistAdventure.Config.HasEmptySlot;
 import static com.lzimul.LawAssistAdventure.Config.MODID;
-import static com.lzimul.LawAssistAdventure.Config.hasEmptySlot;
 
 public class Dimension implements ITeleporter {
     private final BlockPos blockPos;
@@ -121,7 +121,7 @@ public class Dimension implements ITeleporter {
                 Inventory playerInventory = player.getInventory();
                 if (!slot.isEmpty()) {
                     if (!source.getItem().equals(target.getItem())) {
-                        if (hasEmptySlot(playerInventory)) {
+                        if (HasEmptySlot(playerInventory)) {
                             for (ItemStack item : playerInventory.items) {
                                 if (item.isEmpty()) {
                                     playerInventory.setItem(playerInventory.items.indexOf(item), source);

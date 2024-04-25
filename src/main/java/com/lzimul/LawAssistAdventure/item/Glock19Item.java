@@ -58,16 +58,16 @@ public class Glock19Item extends Item {
             if (ammunitionHelper.getCurrent() != 0) {
                 ammunitionHelper.fire(fireNum, (index) -> {
                     level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegister.Glock19Fire.get(), player.getSoundSource(), 1.0F, 1.0F);
-                    for (Vec3 point : getRay(player, 50)) {
+                    for (Vec3 point : GetRay(player, 50)) {
                         BlockPos blockPos = Vec3ToBlockPos(new Vec3(point.x, point.y, point.z));
-                        Entity hitEntity = getEntityAtPoint(player, point);
+                        Entity hitEntity = GetEntityAtPoint(player, point);
                         if (DestroyObstacles(level, blockPos, targetBlocks) && hitEntity != null) {
                             player.attack(hitEntity);
                         }
                     }
                 });
-            } else if (hasItem(player, ItemRegister.BulletBox.get().asItem())) {
-                shrinkItem(player, ItemRegister.BulletBox.get().asItem(), ItemRegister.EmptyBulletBox.get().asItem(), 1);
+            } else if (HasItem(player, ItemRegister.BulletBox.get().asItem())) {
+                ShrinkItem(player, ItemRegister.BulletBox.get().asItem(), ItemRegister.EmptyBulletBox.get().asItem(), 1);
                 ammunitionHelper.add(21);
             } else {
                 player.sendSystemMessage(Component.translatable("event.law_assist_adventure.ammunition.low"));

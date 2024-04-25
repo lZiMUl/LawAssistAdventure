@@ -58,14 +58,20 @@ public class Ak47Item extends Item {
             if (ammunitionHelper.getCurrent() != 0) {
                 ammunitionHelper.fire(1, (index) -> {
                     level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegister.AK47Fire.get(), player.getSoundSource(), 1.0F, 1.0F);
-                    for (Vec3 point : getRay(player, 120)) {
-                        player.level().setBlock(new BlockPos((int) point.x, (int) point.y, (int) point.z), Blocks.GLASS.defaultBlockState(), 3);
-                        player.level().sendBlockUpdated(new BlockPos((int) point.x, (int) point.y, (int) point.z), Blocks.GLASS.defaultBlockState(), Blocks.GLASS.defaultBlockState(), 3);
-
-                        BlockPos blockPos = Vec3ToBlockPos(new Vec3(point.x, point.y, point.z));
-                        Entity hitEntity = getEntityAtPoint(player, point);
-                        if (DestroyObstacles(level, blockPos, targetBlocks) && hitEntity != null) {
-                            player.attack(hitEntity);
+                    for (Vec3 point : GetRay(player, 120)) {
+                        //TODO Temp Code
+                        try {
+                            BlockPos blockPos = Vec3ToBlockPos(new Vec3(point.x, point.y, point.z));
+                            if (!level.getBlockState(blockPos).is(Blocks.AIR)) {
+                                level.destroyBlock(blockPos, true);
+                            }
+                            level.setBlock(new BlockPos((int) point.x, (int) point.y, (int) point.z), Blocks.GLASS.defaultBlockState(), 3);
+                            level.sendBlockUpdated(new BlockPos((int) point.x, (int) point.y, (int) point.z), Blocks.GLASS.defaultBlockState(), Blocks.GLASS.defaultBlockState(), 3);
+                            Entity hitEntity = GetEntityAtPoint(player, point);
+                            if (DestroyObstacles(level, blockPos, targetBlocks) && hitEntity != null) {
+                                player.attack(hitEntity);
+                            }
+                        } catch (Exception ignored) {
                         }
                     }
                 });

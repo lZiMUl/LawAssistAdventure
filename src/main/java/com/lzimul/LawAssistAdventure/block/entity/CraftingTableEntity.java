@@ -18,7 +18,7 @@ import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import static com.lzimul.LawAssistAdventure.Config.getDescriptionId;
+import static com.lzimul.LawAssistAdventure.Config.GetDescriptionId;
 
 public class CraftingTableEntity extends BlockEntity implements MenuProvider {
     private final ContainerData containerData;
@@ -69,7 +69,7 @@ public class CraftingTableEntity extends BlockEntity implements MenuProvider {
 
     @Override
     public @NotNull Component getDisplayName() {
-        return Component.translatable(getDescriptionId(super.level, getBlockPos()));
+        return Component.translatable(GetDescriptionId(super.level, getBlockPos()));
     }
 
     @Nullable
