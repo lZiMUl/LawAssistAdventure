@@ -15,8 +15,6 @@ import net.neoforged.neoforge.items.SlotItemHandler;
 import org.jetbrains.annotations.NotNull;
 
 public class ThermalGeneratorMenu extends AbstractContainerMenu {
-    private final ContainerData containerData;
-
     public ThermalGeneratorMenu(int id, Inventory inventory, FriendlyByteBuf friendlyByteBuf) {
         this(id, inventory, inventory.player.level().getBlockEntity(friendlyByteBuf.readBlockPos()), new SimpleContainerData(1));
     }
@@ -24,7 +22,6 @@ public class ThermalGeneratorMenu extends AbstractContainerMenu {
     public ThermalGeneratorMenu(int id, Inventory inventory, BlockEntity blockEntity, ContainerData containerData) {
         super(MenuRegister.ThermalGeneratorMenu.get(), id);
         checkContainerSize(inventory, 1);
-        this.containerData = containerData;
         ThermalGeneratorEntity thermalGeneratorBlockEntity = (ThermalGeneratorEntity) blockEntity;
         this.addSlot(new SlotItemHandler(thermalGeneratorBlockEntity.getItemHandler(), 0, 80, 32));
         addDataSlots(containerData);

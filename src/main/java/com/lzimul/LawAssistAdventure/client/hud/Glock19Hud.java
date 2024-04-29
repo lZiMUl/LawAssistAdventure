@@ -3,15 +3,15 @@ package com.lzimul.LawAssistAdventure.client.hud;
 import com.lzimul.LawAssistAdventure.register.ItemRegister;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.neoforged.neoforge.client.gui.overlay.ExtendedGui;
-import net.neoforged.neoforge.client.gui.overlay.IGuiOverlay;
+import net.minecraft.client.gui.LayeredDraw;
+import net.neoforged.neoforge.client.gui.GuiLayerManager;
 import org.jetbrains.annotations.NotNull;
 
 import static com.lzimul.LawAssistAdventure.Config.GetResourceLocation;
 import static com.lzimul.LawAssistAdventure.Config.ResourceType;
 import static com.lzimul.LawAssistAdventure.item.Glock19Item.ammunitionHelper;
 
-public class Glock19Hud implements IGuiOverlay {
+public class Glock19Hud extends GuiLayerManager {
     private final Minecraft minecraft;
     private final int imageWidth;
     private final int imageHeight;
@@ -22,12 +22,14 @@ public class Glock19Hud implements IGuiOverlay {
         this.imageHeight = 607 / 10;
     }
 
-    public static Glock19Hud getInstance() {
-        return new Glock19Hud();
+    public static LayeredDraw.Layer getInstance() {
+        return (LayeredDraw.Layer) new Glock19Hud();
     }
 
     @Override
-    public void render(@NotNull ExtendedGui extendedGui, @NotNull GuiGraphics guiGraphics, float partialTick, int screenWidth, int screenHeight) {
+    public void render(@NotNull GuiGraphics guiGraphics, float partialTick) {
+        int screenWidth = guiGraphics.guiWidth();
+        int screenHeight = guiGraphics.guiHeight();
         int positionZ = screenWidth - imageWidth;
         int positionY = screenHeight - imageHeight;
 

@@ -4,6 +4,7 @@ import com.lzimul.LawAssistAdventure.client.menu.block.CraftingTableMenu;
 import com.lzimul.LawAssistAdventure.register.BlockEntityRegister;
 import com.lzimul.LawAssistAdventure.register.ItemRegister;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
@@ -79,16 +80,14 @@ public class CraftingTableEntity extends BlockEntity implements MenuProvider {
     }
 
     @Override
-    public void load(@NotNull CompoundTag compoundTag) {
-        super.load(compoundTag);
-        this.itemStackHandler.deserializeNBT(compoundTag.getCompound("Inventory"));
+    public void loadAdditional(@NotNull CompoundTag compoundTag, @NotNull HolderLookup.Provider provider) {
+        super.loadCustomOnly(compoundTag, provider);
+        this.itemStackHandler.deserializeNBT(provider, compoundTag.getCompound("Inventory"));
     }
 
     @Override
-    protected void saveAdditional(@NotNull CompoundTag compoundTag) {
-        super.saveAdditional(compoundTag);
-        compoundTag.put("Inventory", this.itemStackHandler.serializeNBT());
+    protected void saveAdditional(@NotNull CompoundTag compoundTag, @NotNull HolderLookup.Provider provider) {
+        super.saveAdditional(compoundTag, provider);
+        compoundTag.put("Inventory", this.itemStackHandler.serializeNBT(provider));
     }
-
-
 }

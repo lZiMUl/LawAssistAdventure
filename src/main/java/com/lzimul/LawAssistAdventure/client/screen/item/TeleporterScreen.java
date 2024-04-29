@@ -1,7 +1,7 @@
 package com.lzimul.LawAssistAdventure.client.screen.item;
 
 import com.lzimul.LawAssistAdventure.client.menu.item.TeleporterMenu;
-import com.lzimul.LawAssistAdventure.network.DataNetwork;
+import com.lzimul.LawAssistAdventure.network.NetworkData;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.ImageButton;
@@ -39,7 +39,7 @@ public class TeleporterScreen extends AbstractContainerScreen<TeleporterMenu> {
     }
 
     private void send(String occupation, int id) {
-        PacketDistributor.SERVER.noArg().send(new DataNetwork("server:occupation/" + occupation, id));
+        PacketDistributor.sendToServer(new NetworkData("server:occupation/" + occupation, id));
     }
 
     @Override

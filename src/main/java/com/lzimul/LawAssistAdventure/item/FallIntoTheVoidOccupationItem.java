@@ -11,6 +11,7 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class FallIntoTheVoidOccupationItem extends Item {
+    private static final OccupationHelper<FallIntoTheVoid> occupationHelper = new OccupationHelper<>(FallIntoTheVoid::new);
     public FallIntoTheVoidOccupationItem() {
         super(new Item.Properties());
     }
@@ -18,7 +19,7 @@ public class FallIntoTheVoidOccupationItem extends Item {
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
         if (!level.isClientSide && player.isAlive()) {
-            new OccupationHelper(player, FallIntoTheVoid::new);
+            occupationHelper.use(player);
         }
         return super.use(level, player, hand);
     }

@@ -15,8 +15,6 @@ import net.neoforged.neoforge.items.SlotItemHandler;
 import org.jetbrains.annotations.NotNull;
 
 public class FluidFuelGeneratorMenu extends AbstractContainerMenu {
-    private final ContainerData containerData;
-
     public FluidFuelGeneratorMenu(int id, Inventory inventory, FriendlyByteBuf friendlyByteBuf) {
         this(id, inventory, inventory.player.level().getBlockEntity(friendlyByteBuf.readBlockPos()), new SimpleContainerData(1));
     }
@@ -24,7 +22,6 @@ public class FluidFuelGeneratorMenu extends AbstractContainerMenu {
     public FluidFuelGeneratorMenu(int id, Inventory inventory, BlockEntity blockEntity, ContainerData containerData) {
         super(MenuRegister.FluidFuelGeneratorMenu.get(), id);
         checkContainerSize(inventory, 1);
-        this.containerData = containerData;
         FluidFuelGeneratorEntity fluidFuelGeneratorBlockEntity = (FluidFuelGeneratorEntity) blockEntity;
         this.addSlot(new SlotItemHandler(fluidFuelGeneratorBlockEntity.getItemHandler(), 0, 80, 32));
         addDataSlots(containerData);

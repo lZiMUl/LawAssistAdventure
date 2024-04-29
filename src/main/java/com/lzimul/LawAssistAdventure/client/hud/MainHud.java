@@ -2,23 +2,23 @@ package com.lzimul.LawAssistAdventure.client.hud;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.neoforged.neoforge.client.gui.overlay.ExtendedGui;
-import net.neoforged.neoforge.client.gui.overlay.IGuiOverlay;
+import net.minecraft.client.gui.LayeredDraw;
+import net.neoforged.neoforge.client.gui.GuiLayerManager;
 import org.jetbrains.annotations.NotNull;
 
-public class MainHud implements IGuiOverlay {
+public class MainHud extends GuiLayerManager {
     private final Minecraft minecraft;
 
     public MainHud() {
         this.minecraft = Minecraft.getInstance();
     }
 
-    public static MainHud getInstance() {
-        return new MainHud();
+    public static LayeredDraw.Layer getInstance() {
+        return (LayeredDraw.Layer) new MainHud();
     }
 
     @Override
-    public void render(@NotNull ExtendedGui extendedGui, @NotNull GuiGraphics guiGraphics, float partialTick, int screenWidth, int screenHeight) {
+    public void render(@NotNull GuiGraphics guiGraphics, float partialTick) {
         assert this.minecraft.level != null;
         if (this.minecraft.level.isClientSide()) {
             guiGraphics.setColor(1, 1, 1, 1);

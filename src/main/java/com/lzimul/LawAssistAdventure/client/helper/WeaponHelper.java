@@ -1,22 +1,22 @@
 package com.lzimul.LawAssistAdventure.client.helper;
 
+import net.minecraft.tags.TagKey;
 import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
 public class WeaponHelper implements Tier {
-    private final int level;
     private final int uses;
     private final float speed;
     private final float damage;
     private final int enchantmentValue;
     private final LazyLoadedValue<Ingredient> repairIngredient;
 
-    public WeaponHelper(int level, int uses, float speed, float damage, int enchantmentValue, Supplier<Ingredient> repairIngredient) {
-        this.level = level;
+    public WeaponHelper(int uses, float speed, float damage, int enchantmentValue, Supplier<Ingredient> repairIngredient) {
         this.uses = uses;
         this.speed = speed;
         this.damage = damage;
@@ -41,8 +41,8 @@ public class WeaponHelper implements Tier {
     }
 
     @Override
-    public int getLevel() {
-        return this.level;
+    public @NotNull TagKey<Block> getIncorrectBlocksForDrops() {
+        return null;
     }
 
     @Override

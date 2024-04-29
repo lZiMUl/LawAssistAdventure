@@ -1,6 +1,6 @@
 package com.lzimul.LawAssistAdventure.server.toolbox;
+// TODO 降落伞丢失
 
-import com.lzimul.LawAssistAdventure.register.ItemRegister;
 import com.lzimul.LawAssistAdventure.register.SoundRegister;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -27,7 +27,6 @@ import java.util.Objects;
 import java.util.function.Function;
 import java.util.regex.Pattern;
 
-import static com.lzimul.LawAssistAdventure.Config.HasEmptySlot;
 import static com.lzimul.LawAssistAdventure.Config.MODID;
 
 public class Dimension implements ITeleporter {
@@ -117,25 +116,25 @@ public class Dimension implements ITeleporter {
                 player.changeDimension(world, new Dimension(player.getOnPos()));
                 ItemStack slot = player.getItemBySlot(EquipmentSlot.CHEST);
                 ItemStack source = new ItemStack(slot.getItem());
-                ItemStack target = new ItemStack(ItemRegister.Parachute.get().asItem());
+//                ItemStack target = new ItemStack(ItemRegister.Parachute.get().asItem());
                 Inventory playerInventory = player.getInventory();
                 if (!slot.isEmpty()) {
-                    if (!source.getItem().equals(target.getItem())) {
-                        if (HasEmptySlot(playerInventory)) {
-                            for (ItemStack item : playerInventory.items) {
-                                if (item.isEmpty()) {
-                                    playerInventory.setItem(playerInventory.items.indexOf(item), source);
-                                    player.setItemSlot(EquipmentSlot.CHEST, target);
-                                    break;
-                                }
-                            }
-                        } else {
-                            player.drop(source, true);
-                            player.setItemSlot(EquipmentSlot.CHEST, target);
-                        }
-                    }
+//                    if (!source.getItem().equals(target.getItem())) {
+//                        if (HasEmptySlot(playerInventory)) {
+//                            for (ItemStack item : playerInventory.items) {
+//                                if (item.isEmpty()) {
+//                                    playerInventory.setItem(playerInventory.items.indexOf(item), source);
+////                                    player.setItemSlot(EquipmentSlot.CHEST, target);
+//                                    break;
+//                                }
+//                            }
+//                        } else {
+//                            player.drop(source, true);
+////                            player.setItemSlot(EquipmentSlot.CHEST, target);
+//                        }
+//                    }
                 } else {
-                    player.setItemSlot(EquipmentSlot.CHEST, target);
+//                    player.setItemSlot(EquipmentSlot.CHEST, target);
                     player.playSound(SoundRegister.Demo.get());
                 }
                 player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 240, 1, true, true));

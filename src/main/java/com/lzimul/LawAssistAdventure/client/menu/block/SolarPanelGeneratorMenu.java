@@ -15,8 +15,6 @@ import net.neoforged.neoforge.items.SlotItemHandler;
 import org.jetbrains.annotations.NotNull;
 
 public class SolarPanelGeneratorMenu extends AbstractContainerMenu {
-    private final ContainerData containerData;
-
     public SolarPanelGeneratorMenu(int id, Inventory inventory, FriendlyByteBuf friendlyByteBuf) {
         this(id, inventory, inventory.player.level().getBlockEntity(friendlyByteBuf.readBlockPos()), new SimpleContainerData(1));
     }
@@ -24,7 +22,6 @@ public class SolarPanelGeneratorMenu extends AbstractContainerMenu {
     public SolarPanelGeneratorMenu(int id, Inventory inventory, BlockEntity blockEntity, ContainerData containerData) {
         super(MenuRegister.SolarPanelGeneratorMenu.get(), id);
         checkContainerSize(inventory, 1);
-        this.containerData = containerData;
         SolarPanelGeneratorEntity solarPanelGeneratorEntity = (SolarPanelGeneratorEntity) blockEntity;
         this.addSlot(new SlotItemHandler(solarPanelGeneratorEntity.getItemHandler(), 0, 80, 32));
         addDataSlots(containerData);

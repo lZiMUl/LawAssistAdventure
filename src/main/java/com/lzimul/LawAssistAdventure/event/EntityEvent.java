@@ -5,12 +5,12 @@ import com.lzimul.LawAssistAdventure.entity.Demo2Animal;
 import com.lzimul.LawAssistAdventure.register.EntityRegister;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 
 import static com.lzimul.LawAssistAdventure.Config.MODID;
 
-@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class EntityEvent {
 
     @SubscribeEvent

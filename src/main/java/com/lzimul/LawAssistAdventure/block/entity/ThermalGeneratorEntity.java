@@ -3,6 +3,8 @@ package com.lzimul.LawAssistAdventure.block.entity;
 import com.lzimul.LawAssistAdventure.client.menu.block.ThermalGeneratorMenu;
 import com.lzimul.LawAssistAdventure.register.BlockEntityRegister;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
@@ -69,5 +71,17 @@ public class ThermalGeneratorEntity extends BlockEntity implements MenuProvider 
     @Override
     public AbstractContainerMenu createMenu(int id, @NotNull Inventory inventory, @NotNull Player player) {
         return new ThermalGeneratorMenu(id, inventory, this, this.containerData);
+    }
+
+    @Override
+    public void loadAdditional(@NotNull CompoundTag compoundTag, @NotNull HolderLookup.Provider provider) {
+        super.loadCustomOnly(compoundTag, provider);
+        this.itemStackHandler.deserializeNBT(provider, compoundTag.getCompound("Inventory"));
+    }
+
+    @Override
+    protected void saveAdditional(@NotNull CompoundTag compoundTag, @NotNull HolderLookup.Provider provider) {
+        super.saveAdditional(compoundTag, provider);
+        compoundTag.put("Inventory", this.itemStackHandler.serializeNBT(provider));
     }
 }

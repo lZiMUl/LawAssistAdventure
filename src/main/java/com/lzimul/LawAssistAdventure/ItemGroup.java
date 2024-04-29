@@ -1,4 +1,5 @@
 package com.lzimul.LawAssistAdventure;
+// TODO 物品添加标签页方法丢失
 
 import com.lzimul.LawAssistAdventure.register.BlockRegister;
 import com.lzimul.LawAssistAdventure.register.ItemRegister;
@@ -71,15 +72,16 @@ public class ItemGroup {
                 output.accept(ItemRegister.Staring.get().asItem());
             }).withTabsBefore(block.getId()).build());
     private static final DeferredHolder<CreativeModeTab, CreativeModeTab> armor = CreativeTab.register("item_group.lzimul.law_assist_adventure.armors", () -> CreativeModeTab.builder()
-            .icon(() -> new ItemStack(ItemRegister.ExtremeDangerExplorerHelm.get().asItem()))
+            .icon(() -> new ItemStack(ItemRegister.Harquebus.get().asItem()))
+//            .icon(() -> new ItemStack(ItemRegister.ExtremeDangerExplorerHelm.get().asItem()))
             .title(Component.translatable("itemGroup.lzimul.law_assist_adventure.armors"))
             .displayItems((input, output) -> {
-                output.accept(ItemRegister.ExtremeDangerExplorerHelm.get().asItem());
-                output.accept(ItemRegister.ExtremeDangerExplorerBreastplate.get().asItem());
-                output.accept(ItemRegister.ExtremeDangerExplorerPants.get().asItem());
-                output.accept(ItemRegister.ExtremeDangerExplorerShoes.get().asItem());
-                output.accept(ItemRegister.DefendTheBall.get().asItem());
-                output.accept(ItemRegister.Parachute.get().asItem());
+//                output.accept(ItemRegister.ExtremeDangerExplorerHelm.get().asItem());
+//                output.accept(ItemRegister.ExtremeDangerExplorerBreastplate.get().asItem());
+//                output.accept(ItemRegister.ExtremeDangerExplorerPants.get().asItem());
+//                output.accept(ItemRegister.ExtremeDangerExplorerShoes.get().asItem());
+//                output.accept(ItemRegister.DefendTheBall.get().asItem());
+//                output.accept(ItemRegister.Parachute.get().asItem());
                 output.accept(ItemRegister.Hatchet.get().asItem());
                 output.accept(ItemRegister.PearFlowerGun.get().asItem());
                 output.accept(ItemRegister.Harquebus.get().asItem());

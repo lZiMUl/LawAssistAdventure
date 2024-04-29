@@ -38,7 +38,7 @@ public class PearFlowerGunItem extends SwordItem {
     }).distinct().toList();
 
     public PearFlowerGunItem() {
-        super(new WeaponHelper(1, 400, 1F, 5F, 1, () -> Ingredient.of(ItemRegister.PearFlowerGun.asItem())), 3, -2.4f, new Item.Properties());
+        super(new WeaponHelper(1, 400, 5F, 1, () -> Ingredient.of(ItemRegister.PearFlowerGun.asItem())), new Item.Properties());
     }
 
     public static void reload(Player player) {
@@ -79,12 +79,12 @@ public class PearFlowerGunItem extends SwordItem {
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack itemStack, Level level, @NotNull List<Component> componentList, @NotNull TooltipFlag tooltipFlag) {
+    public void appendHoverText(@NotNull ItemStack itemStack, @NotNull TooltipContext tooltipContext, @NotNull List<Component> componentList, @NotNull TooltipFlag tooltipFlag) {
         if (!Screen.hasShiftDown()) {
             componentList.add(Component.translatable("tip.law_assist_adventure.item.shift").withStyle(ChatFormatting.AQUA));
         } else {
             componentList.add(Component.literal("不知道").withStyle(ChatFormatting.YELLOW));
         }
-        super.appendHoverText(itemStack, level, componentList, tooltipFlag);
+        super.appendHoverText(itemStack, tooltipContext, componentList, tooltipFlag);
     }
 }

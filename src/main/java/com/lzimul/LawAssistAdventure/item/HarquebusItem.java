@@ -74,12 +74,12 @@ public class HarquebusItem extends Item {
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack itemStack, Level level, @NotNull List<Component> componentList, @NotNull TooltipFlag tooltipFlag) {
+    public void appendHoverText(@NotNull ItemStack itemStack, @NotNull TooltipContext tooltipContext, @NotNull List<Component> componentList, @NotNull TooltipFlag tooltipFlag) {
         if (!Screen.hasShiftDown()) {
             componentList.add(Component.translatable("tip.law_assist_adventure.item.shift").withStyle(ChatFormatting.AQUA));
         } else {
             componentList.add(Component.literal("不知道").withStyle(ChatFormatting.YELLOW));
         }
-        super.appendHoverText(itemStack, level, componentList, tooltipFlag);
+        super.appendHoverText(itemStack, tooltipContext, componentList, tooltipFlag);
     }
 }

@@ -1,23 +1,22 @@
 package com.lzimul.LawAssistAdventure.event;
+// TODO 网络事件丢失
 
-import com.lzimul.LawAssistAdventure.network.ClientProviderNetwork;
-import com.lzimul.LawAssistAdventure.network.DataNetwork;
-import com.lzimul.LawAssistAdventure.network.ServerProviderNetwork;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
-import net.neoforged.neoforge.network.event.RegisterPayloadHandlerEvent;
-import net.neoforged.neoforge.network.registration.IPayloadRegistrar;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
+import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 
 import static com.lzimul.LawAssistAdventure.Config.MODID;
 
-@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD)
 public class NetworkEvent {
     @SubscribeEvent
-    public static void register(final RegisterPayloadHandlerEvent event) {
-        final IPayloadRegistrar registrar = event.registrar(MODID);
-        registrar.play(DataNetwork.ID, DataNetwork::new, handler -> {
-            handler.client(ClientProviderNetwork.getInstance()::handleData);
-            handler.server(ServerProviderNetwork.getInstance()::handleData);
-        });
+    public static void register(final RegisterPayloadHandlersEvent event) {
+        final PayloadRegistrar registrar = event.registrar(MODID);
+//        registrar.commonToServer();
+//        registrar.play(NetworkData.ID, NetworkData::new, handler -> {
+//            handler.client(ClientNetworkProvider.getInstance()::handleData);
+//            handler.server(ServerNetworkProvider.getInstance()::handleData);
+//        });
     }
 }

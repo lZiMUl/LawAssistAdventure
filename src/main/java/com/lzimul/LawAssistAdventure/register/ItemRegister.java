@@ -1,8 +1,8 @@
 package com.lzimul.LawAssistAdventure.register;
+// TODO 物品注册丢失
 
 import com.lzimul.LawAssistAdventure.item.*;
 import com.lzimul.LawAssistAdventure.item.block.*;
-import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
@@ -55,12 +55,13 @@ public class ItemRegister {
     public static final DeferredItem<Item> CircuitBoardsBase = Item.register("circuit_boards_base", CircuitBoardsBaseItem::new);
     public static final DeferredItem<Item> Teleporter = Item.register("teleporter", TeleporterItem::new);
 
-    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerHelm = Item.register("extreme_danger_explorer_helm", () -> new ArmorItem(ArmorRegister.ExtremeDangerExplorerHelm, ArmorItem.Type.HELMET, new Item.Properties()));
-    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerBreastplate = Item.register("extreme_danger_explorer_breastplate", () -> new ArmorItem(ArmorRegister.ExtremeDangerExplorerBreastplate, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
-    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerPants = Item.register("extreme_danger_explorer_pants", () -> new ArmorItem(ArmorRegister.ExtremeDangerExplorerPants, ArmorItem.Type.LEGGINGS, new Item.Properties()));
-    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerShoes = Item.register("extreme_danger_explorer_shoes", () -> new ArmorItem(ArmorRegister.ExtremeDangerExplorerShoes, ArmorItem.Type.BOOTS, new Item.Properties()));
-    public static final DeferredItem<ArmorItem> DefendTheBall = Item.register("defend_the_ball", () -> new ArmorItem(ArmorRegister.DefendTheBall, ArmorItem.Type.HELMET, new Item.Properties()));
-    public static final DeferredItem<ArmorItem> Parachute = Item.register("parachute", () -> new ArmorItem(ArmorRegister.Parachute, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+//    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerHelm = Item.register("extreme_danger_explorer_helm", () -> new ArmorItem(ArmorRegister.ExtremeDangerExplorerHelm, ArmorItem.Type.HELMET, new Item.Properties()));
+//    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerBreastplate = Item.register("extreme_danger_explorer_breastplate", () -> new ArmorItem(ArmorRegister.ExtremeDangerExplorerBreastplate, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+//    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerPants = Item.register("extreme_danger_explorer_pants", () -> new ArmorItem(ArmorRegister.ExtremeDangerExplorerPants, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+//    public static final DeferredItem<ArmorItem> ExtremeDangerExplorerShoes = Item.register("extreme_danger_explorer_shoes", () -> new ArmorItem(ArmorRegister.ExtremeDangerExplorerShoes, ArmorItem.Type.BOOTS, new Item.Properties()));
+//    public static final DeferredItem<ArmorItem> DefendTheBall = Item.register("defend_the_ball", () -> new ArmorItem(ArmorRegister.DefendTheBall, ArmorItem.Type.HELMET, new Item.Properties()));
+//    public static final DeferredItem<ArmorItem> Parachute = Item.register("parachute", () -> new ArmorItem(ArmorRegister.Parachute, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+
     public static final DeferredItem<Item> Harquebus = Item.register("harquebus", HarquebusItem::new);
     public static final DeferredItem<Item> Ak47 = Item.register("ak47", Ak47Item::new);
     public static final DeferredItem<Item> Hatchet = Item.register("hatchet", HatchetItem::new);

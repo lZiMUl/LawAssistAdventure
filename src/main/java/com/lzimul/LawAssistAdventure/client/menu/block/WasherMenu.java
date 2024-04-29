@@ -15,8 +15,6 @@ import net.neoforged.neoforge.items.SlotItemHandler;
 import org.jetbrains.annotations.NotNull;
 
 public class WasherMenu extends AbstractContainerMenu {
-    private final ContainerData containerData;
-
     public WasherMenu(int id, Inventory inventory, FriendlyByteBuf friendlyByteBuf) {
         this(id, inventory, inventory.player.level().getBlockEntity(friendlyByteBuf.readBlockPos()), new SimpleContainerData(1));
     }
@@ -24,7 +22,6 @@ public class WasherMenu extends AbstractContainerMenu {
     public WasherMenu(int id, Inventory inventory, BlockEntity blockEntity, ContainerData containerData) {
         super(MenuRegister.WasherMenu.get(), id);
         checkContainerSize(inventory, 1);
-        this.containerData = containerData;
         WasherEntity washerBlockEntity = (WasherEntity) blockEntity;
         this.addSlot(new SlotItemHandler(washerBlockEntity.getItemHandler(), 0, 80, 32));
         addDataSlots(containerData);
